@@ -1,1 +1,3 @@
-# drupical
+#
+
+https://github.com/applicationsonline/librarian-chef

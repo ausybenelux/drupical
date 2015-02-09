@@ -55,17 +55,13 @@ def vagrant_get_config()
 
   vconfig_global = false
 
-  settings_dir = File.expand_path('./include/')
+  settings_dir = File.expand_path('./vagrant/')
+
   local_settings_dir = File.expand_path('.')
 
-  puts "setting directory: " + settings_dir + "."
-  puts "local.settings directory: " + local_settings_dir + "."
+  if File.exists? (settings_dir + "/default.settings.json")
 
-  if File.exists? (settings_dir + "/settings.json")
-
-    puts "Found settings.json."
-
-    vconfig_global = JSON.parse(File.read(settings_dir + "/settings.json"))
+    vconfig_global = JSON.parse(File.read(settings_dir + "/default.settings.json"))
 
     if File.exists? (local_settings_dir + "/local.settings.json")
 
@@ -112,13 +108,22 @@ end
 
 def vagrant_get_alias(vconfig)
 
+
+
   #
   aliases = Array.new
 
   #
-  _aliases = vconfig['config']['aliases']
-  _aliases.each do |key, value|
-    aliases.push(value)
+  vhosts = vconfig['config']['vhosts']
+  vhosts.each do |key, vhost|
+
+    aliases.push(vhost.fetch('server_name'))
+
+    _aliases = vhost.fetch('aliases')
+    _aliases.each do |key, _alias|
+      aliases.push(_alias)
+    end
+
   end
 
   #

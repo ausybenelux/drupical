@@ -1,0 +1,118 @@
+{
+  "config": {
+
+    "box_type": "hashicorp/precise64",
+    "box_name": "drupicaldev",
+    "box_hostname": "drupicaldev",
+    "box_gui": false,
+
+    "box_dhcp": true,
+    "box_static_ip": "10.0.0.1", // ignored if box_dhcp == true
+
+    "box_ram_cpu": "auto",
+    "box_ram": "1G", // ignored if box_ram_cpu == auto
+    "box_cpu": "2", // ignored if box_ram_cpu == auto
+
+    "vagrant_debugging": true,
+
+    "drupical": {
+      "php_version": "5.4",
+      "enable_php_apc": true,
+      "enable_php_curl": true,
+      "enable_php_memcache": true,
+      "enable_php_drush": true,
+      "enable_php_phing": true,
+      "enable_php_composer": true,
+      "enable_php_xdebug": false
+    },
+
+    "solr": {
+      "solr_install": false,
+      "solr_version": "3.6.2",
+      "solr_checksum": "537426dcbdd0dc82dd5bf16b48b6bcaf87cb4049c1245eea8dcb79eeaf3e7ac6"
+    },
+
+    "varnish_install": false,
+
+    "web_tools" : {
+      "adminer" : {
+        "adminer_install" : true,
+        "adminer_alias" : "adminer.drupicaldev.local"
+      },
+      "apc" : {
+        "apc_install" : true,
+        "apc_alias" : "apc.drupicaldev.local"
+      },
+      "phpmemcachedadmin" : {
+        "phpmemcachedadmin_install" : true,
+        "phpmemcachedadmin_alias" : "phpmemcachedadmin.drupicaldev.local"
+      }
+    },
+
+    "vagrant_ports" : {
+      "http" : {
+        "host" : "80",
+        "guest" : "80"
+      },
+      "https" : {
+        "host" : "443",
+        "guest" : "443"
+      },
+      "xdebug" : {
+        "host" : "9000",
+        "guest" : "9000"
+      },
+      "varnish" : {
+        "host" : "8080",
+        "guest" : "8080"
+      },
+      "mysql" : {
+        "host" : "3306",
+        "guest" : "3306"
+      },
+      "solr" : {
+        "host" : "8390",
+        "guest" : "8390"
+      }
+    },
+
+    "vagrant_synced_folders" : {
+      "docroot" : {
+        "source" : "./docroot",
+        "target" : "/var/www/docroot/",
+        "type" : "nfs",
+        "mount_options" : ["rw", "vers=3", "tcp", "fsc", "actimeo=1"]
+      },
+      "logs" : {
+        "source" : "./logs",
+        "target" : "/home/vagrant/logs",
+        "type" : "nfs",
+        "mount_options" : ["rw", "vers=3", "tcp", "fsc", "actimeo=1"]
+      },
+      "scripts" :  {
+        "source" : "./scripts",
+        "target" : "/home/vagrant/scripts",
+        "type" : "nfs",
+        "mount_options" : ["rw", "vers=3", "tcp", "fsc", "actimeo=1"]
+      },
+      "config" :  {
+        "source" : "./config",
+        "target" : "/home/vagrant/config",
+        "type" : "nfs",
+        "mount_options" : ["rw", "vers=3", "tcp", "fsc", "actimeo=1"]
+      }
+
+    },
+
+    "vhosts" : {
+      "vhost1" : {
+        "server_name" : "drupicaldev.local",
+        "docroot" : "/var/www/docroot/",
+        "aliases" : {
+          "alias1" : "www.drupicaldev.local"
+        }
+      }
+    }
+
+  }
+}

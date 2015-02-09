@@ -16,7 +16,8 @@
         "mime",
         "rewrite",
         "setenvif"
-      ]
+      ],
+      "log_dir" : "/home/vagrant/logs/apache2"
     },
     "php" : {
       "install_method" : "package",
