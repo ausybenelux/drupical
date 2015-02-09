@@ -1,0 +1,35 @@
+#!/usr/bin/env ruby
+#^syntax detection
+
+site 'https://supermarket.getchef.com/api/v1'
+
+cookbook 'apt'
+
+cookbook 'git'
+
+cookbook 'curl'
+
+cookbook 'vim'
+
+cookbook "chef-dotdeb",
+         :git => "https://github.com/homemade/chef-dotdeb"
+
+cookbook 'apache2'
+
+cookbook 'mysql', '~> 5.3.6'
+
+cookbook 'php'
+
+cookbook 'composer'
+
+cookbook 'phing'
+
+cookbook 'hipsnip-jetty'
+
+cookbook 'hipsnip-solr'
+
+cookbook 'memcached'
+
+cookbook 'varnish'
+
+cookbook 'phpmyadmin'

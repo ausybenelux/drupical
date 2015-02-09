@@ -1,0 +1,13 @@
+{
+  "name": "varnish",
+  "description": "Web role",
+  "json_class": "Chef::Role",
+  "default_attributes": {},
+  "chef_type": "role",
+  "run_list": [
+    "recipe[drupical::varnish]",
+    "recipe[varnish]"
+  ],
+  "env_run_lists": {
+  }
+}

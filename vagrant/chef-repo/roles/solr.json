@@ -1,0 +1,15 @@
+{
+  "name": "solr",
+  "description": "Web role",
+  "json_class": "Chef::Role",
+  "default_attributes": {},
+  "chef_type": "role",
+  "run_list": [
+    "recipe[solr::default]",
+    "recipe[java]",
+    "recipe[hipsnip-jetty]",
+    "recipe[hipsnip-solr]"
+  ],
+  "env_run_lists": {
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "name": "database",
+  "description": "Database role",
+  "json_class": "Chef::Role",
+  "default_attributes": {
+    "mysql": {
+      "allow_remote_root" : true,
+      "remove_anonymous_users" : true,
+      "server_root_password" : "root",
+      "server_debian_password" : "root"
+    }
+  },
+  "chef_type": "role",
+  "run_list": [
+    "recipe[drupical::database]",
+    "recipe[mysql::client]",
+    "recipe[mysql::server]"
+  ],
+  "env_run_lists": {
+  }
+}

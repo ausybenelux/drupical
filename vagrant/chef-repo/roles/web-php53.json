@@ -1,0 +1,11 @@
+{
+  "name": "web-php53",
+  "description": "Web role",
+  "json_class": "Chef::Role",
+  "default_attributes": {},
+  "chef_type": "role",
+  "run_list": [
+    "recipe[php5_ppa::from_skettle]"
+  ],
+  "env_run_lists": {}
+}

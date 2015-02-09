@@ -1,0 +1,16 @@
+{
+  "name": "web-tools",
+  "description": "Web role",
+  "json_class": "Chef::Role",
+  "default_attributes": {
+  },
+  "chef_type": "role",
+  "run_list": [
+    "recipe[drupical::web-tools]",
+    "recipe[web-tools::adminer]",
+    "recipe[web-tools::apc]",
+    "recipe[web-tools::phpmemcachedadmin]"
+  ],
+  "env_run_lists": {
+  }
+}

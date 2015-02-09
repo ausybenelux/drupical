@@ -1,0 +1,45 @@
+{
+  "name": "web",
+  "description": "Web role",
+  "json_class": "Chef::Role",
+  "default_attributes": {
+    "memcached": {
+      "memory": "128"
+    },
+    "apache": {
+      "default_modules": [
+        "alias",
+        "cgi",
+        "deflate",
+        "dir",
+        "log_config",
+        "mime",
+        "rewrite",
+        "setenvif"
+      ]
+    },
+    "php" : {
+      "install_method" : "package",
+      "conf_dir" : "/etc/php5/apache2",
+      "directives" : {
+        "memory_limit" : "512M",
+        "error_reporting" : "E_ALL & ~E_DEPRECATED",
+        "display_errors" : "On",
+        "post_max_size" : "64M",
+        "upload_max_filesize" : "64M"
+      }
+    }
+  },
+  "chef_type": "role",
+  "run_list": [
+    "recipe[drupical::apache]",
+    "recipe[drupical::php]",
+    "recipe[apache2]",
+    "recipe[memcached]",
+    "recipe[drush]",
+    "recipe[composer]",
+    "recipe[phing]"
+  ],
+  "env_run_lists": {
+  }
+}
