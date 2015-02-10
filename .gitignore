@@ -3,9 +3,6 @@
 
 logs/apache2/*
 
-storage
-
 vagrant/chef-repo/tmp
 vagrant/chef-repo/cookbooks
-
 

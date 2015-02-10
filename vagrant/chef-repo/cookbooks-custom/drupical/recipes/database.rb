@@ -15,3 +15,17 @@ ruby_block "Ensuring mysql has the correct settings for drupal" do
     fe.write_file
   end
 end
+
+vhosts = node['config']['vhosts']
+vhosts.each do |key, vhost|
+
+  bash 'extract_module' do
+    database = vhost.fetch('database_name')
+    code <<-EOH
+    mysql -u root -e "create database #{database}";
+    EOH
+  end
+
+end
+
+

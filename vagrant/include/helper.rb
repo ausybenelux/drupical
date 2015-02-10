@@ -59,15 +59,15 @@ def vagrant_get_config()
 
   local_settings_dir = File.expand_path('.')
 
-  if File.exists? (settings_dir + "/default.settings.json")
+  if File.exists? (settings_dir + "/default.vagrant.settings.json")
 
-    vconfig_global = JSON.parse(File.read(settings_dir + "/default.settings.json"))
+    vconfig_global = JSON.parse(File.read(settings_dir + "/default.vagrant.settings.json"))
 
-    if File.exists? (local_settings_dir + "/local.settings.json")
+    if File.exists? (local_settings_dir + "/local.vagrant.settings.json")
 
       puts "Found local.settings.json."
 
-      vconfig_local = JSON.parse(File.read(local_settings_dir + "/local.settings.json"))
+      vconfig_local = JSON.parse(File.read(local_settings_dir + "/local.vagrant.settings.json"))
 
       vconfig_global["config"].each do |gkey, gvalue|
 

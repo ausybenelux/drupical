@@ -1,0 +1,10 @@
+<?php
+
+<% @node["vhosts"].each do |index, site| %>
+
+$aliases['<%= index %>'] = array(
+  'root' => '/var/www/<%= index %>',
+  'uri' => '<%= node["ip"] %>/<%= index %>',
+);
+
+<% end %>

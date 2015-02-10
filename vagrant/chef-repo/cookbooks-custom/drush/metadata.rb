@@ -5,7 +5,7 @@ maintainer_email "bart.arickx@one-agency.be"
 
 license '(c) 2015 -- All rights reserved'
 
-description "Installs/Configures php5 from ppa"
+description "Installs/Configures drush"
 long_description IO.read(File.join(File.dirname(__FILE__), 'README.md'))
 
 version "0.0.1"

@@ -3,18 +3,23 @@
 # Recipe:: default
 #
 
+git "/usr/share/drush" do
+  repository "git://github.com:drush-ops/drush.git"
+  reference "6.5.0"
+  action :sync
+end
 
-case node[:platform]
-  when "debian", "ubuntu"
-    bash "install-drush" do
-      code <<-EOH
-    (pear install Console_Table)
-    (cd /tmp; wget https://github.com/drush-ops/drush/archive/6.5.0.tar.gz)
-    (cd /tmp; tar zxvf 6.5.0.tar.gz)
-    (cd /tmp; mkdir /var/lib/drush ; cd drush-6.5.0 ; cp -R * /var/lib/drush/)
-    (cd /tmp; ln -s /var/lib/drush/drush /usr/bin/drush)
-    (cd /tmp; drush dl registry_rebuild)
-      EOH
-      not_if { File.exists?("/usr/share/drush/drush") }
-    end
+bash "make-drush-symlink" do
+  code <<-EOH
+(ln -s /usr/share/drush/drush /usr/bin/drush)
+  EOH
+  not_if { File.exists?("/usr/bin/drush") }
+  only_if { File.exists?("/usr/share/drush/drush") }
+end
+
+bash "install-console-table" do
+  code <<-EOH
+(pear install Console_Table)
+  EOH
+  not_if "pear list| grep Console_Table"
 end

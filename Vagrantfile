@@ -19,6 +19,9 @@ begin
   #
   aliases = vagrant_get_alias(vconfig)
 
+  #
+  vconfig.aliases = aliases
+
 end
 
 
@@ -124,7 +127,7 @@ Vagrant.configure(2) do |config|
 
     config.persistent_storage.enabled = true
     config.persistent_storage.use_lvm = false
-    config.persistent_storage.location = "storage/mysql-hdd.vdi"
+    config.persistent_storage.location = ".vagrant/storage/mysql-hdd.vdi"
     config.persistent_storage.size = 5000
     config.persistent_storage.mountname = 'mysql'
     config.persistent_storage.filesystem = 'ext4'
