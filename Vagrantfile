@@ -3,7 +3,7 @@
 
 begin
 
-  load 'vagrant/include/helper.rb'
+  load './build/vagrant/include/helper.rb'
   rescue LoadError
 
 end
@@ -20,8 +20,6 @@ begin
   aliases = vagrant_get_alias(vconfig)
 
 end
-
-
 
 Vagrant.configure(2) do |config|
 
@@ -59,8 +57,6 @@ Vagrant.configure(2) do |config|
                             type: value.fetch('type'),
                             mount_options: value.fetch('mount_options')
   end
-
-
 
   # Virtualbox
   config.vm.provider "virtualbox" do |vb|
@@ -151,19 +147,19 @@ Vagrant.configure(2) do |config|
     chef.environment = "vagrant"
 
     #
-    chef.environments_path = "vagrant/chef-repo/environments"
+    chef.environments_path = "./build/vagrant/chef-repo/environments"
 
     #
     chef.cookbooks_path = [
-        "vagrant/chef-repo/cookbooks",
-        "vagrant/chef-repo/cookbooks-custom"
+        "./build/vagrant/chef-repo/cookbooks",
+        "./build/vagrant/chef-repo/cookbooks-custom"
     ]
 
     #
-    chef.roles_path = "vagrant/chef-repo/roles"
+    chef.roles_path = "./build/vagrant/chef-repo/roles"
 
     #
-    chef.data_bags_path = 'vagrant/chef-repo/data_bags'
+    chef.data_bags_path = './build/vagrant/chef-repo/data_bags'
 
     #
     chef.add_role("base")

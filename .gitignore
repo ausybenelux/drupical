@@ -4,5 +4,5 @@
 
 logs/apache2/*
 
-vagrant/chef-repo/tmp
-vagrant/chef-repo/cookbooks
+build/vagrant/chef-repo/tmp
+build/vagrant/chef-repo/cookbooks
