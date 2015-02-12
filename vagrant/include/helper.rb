@@ -57,7 +57,7 @@ def vagrant_get_config()
 
   settings_dir = File.expand_path('./vagrant/')
 
-  local_settings_dir = File.expand_path('.')
+  local_settings_dir = File.expand_path('./build/')
 
   if File.exists? (settings_dir + "/default.vagrant.settings.json")
 
@@ -86,8 +86,8 @@ def vagrant_get_config()
     else
 
       puts "#"
-      puts "Couldn't find local.settings.json in " + local_settings_dir + "."
-      puts "Using default values from settings.json"
+      puts "Couldn't find local.vagrant.settings.json in " + local_settings_dir + "."
+      puts "Using default values from default.vagrant.settings.json"
       puts "#"
 
     end
@@ -108,8 +108,6 @@ end
 
 def vagrant_get_alias(vconfig)
 
-
-
   #
   aliases = Array.new
 
@@ -127,18 +125,18 @@ def vagrant_get_alias(vconfig)
   end
 
   #
-  if vconfig['config']['web_tools']['adminer']['adminer_install']
-    aliases.push(vconfig['config']['web_tools']['adminer']['adminer_alias'])
+  if vconfig['config']['drupical']['web_tools']['adminer']['adminer_install']
+    aliases.push(vconfig['config']['drupical']['web_tools']['adminer']['adminer_alias'])
   end
 
   #
-  if vconfig['config']['web_tools']['apc']['apc_install']
-    aliases.push(vconfig['config']['web_tools']['apc']['apc_alias'])
+  if vconfig['config']['drupical']['web_tools']['apc']['apc_install']
+    aliases.push(vconfig['config']['drupical']['web_tools']['apc']['apc_alias'])
   end
 
   #
-  if vconfig['config']['web_tools']['phpmemcachedadmin']['phpmemcachedadmin_install']
-    aliases.push(vconfig['config']['web_tools']['phpmemcachedadmin']['phpmemcachedadmin_alias'])
+  if vconfig['config']['drupical']['web_tools']['phpmemcachedadmin']['phpmemcachedadmin_install']
+    aliases.push(vconfig['config']['drupical']['web_tools']['phpmemcachedadmin']['phpmemcachedadmin_alias'])
   end
 
   return aliases

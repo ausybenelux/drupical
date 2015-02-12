@@ -19,9 +19,6 @@ begin
   #
   aliases = vagrant_get_alias(vconfig)
 
-  #
-  vconfig.aliases = aliases
-
 end
 
 
@@ -175,11 +172,11 @@ Vagrant.configure(2) do |config|
     chef.add_role("database")
 
     #
-    if vconfig['config']["drupical"]["php_version"] == "5.3"
+    if vconfig['config']["drupical"]["php"]["php_version"] == "5.3"
       chef.add_role("web-php53")
-    elsif vconfig['config']["drupical"]["php_version"] == "5.4"
+    elsif vconfig['config']["drupical"]["php"]["php_version"] == "5.4"
       chef.add_role("web-php54")
-    elsif vconfig['config']["drupical"]["php_version"] == "5.5"
+    elsif vconfig['config']["drupical"]["php"]["php_version"] == "5.5"
       chef.add_role("web-php55")
     end
 
@@ -188,12 +185,12 @@ Vagrant.configure(2) do |config|
     chef.add_role("web-tools")
 
     #
-    if vconfig['config']['solr']['solr_install']
+    if vconfig['config']["drupical"]['solr']['solr_install']
       chef.add_role("solr")
     end
 
     #
-    if vconfig['config']['varnish_install']
+    if vconfig['config']["drupical"]['varnish_install']
       chef.add_role("varnish")
     end
 

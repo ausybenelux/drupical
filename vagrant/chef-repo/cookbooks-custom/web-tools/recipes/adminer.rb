@@ -1,4 +1,4 @@
-if node['config']['web_tools']['adminer']['adminer_install']
+if node['config']['drupical']['web_tools']['adminer']['adminer_install']
 
   directory "/usr/share/adminer" do
     mode 0777
@@ -20,7 +20,7 @@ if node['config']['web_tools']['adminer']['adminer_install']
   end
 
   web_app "adminer" do
-    server_name node['config']['web_tools']['adminer']['adminer_alias']
+    server_name node['config']['drupical']['web_tools']['adminer']['adminer_alias']
     docroot "/usr/share/adminer"
     cookbook 'apache2'
   end

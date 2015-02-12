@@ -1,4 +1,4 @@
-if node['config']['web_tools']['phpmemcachedadmin']['phpmemcachedadmin_install']
+if node['config']['drupical']['web_tools']['phpmemcachedadmin']['phpmemcachedadmin_install']
 
   remote_directory '/usr/share/phpmemcachedadmin' do
     source 'phpmemcachedadmin'
@@ -8,7 +8,7 @@ if node['config']['web_tools']['phpmemcachedadmin']['phpmemcachedadmin_install']
   end
 
   web_app "phpmemcachedadmin" do
-    server_name node['config']['web_tools']['phpmemcachedadmin']['phpmemcachedadmin_alias']
+    server_name node['config']['drupical']['web_tools']['phpmemcachedadmin']['phpmemcachedadmin_alias']
     docroot "/usr/share/phpmemcachedadmin"
     cookbook 'apache2'
   end

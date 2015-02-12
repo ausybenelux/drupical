@@ -1,10 +1,11 @@
 <?php
 
-<% @node["vhosts"].each do |index, site| %>
-
-$aliases['<%= index %>'] = array(
-  'root' => '/var/www/<%= index %>',
-  'uri' => '<%= node["ip"] %>/<%= index %>',
+<% @aliases.each do |_alias| %>
+$aliases['<%= _alias %>'] = array(
+    'uri'           => '<%= _alias %>',
+    'root'          => '<%= @docroot %>',
+    'remote-host'   => '<%= @server_name %>',
+    'remote-user'   => 'vagrant',
+    'os'            => 'Linux',
 );
-
 <% end %>

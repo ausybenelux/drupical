@@ -1,4 +1,4 @@
-if node['config']['web_tools']['apc']['apc_install']
+if node['config']['drupical']['web_tools']['apc']['apc_install']
 
   directory "/usr/share/apc" do
     mode 0777
@@ -12,7 +12,7 @@ if node['config']['web_tools']['apc']['apc_install']
   end
 
   web_app "apc" do
-    server_name node['config']['web_tools']['apc']['apc_alias']
+    server_name node['config']['drupical']['web_tools']['apc']['apc_alias']
     docroot "/usr/share/apc"
     cookbook 'apache2'
   end

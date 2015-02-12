@@ -1,8 +1,8 @@
 .idea
-.vagrant
+
+.vagrant/*
 
 logs/apache2/*
 
 vagrant/chef-repo/tmp
 vagrant/chef-repo/cookbooks
-

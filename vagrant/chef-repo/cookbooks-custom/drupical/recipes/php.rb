@@ -25,7 +25,7 @@ package "php5-gd" do
 end
 
 #
-if node['config']['drupical']['enable_php_apc']
+if node['config']['drupical']['php']['enable_php_apc']
 
   package "php-apc" do
     action :install
@@ -34,7 +34,7 @@ if node['config']['drupical']['enable_php_apc']
 end
 
 #
-if node['config']['drupical']['enable_php_curl']
+if node['config']['drupical']['php']['enable_php_curl']
 
   include_recipe "curl"
 
@@ -45,7 +45,7 @@ if node['config']['drupical']['enable_php_curl']
 end
 
 #
-if node['config']['drupical']['enable_php_memcache']
+if node['config']['drupical']['php']['enable_php_memcache']
 
   include_recipe 'memcached'
 
@@ -56,7 +56,7 @@ if node['config']['drupical']['enable_php_memcache']
 end
 
 #
-if node['config']['drupical']['enable_php_xdebug']
+if node['config']['drupical']['php']['enable_php_xdebug']
 
   package "php5-xdebug" do
     options "--no-install-recommends --quiet --assume-yes"
@@ -66,21 +66,22 @@ if node['config']['drupical']['enable_php_xdebug']
 end
 
 #
-if node['config']['drupical']['enable_php_phing']
+if node['config']['drupical']['php']['enable_php_phing']
 
   include_recipe 'phing'
 
 end
 
 #
-if node['config']['drupical']['enable_php_drush']
+if node['config']['drupical']['php']['enable_php_drush']
 
-  include_recipe "drush"
+  include_recipe "drush::default"
+  include_recipe "drush::aliases"
 
 end
 
 #
-if node['config']['drupical']['enable_php_composer']
+if node['config']['drupical']['php']['enable_php_composer']
 
   include_recipe "composer"
 

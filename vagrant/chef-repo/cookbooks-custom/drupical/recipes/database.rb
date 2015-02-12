@@ -21,8 +21,9 @@ vhosts.each do |key, vhost|
 
   bash 'extract_module' do
     database = vhost.fetch('database_name')
+    pass = node['mysql']['server_root_password']
     code <<-EOH
-    mysql -u root -e "create database #{database}";
+    mysql --user=root --password=#{pass} -e "CREATE DATABASE IF NOT EXISTS #{database}";
     EOH
   end
 
