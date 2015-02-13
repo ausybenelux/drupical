@@ -39,14 +39,10 @@ def vagrant_check_requirements
     end
 
     puts "#"
-    puts "#"
 
     raise SystemExit
 
   end
-
-  puts "#"
-  puts "#"
 
 end
 
@@ -95,7 +91,7 @@ def vagrant_get_config()
   else
 
     puts "#"
-    puts "Couldn't find settings.json in " + settings_dir + "."
+    puts "Couldn't find default.vagrant.settings.json in " + settings_dir + "."
     puts "#"
 
     raise SystemExit

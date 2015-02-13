@@ -71,7 +71,7 @@ if node['config']['drupical']['php']['enable_php_xdebug']
     action :create
   end
 
-  link "../mods-available/memcache.ini" do
+  link "/etc/php5/conf.d/xdebug.ini" do
     to "/etc/php5/mods-available/xdebug.ini"
   end
 

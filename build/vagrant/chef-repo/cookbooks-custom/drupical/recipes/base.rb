@@ -3,19 +3,17 @@
 # Recipe:: base
 #
 
-#bash "update-cleanup" do
-#  code <<-EOH
-#(apt-get update && apt-get upgrade -y)
-#(apt-get -y autoremove && apt-get -y clean)
-#(reset)
-#  EOH
-#end
-
 include_recipe "apt"
+
+execute "pin-update-cleanup" do
+  command "apt-mark hold grub-pc grub-pc-bin grub2-common && apt-get update && apt-get upgrade -y && apt-get -y autoremove && apt-get -y clean"
+  action :nothing
+end
 
 template "/etc/apt/apt.conf.d/90forceyes" do
   source "90forceyes"
   mode '0666'
+  notifies :run, "execute[pin-update-cleanup]", :immediately
 end
 
 include_recipe "cachefilesd"
