@@ -6,7 +6,7 @@
 Chef::Log.info('Starting drupical::php')
 
 #
-include_recipe 'php5_ppa::default'
+include_recipe 'php5::default'
 
 #
 include_recipe 'apache2::mod_php5'
@@ -25,7 +25,7 @@ package "php5-gd" do
 end
 
 #
-if node['config']['drupical']['php']['enable_php_apc'] && node["php5_ppa"]["version"] != "5.5"
+if node['config']['drupical']['php']['enable_php_apc'] && node["php5"]["version"] != "5.5" && node["php5"]["version"] != "5.6"
 
   package "php-apc" do
     action :install
@@ -63,7 +63,7 @@ if node['config']['drupical']['php']['enable_php_xdebug']
     action :install
   end
 
-  template "/etc/php5/conf.d/xdebug.ini" do
+  template "/etc/php5/mods-available/xdebug.ini" do
     source "xdebug.ini"
     mode 0644
     owner "root"
@@ -71,9 +71,10 @@ if node['config']['drupical']['php']['enable_php_xdebug']
     action :create
   end
 
-  link "/etc/php5/conf.d/xdebug.ini" do
-    to "/etc/php5/conf.d/20-xdebug.ini"
+  link "../mods-available/memcache.ini" do
+    to "/etc/php5/mods-available/xdebug.ini"
   end
+
 
 end
 
@@ -88,7 +89,7 @@ end
 if node['config']['drupical']['php']['enable_php_drush']
 
   include_recipe "drush::default"
-  #include_recipe "drush::aliases"
+  include_recipe "drush::aliases"
 
 end
 

@@ -5,7 +5,8 @@
   "default_attributes": {},
   "chef_type": "role",
   "run_list": [
-    "recipe[php5_ppa::from_skettle]"
+    "recipe[php5::default]",
+    "recipe[php5::php5_53_ppa]"
   ],
   "env_run_lists": {}
 }

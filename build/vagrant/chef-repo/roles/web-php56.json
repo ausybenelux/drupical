@@ -1,12 +1,12 @@
 {
-  "name": "web-php54",
+  "name": "web-php55",
   "description": "Web role",
   "json_class": "Chef::Role",
   "default_attributes": {},
   "chef_type": "role",
   "run_list": [
     "recipe[php5::default]",
-    "recipe[php5::php5_54_ppa]"
+    "recipe[php5::php5_56_dotdeb]"
   ],
   "env_run_lists": {}
 }

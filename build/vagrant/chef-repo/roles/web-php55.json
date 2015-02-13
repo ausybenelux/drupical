@@ -5,7 +5,8 @@
   "default_attributes": {},
   "chef_type": "role",
   "run_list": [
-    "recipe[php5_ppa::from_ondrej]"
+    "recipe[php5::default]",
+    "recipe[php5::php5_55_ppa]"
   ],
   "env_run_lists": {}
 }

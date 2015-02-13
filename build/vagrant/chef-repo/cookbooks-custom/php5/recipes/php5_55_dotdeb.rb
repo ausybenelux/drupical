@@ -1,6 +1,6 @@
 #
 # Cookbook Name:: dotdeb
-# Recipe:: default
+# Recipe:: php54
 #
 # Copyright 2012, Benedict Steele
 #
@@ -17,10 +17,17 @@
 # limitations under the License.
 #
 
-apt_repository "dotdeb" do
+apt_repository "dotdeb-php55" do
   uri "http://packages.dotdeb.org"
-  distribution "squeeze"
+  distribution "wheezy-php55"
   components ["all"]
   key "http://www.dotdeb.org/dotdeb.gpg"
+  notifies :run, "execute[apt-get update]", :immediately
+end
+
+apt_preference "dotdeb-php55-pin" do
+  glob '*'
+  pin 'origin http://packages.dotdeb.org'
+  pin_priority '700'
   notifies :run, "execute[apt-get update]", :immediately
 end

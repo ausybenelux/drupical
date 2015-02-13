@@ -13,6 +13,11 @@
 
 include_recipe "apt"
 
+template "/etc/apt/apt.conf.d/90forceyes" do
+  source "90forceyes"
+  mode '0666'
+end
+
 include_recipe "cachefilesd"
 
 include_recipe "git"

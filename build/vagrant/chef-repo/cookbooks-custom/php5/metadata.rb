@@ -18,7 +18,7 @@ end
   depends dependancy
 end
 
-recipe 'php5_ppa::default', 'Main configuration'
-recipe 'php5_ppa::from_ondrej', 'from_ondrej'
-recipe 'php5_ppa::from_ondrej_old', 'from_ondrej_old'
-recipe 'php5_ppa::skettler', 'skettler'
+recipe 'php5::default', 'Main configuration'
+recipe 'php5::from_ondrej', 'from_ondrej'
+recipe 'php5::from_ondrej_old', 'from_ondrej_old'
+recipe 'php5::skettler', 'skettler'

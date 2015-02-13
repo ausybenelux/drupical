@@ -17,7 +17,7 @@
         "rewrite",
         "setenvif"
       ],
-      "log_dir" : "/home/vagrant/logs/apache2"
+      "log_dir" : "/home/vagrant/drupical/logs/apache2"
     },
     "php" : {
       "install_method" : "package",
@@ -35,6 +35,7 @@
   "run_list": [
     "recipe[drupical::apache]",
     "recipe[drupical::php]",
+    "recipe[php5::default]",
     "recipe[apache2]",
     "recipe[memcached]",
     "recipe[drush]",

@@ -17,10 +17,18 @@
 # limitations under the License.
 #
 
-apt_repository "dotdeb-php56" do
+apt_repository "dotdeb-php54" do
   uri "http://packages.dotdeb.org"
-  distribution "wheezy-php56"
+  distribution "squeeze-php54"
   components ["all"]
   key "http://www.dotdeb.org/dotdeb.gpg"
+  notifies :run, "execute[apt-get update]", :immediately
+
+end
+
+apt_preference "dotdeb-php54-pin" do
+  glob '*'
+  pin 'origin http://packages.dotdeb.org'
+  pin_priority '700'
   notifies :run, "execute[apt-get update]", :immediately
 end

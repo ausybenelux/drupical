@@ -5,13 +5,12 @@
 
 include_recipe "apt"
 
-
-apt_repository "skettler-php-#{node["lsb"]["codename"]}" do
+apt_repository "skettler-php" do
   uri "http://ppa.launchpad.net/skettler/php/ubuntu"
   distribution node["lsb"]["codename"]
   components ["main"]
-  keyserver node["php5_ppa"]["keyserver"]
-  key node["php5_ppa"]["key_skettler"]
+  keyserver node["php5"]["keyserver"]
+  key node["php5"]["key_skettler"]
   action :add
   notifies :run, "execute[apt-get update]", :immediately
 end

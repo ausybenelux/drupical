@@ -11,7 +11,7 @@
 
     "box_ram_cpu": "auto",
     "box_ram": "1G", // ignored if box_ram_cpu == auto
-    "box_cpu": "2", // ignored if box_ram_cpu == auto
+    "box_cpu": "2",  // ignored if box_ram_cpu == auto
 
     "vagrant_debugging": true,
 
@@ -24,7 +24,7 @@
         "enable_php_drush": true,
         "enable_php_phing": true,
         "enable_php_composer": true,
-        "enable_php_xdebug": false
+        "enable_php_xdebug": true
       },
       "solr": {
         "solr_install": false,
@@ -76,21 +76,9 @@
     },
 
     "vagrant_synced_folders" : {
-      "docroot" : {
-        "source" : "./docroot",
-        "target" : "/var/www/docroot/",
-        "type" : "nfs",
-        "mount_options" : ["rw", "vers=3", "tcp", "fsc", "actimeo=1"]
-      },
       "build" : {
-        "source" : "./build",
-        "target" : "/home/vagrant/build",
-        "type" : "nfs",
-        "mount_options" : ["rw", "vers=3", "tcp", "fsc", "actimeo=1"]
-      },
-      "logs" : {
-        "source" : "./logs",
-        "target" : "/home/vagrant/logs",
+        "source" : "../drupical",
+        "target" : "/home/vagrant/drupical",
         "type" : "nfs",
         "mount_options" : ["rw", "vers=3", "tcp", "fsc", "actimeo=1"]
       }
@@ -98,11 +86,11 @@
 
     "vhosts" : {
       "vhost1" : {
-        "server_name" : "drupical.local",
+        "server_name" : "drupicaldev.local",
         "database_name" : "drupical",
-        "docroot" : "/var/www/docroot/",
+        "docroot" : "/home/vagrant/drupical/docroot/",
         "aliases" : {
-          "alias1" : "www.drupical.local"
+          "alias1" : "www.drupicaldev.local"
         }
       }
     }
