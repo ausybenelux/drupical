@@ -1,5 +1,27 @@
 {
   "config": {
-    "vagrant_debugging": true
+    "vagrant_debugging": true,
+
+    "vagrant_synced_folders" : {
+      "build" : {
+        "source" : "../drupical",
+        "target" : "/home/vagrant/drupical",
+        "type" : "nfs",
+        "mount_options" : ["rw", "vers=3", "tcp", "fsc", "actimeo=1"]
+      }
+    },
+
+    "vhosts" : {
+      "vhost1" : {
+        "server_name" : "drupicaldev.local",
+        "database_name" : "drupical",
+        "docroot" : "/home/vagrant/drupical/docroot/",
+        "aliases" : {
+          "alias1" : "www.drupicaldev.local"
+        }
+      }
+    }
+
+
   }
 }
