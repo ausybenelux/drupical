@@ -9,10 +9,10 @@ Chef::Log.info('Starting drupical::php')
 include_recipe 'php5::default'
 
 #
-include_recipe 'apache2::mod_php5'
+include_recipe 'php'
 
 #
-include_recipe 'php'
+include_recipe 'apache2::mod_php5'
 
 #
 package "php5-mysqlnd" do
@@ -25,12 +25,12 @@ package "php5-gd" do
 end
 
 #
-if node['config']['drupical']['php']['enable_php_apc'] && node["php5"]["version"] != "5.5" && node["php5"]["version"] != "5.6"
-
-  package "php-apc" do
-    action :install
+if node['config']['drupical']['php']['enable_php_apc']
+  if node["php5"]["version"] != "5.5" && node["php5"]["version"] != "5.6"
+    package "php-apc" do
+      action :install
+    end
   end
-
 end
 
 #
@@ -55,7 +55,7 @@ if node['config']['drupical']['php']['enable_php_memcache']
 
 end
 
-#
+
 if node['config']['drupical']['php']['enable_php_xdebug']
 
   package "php5-xdebug" do
@@ -63,22 +63,21 @@ if node['config']['drupical']['php']['enable_php_xdebug']
     action :install
   end
 
-  template "/etc/php5/mods-available/xdebug.ini" do
-    source "xdebug.ini"
-    mode 0644
-    owner "root"
-    group "root"
-    action :create
-  end
+  # template "/etc/php5/conf.d/xdebug.ini" do
+  #   source "xdebug.ini"
+  #   mode 0644
+  #   owner "root"
+  #   group "root"
+  #   action :create
+  # end
 
-  link "/etc/php5/conf.d/xdebug.ini" do
-    to "/etc/php5/mods-available/xdebug.ini"
-  end
-
+  #link "/etc/php5/conf.d/xdebug.ini" do
+  #  to "/etc/php5/mods-available/xdebug.ini"
+  #end
 
 end
 
-#
+
 if node['config']['drupical']['php']['enable_php_phing']
 
   include_recipe 'phing'

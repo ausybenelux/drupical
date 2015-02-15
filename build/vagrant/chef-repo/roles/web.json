@@ -21,7 +21,6 @@
     },
     "php" : {
       "install_method" : "package",
-      "conf_dir" : "/etc/php5/apache2",
       "directives" : {
         "memory_limit" : "512M",
         "error_reporting" : "E_ALL & ~E_DEPRECATED",
@@ -33,10 +32,10 @@
   },
   "chef_type": "role",
   "run_list": [
-    "recipe[drupical::apache]",
-    "recipe[drupical::php]",
-    "recipe[php5::default]",
     "recipe[apache2]",
+    "recipe[drupical::apache]",
+    "recipe[php5::default]",
+    "recipe[drupical::php]",
     "recipe[memcached]",
     "recipe[drush]",
     "recipe[composer]",

@@ -14,11 +14,11 @@ version "0.0.1"
   supports os
 end
 
-%w{ apt }.each do |dependancy|
+%w{ apt php }.each do |dependancy|
   depends dependancy
 end
 
 recipe 'php5::default', 'Main configuration'
-recipe 'php5::from_ondrej', 'from_ondrej'
-recipe 'php5::from_ondrej_old', 'from_ondrej_old'
-recipe 'php5::skettler', 'skettler'
+recipe 'php5::php5_54_ppa', 'php5_54_ppa'
+recipe 'php5::php5_55_ppa', 'php5_55_ppa'
+recipe 'php5::php5_56_dotdeb', 'php5_56_dotdeb'

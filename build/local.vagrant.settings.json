@@ -1,5 +1,5 @@
 {
   "config": {
-    "vagrant_debugging": false
+    "vagrant_debugging": true
   }
 }

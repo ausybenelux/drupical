@@ -165,7 +165,7 @@ Vagrant.configure(2) do |config|
     chef.add_role("base")
 
     #
-    chef.add_role("database")
+    #chef.add_role("database")
 
     #
     if vconfig['config']["drupical"]["php"]["php_version"] == "5.3"
@@ -174,15 +174,13 @@ Vagrant.configure(2) do |config|
       chef.add_role("web-php54")
     elsif vconfig['config']["drupical"]["php"]["php_version"] == "5.5"
       chef.add_role("web-php55")
-    elsif vconfig['config']["drupical"]["php"]["php_version"] == "5.6"
-      chef.add_role("web-php55")
     end
 
     #
     chef.add_role("web")
 
     #
-    chef.add_role("web-tools")
+    #chef.add_role("web-tools")
 
     #
     if vconfig['config']["drupical"]['solr']['solr_install']

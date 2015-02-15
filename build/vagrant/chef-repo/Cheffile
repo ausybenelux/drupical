@@ -16,6 +16,7 @@ cookbook 'apache2'
 cookbook 'mysql', '~> 5.3.6'
 
 cookbook 'php'
+cookbook 'php-fpm'
 
 cookbook 'composer'
 

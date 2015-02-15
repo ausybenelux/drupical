@@ -3,8 +3,6 @@
 # Recipe:: from_ondrej_old
 #
 
-include_recipe "apt"
-
 apt_repository "ondrej-old-php" do
   uri "http://ppa.launchpad.net/ondrej/php5-oldstable/ubuntu"
   distribution node["lsb"]["codename"]

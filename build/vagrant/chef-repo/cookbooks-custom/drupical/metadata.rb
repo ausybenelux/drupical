@@ -14,11 +14,14 @@ version '0.1.0'
   supports os
 end
 
-%w{apt git apache2 composer curl hipsnip-jetty hipsnip-solr java memcached mysql phing varnish vim}.each do |dependancy|
+%w{apt git apache2 composer curl hipsnip-jetty hipsnip-solr java memcached mysql phing php5 varnish vim}.each do |dependancy|
   depends dependancy
 end
 
+recipe 'drupical::default', 'dummy'
 recipe 'drupical::base', 'Main configuration'
 recipe 'drupical::database', 'Database role cookbook'
 recipe 'drupical::varnish', 'Varnish role cookbook'
 recipe 'drupical::web', 'Web role cookbook'
+recipe 'drupical::apache', 'apache role cookbook'
+recipe 'drupical::php', 'php role cookbook'
