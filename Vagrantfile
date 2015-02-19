@@ -75,13 +75,11 @@ Vagrant.configure(2) do |config|
     end
 
     # Ports
-    vconfig['config']['vagrant_ports'].each do |key, value|
-
-      config.vm.network :forwarded_port,
-                        host: value.fetch('host'),
-                        guest: value.fetch('guest')
-
-    end
+    #vconfig['config']['vagrant_ports'].each do |key, value|
+    #  config.vm.network :forwarded_port,
+    #                    host: value.fetch('host'),
+    #                    guest: value.fetch('guest')
+    #end
 
     # RAM and CPU
     if vconfig['config']['box_ram_cpu'] == "auto"
@@ -103,9 +101,7 @@ Vagrant.configure(2) do |config|
   if Vagrant.has_plugin?("vagrant-hostmanager")
 
     config.hostmanager.ip_resolver = proc do |vm, resolving_vm|
-      if vm.id
-        `VBoxManage guestproperty get #{vm.id} "/VirtualBox/GuestInfo/Net/1/V4/IP"`.split()[1]
-      end
+      read_ip_address(vm)
     end
 
     config.hostmanager.enabled = true

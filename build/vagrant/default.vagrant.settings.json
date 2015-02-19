@@ -32,6 +32,10 @@
         "solr_checksum": "537426dcbdd0dc82dd5bf16b48b6bcaf87cb4049c1245eea8dcb79eeaf3e7ac6"
       },
       "web_tools" : {
+        "itworks" : {
+          "itworks_install" : true,
+          "itworks_alias" : "itworks.drupicaldev.local"
+        },
         "adminer" : {
           "adminer_install" : true,
           "adminer_alias" : "adminer.drupicaldev.local"

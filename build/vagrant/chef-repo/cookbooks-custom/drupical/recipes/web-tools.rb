@@ -6,6 +6,9 @@
 Chef::Log.info('Starting drupical::web-tools')
 
 #
+include_recipe 'web-tools::itworks'
+
+#
 include_recipe 'web-tools::adminer'
 
 #

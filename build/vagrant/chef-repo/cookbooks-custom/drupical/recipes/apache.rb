@@ -24,6 +24,7 @@ vhosts.each do |key, vhost|
 
     server_name vhost.fetch('server_name')
     docroot vhost.fetch('docroot')
+
     allow_override 'All'
 
     cookbook 'apache2'

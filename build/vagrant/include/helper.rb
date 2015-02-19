@@ -121,6 +121,11 @@ def vagrant_get_alias(vconfig)
   end
 
   #
+  if vconfig['config']['drupical']['web_tools']['itworks']['itworks_install']
+    aliases.push(vconfig['config']['drupical']['web_tools']['itworks']['itworks_alias'])
+  end
+
+  #
   if vconfig['config']['drupical']['web_tools']['adminer']['adminer_install']
     aliases.push(vconfig['config']['drupical']['web_tools']['adminer']['adminer_alias'])
   end
@@ -139,3 +144,24 @@ def vagrant_get_alias(vconfig)
 
 end
 
+$logger = Log4r::Logger.new('vagrantfile')
+def read_ip_address(machine)
+  command = "LANG=en ifconfig  | grep 'inet addr:'| grep -v '127.0.0.1' | cut -d: -f2 | awk '{ print $1 }'"
+  result  = ""
+
+  $logger.info "Processing #{ machine.name } ... "
+
+  begin
+    # sudo is needed for ifconfig
+    machine.communicate.sudo(command) do |type, data|
+      result << data if type == :stdout
+    end
+    $logger.info "Processing #{ machine.name } ... success"
+  rescue
+    result = "# NOT-UP"
+    $logger.info "Processing #{ machine.name } ... not running"
+  end
+
+  # the second inet is more accurate
+  result.chomp.split("\n").last
+end

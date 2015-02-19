@@ -7,6 +7,7 @@
       "memory": "128"
     },
     "apache": {
+      "version": "2.4",
       "default_modules": [
         "alias",
         "cgi",

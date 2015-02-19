@@ -43,12 +43,17 @@ SITE
       windows (>= 0.0.0)
       xml (>= 0.0.0)
       yum-epel (>= 0.0.0)
+    php-fpm (0.7.0)
+      apt (>= 0.0.0)
+      yum (>= 3.0)
     phpmyadmin (1.0.6)
       php (>= 0.0.0)
     runit (1.5.14)
       build-essential (>= 0.0.0)
       yum (~> 3.0)
       yum-epel (>= 0.0.0)
+    sonar (0.0.1)
+      java (>= 0.0.0)
     varnish (1.0.2)
       apt (~> 2.4)
       build-essential (>= 0.0.0)
@@ -66,17 +71,9 @@ SITE
     yum-mysql-community (0.1.12)
       yum (>= 3.0)
 
-GIT
-  remote: https://github.com/homemade/chef-dotdeb
-  ref: master
-  sha: cedefbbe9e4d8a9f3103d66affc37c20fb5f175f
-  specs:
-    chef-dotdeb (0.0.2)
-
 DEPENDENCIES
   apache2 (>= 0)
   apt (>= 0)
-  chef-dotdeb (>= 0)
   composer (>= 0)
   curl (>= 0)
   git (>= 0)
@@ -86,7 +83,9 @@ DEPENDENCIES
   mysql (~> 5.3.6)
   phing (>= 0)
   php (>= 0)
+  php-fpm (>= 0)
   phpmyadmin (>= 0)
+  sonar (~> 0.0.1)
   varnish (>= 0)
   vim (>= 0)
 
