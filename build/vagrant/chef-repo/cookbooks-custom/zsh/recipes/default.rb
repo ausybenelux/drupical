@@ -25,5 +25,6 @@ bash "install-zsh" do
 end
 
 link "/home/vagrant/bin" do
-  to "/home/vagrant/build/bin"
+  to "/home/vagrant/drupical/build/bin"
+  not_if { File.symlink?("/home/vagrant/bin") }
 end

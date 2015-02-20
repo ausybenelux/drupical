@@ -1,5 +1,4 @@
-.PHONY: info install-chef-librarian download-chef-cookbooks install-vagrant-dependencies make-drupal
-
+.PHONY: info install-chef-librarian download-chef-cookbooks install-vagrant-dependencies make-drupal vagrant-provision
 PWD = $(shell pwd)
 
 default: info
@@ -10,6 +9,7 @@ info:
 	@echo "make download-chef-cookbooks"
 	@echo "make install-vagrant-dependencies"
 	@echo "make make-drupal"
+	@echo "make vagrant-provision"
 
 install-chef-librarian:
 	gem install librarian-chef
@@ -28,3 +28,6 @@ install-vagrant-dependencies:
 
 make-drupal:
 	cd $(PWD)/build/phing ; $(shell pwd) ; phing
+
+vagrant-provision:
+	vagrant reload --provision
