@@ -34,6 +34,7 @@
   },
   "chef_type": "role",
   "run_list": [
+    "recipe[drupical::apache_repo]",
     "recipe[apache2]",
     "recipe[apache2::mod_fastcgi]",
     "recipe[apache2::mod_actions]",
