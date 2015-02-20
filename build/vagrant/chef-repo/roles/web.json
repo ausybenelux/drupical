@@ -18,6 +18,7 @@
         "rewrite",
         "setenvif"
       ],
+      "mpm": "worker",
       "log_dir" : "/home/vagrant/drupical/logs/apache2"
     },
     "php" : {
@@ -34,9 +35,13 @@
   "chef_type": "role",
   "run_list": [
     "recipe[apache2]",
+    "recipe[apache2::mod_fastcgi]",
+    "recipe[apache2::mod_actions]",
+    "recipe[apache2::mod_alias]",
     "recipe[drupical::apache]",
     "recipe[php5::default]",
     "recipe[drupical::php]",
+    "recipe[php-fpm]",
     "recipe[memcached]",
     "recipe[drush]",
     "recipe[composer]",

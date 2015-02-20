@@ -28,3 +28,5 @@ cookbook 'hipsnip-solr'
 cookbook 'memcached'
 
 cookbook 'varnish'
+
+cookbook 'php-fpm'

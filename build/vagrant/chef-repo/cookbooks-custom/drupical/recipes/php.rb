@@ -5,6 +5,19 @@
 
 Chef::Log.info('Starting drupical::php')
 
+
+include_recipe 'php-fpm'
+
+#
+#Installing the default pool
+#With the correct PHP settings for drupal installations
+#
+php_fpm_pool "www" do
+  process_manager "dynamic"
+  max_requests 5000
+  php_options 'php_admin_flag[log_errors]' => 'on', 'php_admin_value[memory_limit]' => '512M', 'php_admin_value[error_reporting]' =>  'E_ALL & ~E_DEPRECATED', 'php_admin_value[display_errors]'  =>  'On', 'php_admin_value[post_max_size]'  =>  '64M', 'php_admin_value[upload_max_filesize]' =>  '64M'
+end
+
 #
 include_recipe 'php5::default'
 
@@ -12,7 +25,9 @@ include_recipe 'php5::default'
 include_recipe 'php'
 
 #
-include_recipe 'apache2::mod_php5'
+#We have to disable apache2::mod_php5 because it'll interfere with the PHP-FPM module.
+#
+#include_recipe 'apache2::mod_php5'
 
 #
 package "php5-mysqlnd" do
@@ -97,4 +112,23 @@ if node['config']['drupical']['php']['enable_php_composer']
 
   include_recipe "composer"
 
+end
+
+
+file '/etc/apache2/conf-available/php-fpm.conf' do
+  owner 'root'
+  group 'root'
+  mode '0755'
+  action :create
+end
+
+template '/etc/apache2/conf-available/php-fpm.conf' do
+  source 'php-fpm.conf'
+  mode '0644'
+  notifies :restart, 'service[apache2]', :delayed
+  not_if {!File.exists?('/etc/apache2/conf-available/php-fpm.conf')}
+end
+
+link '/etc/apache2/conf-enabled/php-fpm.conf' do
+  to '/etc/apache2/conf-available/php-fpm.conf'
 end
