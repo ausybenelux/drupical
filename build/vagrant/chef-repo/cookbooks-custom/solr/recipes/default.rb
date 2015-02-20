@@ -11,9 +11,9 @@ node.override['java']['oracle']['accept_oracle_download_terms'] = true
 node.override['java']['jdk']['7']['x86_64']['url'] = "http://ftp.osuosl.org/pub/funtoo/distfiles/oracle-java/jdk-7u76-linux-x64.tar.gz"
 
 node.override['jetty']['port'] = 8390
-node.override['jetty']['version'] = '9.2.7.v20150116'
-node.override['jetty']['link'] = 'http://eclipse.org/downloads/download.php?file=/jetty/stable-9/dist/jetty-distribution-9.2.7.v20150116.tar.gz&r=1'
-node.override['jetty']['checksum'] = '90d3f9ef886696a62bd93012f463d0054282b395'
+node.override['jetty']['version'] = '9.2.8.v20150217'
+node.override['jetty']['link'] = 'http://download.eclipse.org/jetty/stable-9/dist/jetty-distribution-9.2.8.v20150217.tar.gz'
+node.override['jetty']['checksum'] = 'd565cb0abe9c265f573a16c5dfd9ae36e769c908'
 
 node.override['solr']["version"] = node['config']['drupical']['solr']['solr_version']
 node.override['solr']["checksum"] = node['config']['drupical']['solr']['solr_checksum']
@@ -24,24 +24,46 @@ include_recipe "hipsnip-jetty"
 
 include_recipe "hipsnip-solr"
 
-bash "Adding permissions for solr" do
+if /^(?:1\.4\.(?:0|1){1}|3\.[0-9]{1,}\.[0-9]{1,})/.match(node['config']['drupical']['solr']['solr_version'])
+  solr_name = "apache-solr-#{node['config']['drupical']['solr']['solr_version']}"
+elsif /^4\.[0-9]{1,}\.[0-9]{1,}/.match(node['config']['drupical']['solr']['solr_version'])
+  solr_name = "solr-#{node['config']['drupical']['solr']['solr_version']}"
+else
+  solr_name = ""
+end
 
-  if /^(?:1\.4\.(?:0|1){1}|3\.[0-9]{1,}\.[0-9]{1,})/.match(node['config']['drupical']['solr']['solr_version'])
-    solr_name = "apache-solr-#{node['config']['drupical']['solr']['solr_version']}"
-  elsif /^4\.[0-9]{1,}\.[0-9]{1,}/.match(node['config']['drupical']['solr']['solr_version'])
-    solr_name = "solr-#{node['config']['drupical']['solr']['solr_version']}"
-  else
-    solr_name = ""
-  end
+bash "configure-solr" do
 
   if (solr_name.length > 0)
-
     code <<-EOH
-(sudo chown -R vagrant:vagrant /usr/local/src/#{solr_name})
-(rm -rf /usr/share/solr/* && cp -R /usr/local/src/#{solr_name}/example/multicore/* /usr/share/solr/)
-(rm -rf /usr/share/solr/core0/conf && ln -s /config/solr/ /usr/share/solr/core0/conf)
-(chmod -R 775 /usr/share/solr/ && chown -R jetty.jetty /usr/share/solr/)
+      (usermod -a -G jetty vagrant)
+      (chown -R vagrant:vagrant /usr/local/src/#{solr_name})
+      (rm -rf /usr/share/solr/*)
+      (cp -R /usr/local/src/#{solr_name}/example/multicore/* /usr/share/solr/)
+      (chmod -R 775 /usr/share/solr/)
+      (chown -R jetty.jetty /usr/share/solr/)
     EOH
-
   end
+
+end
+
+vhosts = node['config']['vhosts']
+vhosts.each do |key, vhost|
+
+  server_name = vhost.fetch('server_name')
+
+  bash "configure-multicore-solr-#{server_name}" do
+    code <<-EOH
+      (ln -s /home/vagrant/drupical/build/config/solr /usr/share/solr/#{server_name}/conf)
+    EOH
+  end
+
+  ruby_block "adding-multicore-#{server_name}" do
+    block do
+      fe = Chef::Util::FileEdit.new("/usr/share/solr/solr.xml")
+      fe.insert_line_after_match(/defaultCoreName/, "<core name=\"#{server_name}\" instanceDir=\"#{server_name}\" />")
+      fe.write_file
+    end
+  end
+
 end

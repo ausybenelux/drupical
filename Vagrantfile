@@ -4,7 +4,7 @@
 begin
 
   load './build/vagrant/include/helper.rb'
-  rescue LoadError
+rescue LoadError
 
 end
 
@@ -28,7 +28,7 @@ Vagrant.configure(2) do |config|
 
   #
   config.vm.box = vconfig['config']['box_type']
-  config.vm.box_check_update = false
+  config.vm.box_check_update = true
 
   #
   config.omnibus.chef_version = '11'
@@ -39,11 +39,18 @@ Vagrant.configure(2) do |config|
   # Forward Agent
   config.ssh.forward_agent = true
 
-  # Cache
-  config.cache.auto_detect = true
+  # Plugin: Cachier
   config.cache.scope = :box
+  config.cache.auto_detect = false
+  config.cache.synced_folder_opts = {type: :nfs}
   config.cache.enable :apt
   config.cache.enable :chef
+  config.cache.enable :gem
+  config.cache.enable :npm
+  config.cache.enable :generic, {
+                                  "wget" => {cache_dir: "/var/cache/wget"},
+                                  "curl" => {cache_dir: "/var/cache/curl"},
+                              }
 
   # Fix NFS permission issues
   config.nfs.map_uid = Process.uid
@@ -95,6 +102,11 @@ Vagrant.configure(2) do |config|
       vb.memory = vconfig['config']['box_ram']
       vb.cpus = vconfig['config']['box_cpu']
     end
+
+    vb.customize ["modifyvm", :id, "--natdnshostresolver1", "on"]
+    vb.customize ["modifyvm", :id, "--natdnsproxy1", "on"]
+    vb.customize ["modifyvm", :id, "--ioapic", "on"]
+    vb.customize ["storageattach", :id, "--storagectl", "SATA Controller", "--port", 0, "--nonrotational", "on"]
 
   end
 
@@ -188,6 +200,10 @@ Vagrant.configure(2) do |config|
       chef.add_role("varnish")
     end
 
+  end
+
+  config.trigger.before :destroy do
+    run "bash test -f /home/vagrant/drupical/build/backup/backup-db.sh && bash /home/vagrant/drupical/build/backup/backup-db.sh"
   end
 
 end

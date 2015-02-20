@@ -2,7 +2,15 @@
   "name": "varnish",
   "description": "Web role",
   "json_class": "Chef::Role",
-  "default_attributes": {},
+  "default_attributes": {
+    "varnish" : {
+      "version" : "3.0",
+      "start" : "yes",
+      "backend_host" : "localhost",
+      "backend_port" : "80",
+      "listen_port" : "8081 "
+    }
+  },
   "chef_type": "role",
   "run_list": [
     "recipe[drupical::varnish]",
