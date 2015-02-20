@@ -20,8 +20,8 @@ if node['config']['drupical']['web_tools']['tools']['info']['install']
   url_base = node['config']['drupical']['web_tools']['url_base']
   tool_alias = node['config']['drupical']['web_tools']['tools']['info']['alias']
 
-  web_app "itworks" do
-    server_name "#{url_base}.#{tool_alias}"
+  web_app "info" do
+    server_name "#{tool_alias}.#{url_base}"
     docroot "/usr/share/info/"
     cookbook 'apache2'
   end

@@ -31,7 +31,7 @@ if node['config']['drupical']['web_tools']['tools']['opcachegui']['install']
   tool_alias = node['config']['drupical']['web_tools']['tools']['opcachegui']['alias']
 
   web_app "opcachegui" do
-    server_name "#{url_base}.#{tool_alias}"
+    server_name "#{tool_alias}.#{url_base}"
     docroot "/usr/share/opcachegui/"
     cookbook 'apache2'
   end

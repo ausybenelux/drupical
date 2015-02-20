@@ -16,7 +16,7 @@ if node['config']['drupical']['web_tools']['tools']['phpmemcachedadmin']['instal
   tool_alias = node['config']['drupical']['web_tools']['tools']['phpmemcachedadmin']['alias']
 
   web_app "phpmemcachedadmin" do
-    server_name "#{url_base}.#{tool_alias}"
+    server_name "#{tool_alias}.#{url_base}"
     docroot "/usr/share/phpmemcachedadmin"
     cookbook 'apache2'
   end

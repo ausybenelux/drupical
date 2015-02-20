@@ -15,7 +15,7 @@ if node['config']['drupical']['web_tools']['tools']['adminer']['install']
   tool_alias = node['config']['drupical']['web_tools']['tools']['adminer']['alias']
 
   web_app "adminer" do
-    server_name "#{url_base}.#{tool_alias}"
+    server_name "#{tool_alias}.#{url_base}"
     docroot "/usr/share/adminer/adminer"
     cookbook 'apache2'
   end
