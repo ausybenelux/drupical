@@ -16,14 +16,6 @@ template "/etc/apt/apt.conf.d/90forceyes" do
   notifies :run, "execute[pin-update-cleanup]", :immediately
 end
 
-mount "/tmp" do
-  pass     0
-  fstype   "tmpfs"
-  device   "/dev/null"
-  options  "defaults,noatime"
-  action   [:mount, :enable]
-end
-
 include_recipe "cachefilesd"
 
 include_recipe "git"

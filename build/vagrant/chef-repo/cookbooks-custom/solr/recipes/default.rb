@@ -54,14 +54,14 @@ vhosts.each do |key, vhost|
 
   bash "configure-multicore-solr-#{server_name}" do
     code <<-EOH
-      (ln -s /home/vagrant/drupical/build/config/solr /usr/share/solr/#{server_name}/conf)
+      (ln -s /usr/share/solr/#{server_name} /home/vagrant/drupical/build/config/solr)
     EOH
   end
 
   ruby_block "adding-multicore-#{server_name}" do
     block do
       fe = Chef::Util::FileEdit.new("/usr/share/solr/solr.xml")
-      fe.insert_line_after_match(/defaultCoreName/, "<core name=\"#{server_name}\" instanceDir=\"#{server_name}\" />")
+      fe.insert_line_before_match(/\/cores/, "<core name=\"#{server_name}\" instanceDir=\"#{server_name}\" />")
       fe.write_file
     end
   end
