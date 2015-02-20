@@ -7,10 +7,10 @@
   "chef_type": "role",
   "run_list": [
     "recipe[drupical::web-tools]",
-    "recipe[web-tools::itworks]",
+    "recipe[web-tools::info]",
     "recipe[web-tools::adminer]",
-    "recipe[web-tools::apc]",
-    "recipe[web-tools::phpmemcachedadmin]"
+    "recipe[web-tools::phpmemcachedadmin]",
+    "recipe[web-tools::opcachegui]"
   ],
   "env_run_lists": {
   }

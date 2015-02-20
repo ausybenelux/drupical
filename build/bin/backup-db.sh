@@ -1,4 +1,4 @@
-#! /bin/bash
+#! /bin/sh
 
 TIMESTAMP=$(date +"%F")
 BACKUP_DIR="/home/vagrant/drupical/build/backup/"

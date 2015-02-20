@@ -120,24 +120,11 @@ def vagrant_get_alias(vconfig)
 
   end
 
-  #
-  if vconfig['config']['drupical']['web_tools']['itworks']['itworks_install']
-    aliases.push(vconfig['config']['drupical']['web_tools']['itworks']['itworks_alias'])
-  end
-
-  #
-  if vconfig['config']['drupical']['web_tools']['adminer']['adminer_install']
-    aliases.push(vconfig['config']['drupical']['web_tools']['adminer']['adminer_alias'])
-  end
-
-  #
-  if vconfig['config']['drupical']['web_tools']['apc']['apc_install']
-    aliases.push(vconfig['config']['drupical']['web_tools']['apc']['apc_alias'])
-  end
-
-  #
-  if vconfig['config']['drupical']['web_tools']['phpmemcachedadmin']['phpmemcachedadmin_install']
-    aliases.push(vconfig['config']['drupical']['web_tools']['phpmemcachedadmin']['phpmemcachedadmin_alias'])
+  web_tools = vconfig['config']['drupical']['web_tools']['tools']
+  web_tools.each do |key, web_tool|
+    url_base = vconfig['config']['drupical']['web_tools']['url_base']
+    tool_alias = web_tool.fetch('alias')
+    aliases.push("#{url_base}.#{tool_alias}")
   end
 
   return aliases

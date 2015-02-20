@@ -25,12 +25,14 @@ package "php5-gd" do
 end
 
 #
-if node['config']['drupical']['php']['enable_php_apc']
-  if node["php5"]["version"] != "5.5" && node["php5"]["version"] != "5.6"
+if node['config']['drupical']['php']['enable_php_opcode_cache']
+
+  if node["php5"]["version"] == "5.3" && node["php5"]["version"] == "5.4"
     package "php-apc" do
       action :install
     end
   end
+
 end
 
 #

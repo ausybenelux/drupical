@@ -13,12 +13,15 @@
     "box_ram": "1G", // ignored if box_ram_cpu == auto
     "box_cpu": "2",  // ignored if box_ram_cpu == auto
 
+    "os_update": false,
+
     "vagrant_debugging": true,
 
     "drupical": {
+
       "php" : {
         "php_version": "5.5",
-        "enable_php_apc": true,
+        "enable_php_opcode_cache": true,
         "enable_php_curl": true,
         "enable_php_memcache": true,
         "enable_php_drush": true,
@@ -26,30 +29,37 @@
         "enable_php_composer": true,
         "enable_php_xdebug": true
       },
+
       "solr": {
-        "solr_install": true,
+        "solr_install": false,
         "solr_version": "3.6.2",
         "solr_checksum": "537426dcbdd0dc82dd5bf16b48b6bcaf87cb4049c1245eea8dcb79eeaf3e7ac6"
       },
+
       "web_tools" : {
-        "itworks" : {
-          "itworks_install" : true,
-          "itworks_alias" : "itworks.drupicaldev.local"
-        },
-        "adminer" : {
-          "adminer_install" : true,
-          "adminer_alias" : "adminer.drupicaldev.local"
-        },
-        "apc" : {
-          "apc_install" : true,
-          "apc_alias" : "apc.drupicaldev.local"
-        },
-        "phpmemcachedadmin" : {
-          "phpmemcachedadmin_install" : true,
-          "phpmemcachedadmin_alias" : "phpmemcachedadmin.drupicaldev.local"
+        "url_base" : "drupicaldev.local",
+        "tools" : {
+          "info" : {
+            "install" : true,
+            "alias" : "info"
+          },
+          "adminer" : {
+            "install" : true,
+            "alias" : "adminer"
+          },
+          "phpmemcachedadmin" : {
+            "install" : true,
+            "alias" : "phpmemcachedadmin"
+          },
+          "opcachegui" : {
+            "install" : true,
+            "alias" : "opcachegui"
+          }
         }
       },
+
       "varnish_install": true
+
     },
 
     "vagrant_ports" : {

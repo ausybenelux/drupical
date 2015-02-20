@@ -1,7 +1,7 @@
 <?php
 
 // MySQL
-$mysqli = @new mysqli('localhost', 'root', 'root');
+$mysqli = @new mysqli('localhost', 'root', '10moioui');
 $mysql_running = true;
 if (mysqli_connect_errno()) {
     $mysql_running = false;
@@ -19,7 +19,6 @@ if ($m->addServer('localhost', 11211)) {
     $memcached_version = current($memcached_version);
 }
 ?>
-<!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
@@ -129,7 +128,7 @@ if ($m->addServer('localhost', 11211)) {
 
       <tr>
         <td>memcached</td>
-        <td><i class="icon-<?php echo (class_exists('Memcached') ? 'ok' : 'remove'); ?>"></i></td>
+        <td><i class="icon-<?php echo (class_exists('Memcache') ? 'ok' : 'remove'); ?>"></i></td>
       </tr>
 
       <tr>

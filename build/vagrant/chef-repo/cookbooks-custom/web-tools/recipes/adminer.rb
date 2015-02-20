@@ -1,27 +1,22 @@
-if node['config']['drupical']['web_tools']['adminer']['adminer_install']
+#
+# Cookbook Name:: drupical
+# Recipe:: adminer
+#
 
-  directory "/usr/share/adminer" do
-    mode 0777
-    action :create
-    owner node['apache']['user']
-    group node['apache']['group']
+if node['config']['drupical']['web_tools']['tools']['adminer']['install']
+
+  git "/usr/share/adminer" do
+    repository "https://github.com/vrana/adminer.git"
+    reference "v4.2.0"
+    action :sync
   end
 
-  cookbook_file "/usr/share/adminer/adminer.php" do
-    source "adminer.php"
-    mode 0777
-    action :create
-    owner node['apache']['user']
-    group node['apache']['group']
-  end
-
-  link "/usr/share/adminer/index.php" do
-    to "/usr/share/adminer/adminer.php"
-  end
+  url_base = node['config']['drupical']['web_tools']['url_base']
+  tool_alias = node['config']['drupical']['web_tools']['tools']['adminer']['alias']
 
   web_app "adminer" do
-    server_name node['config']['drupical']['web_tools']['adminer']['adminer_alias']
-    docroot "/usr/share/adminer"
+    server_name "#{url_base}.#{tool_alias}"
+    docroot "/usr/share/adminer/adminer"
     cookbook 'apache2'
   end
 

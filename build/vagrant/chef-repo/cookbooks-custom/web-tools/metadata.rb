@@ -1,11 +1,11 @@
-name 'phpmemcachedadmin'
+name 'web-tools'
 
 maintainer 'Bart Arickx'
 maintainer_email 'bart.arickx@one-agency.be'
 
 license '(c) 2015 -- All rights reserved'
 
-description 'Installs/Configures phpmemcachedadmin'
+description 'Installs/Configures webtools'
 long_description IO.read(File.join(File.dirname(__FILE__), 'README.md'))
 
 version '0.0.1'
@@ -18,4 +18,7 @@ end
   depends dependancy
 end
 
+recipe 'info::default', 'Main configuration'
+recipe 'adminer::default', 'Main configuration'
+recipe 'opcachegui::default', 'Main configuration'
 recipe 'phpmemcachedadmin::default', 'Main configuration'

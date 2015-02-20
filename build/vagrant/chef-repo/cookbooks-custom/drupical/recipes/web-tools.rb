@@ -6,13 +6,13 @@
 Chef::Log.info('Starting drupical::web-tools')
 
 #
-include_recipe 'web-tools::itworks'
-
-#
 include_recipe 'web-tools::adminer'
 
 #
-include_recipe 'web-tools::apc'
+include_recipe 'web-tools::info'
+
+#
+include_recipe 'web-tools::opcachegui'
 
 #
 include_recipe 'web-tools::phpmemcachedadmin'
