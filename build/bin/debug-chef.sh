@@ -1,4 +1,4 @@
-#! /bin/sh
+#! /bin/bash
 
-cd /tmp/vagrant-chef-1
-chef-solo -c solo.rb -j dns.json
+cd /tmp/vagrant-chef
+sudo chef-solo -c solo.rb -j dna.json

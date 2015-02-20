@@ -203,7 +203,7 @@ Vagrant.configure(2) do |config|
   end
 
   config.trigger.before :destroy do
-    run "bash test -f /home/vagrant/drupical/build/backup/backup-db.sh && bash /home/vagrant/drupical/build/backup/backup-db.sh"
+    run "/usr/bin/test -f /home/vagrant/drupical/build/bin/backup-db.sh && bash /home/vagrant/drupical/build/bin/backup-db.sh"
   end
 
 end

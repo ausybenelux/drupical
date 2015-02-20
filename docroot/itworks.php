@@ -1,17 +1,18 @@
 <?php
-
 // MySQL
-$mysqli = @new mysqli('localhost', 'root', 'root');
+$mysqli = @new mysqli('localhost', 'root', '10moioui');
+
 $mysql_running = true;
 if (mysqli_connect_errno()) {
     $mysql_running = false;
 } else {
 	$mysql_version = $mysqli->server_info;
 }
+
 $mysqli->close();
 
 // Memcached
-$m = new Memcached();
+$m = new Memcache();
 $memcached_running = false;
 if ($m->addServer('localhost', 11211)) {
     $memcached_running = true;
@@ -25,28 +26,24 @@ if ($m->addServer('localhost', 11211)) {
   <meta charset="utf-8">
   <title>Vagrant LAMP stack</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.no-icons.min.css" rel="stylesheet"/>
+  <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.no-icons.min.css" rel="stylesheet" />
   <link href="//netdna.bootstrapcdn.com/font-awesome/3.0.2/css/font-awesome.css" rel="stylesheet">
   <style type="text/css">
       html, body {
           height: 100%;
       }
-
       #wrap {
           min-height: 100%;
           height: auto !important;
           height: 100%;
           margin: 0 auto -60px;
       }
-
       #push, #footer {
           height: 60px;
       }
-
       #footer {
           background-color: #f5f5f5;
       }
-
       @media (max-width: 767px) {
           #footer {
               margin-left: -20px;
@@ -55,22 +52,18 @@ if ($m->addServer('localhost', 11211)) {
               padding-right: 20px;
           }
       }
-
       .container {
           width: auto;
           max-width: 680px;
       }
-
       .container .credit {
           margin: 20px 0;
       }
-
       .page-header i {
           float: left;
           margin-top: -5px;
           margin-right: 12px;
       }
-
       table td:first-child {
           width: 300px;
       }
@@ -81,7 +74,6 @@ if ($m->addServer('localhost', 11211)) {
   <div class="container">
     <div class="page-header">
       <i class="icon-lightbulb icon-4x"></i>
-
       <h1>It works!</h1>
     </div>
     <p class="lead">The Virtual Machine is up and running, yay! Here's some additional information you might need.</p>
@@ -104,10 +96,14 @@ if ($m->addServer('localhost', 11211)) {
       </tr>
 
       <tr>
-        <td>Memcache running</td>
+        <td>Memcached running</td>
         <td><i class="icon-<?php echo ($memcached_running ? 'ok' : 'remove'); ?>"></i></td>
       </tr>
 
+      <tr>
+        <td>Memcached version</td>
+        <td><?php echo ($memcached_version ? $memcached_version : 'N/A'); ?></td>
+      </tr>
     </table>
 
     <h3>PHP Modules</h3>
@@ -156,9 +152,7 @@ if ($m->addServer('localhost', 11211)) {
       </tr>
 
       <tr>
-        <td colspan="2">
-          <em>Note: External access is enabled! Just use <strong><?php echo $_SERVER['SERVER_ADDR'] ?></strong> as host.</em>
-        </td>
+        <td colspan="2"><em>Note: External access is enabled! Just use <strong><?php echo $_SERVER['SERVER_ADDR'] ?></strong> as host.</em></td>
       </tr>
     </table>
   </div>
