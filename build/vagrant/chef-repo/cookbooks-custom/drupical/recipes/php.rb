@@ -13,13 +13,28 @@ include_recipe 'php5::default'
 include_recipe 'php-fpm'
 
 #
-#Installing the default pool
-#With the correct PHP settings for drupal installations
-#
 php_fpm_pool "www" do
   process_manager "dynamic"
   max_requests 5000
   php_options 'php_admin_flag[log_errors]' => 'on', 'php_admin_value[memory_limit]' => '512M', 'php_admin_value[error_reporting]' =>  'E_ALL & ~E_DEPRECATED', 'php_admin_value[display_errors]'  =>  'On', 'php_admin_value[post_max_size]'  =>  '64M', 'php_admin_value[upload_max_filesize]' =>  '64M'
+end
+
+file '/etc/apache2/conf-available/php-fpm.conf' do
+  owner 'root'
+  group 'root'
+  mode '0755'
+  action :create
+end
+
+template '/etc/apache2/conf-available/php-fpm.conf' do
+  source 'php-fpm.conf'
+  mode '0644'
+  notifies :restart, 'service[apache2]', :delayed
+  not_if {!File.exists?('/etc/apache2/conf-available/php-fpm.conf')}
+end
+
+link '/etc/apache2/conf-enabled/php-fpm.conf' do
+  to '/etc/apache2/conf-available/php-fpm.conf'
 end
 
 #
@@ -36,8 +51,12 @@ package "php5-mysqlnd" do
 end
 
 #
-package "php5-gd" do
-  action :install
+if node['config']['drupical']['php']['enable_php_gd']
+
+  package "php5-gd" do
+    action :install
+  end
+
 end
 
 #
@@ -67,34 +86,20 @@ if node['config']['drupical']['php']['enable_php_memcache']
 
   include_recipe 'memcached'
 
-  package "php5-memcache" do
+  package "php5-memcached" do
     action :install
   end
 
 end
 
+#
+if node['config']['drupical']['php']['enable_php_mcrypt']
 
-if node['config']['drupical']['php']['enable_php_xdebug']
-
-  package "php5-xdebug" do
-    options " || true"
+  package "php5-mcrypt" do
     action :install
   end
 
-  # template "/etc/php5/conf.d/xdebug.ini" do
-  #   source "xdebug.ini"
-  #   mode 0644
-  #   owner "root"
-  #   group "root"
-  #   action :create
-  # end
-
-  #link "/etc/php5/conf.d/xdebug.ini" do
-  #  to "/etc/php5/mods-available/xdebug.ini"
-  #end
-
 end
-
 
 if node['config']['drupical']['php']['enable_php_phing']
 
@@ -117,21 +122,50 @@ if node['config']['drupical']['php']['enable_php_composer']
 
 end
 
+if node['config']['drupical']['php']['enable_php_xdebug']
 
-file '/etc/apache2/conf-available/php-fpm.conf' do
-  owner 'root'
-  group 'root'
-  mode '0755'
-  action :create
+  package "php5-xdebug" do
+    options " || true"
+    action :install
+  end
+
+  file "/etc/php5/mods-available/xdebug.ini" do
+    action :delete
+    only_if { File.exists?("/etc/php5/mods-available/xdebug.ini") }
+  end
+
+  template "/etc/php5/mods-available/xdebug.ini" do
+    source "xdebug.ini"
+    mode 0644
+    owner "root"
+    group "root"
+    action :create
+  end
+
+  link "/etc/php5/fpm/conf.d/xdebug.ini" do
+    to "/etc/php5/mods-available/xdebug.ini"
+  end
+
 end
 
-template '/etc/apache2/conf-available/php-fpm.conf' do
-  source 'php-fpm.conf'
-  mode '0644'
-  notifies :restart, 'service[apache2]', :delayed
-  not_if {!File.exists?('/etc/apache2/conf-available/php-fpm.conf')}
-end
+#
+if node['config']['drupical']['php']['enable_php_uprofiler']
 
-link '/etc/apache2/conf-enabled/php-fpm.conf' do
-  to '/etc/apache2/conf-available/php-fpm.conf'
+  package "php5-uprofiler" do
+    action :install
+  end
+
+  file "/etc/php5/mods-available/uprofiler.ini" do
+    action :delete
+    only_if { File.exists?("/etc/php5/mods-available/uprofiler.ini") }
+  end
+
+  template "/etc/php5/mods-available/uprofiler.ini" do
+    source "uprofiler.ini"
+    mode 0644
+    owner "root"
+    group "root"
+    action :create
+  end
+
 end

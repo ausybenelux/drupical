@@ -1,7 +1,7 @@
 <?php
 
 // MySQL
-$mysqli = @new mysqli('localhost', 'root', '10moioui');
+$mysqli = @new mysqli('localhost', 'root', '<%= node[:mysql][:server_root_password] %>');
 $mysql_running = true;
 if (mysqli_connect_errno()) {
     $mysql_running = false;

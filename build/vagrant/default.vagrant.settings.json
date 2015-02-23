@@ -21,13 +21,17 @@
 
       "php" : {
         "php_version": "5.5",
+        "enable_php_mcrypt": true,
+        "enable_php_gd": true,
         "enable_php_opcode_cache": true,
         "enable_php_curl": true,
         "enable_php_memcache": true,
         "enable_php_drush": true,
         "enable_php_phing": true,
         "enable_php_composer": true,
-        "enable_php_xdebug": true
+        "enable_php_xdebug": true,
+        "enable_php_xhprof": true,
+        "enable_php_uprofiler": true
       },
 
       "solr": {
@@ -54,6 +58,10 @@
           "opcachegui" : {
             "install" : true,
             "alias" : "opcachegui"
+          },
+          "uprofiler_ui" : {
+            "install" : true,
+            "alias" : "xx"
           }
         }
       },

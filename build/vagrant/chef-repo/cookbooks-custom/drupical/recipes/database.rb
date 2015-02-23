@@ -19,9 +19,10 @@ end
 vhosts = node['config']['vhosts']
 vhosts.each do |key, vhost|
 
+  database = vhost.fetch('database_name')
+  pass = node['mysql']['server_root_password']
+
   bash 'extract_module' do
-    database = vhost.fetch('database_name')
-    pass = node['mysql']['server_root_password']
     code <<-EOH
     mysql --user=root --password=#{pass} -e "CREATE DATABASE IF NOT EXISTS #{database}";
     EOH
@@ -29,4 +30,7 @@ vhosts.each do |key, vhost|
 
 end
 
-
+template "/usr/local/bin/backup-db.sh" do
+  source "backup-db.sh.erb"
+  mode 0777
+end

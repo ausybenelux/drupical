@@ -2,8 +2,10 @@
 
 TIMESTAMP=$(date +"%F")
 BACKUP_DIR="/home/vagrant/drupical/build/backup/"
+
 MYSQL_USER="root"
-MYSQL_PASSWORD="10moioui"
+MYSQL_PASSWORD="<%= node[:mysql][:server_root_password] %>"
+
 MYSQL=/usr/bin/mysql
 MYSQLDUMP=/usr/bin/mysqldump
 

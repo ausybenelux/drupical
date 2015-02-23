@@ -1,6 +1,9 @@
+#
+# Cookbook Name:: drupical
+# Recipe:: apache_repo
+#
+
 Chef::Log.info('Starting drupical::apache_repo')
-
-
 
 apt_repository "ondrej-apache2" do
   uri "http://ppa.launchpad.net/ondrej/apache2/ubuntu"

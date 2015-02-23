@@ -206,7 +206,7 @@ Vagrant.configure(2) do |config|
   end
 
   config.trigger.before :destroy do
-    #run_remote "test -f /home/vagrant/drupical/build/bin/backup-db.sh || /home/vagrant/drupical/build/bin/backup-db.sh"
+    #run_remote "/usr/local/bin/backup-db.sh"
   end
 
 end

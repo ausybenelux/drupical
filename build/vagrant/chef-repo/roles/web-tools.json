@@ -10,7 +10,8 @@
     "recipe[web-tools::info]",
     "recipe[web-tools::adminer]",
     "recipe[web-tools::phpmemcachedadmin]",
-    "recipe[web-tools::opcachegui]"
+    "recipe[web-tools::opcachegui]",
+    "recipe[web-tools::profiler]"
   ],
   "env_run_lists": {
   }

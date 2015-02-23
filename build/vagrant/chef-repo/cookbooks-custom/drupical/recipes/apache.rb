@@ -9,15 +9,6 @@ Chef::Log.info('Starting drupical::apache')
 include_recipe 'apache2'
 
 #
-=begin
-bash "Enabling modules" do
-  code <<-EOL
-    a2enmod rewrite
-  EOL
-  notifies :restart, "service[apache2]", :delayed
-end
-=end
-
 execute "Enabling necessary apache2 modules" do
   command 'a2enmod actions && a2enmod alias && a2enmod rewrite && a2enmod fastcgi'
   action :run
