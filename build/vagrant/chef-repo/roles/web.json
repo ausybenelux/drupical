@@ -46,7 +46,9 @@
     "recipe[memcached]",
     "recipe[drush]",
     "recipe[composer]",
-    "recipe[phing]"
+    "recipe[phing]",
+    "recipe[drupical::nodejs]",
+    "recipe[drupical::ruby]"
   ],
   "env_run_lists": {
   }

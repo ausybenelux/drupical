@@ -1,10 +1,15 @@
 SITE
   remote: https://supermarket.getchef.com/api/v1
   specs:
+    7-zip (1.0.2)
+      windows (>= 1.2.2)
     apache2 (3.0.0)
       iptables (>= 0.0.0)
       logrotate (>= 0.0.0)
     apt (2.6.1)
+    ark (0.9.0)
+      7-zip (>= 0.0.0)
+      windows (>= 0.0.0)
     build-essential (2.1.3)
     chef-sugar (2.5.0)
     chef_handler (1.1.6)
@@ -34,6 +39,11 @@ SITE
       yum-epel (>= 0.0.0)
     mysql (5.3.6)
       yum-mysql-community (>= 0.0.0)
+    nodejs (2.2.0)
+      apt (>= 0.0.0)
+      ark (>= 0.0.0)
+      build-essential (>= 0.0.0)
+      yum-epel (>= 0.0.0)
     phing (0.0.2)
       php (>= 0.0.0)
     php (1.5.0)
@@ -46,6 +56,9 @@ SITE
     php-fpm (0.7.0)
       apt (>= 0.0.0)
       yum (>= 3.0)
+    ruby-ng (0.3.0)
+      apt (>= 0.0.0)
+      build-essential (>= 0.0.0)
     runit (1.5.14)
       build-essential (>= 0.0.0)
       yum (~> 3.0)
@@ -67,19 +80,30 @@ SITE
     yum-mysql-community (0.1.12)
       yum (>= 3.0)
 
+GIT
+  remote: git://github.com/MattSurabian/grunt_cookbook.git
+  ref: master
+  sha: b3f543346cfbb99d83baff6604dcef595254e777
+  specs:
+    grunt_cookbook (1.0.0)
+      nodejs (>= 0.0.0)
+
 DEPENDENCIES
   apache2 (>= 0)
   apt (>= 0)
   composer (>= 0)
   curl (>= 0)
   git (>= 0)
+  grunt_cookbook (>= 0)
   hipsnip-jetty (>= 0)
   hipsnip-solr (>= 0)
   memcached (>= 0)
   mysql (~> 5.3.6)
+  nodejs (>= 0)
   phing (>= 0)
   php (>= 0)
   php-fpm (>= 0)
+  ruby-ng (>= 0)
   varnish (>= 0)
   vim (>= 0)
 

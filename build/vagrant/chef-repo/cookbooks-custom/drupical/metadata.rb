@@ -25,3 +25,7 @@ recipe 'drupical::varnish', 'Varnish role cookbook'
 recipe 'drupical::web', 'Web role cookbook'
 recipe 'drupical::apache', 'apache role cookbook'
 recipe 'drupical::php', 'php role cookbook'
+
+depends 'nodejs'
+depends 'grunt_cookbook'
+depends 'ruby-ng'
