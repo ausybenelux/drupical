@@ -14,7 +14,7 @@ version '0.0.1'
   supports os
 end
 
-%w{apache2 php}.each do |dependancy|
+%w{apache2 php php5}.each do |dependancy|
   depends dependancy
 end
 

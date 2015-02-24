@@ -6,11 +6,11 @@
   },
   "chef_type": "role",
   "run_list": [
-    "recipe[drupical::web-tools]",
-    "recipe[web-tools::info]",
+    "recipe[web-tools::default]",
     "recipe[web-tools::adminer]",
-    "recipe[web-tools::phpmemcachedadmin]",
+    "recipe[web-tools::info]",
     "recipe[web-tools::opcachegui]",
+    "recipe[web-tools::phpmemcachedadmin]",
     "recipe[web-tools::profiler]"
   ],
   "env_run_lists": {

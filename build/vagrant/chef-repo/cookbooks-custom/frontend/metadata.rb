@@ -1,4 +1,4 @@
-name 'drupical'
+name 'frontend'
 
 maintainer 'Bart Arickx'
 maintainer_email 'bart.arickx@one-agency.be'
@@ -14,9 +14,9 @@ version '0.1.0'
   supports os
 end
 
-%w{apt}.each do |dependancy|
+%w{ apt nodejs grunt_cookbook ruby-ng }.each do |dependancy|
   depends dependancy
 end
 
-recipe 'drupical::default', 'default'
-recipe 'drupical::drush',   'drush'
+recipe 'frontend::nodejs',  'nodejs'
+recipe 'frontend::ruby',    'ruby'

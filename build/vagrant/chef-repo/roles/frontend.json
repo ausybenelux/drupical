@@ -1,6 +1,6 @@
 {
-  "name": "base",
-  "description": "Base role applied to all nodes.",
+  "name": "Frontend",
+  "description": "Frontend role.",
   "json_class": "Chef::Role",
   "default_attributes": {
   },
@@ -15,10 +15,8 @@
   },
   "chef_type": "role",
   "run_list": [
-    "recipe[base]",
-    "recipe[base::cachefilesd]",
-    "recipe[base::zsh]"
-
+    "recipe[base::default]",
+    "recipe[base::cachefilesd]"
   ],
   "env_run_lists": {
   }

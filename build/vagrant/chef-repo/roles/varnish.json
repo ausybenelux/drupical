@@ -13,8 +13,8 @@
   },
   "chef_type": "role",
   "run_list": [
-    "recipe[drupical::varnish]",
-    "recipe[varnish]"
+    "recipe[varnish::default]",
+    "recipe[web-varnish::default]"
   ],
   "env_run_lists": {
   }

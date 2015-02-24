@@ -20,35 +20,16 @@
       ],
       "mpm": "worker",
       "log_dir" : "/home/vagrant/drupical/logs/apache2"
-    },
-    "php" : {
-      "install_method" : "package",
-      "directives" : {
-        "memory_limit" : "512M",
-        "error_reporting" : "E_ALL & ~E_DEPRECATED",
-        "display_errors" : "On",
-        "post_max_size" : "64M",
-        "upload_max_filesize" : "64M"
-      }
     }
   },
   "chef_type": "role",
   "run_list": [
-    "recipe[drupical::apache_repo]",
-    "recipe[apache2]",
-    "recipe[apache2::mod_fastcgi]",
-    "recipe[apache2::mod_actions]",
-    "recipe[apache2::mod_alias]",
-    "recipe[drupical::apache]",
-    "recipe[php5::default]",
-    "recipe[drupical::php]",
-    "recipe[php-fpm]",
-    "recipe[memcached]",
-    "recipe[drush]",
-    "recipe[composer]",
-    "recipe[phing]",
-    "recipe[drupical::nodejs]",
-    "recipe[drupical::ruby]"
+    "recipe[web::default]",
+    "recipe[web::apache]",
+    "recipe[web::apache_repo]",
+    "recipe[web-memcached::default]",
+    "recipe[web-solr::default]",
+    "recipe[web-varnish::default]"
   ],
   "env_run_lists": {
   }

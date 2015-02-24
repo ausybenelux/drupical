@@ -5,10 +5,10 @@
   "default_attributes": {},
   "chef_type": "role",
   "run_list": [
-    "recipe[solr::default]",
-    "recipe[java]",
+    "recipe[web-solr::default]",
     "recipe[hipsnip-jetty]",
-    "recipe[hipsnip-solr]"
+    "recipe[hipsnip-solr]",
+    "recipe[java::default]"
   ],
   "env_run_lists": {
   }

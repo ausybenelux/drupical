@@ -1,6 +1,6 @@
 #
-# Cookbook Name:: drupical
-# Recipe:: default
-#
+if node['config']['drupical']['php']['enable_php_drush']
 
-Chef::Log.info('Starting drupical::default')
+  include_recipe "drupical::drush"
+
+end

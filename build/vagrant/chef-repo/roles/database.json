@@ -12,7 +12,8 @@
   },
   "chef_type": "role",
   "run_list": [
-    "recipe[drupical::database]",
+    "recipe[database::default]",
+    "recipe[database::mysql]",
     "recipe[mysql::client]",
     "recipe[mysql::server]"
   ],

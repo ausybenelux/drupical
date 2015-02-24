@@ -1,5 +1,5 @@
 {
-  "name": "base",
+  "name": "drupical",
   "description": "Base role applied to all nodes.",
   "json_class": "Chef::Role",
   "default_attributes": {
@@ -15,10 +15,8 @@
   },
   "chef_type": "role",
   "run_list": [
-    "recipe[base]",
-    "recipe[base::cachefilesd]",
-    "recipe[base::zsh]"
-
+    "recipe[drupical]",
+    "recipe[drupical::drush]"
   ],
   "env_run_lists": {
   }
