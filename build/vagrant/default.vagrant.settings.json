@@ -14,16 +14,18 @@
     "box_cpu": "2",
     // ignored if box_ram_cpu == auto
 
-    "os_update": false,
-    "vagrant_debugging": true,
+    "os_update": true,
+
+    "vagrant_debugging": false,
+
     "drupical": {
       "php": {
         "php_version": "5.5",
-        "enable_php_phing": false,
-        "enable_php_composer": false
+        "enable_php_phing": true,
+        "enable_php_composer": true
       },
       "solr": {
-        "solr_install": false,
+        "solr_install": true,
         "solr_version": "3.6.2",
         "solr_checksum": "537426dcbdd0dc82dd5bf16b48b6bcaf87cb4049c1245eea8dcb79eeaf3e7ac6"
       },
@@ -31,11 +33,11 @@
         "url_base": "drupicaldev.local",
         "tools": {
           "info": {
-            "install": false,
+            "install": true,
             "alias": "info"
           },
           "adminer": {
-            "install": false,
+            "install": true,
             "alias": "adminer"
           },
           "phpmemcachedadmin": {
@@ -187,12 +189,12 @@
       "php5-ffmpeg": false,
       "php5-gd": true,
       "php5-gearman": false,
-      "php5-geoip": true,
+      "php5-geoip": false,
       "php5-gmp": false,
       "php5-imagick": false,
       "php5-imap": false,
       "php5-interbase": false,
-      "php5-intl": true,
+      "php5-intl": false,
       "php5-json": false,
       "php5-lasso": false,
       "php5-ldap": false,
@@ -231,8 +233,8 @@
       "php5-uuid": false,
       "php5-xcache": false,
       "php5-xdebug": true,
-      "php5-xmlrpc": true,
-      "php5-xsl": true,
+      "php5-xmlrpc": false,
+      "php5-xsl": false,
       "php5-zmq": false,
       "phpsysinfo": false,
       "phpunit": false,
