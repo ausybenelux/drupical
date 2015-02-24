@@ -3,62 +3,20 @@
 # Recipe:: packages
 #
 
-#
-package "php5-mysqlnd" do
-  action :install
-end
+node['config']['php_packages'].each do |php_package, install_php_package|
 
-#
-if node['config']['drupical']['php']['enable_php_gd']
+  if install_php_package
 
-  package "php5-gd" do
-    action :install
-  end
-
-end
-
-#
-if node['config']['drupical']['php']['enable_php_opcode_cache']
-
-  if node["php5"]["version"] == "5.3" && node["php5"]["version"] == "5.4"
-    package "php-apc" do
+    package php_package do
+      options " || true"
       action :install
     end
+
   end
 
 end
 
 #
-if node['config']['drupical']['php']['enable_php_curl']
-
-  include_recipe "curl"
-
-  package "php5-curl" do
-    action :install
-  end
-
-end
-
-#
-if node['config']['drupical']['php']['enable_php_memcache']
-
-  include_recipe 'memcached'
-
-  package "php5-memcached" do
-    action :install
-  end
-
-end
-
-#
-if node['config']['drupical']['php']['enable_php_mcrypt']
-
-  package "php5-mcrypt" do
-    action :install
-  end
-
-end
-
 if node['config']['drupical']['php']['enable_php_phing']
 
   include_recipe 'phing'
@@ -72,12 +30,8 @@ if node['config']['drupical']['php']['enable_php_composer']
 
 end
 
-if node['config']['drupical']['php']['enable_php_xdebug']
-
-  package "php5-xdebug" do
-    options " || true"
-    action :install
-  end
+#
+if node['config']['php_packages']['php5-xdebug']
 
   file "/etc/php5/mods-available/xdebug.ini" do
     action :delete
@@ -94,17 +48,14 @@ if node['config']['drupical']['php']['enable_php_xdebug']
 
   link "/etc/php5/fpm/conf.d/xdebug.ini" do
     to "/etc/php5/mods-available/xdebug.ini"
+    only_if { File.directory?("/etc/php5/fpm/conf.d/") }
     notifies :restart, 'service[apache2]', :delayed
   end
 
 end
 
 #
-if node['config']['drupical']['php']['enable_php_uprofiler']
-
-  package "php5-uprofiler" do
-    action :install
-  end
+if node['config']['php_packages']['php5-uprofiler']
 
   file "/etc/php5/mods-available/uprofiler.ini" do
     action :delete
@@ -118,6 +69,7 @@ if node['config']['drupical']['php']['enable_php_uprofiler']
     group "root"
     action :create
     notifies :restart, 'service[apache2]', :delayed
+    only_if { !File.exists?("/etc/php5/mods-available/uprofiler.ini") }
   end
 
 end

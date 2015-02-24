@@ -11,7 +11,8 @@
     "recipe[web-tools::info]",
     "recipe[web-tools::opcachegui]",
     "recipe[web-tools::phpmemcachedadmin]",
-    "recipe[web-tools::profiler]"
+    "recipe[web-tools::profiler]",
+    "recipe[web-tools::phpdoc]"
   ],
   "env_run_lists": {
   }

@@ -1,107 +1,242 @@
 {
   "config": {
-
     "box_type": "hashicorp/precise64",
     "box_name": "drupicaldev",
     "box_hostname": "drupicaldev",
     "box_gui": false,
-
     "box_dhcp": true,
-    "box_static_ip": "10.0.0.1", // ignored if box_dhcp == true
+    "box_static_ip": "10.0.0.1",
+    // ignored if box_dhcp == true
 
     "box_ram_cpu": "auto",
-    "box_ram": "1G", // ignored if box_ram_cpu == auto
-    "box_cpu": "2",  // ignored if box_ram_cpu == auto
+    "box_ram": "1G",
+    // ignored if box_ram_cpu == auto
+    "box_cpu": "2",
+    // ignored if box_ram_cpu == auto
 
     "os_update": false,
-
     "vagrant_debugging": true,
-
     "drupical": {
-
-      "php" : {
+      "php": {
         "php_version": "5.5",
-        "enable_php_mcrypt": true,
-        "enable_php_gd": true,
-        "enable_php_opcode_cache": true,
-        "enable_php_curl": true,
-        "enable_php_memcache": true,
-        "enable_php_drush": true,
-        "enable_php_phing": true,
-        "enable_php_composer": true,
-        "enable_php_xdebug": true,
-        "enable_php_xhprof": true,
-        "enable_php_uprofiler": true
+        "enable_php_phing": false,
+        "enable_php_composer": false
       },
-
       "solr": {
         "solr_install": false,
         "solr_version": "3.6.2",
         "solr_checksum": "537426dcbdd0dc82dd5bf16b48b6bcaf87cb4049c1245eea8dcb79eeaf3e7ac6"
       },
-
-      "web_tools" : {
-        "url_base" : "drupicaldev.local",
-        "tools" : {
-          "info" : {
-            "install" : true,
-            "alias" : "info"
+      "web_tools": {
+        "url_base": "drupicaldev.local",
+        "tools": {
+          "info": {
+            "install": false,
+            "alias": "info"
           },
-          "adminer" : {
-            "install" : true,
-            "alias" : "adminer"
+          "adminer": {
+            "install": false,
+            "alias": "adminer"
           },
-          "phpmemcachedadmin" : {
-            "install" : true,
-            "alias" : "phpmemcachedadmin"
+          "phpmemcachedadmin": {
+            "install": false,
+            "alias": "phpmemcachedadmin"
           },
-          "opcachegui" : {
-            "install" : true,
-            "alias" : "opcachegui"
+          "opcachegui": {
+            "install": false,
+            "alias": "opcachegui"
           },
-          "uprofiler_ui" : {
-            "install" : true,
-            "alias" : "xx"
+          "uprofiler_ui": {
+            "install": false,
+            "alias": "uprofiler"
+          },
+          "phpdoc": {
+            "install": true,
+            "alias": "phpdoc"
           }
         }
       },
-
-      "varnish_install": true
-
+      "varnish_install": false
     },
-
-    "vagrant_ports" : {
-      "http" : {
-        "host" : "80",
-        "guest" : "80"
+    "vagrant_ports": {
+      "http": {
+        "host": "80",
+        "guest": "80"
       },
-      "https" : {
-        "host" : "443",
-        "guest" : "443"
+      "https": {
+        "host": "443",
+        "guest": "443"
       },
-      "xdebug" : {
-        "host" : "9000",
-        "guest" : "9000"
+      "xdebug": {
+        "host": "9000",
+        "guest": "9000"
       },
-      "varnish" : {
-        "host" : "8080",
-        "guest" : "8080"
+      "varnish": {
+        "host": "8080",
+        "guest": "8080"
       },
-      "mysql" : {
-        "host" : "3306",
-        "guest" : "3306"
+      "mysql": {
+        "host": "3306",
+        "guest": "3306"
       },
-      "solr" : {
-        "host" : "8390",
-        "guest" : "8390"
+      "solr": {
+        "host": "8390",
+        "guest": "8390"
       }
     },
-
-    "vagrant_synced_folders" : {
+    "vagrant_synced_folders": {
     },
-
-    "vhosts" : {
+    "vhosts": {
+    },
+    "php_packages": {
+      "php-apc": false,
+      "php-auth": false,
+      "php-auth-http": false,
+      "php-auth-sasl": false,
+      "php-benchmark": false,
+      "php-cache": false,
+      "php-cache-lite": false,
+      "php-codesniffer": false,
+      "php-compat": false,
+      "php-config": false,
+      "php-console-table": false,
+      "php-crypt-blowfish": false,
+      "php-crypt-cbc": false,
+      "php-crypt-gpg": false,
+      "php-date": false,
+      "php-db": false,
+      "php-doc": false,
+      "php-elisp": false,
+      "php-event-dispatcher": false,
+      "php-file": false,
+      "php-fpdf": false,
+      "php-geshi": false,
+      "php-getid3": false,
+      "php-gettext": false,
+      "php-html-common": false,
+      "php-html-safe": false,
+      "php-html-template-it": false,
+      "php-htmlpurifier": false,
+      "php-http": false,
+      "php-http-request": false,
+      "php-http-upload": false,
+      "php-http-webdav-server": false,
+      "php-image-text": false,
+      "php-imlib": false,
+      "php-kolab-filter": false,
+      "php-kolab-freebusy": false,
+      "php-letodms-core": false,
+      "php-letodms-lucene": false,
+      "php-log": false,
+      "php-mail": false,
+      "php-mail-mime": false,
+      "php-mail-mimedecode": false,
+      "php-mdb2": false,
+      "php-mdb2-driver-mysql": false,
+      "php-mdb2-driver-pgsql": false,
+      "php-mdb2-driver-sqlite": false,
+      "php-mime-type": false,
+      "php-net-checkip": false,
+      "php-net-dime": false,
+      "php-net-dnsbl": false,
+      "php-net-ftp": false,
+      "php-net-imap": false,
+      "php-net-ipv4": false,
+      "php-net-ipv6": false,
+      "php-net-ldap": false,
+      "php-net-ldap2": false,
+      "php-net-lmtp": false,
+      "php-net-nntp": false,
+      "php-net-ping": false,
+      "php-net-portscan": false,
+      "php-net-sieve": false,
+      "php-net-smartirc": false,
+      "php-net-smtp": false,
+      "php-net-socket": false,
+      "php-net-url": false,
+      "php-net-whois": false,
+      "php-numbers-words": false,
+      "php-openid": false,
+      "php-pager": false,
+      "php-pear": false,
+      "php-radius-legacy": false,
+      "php-services-json": false,
+      "php-services-weather": false,
+      "php-soap": false,
+      "php-text-captcha": false,
+      "php-text-figlet": false,
+      "php-text-password": false,
+      "php-text-wiki": false,
+      "php-wikidiff2": false,
+      "php-xajax": false,
+      "php-xml-htmlsax3": false,
+      "php-xml-parser": false,
+      "php-xml-rpc": false,
+      "php-xml-rpc2": false,
+      "php-xml-rss": false,
+      "php-xml-serializer": false,
+      "php-zeroc-ice": false,
+      "php5-adodb": false,
+      "php5-apcu": false,
+      "php5-auth-pam": false,
+      "php5-curl": true,
+      "php5-dbg": false,
+      "php5-dev": false,
+      "php5-enchant": false,
+      "php5-exactimage": false,
+      "php5-ffmpeg": false,
+      "php5-gd": true,
+      "php5-gearman": false,
+      "php5-geoip": true,
+      "php5-gmp": false,
+      "php5-imagick": false,
+      "php5-imap": false,
+      "php5-interbase": false,
+      "php5-intl": true,
+      "php5-json": false,
+      "php5-lasso": false,
+      "php5-ldap": false,
+      "php5-librdf": false,
+      "php5-libvirt-php": false,
+      "php5-mapscript": false,
+      "php5-mcrypt": true,
+      "php5-memcache": false,
+      "php5-memcached": true,
+      "php5-midgard2": false,
+      "php5-ming": false,
+      "php5-mongo": false,
+      "php5-mysql": false,
+      "php5-mysqlnd": true,
+      "php5-mysqlnd-ms": false,
+      "php5-oauth": false,
+      "php5-odbc": false,
+      "php5-pgsql": false,
+      "php5-ps": false,
+      "php5-pspell": false,
+      "php5-radius": false,
+      "php5-readline": false,
+      "php5-recode": false,
+      "php5-redis": false,
+      "php5-remctl": false,
+      "php5-rrd": false,
+      "php5-sasl": false,
+      "php5-snmp": false,
+      "php5-sqlite": false,
+      "php5-suhosin": true,
+      "php5-svn": false,
+      "php5-sybase": false,
+      "php5-tidy": false,
+      "php5-tokyo-tyrant": false,
+      "php5-uprofiler": true,
+      "php5-uuid": false,
+      "php5-xcache": false,
+      "php5-xdebug": true,
+      "php5-xmlrpc": true,
+      "php5-xsl": true,
+      "php5-zmq": false,
+      "phpsysinfo": false,
+      "phpunit": false,
+      "phpunit-doc": false
     }
-
   }
 }

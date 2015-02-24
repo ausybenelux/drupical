@@ -27,9 +27,7 @@
     "recipe[web::default]",
     "recipe[web::apache]",
     "recipe[web::apache_repo]",
-    "recipe[web-memcached::default]",
-    "recipe[web-solr::default]",
-    "recipe[web-varnish::default]"
+    "recipe[web-memcached::default]"
   ],
   "env_run_lists": {
   }

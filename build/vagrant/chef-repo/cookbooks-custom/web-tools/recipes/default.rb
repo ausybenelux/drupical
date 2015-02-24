@@ -20,3 +20,6 @@ include_recipe 'web-tools::phpmemcachedadmin'
 #
 include_recipe 'web-tools::profiler'
 
+#
+include_recipe 'web-tools::phpdoc'
+
