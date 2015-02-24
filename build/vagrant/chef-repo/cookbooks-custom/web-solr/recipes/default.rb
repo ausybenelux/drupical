@@ -11,8 +11,8 @@ node.override['java']['oracle']['accept_oracle_download_terms'] = true
 node.override['java']['jdk']['7']['x86_64']['url'] = "http://ftp.osuosl.org/pub/funtoo/distfiles/oracle-java/jdk-7u76-linux-x64.tar.gz"
 
 node.override['jetty']['port'] = 8390
-node.override['jetty']['version'] = '9.2.8.v20150217'
-node.override['jetty']['link'] = 'http://download.eclipse.org/jetty/stable-9/dist/jetty-distribution-9.2.8.v20150217.tar.gz'
+node.override['jetty']['version'] = '9.2.9.v20150224'
+node.override['jetty']['link'] = 'http://download.eclipse.org/jetty/stable-9/dist/jetty-distribution-9.2.9.v20150224.tar.gz'
 node.override['jetty']['checksum'] = 'd565cb0abe9c265f573a16c5dfd9ae36e769c908'
 
 node.override['solr']["version"] = node['config']['drupical']['solr']['solr_version']

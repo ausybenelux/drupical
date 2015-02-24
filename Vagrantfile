@@ -95,23 +95,30 @@ Vagrant.configure(2) do |config|
     if vconfig['config']['box_ram_cpu'] == "auto"
       host = RbConfig::CONFIG['host_os']
       if host =~ /darwin/
-        vb.cpus = `sysctl -n hw.ncpu`.to_i
-        vb.memory = `sysctl -n hw.memsize`.to_i / 1024 / 1024 / 4
+        cpus = `sysctl -n hw.ncpu`.to_i
+        memory = `sysctl -n hw.memsize`.to_i / 1024 / 1024 / 4
       else
-        vb.memory = vconfig['config']['box_ram']
-        vb.cpus = vconfig['config']['box_cpu']
+        memory = vconfig['config']['box_ram']
+        cpus = vconfig['config']['box_cpu']
       end
     else
-      vb.memory = vconfig['config']['box_ram']
-      vb.cpus = vconfig['config']['box_cpu']
+      memory = vconfig['config']['box_ram']
+      cpus = vconfig['config']['box_cpu']
     end
+    vb.memory = memory
+    vb.cpus = cpus
 
+    #
     vb.customize ["modifyvm", :id, "--natdnshostresolver1", "on"]
     vb.customize ["modifyvm", :id, "--natdnsproxy1", "on"]
+
+    #
     vb.customize ["modifyvm", :id, "--ioapic", "on"]
     vb.customize ["modifyvm", :id, "--chipset", "ich9"]
-    vb.customize ["modifyvm", :id, "--accelerate3d", "off"]
     vb.customize ["storageattach", :id, "--storagectl", "SATA Controller", "--port", 0, "--nonrotational", "on"]
+
+    #
+    vb.customize ["modifyvm", :id, "--accelerate3d", "off"]
 
   end
 
