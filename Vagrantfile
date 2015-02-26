@@ -215,7 +215,10 @@ Vagrant.configure(2) do |config|
   end
 
   config.trigger.before :destroy do
-    #run_remote "/usr/local/bin/backup-db.sh"
+    if File.exists?('build/backup/file_token')
+      run_remote "/usr/local/bin/backup-db.sh"
+    end
+
   end
 
 end

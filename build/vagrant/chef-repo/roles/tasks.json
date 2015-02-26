@@ -1,0 +1,19 @@
+{
+  "name": "Tasks",
+  "description": "Tasks that have to be executed at the end.",
+  "json_class": "Chef::Role",
+  "default_attributes": {},
+  "chef_type": "role",
+  "override_attributes": {
+    "authorization": {
+      "sudo": {
+        "users": "vagrant",
+        "passwordless": true
+      }
+    }
+  },
+  "run_list": [
+    "recipe[drupical::tasks]"
+  ],
+  "env_run_lists": {}
+}

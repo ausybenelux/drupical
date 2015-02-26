@@ -36,7 +36,7 @@ vhosts.each do |key, vhost|
 end
 
 #
-template "/usr/local/bin/backup-db.sh" do
-  source "backup-db.sh.erb"
-  mode 0777
-end
+#template "/usr/local/bin/backup-db.sh" do
+#  source "backup-db.sh.erb"
+#  mode 0777
+#end
