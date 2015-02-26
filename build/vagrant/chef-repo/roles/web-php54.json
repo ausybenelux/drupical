@@ -17,6 +17,8 @@
   "chef_type": "role",
   "run_list": [
     "recipe[php5::default]",
+    "recipe[php5::install]",
+    "recipe[php5::packages]",
     "recipe[php5::php5_54_ppa]",
     "recipe[php-fpm]"
   ],

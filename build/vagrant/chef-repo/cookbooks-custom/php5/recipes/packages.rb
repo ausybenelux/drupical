@@ -7,8 +7,9 @@ node['config']['php_packages'].each do |php_package, install_php_package|
 
   if install_php_package
 
+    puts php_package
+
     package php_package do
-      options " || true"
       action :install
     end
 

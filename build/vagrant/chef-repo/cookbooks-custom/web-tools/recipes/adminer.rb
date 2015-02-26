@@ -20,7 +20,7 @@ if node['config']['drupical']['web_tools']['tools']['adminer']['install']
   end
 
   template "/usr/share/adminer/index.php" do
-    source "index_adminer.php.erb"
+    source "adminer_index.php.erb"
     mode 0777
     owner node['apache']['user']
     group node['apache']['group']

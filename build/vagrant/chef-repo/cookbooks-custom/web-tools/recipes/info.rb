@@ -5,15 +5,20 @@
 
 if node['config']['drupical']['web_tools']['tools']['info']['install']
 
-  directory '/usr/share/info' do
+  remote_directory '/usr/share/siteinfo' do
+    source 'info'
     mode 0777
-    action :create
     owner node['apache']['user']
     group node['apache']['group']
   end
 
-  template "/usr/share/info/index.php" do
-    source "info.php.erb"
+  template "/usr/share/siteinfo/index.php" do
+    source "info_index.php.erb"
+    mode '0666'
+  end
+
+  template "/usr/share/siteinfo/phpinfo.php" do
+    source "info_phpinfo.php.erb"
     mode '0666'
   end
 
@@ -22,7 +27,7 @@ if node['config']['drupical']['web_tools']['tools']['info']['install']
 
   web_app "info" do
     server_name "#{tool_alias}.#{url_base}"
-    docroot "/usr/share/info/"
+    docroot "/usr/share/siteinfo/"
     cookbook 'apache2'
   end
 
