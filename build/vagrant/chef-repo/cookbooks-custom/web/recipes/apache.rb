@@ -41,12 +41,12 @@ execute "Enabling necessary apache2 modules" do
 end
 
 #
-vhosts = node['config']['vhosts']
-vhosts.each do |key, vhost|
+ node['config']['vhosts'].each do |key, vhost|
 
   web_app key do
-    server_name vhost.fetch('server_name')
-    docroot vhost.fetch('docroot')
+    server_name vhost['server_name']
+    server_aliases vhost['aliases']
+    docroot vhost['docroot']
     allow_override 'All'
     cookbook 'apache2'
   end

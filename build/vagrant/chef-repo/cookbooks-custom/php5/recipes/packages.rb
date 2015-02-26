@@ -3,20 +3,6 @@
 # Recipe:: packages
 #
 
-node['config']['php_packages'].each do |php_package, install_php_package|
-
-  if install_php_package
-
-    puts php_package
-
-    package php_package do
-      action :install
-    end
-
-  end
-
-end
-
 #
 if node['config']['drupical']['php']['enable_php_phing']
 
@@ -71,6 +57,19 @@ if node['config']['php_packages']['php5-uprofiler']
     action :create
     notifies :restart, 'service[apache2]', :delayed
     only_if { !File.exists?("/etc/php5/mods-available/uprofiler.ini") }
+  end
+
+end
+
+#
+node['config']['php_packages'].each do |php_package, install_php_package|
+
+  if install_php_package
+
+    package php_package do
+      action :install
+    end
+
   end
 
 end

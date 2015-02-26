@@ -16,9 +16,7 @@
         "server_name" : "drupicaldev.local",
         "database_name" : "drupical",
         "docroot" : "/home/vagrant/drupical/docroot/",
-        "aliases" : {
-          "alias1" : "www.drupicaldev.local"
-        }
+        "aliases" : [ "www.drupicaldev.local" ]
       }
     }
 
