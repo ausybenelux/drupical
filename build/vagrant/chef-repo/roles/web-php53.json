@@ -19,7 +19,6 @@
     "recipe[php5::default]",
     "recipe[php5::install]",
     "recipe[php5::packages]",
-    "recipe[php5::php5_53_ppa]",
     "recipe[php-fpm]"
   ],
   "env_run_lists": {}

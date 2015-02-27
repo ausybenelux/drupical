@@ -20,7 +20,7 @@
 
     "drupical": {
       "php": {
-        "php_version": "5.5",
+        "php_version": "5.4",
         "enable_php_phing": true,
         "enable_php_composer": true
       },
@@ -49,7 +49,7 @@
             "alias": "opcachegui"
           },
           "uprofiler_ui": {
-            "install": true,
+            "install": false,
             "alias": "uprofiler"
           },
           "phpdoc": {
@@ -228,7 +228,7 @@
       "php5-sybase": false,
       "php5-tidy": false,
       "php5-tokyo-tyrant": false,
-      "php5-uprofiler": true,
+      "php5-uprofiler": false,
       "php5-uuid": false,
       "php5-xcache": false,
       "php5-xdebug": true,
