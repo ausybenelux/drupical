@@ -47,6 +47,7 @@ if node['config']['drupical']['web_tools']['tools']['opcachegui']['install']
     server_name "#{tool_alias}.#{url_base}"
     docroot "/usr/share/opcachegui/"
     cookbook 'apache2'
+    server_pool "opcachegui"
   end
 
 end

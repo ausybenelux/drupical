@@ -11,6 +11,14 @@ include_recipe 'web::apache_repo'
 #
 include_recipe 'apache2'
 
+begin
+  t = resources(:template => "#{node['apache']['dir']}/sites-available/#{application_name}.conf")
+  t.source "web_app.conf.erb"
+  t.cookbook "web"
+rescue Chef::Exceptions::ResourceNotFound
+  Chef::Log.warn "could not find template #{node['apache']['dir']}/sites-available/#{application_name}.conf to modify"
+end
+
 #
 package "libapache2-mod-fastcgi" do
   action :install
@@ -48,6 +56,7 @@ end
     server_aliases vhost['aliases']
     docroot vhost['docroot']
     allow_override 'All'
+    server_pool vhost['server_name'].split('.')[0]
     cookbook 'apache2'
   end
 

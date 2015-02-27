@@ -19,6 +19,7 @@ if node['config']['drupical']['web_tools']['tools']['phpmemcachedadmin']['instal
     server_name "#{tool_alias}.#{url_base}"
     docroot "/usr/share/phpmemcachedadmin"
     cookbook 'apache2'
+    server_pool "phpmemcachedadmin"
   end
 
 end

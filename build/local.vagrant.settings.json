@@ -29,7 +29,15 @@
         "server_name" : "drupicaldev.local",
         "database_name" : "drupical",
         "docroot" : "/home/vagrant/drupical/docroot/",
-        "aliases" : [ "www.drupicaldev.local" ]
+        "aliases" : [ "www.drupicaldev.local" ],
+        "php_settings": {
+          "log_errors": "on",
+          "memory_limit": "512M",
+          "error_reporting": "E_ALL & ~E_DEPRECATED",
+          "display_errors": "On",
+          "post_max_size": "64M",
+          "upload_max_filesize": "64M"
+        }
       }
     }
 

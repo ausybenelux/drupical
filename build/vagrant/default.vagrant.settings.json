@@ -20,7 +20,7 @@
 
     "drupical": {
       "php": {
-        "php_version": "5.4",
+        "php_version": "5.5",
         "enable_php_phing": true,
         "enable_php_composer": true
       },
