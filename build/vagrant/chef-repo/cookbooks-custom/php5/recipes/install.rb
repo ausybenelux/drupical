@@ -45,12 +45,11 @@ node['config']['vhosts'].each do |key, vhost|
 end
 
 #
-node['config']['drupical']['web_tools']['tools'].each do |key, tool|
+node['config']['web_tools']['tools'].each do |key, tool|
   if tool['install'] == true
     php_fpm_pool key do
       process_manager "dynamic"
       max_requests 5000
-      php_options 'php_admin_flag[log_errors]' => 'on', 'php_admin_value[memory_limit]' => '512M', 'php_admin_value[error_reporting]' => 'E_ALL & ~E_DEPRECATED', 'php_admin_value[display_errors]' => 'Off', 'php_admin_value[post_max_size]' => '64M', 'php_admin_value[upload_max_filesize]' => '64M'
     end
   end
 end

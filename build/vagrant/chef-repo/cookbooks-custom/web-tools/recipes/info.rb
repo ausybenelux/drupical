@@ -26,9 +26,10 @@ if node['config']['web_tools']['tools']['info']['install']
   tool_alias = node['config']['web_tools']['tools']['info']['alias']
 
   web_app "info" do
+    templates 'web_app.conf.erb'
+    cookbook 'web'
     server_name "#{tool_alias}.#{url_base}"
     docroot "/usr/share/siteinfo/"
-    cookbook 'web'
     server_pool "info"
   end
 

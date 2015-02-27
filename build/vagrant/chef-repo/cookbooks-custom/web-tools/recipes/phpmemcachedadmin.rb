@@ -16,9 +16,10 @@ if node['config']['web_tools']['tools']['phpmemcachedadmin']['install']
   tool_alias = node['config']['web_tools']['tools']['phpmemcachedadmin']['alias']
 
   web_app "phpmemcachedadmin" do
+    templates 'web_app.conf.erb'
+    cookbook 'web'
     server_name "#{tool_alias}.#{url_base}"
     docroot "/usr/share/phpmemcachedadmin"
-    cookbook 'web'
     server_pool "phpmemcachedadmin"
   end
 

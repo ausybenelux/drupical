@@ -41,6 +41,7 @@ if node['config']['web_tools']['tools']['adminer']['install']
     allow_override "All"
     docroot "/usr/share/adminer/"
     server_pool "adminer"
+    templates 'web_app.conf.erb'
     cookbook 'web'
   end
 

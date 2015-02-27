@@ -44,9 +44,10 @@ if node['config']['web_tools']['tools']['opcachegui']['install']
   tool_alias = node['config']['web_tools']['tools']['opcachegui']['alias']
 
   web_app "opcachegui" do
+    templates 'web_app.conf.erb'
+    cookbook 'web'
     server_name "#{tool_alias}.#{url_base}"
     docroot "/usr/share/opcachegui/"
-    cookbook 'web'
     server_pool "opcachegui"
   end
 

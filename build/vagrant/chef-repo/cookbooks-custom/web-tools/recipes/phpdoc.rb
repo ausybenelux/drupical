@@ -13,9 +13,10 @@ if node['config']['web_tools']['tools']['phpdoc']['install']
   tool_alias = node['config']['web_tools']['tools']['phpdoc']['alias']
 
   web_app "phpdoc" do
+    templates 'web_app.conf.erb'
+    cookbook 'web'
     server_name "#{tool_alias}.#{url_base}"
     docroot "/usr/share/doc/php-doc/html/"
-    cookbook 'web'
     server_pool "phpdoc"
   end
 
