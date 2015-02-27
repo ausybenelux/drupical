@@ -1,5 +1,6 @@
 {
   "config": {
+
     "vagrant_debugging": true,
 
     "vagrant_synced_folders" : {
@@ -7,12 +8,24 @@
         "source" : "../drupical",
         "target" : "/home/vagrant/drupical",
         "type" : "nfs",
-        "mount_options" : ["rw", "vers=3", "tcp", "fsc", "actimeo=1"]
+        "mount_options" : ["rw", "vers=3", "udp", "fsc", "actimeo=1"]
+      },
+      "adminer" : {
+        "source" : "./build/web-tools/adminer/",
+        "target" : "/usr/share/adminer/",
+        "type" : "nfs",
+        "mount_options" : ["rw", "vers=3", "udp", "fsc", "actimeo=1"]
+      },
+      "siteinfo" : {
+        "source" : "./build/web-tools/siteinfo/",
+        "target" : "/usr/share/siteinfo/",
+        "type" : "nfs",
+        "mount_options" : ["rw", "vers=3", "udp", "fsc", "actimeo=1"]
       }
     },
 
     "vhosts" : {
-      "vhost1" : {
+      "drupical" : {
         "server_name" : "drupicaldev.local",
         "database_name" : "drupical",
         "docroot" : "/home/vagrant/drupical/docroot/",

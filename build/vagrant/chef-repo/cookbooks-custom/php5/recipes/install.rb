@@ -3,8 +3,6 @@
 # Recipe:: install
 #
 
-node.override['php5']["version"] = node['config']['drupical']['php']['php_version']
-
 if node["php5"]["version"] == "5.3"
 
 elsif node["php5"]["version"] == "5.4"
@@ -29,7 +27,6 @@ include_recipe 'php'
 #We have to disable apache2::mod_php5 because it'll interfere with the PHP-FPM module.
 #
 #include_recipe 'apache2::mod_php5'
-
 
 #
 php_fpm_pool "www" do

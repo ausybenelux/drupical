@@ -8,8 +8,8 @@ if node['config']['drupical']['web_tools']['tools']['phpmemcachedadmin']['instal
   remote_directory '/usr/share/phpmemcachedadmin' do
     source 'phpmemcachedadmin'
     mode 0777
-    owner node['apache']['user']
-    group node['apache']['group']
+    #owner node['apache']['user']
+    #group node['apache']['group']
   end
 
   url_base = node['config']['drupical']['web_tools']['url_base']

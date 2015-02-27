@@ -8,8 +8,8 @@ if node['config']['drupical']['web_tools']['tools']['info']['install']
   remote_directory '/usr/share/siteinfo' do
     source 'info'
     mode 0777
-    owner node['apache']['user']
-    group node['apache']['group']
+    #owner node['apache']['user']
+    #group node['apache']['group']
   end
 
   template "/usr/share/siteinfo/index.php" do

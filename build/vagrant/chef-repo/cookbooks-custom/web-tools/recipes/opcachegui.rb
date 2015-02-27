@@ -5,16 +5,16 @@
 
 if node['config']['drupical']['web_tools']['tools']['opcachegui']['install']
 
-  if node["php5"]["version"] == "5.3" && node["php5"]["version"] == "5.4"
+  directory "/usr/share/opcachegui" do
+    mode 0777
+    action :create
+    owner node['apache']['user']
+    group node['apache']['group']
+  end
 
-    directory "/usr/share/opcachegui" do
-      mode 0777
-      action :create
-      owner node['apache']['user']
-      group node['apache']['group']
-    end
+  if node["php5"]["version"] == "5.3" || node["php5"]["version"] == "5.4"
 
-    link "/usr/share/apc/index.php" do
+    link "/usr/share/opcachegui/index.php" do
       to "/usr/share/doc/php-apc/apc.php"
     end
 
