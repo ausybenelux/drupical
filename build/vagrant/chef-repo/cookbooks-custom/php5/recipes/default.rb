@@ -3,7 +3,7 @@
 # Recipe:: default
 #
 
-node.override['php5']["version"] = node['config']['drupical']['php']['php_version']
+node.override['php5']["version"] = node['config']['php']['php_version']
 
 include_recipe 'php5::install'
 

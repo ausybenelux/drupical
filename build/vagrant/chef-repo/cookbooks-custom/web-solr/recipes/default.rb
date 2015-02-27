@@ -15,8 +15,8 @@ node.override['jetty']['version'] = '9.2.9.v20150224'
 node.override['jetty']['link'] = 'http://download.eclipse.org/jetty/stable-9/dist/jetty-distribution-9.2.9.v20150224.tar.gz'
 node.override['jetty']['checksum'] = 'd565cb0abe9c265f573a16c5dfd9ae36e769c908'
 
-node.override['solr']["version"] = node['config']['drupical']['solr']['solr_version']
-node.override['solr']["checksum"] = node['config']['drupical']['solr']['solr_checksum']
+node.override['solr']["version"] = node['config']['solr']['solr_version']
+node.override['solr']["checksum"] = node['config']['solr']['solr_checksum']
 
 include_recipe "java"
 
@@ -24,10 +24,10 @@ include_recipe "hipsnip-jetty"
 
 include_recipe "hipsnip-solr"
 
-if /^(?:1\.4\.(?:0|1){1}|3\.[0-9]{1,}\.[0-9]{1,})/.match(node['config']['drupical']['solr']['solr_version'])
-  solr_name = "apache-solr-#{node['config']['drupical']['solr']['solr_version']}"
-elsif /^4\.[0-9]{1,}\.[0-9]{1,}/.match(node['config']['drupical']['solr']['solr_version'])
-  solr_name = "solr-#{node['config']['drupical']['solr']['solr_version']}"
+if /^(?:1\.4\.(?:0|1){1}|3\.[0-9]{1,}\.[0-9]{1,})/.match(node['config']['solr']['solr_version'])
+  solr_name = "apache-solr-#{node['config']['solr']['solr_version']}"
+elsif /^4\.[0-9]{1,}\.[0-9]{1,}/.match(node['config']['solr']['solr_version'])
+  solr_name = "solr-#{node['config']['solr']['solr_version']}"
 else
   solr_name = ""
 end

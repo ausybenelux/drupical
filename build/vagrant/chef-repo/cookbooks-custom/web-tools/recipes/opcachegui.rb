@@ -3,7 +3,7 @@
 # Recipe:: opcachegui
 #
 
-if node['config']['drupical']['web_tools']['tools']['opcachegui']['install']
+if node['config']['web_tools']['tools']['opcachegui']['install']
 
   directory "/usr/share/opcachegui" do
     mode 0777
@@ -40,13 +40,13 @@ if node['config']['drupical']['web_tools']['tools']['opcachegui']['install']
 
   end
 
-  url_base = node['config']['drupical']['web_tools']['url_base']
-  tool_alias = node['config']['drupical']['web_tools']['tools']['opcachegui']['alias']
+  url_base = node['config']['web_tools']['url_base']
+  tool_alias = node['config']['web_tools']['tools']['opcachegui']['alias']
 
   web_app "opcachegui" do
     server_name "#{tool_alias}.#{url_base}"
     docroot "/usr/share/opcachegui/"
-    cookbook 'apache2'
+    cookbook 'web'
     server_pool "opcachegui"
   end
 

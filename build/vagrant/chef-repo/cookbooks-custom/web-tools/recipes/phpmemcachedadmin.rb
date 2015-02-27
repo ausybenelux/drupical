@@ -3,7 +3,7 @@
 # Recipe:: phpmemcachedadmin
 #
 
-if node['config']['drupical']['web_tools']['tools']['phpmemcachedadmin']['install']
+if node['config']['web_tools']['tools']['phpmemcachedadmin']['install']
 
   remote_directory '/usr/share/phpmemcachedadmin' do
     source 'phpmemcachedadmin'
@@ -12,13 +12,13 @@ if node['config']['drupical']['web_tools']['tools']['phpmemcachedadmin']['instal
     #group node['apache']['group']
   end
 
-  url_base = node['config']['drupical']['web_tools']['url_base']
-  tool_alias = node['config']['drupical']['web_tools']['tools']['phpmemcachedadmin']['alias']
+  url_base = node['config']['web_tools']['url_base']
+  tool_alias = node['config']['web_tools']['tools']['phpmemcachedadmin']['alias']
 
   web_app "phpmemcachedadmin" do
     server_name "#{tool_alias}.#{url_base}"
     docroot "/usr/share/phpmemcachedadmin"
-    cookbook 'apache2'
+    cookbook 'web'
     server_pool "phpmemcachedadmin"
   end
 
