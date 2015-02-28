@@ -16,7 +16,7 @@ if node['config']['drupical']['web_tools']['tools']['uprofiler_ui']['install']
     server_name "#{tool_alias}.#{url_base}"
     docroot "/usr/share/uprofiler/uprofiler_html"
     cookbook 'apache2'
-    server_pool "uprofiler"
+    server_pool "tools"
   end
 
 end

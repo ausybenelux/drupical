@@ -29,7 +29,7 @@ if node['config']['drupical']['web_tools']['tools']['info']['install']
     server_name "#{tool_alias}.#{url_base}"
     docroot "/usr/share/siteinfo/"
     cookbook 'apache2'
-    server_pool "info"
+    server_pool "tools"
   end
 
 end

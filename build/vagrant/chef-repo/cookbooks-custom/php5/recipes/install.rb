@@ -32,12 +32,15 @@ include_recipe 'php'
 node['config']['vhosts'].each do |key, vhost|
   php_settings = {}
   vhost['php_settings'].each do |setting_key, value|
-    php_settings[setting_key] = value
+    php_settings["php_admin_value[#{setting_key}]"] = "value"
   end
 
   php_fpm_pool vhost['server_name'].split('.')[0] do
     process_manager "dynamic"
     max_requests 5000
+    max_children 10
+    min_spare_servers 2
+    max_spare_servers 5
     php_options php_settings
   end
 end
@@ -46,6 +49,9 @@ node['config']['drupical']['web_tools']['tools'].each do |key, tool|
   if tool['install'] == true
     php_fpm_pool key do
       process_manager "dynamic"
+      max_children 10
+      min_spare_servers 2
+      max_spare_servers 5
       max_requests 5000
       php_options 'php_admin_flag[log_errors]' => 'on', 'php_admin_value[memory_limit]' => '512M', 'php_admin_value[error_reporting]' =>  'E_ALL & ~E_DEPRECATED', 'php_admin_value[display_errors]'  =>  'On', 'php_admin_value[post_max_size]'  =>  '64M', 'php_admin_value[upload_max_filesize]' =>  '64M'
     end

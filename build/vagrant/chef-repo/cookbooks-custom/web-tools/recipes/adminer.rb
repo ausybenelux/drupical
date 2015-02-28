@@ -40,7 +40,7 @@ if node['config']['drupical']['web_tools']['tools']['adminer']['install']
     server_name "#{tool_alias}.#{url_base}"
     allow_override "All"
     docroot "/usr/share/adminer/"
-    server_pool "adminer"
+    server_pool "tools"
     cookbook 'apache2'
   end
 

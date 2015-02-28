@@ -16,7 +16,7 @@ if node['config']['drupical']['web_tools']['tools']['phpdoc']['install']
     server_name "#{tool_alias}.#{url_base}"
     docroot "/usr/share/doc/php-doc/html/"
     cookbook 'apache2'
-    server_pool "phpdoc"
+    server_pool "tools"
   end
 
 end
