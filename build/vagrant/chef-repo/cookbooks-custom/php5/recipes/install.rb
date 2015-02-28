@@ -30,6 +30,7 @@ include_recipe 'php'
 
 #
 node['config']['vhosts'].each do |key, vhost|
+
   php_settings = {}
   vhost['php_settings'].each do |setting_key, value|
     php_settings["php_admin_value[#{setting_key}]"] = "value"
@@ -43,9 +44,11 @@ node['config']['vhosts'].each do |key, vhost|
     max_spare_servers 5
     php_options php_settings
   end
+
 end
 
-node['config']['drupical']['web_tools']['tools'].each do |key, tool|
+#
+node['config']['web_tools']['tools'].each do |key, tool|
   if tool['install'] == true
     php_fpm_pool key do
       process_manager "dynamic"
@@ -53,11 +56,9 @@ node['config']['drupical']['web_tools']['tools'].each do |key, tool|
       min_spare_servers 2
       max_spare_servers 5
       max_requests 5000
-      php_options 'php_admin_flag[log_errors]' => 'on', 'php_admin_value[memory_limit]' => '512M', 'php_admin_value[error_reporting]' =>  'E_ALL & ~E_DEPRECATED', 'php_admin_value[display_errors]'  =>  'On', 'php_admin_value[post_max_size]'  =>  '64M', 'php_admin_value[upload_max_filesize]' =>  '64M'
     end
   end
 end
-
 
 file "/etc/apache2/conf-available/php-fpm.conf" do
   action :delete
@@ -68,7 +69,6 @@ template '/etc/apache2/conf-available/php-fpm.conf' do
   source 'php-fpm.conf'
   mode '0644'
   notifies :restart, 'service[apache2]', :delayed
-  only_if {!File.exists?('/etc/apache2/conf-available/php-fpm.conf')}
 end
 
 link '/etc/apache2/conf-enabled/php-fpm.conf' do

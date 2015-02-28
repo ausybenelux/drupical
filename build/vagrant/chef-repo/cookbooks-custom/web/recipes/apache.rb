@@ -11,8 +11,6 @@ include_recipe 'web::apache_repo'
 #
 include_recipe 'apache2'
 
-
-
 #
 package "libapache2-mod-fastcgi" do
   action :install
@@ -46,12 +44,13 @@ end
  node['config']['vhosts'].each do |key, vhost|
 
   web_app key do
+    templates 'web_app.conf.erb'
+    cookbook 'web'
     server_name vhost['server_name']
     server_aliases vhost['aliases']
     docroot vhost['docroot']
     allow_override 'All'
     server_pool vhost['server_name'].split('.')[0]
-    cookbook 'apache2'
   end
 
 end

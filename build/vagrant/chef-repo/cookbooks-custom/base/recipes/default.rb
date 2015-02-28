@@ -19,7 +19,7 @@ execute "apt-upgrade" do
   action :nothing
   ignore_failure true
   only_if { apt_installed? }
-  only_if { node['config']['drupical']['os_update'] }
+  only_if { node['config']['os_update'] }
 end
 
 execute "apt-cleanup" do

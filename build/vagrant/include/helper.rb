@@ -121,11 +121,11 @@ def vagrant_get_alias(vconfig)
   end
 
   #
-  web_tools = vconfig['config']['drupical']['web_tools']['tools']
+  web_tools = vconfig['config']['web_tools']['tools']
   web_tools.each do |key, web_tool|
 
     if web_tool['install']
-      url_base = vconfig['config']['drupical']['web_tools']['url_base']
+      url_base = vconfig['config']['web_tools']['url_base']
       tool_alias = web_tool.fetch('alias')
       aliases.push("#{tool_alias}.#{url_base}")
     end

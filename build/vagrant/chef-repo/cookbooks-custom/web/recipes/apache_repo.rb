@@ -1,5 +1,5 @@
 #
-# Cookbook Name:: drupical
+# Cookbook Name::web
 # Recipe:: apache_repo
 #
 

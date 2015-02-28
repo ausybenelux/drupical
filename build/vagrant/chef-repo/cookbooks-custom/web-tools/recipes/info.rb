@@ -3,7 +3,7 @@
 # Recipe:: info
 #
 
-if node['config']['drupical']['web_tools']['tools']['info']['install']
+if node['config']['web_tools']['tools']['info']['install']
 
   remote_directory '/usr/share/siteinfo' do
     source 'info'
@@ -22,14 +22,15 @@ if node['config']['drupical']['web_tools']['tools']['info']['install']
     mode '0666'
   end
 
-  url_base = node['config']['drupical']['web_tools']['url_base']
-  tool_alias = node['config']['drupical']['web_tools']['tools']['info']['alias']
+  url_base = node['config']['web_tools']['url_base']
+  tool_alias = node['config']['web_tools']['tools']['info']['alias']
 
   web_app "info" do
+    templates 'web_app.conf.erb'
     server_name "#{tool_alias}.#{url_base}"
     docroot "/usr/share/siteinfo/"
     cookbook 'apache2'
-    server_pool "tools"
+    server_pool "info"
   end
 
 end

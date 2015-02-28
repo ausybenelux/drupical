@@ -31,6 +31,7 @@
         <title><%= node[:config][:box_name] %></title>
         <link href="css/bootstrap.min.css" rel="stylesheet">
         <link href="css/bootstrap-theme.min.css" rel="stylesheet">
+        <link href="css/dashboard.min.css" rel="stylesheet">
         <!--[if lt IE 9]>
         <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
         <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
@@ -55,11 +56,11 @@
                 <div id="navbar" class="navbar-collapse collapse">
                     <ul class="nav navbar-nav navbar-right">
                         <li>
-                            <a href="http://info.<%= node['config']['drupical']['web_tools']['url_base'] %>/phpinfo.php" target="_blank">phpinfo</a>
+                            <a href="http://info.<%= node['config']['web_tools']['url_base'] %>/phpinfo.php" target="_blank">phpinfo</a>
                         </li>
-                        <% node['config']['drupical']['web_tools']['tools'].each do |key,web_tool| %>
+                        <% node['config']['web_tools']['tools'].each do |key,web_tool| %>
                         <li>
-                            <a href="http://<%= web_tool['alias'] %>.<%= node['config']['drupical']['web_tools']['url_base'] %>" target="_blank">
+                            <a href="http://<%= web_tool['alias'] %>.<%= node['config']['web_tools']['url_base'] %>" target="_blank">
                                 <%= key %>
                             </a>
                         </li>

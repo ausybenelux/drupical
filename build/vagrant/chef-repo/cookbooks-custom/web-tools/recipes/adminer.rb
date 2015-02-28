@@ -3,7 +3,7 @@
 # Recipe:: adminer
 #
 
-if node['config']['drupical']['web_tools']['tools']['adminer']['install']
+if node['config']['web_tools']['tools']['adminer']['install']
 
   directory '/usr/share/adminer' do
     mode 0777
@@ -33,14 +33,15 @@ if node['config']['drupical']['web_tools']['tools']['adminer']['install']
     #group node['apache']['group']
   end
 
-  url_base = node['config']['drupical']['web_tools']['url_base']
-  tool_alias = node['config']['drupical']['web_tools']['tools']['adminer']['alias']
+  url_base = node['config']['web_tools']['url_base']
+  tool_alias = node['config']['web_tools']['tools']['adminer']['alias']
 
   web_app "adminer" do
     server_name "#{tool_alias}.#{url_base}"
     allow_override "All"
     docroot "/usr/share/adminer/"
-    server_pool "tools"
+    server_pool "adminer"
+    templates 'web_app.conf.erb'
     cookbook 'apache2'
   end
 

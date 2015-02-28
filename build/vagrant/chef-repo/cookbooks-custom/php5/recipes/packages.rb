@@ -4,14 +4,14 @@
 #
 
 #
-if node['config']['drupical']['php']['enable_php_phing']
+if node['config']['php']['enable_php_phing']
 
   include_recipe 'phing'
 
 end
 
 #
-if node['config']['drupical']['php']['enable_php_composer']
+if node['config']['php']['enable_php_composer']
 
   include_recipe "composer"
 
