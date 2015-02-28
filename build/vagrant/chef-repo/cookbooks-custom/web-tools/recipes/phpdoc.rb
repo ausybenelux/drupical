@@ -17,12 +17,8 @@ if node['config']['web_tools']['tools']['phpdoc']['install']
     cookbook 'web'
     server_name "#{tool_alias}.#{url_base}"
     docroot "/usr/share/doc/php-doc/html/"
-<<<<<<< HEAD
     cookbook 'apache2'
-    server_pool "tools"
-=======
     server_pool "phpdoc"
->>>>>>> b66a0a1934a3660b5977807e16a441c209a27034
   end
 
 end
