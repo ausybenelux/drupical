@@ -5,7 +5,7 @@ begin
 
   load './build/vagrant/include/helper.rb'
 
-  rescue
+rescue
     LoadError
 
 end
@@ -21,6 +21,11 @@ begin
   #
 
   aliases = vagrant_get_alias(vconfig)
+
+puts aliases
+
+rescue
+    LoadError
 
 end
 

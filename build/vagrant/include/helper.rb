@@ -113,17 +113,14 @@ def vagrant_get_alias(vconfig)
 
     aliases.push(vhost.fetch('server_name'))
 
-    _aliases = vhost.fetch('aliases')
-    _aliases.each do |key, _alias|
+    vhost['aliases'].each do |_alias|
       aliases.push(_alias)
     end
 
   end
 
   #
-  web_tools = vconfig['config']['web_tools']['tools']
-  web_tools.each do |key, web_tool|
-
+  vconfig['config']['web_tools']['tools'].each do |key, web_tool|
     if web_tool['install']
       url_base = vconfig['config']['web_tools']['url_base']
       tool_alias = web_tool.fetch('alias')
