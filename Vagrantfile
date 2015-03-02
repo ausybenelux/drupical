@@ -19,13 +19,7 @@ begin
   vconfig = vagrant_get_config()
 
   #
-
   aliases = vagrant_get_alias(vconfig)
-
-puts aliases
-
-rescue
-    LoadError
 
 end
 
