@@ -21,4 +21,12 @@ if node['config']['web_tools']['tools']['phpdoc']['install']
     server_pool "phpdoc"
   end
 
+  php_fpm_pool "phpdoc" do
+    process_manager "dynamic"
+    max_children 10
+    min_spare_servers 2
+    max_spare_servers 5
+    max_requests 5000
+  end
+
 end

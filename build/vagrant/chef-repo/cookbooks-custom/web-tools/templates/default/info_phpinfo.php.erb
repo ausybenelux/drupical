@@ -9,7 +9,7 @@
     $phpinfo = ob_get_contents();
     ob_end_clean();
 
-    <%= "preg_match('%<style type=\"text/css\">(.*?)</style>.*?(<body>.*</body>)%s', $phpinfo, $matches"; %>
+    <%= "preg_match('%<style type=\"text/css\">(.*?)</style>.*?(<body>.*</body>)%s', $phpinfo, $matches);"; %>
 
     $matches[2] = str_replace('<table>', '<table class="table table-bordered">', $matches[2]);
     $matches[2] = str_replace('<h1>', '<h1 class="page-header">', $matches[2]);

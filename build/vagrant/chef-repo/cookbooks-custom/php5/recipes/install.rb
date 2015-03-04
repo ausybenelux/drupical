@@ -3,6 +3,10 @@
 # Recipe:: install
 #
 
+node.override['php-fpm']['log_dir'] = '/home/vagrant/drupical/logs/'
+node.override['php-fpm']['error_log'] = '/home/vagrant/drupical/logs/php-fpm/php-fpm.log'
+
+
 if node["php5"]["version"] == "5.3"
 
 elsif node["php5"]["version"] == "5.4"
@@ -45,19 +49,6 @@ node['config']['vhosts'].each do |key, vhost|
     php_options php_settings
   end
 
-end
-
-#
-node['config']['web_tools']['tools'].each do |key, tool|
-  if tool['install'] == true
-    php_fpm_pool key do
-      process_manager "dynamic"
-      max_children 10
-      min_spare_servers 2
-      max_spare_servers 5
-      max_requests 5000
-    end
-  end
 end
 
 file "/etc/apache2/conf-available/php-fpm.conf" do

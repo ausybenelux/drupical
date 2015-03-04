@@ -52,4 +52,12 @@ if node['config']['web_tools']['tools']['opcachegui']['install']
     server_pool "opcachegui"
   end
 
+  php_fpm_pool "opcachegui" do
+    process_manager "dynamic"
+    max_children 10
+    min_spare_servers 2
+    max_spare_servers 5
+    max_requests 5000
+  end
+
 end

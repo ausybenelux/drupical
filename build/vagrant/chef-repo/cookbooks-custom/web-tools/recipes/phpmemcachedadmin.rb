@@ -24,4 +24,12 @@ if node['config']['web_tools']['tools']['phpmemcachedadmin']['install']
     server_pool "phpmemcachedadmin"
   end
 
+  php_fpm_pool "phpmemcachedadmin" do
+    process_manager "dynamic"
+    max_children 10
+    min_spare_servers 2
+    max_spare_servers 5
+    max_requests 5000
+  end
+  
 end

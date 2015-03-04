@@ -17,6 +17,22 @@ if node['config']['php']['enable_php_composer']
 
 end
 
+
+
+#
+node['config']['php_packages'].each do |php_package, install_php_package|
+
+  if install_php_package
+
+    package php_package do
+      action :install
+      notifies :reload, 'service[php-fpm]', :delayed
+    end
+
+  end
+
+end
+
 #
 if node['config']['php_packages']['php5-xdebug']
 
@@ -25,7 +41,7 @@ if node['config']['php_packages']['php5-xdebug']
     only_if { File.exists?("/etc/php5/mods-available/xdebug.ini") }
   end
 
-  template "/etc/php5/mods-available/xdebug.ini" do
+  template "/etc/php5/mods-available/20-xdebug.ini" do
     source "xdebug.ini"
     mode 0644
     owner "root"
@@ -33,10 +49,9 @@ if node['config']['php_packages']['php5-xdebug']
     action :create
   end
 
-  link "/etc/php5/fpm/conf.d/xdebug.ini" do
-    to "/etc/php5/mods-available/xdebug.ini"
-    only_if { File.directory?("/etc/php5/fpm/conf.d/") }
-    notifies :restart, 'service[apache2]', :delayed
+  file "/etc/php5/fpm/conf.d/20-xdebug.ini" do
+    action :delete
+    only_if { File.exists?("/etc/php5/fpm/conf.d/20-xdebug.ini") }
   end
 
 end
@@ -56,20 +71,8 @@ if node['config']['php_packages']['php5-uprofiler']
     group "root"
     action :create
     notifies :restart, 'service[apache2]', :delayed
+    notifies :reload, 'service[php-fpm]', :delayed
     only_if { !File.exists?("/etc/php5/mods-available/uprofiler.ini") }
-  end
-
-end
-
-#
-node['config']['php_packages'].each do |php_package, install_php_package|
-
-  if install_php_package
-
-    package php_package do
-      action :install
-    end
-
   end
 
 end

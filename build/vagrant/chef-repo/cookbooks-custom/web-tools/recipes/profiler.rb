@@ -21,4 +21,12 @@ if node['config']['web_tools']['tools']['uprofiler_ui']['install']
     server_pool "uprofiler"
   end
 
+  php_fpm_pool "uprofiler" do
+    process_manager "dynamic"
+    max_children 10
+    min_spare_servers 2
+    max_spare_servers 5
+    max_requests 5000
+  end
+
 end
