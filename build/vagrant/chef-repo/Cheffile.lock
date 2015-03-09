@@ -63,6 +63,7 @@ SITE
       build-essential (>= 0.0.0)
       yum (~> 3.0)
       yum-epel (>= 0.0.0)
+    selenium (2.2.2)
     varnish (1.0.2)
       apt (~> 2.4)
       build-essential (>= 0.0.0)
@@ -104,6 +105,7 @@ DEPENDENCIES
   php (>= 0)
   php-fpm (>= 0)
   ruby-ng (>= 0)
+  selenium (>= 0)
   varnish (>= 0)
   vim (>= 0)
 

@@ -3,6 +3,13 @@
   "description": "Base role applied to all nodes.",
   "json_class": "Chef::Role",
   "default_attributes": {
+    "java" : {
+    "install_flavor" : "oracle",
+    "jdk_version" : "7",
+    "oracle" : {
+      "accept_oracle_download_terms" : true
+    }
+    }
   },
   "chef_type": "role",
   "override_attributes": {
@@ -17,8 +24,8 @@
   "run_list": [
     "recipe[base]",
     "recipe[base::cachefilesd]",
-    "recipe[base::zsh]"
-
+    "recipe[base::zsh]",
+    "recipe[java]"
   ],
   "env_run_lists": {
   }

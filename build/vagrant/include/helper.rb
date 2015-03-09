@@ -3,7 +3,15 @@
 
 def vagrant_check_requirements
 
-  if !Vagrant.has_plugin?("vagrant-triggers") || !Vagrant.has_plugin?("vagrant-hostsupdater") || !Vagrant.has_plugin?("vagrant-cachier") || !Vagrant.has_plugin?("vagrant-vbguest") || !Vagrant.has_plugin?("vagrant-persistent-storage") || !Vagrant.has_plugin?("vagrant-hostmanager")
+  Vagrant.require_version ">= 1.6.5"
+
+  if !Vagrant.has_plugin?("vagrant-triggers") || 
+    !Vagrant.has_plugin?("vagrant-hostsupdater") || 
+    !Vagrant.has_plugin?("vagrant-cachier") || 
+    !Vagrant.has_plugin?("vagrant-vbguest") || 
+    !Vagrant.has_plugin?("vagrant-persistent-storage") || 
+    !Vagrant.has_plugin?("vagrant-hostmanager") ||
+    !Vagrant.has_plugin?("vagrant-reload")
 
     puts "#"
     puts "Vagrant needs extra plugin(s)"
@@ -38,6 +46,10 @@ def vagrant_check_requirements
       puts "vagrant plugin install vagrant-hostmanager"
     end
 
+    if !Vagrant.has_plugin?("vagrant-reload")
+      puts "vagrant plugin install vagrant-reload"
+    end
+    
     puts "#"
 
     raise SystemExit
@@ -120,11 +132,14 @@ def vagrant_get_alias(vconfig)
   end
 
   #
-  vconfig['config']['web_tools']['tools'].each do |key, web_tool|
-    if web_tool['install']
-      url_base = vconfig['config']['web_tools']['url_base']
-      tool_alias = web_tool.fetch('alias')
-      aliases.push("#{tool_alias}.#{url_base}")
+  if vconfig['config']['web_tools']['web_tools_install']
+
+    vconfig['config']['web_tools']['tools'].each do |key, web_tool|
+      if web_tool['install']
+        url_base = vconfig['config']['web_tools']['url_base']
+        tool_alias = web_tool.fetch('alias')
+        aliases.push("#{tool_alias}.#{url_base}")
+      end
     end
 
   end
@@ -133,24 +148,70 @@ def vagrant_get_alias(vconfig)
 
 end
 
-$logger = Log4r::Logger.new('vagrantfile')
 def read_ip_address(machine)
+
   command = "LANG=en ifconfig  | grep 'inet addr:'| grep -v '127.0.0.1' | cut -d: -f2 | awk '{ print $1 }'"
   result  = ""
-
-  $logger.info "Processing #{ machine.name } ... "
 
   begin
     # sudo is needed for ifconfig
     machine.communicate.sudo(command) do |type, data|
       result << data if type == :stdout
     end
-    $logger.info "Processing #{ machine.name } ... success"
   rescue
     result = "# NOT-UP"
-    $logger.info "Processing #{ machine.name } ... not running"
   end
 
   # the second inet is more accurate
   result.chomp.split("\n").last
+
 end
+
+def get_vagrant_post_up_message
+
+message = <<EOF
+ ██▓    ██▀███  ▓█████ ▄▄▄██▀▀▀▓█████  ▄████▄  ▄▄▄█████▓   ▓██   ██▓ ▒█████   █    ██  ██▀███     
+▓██▒   ▓██ ▒ ██▒▓█   ▀   ▒██   ▓█   ▀ ▒██▀ ▀█  ▓  ██▒ ▓▒    ▒██  ██▒▒██▒  ██▒ ██  ▓██▒▓██ ▒ ██▒   
+▒██▒   ▓██ ░▄█ ▒▒███     ░██   ▒███   ▒▓█    ▄ ▒ ▓██░ ▒░     ▒██ ██░▒██░  ██▒▓██  ▒██░▓██ ░▄█ ▒   
+░██░   ▒██▀▀█▄  ▒▓█  ▄▓██▄██▓  ▒▓█  ▄ ▒▓▓▄ ▄██▒░ ▓██▓ ░      ░ ▐██▓░▒██   ██░▓▓█  ░██░▒██▀▀█▄     
+░██░   ░██▓ ▒██▒░▒████▒▓███▒   ░▒████▒▒ ▓███▀ ░  ▒██▒ ░      ░ ██▒▓░░ ████▓▒░▒▒█████▓ ░██▓ ▒██▒   
+░▓     ░ ▒▓ ░▒▓░░░ ▒░ ░▒▓▒▒░   ░░ ▒░ ░░ ░▒ ▒  ░  ▒ ░░         ██▒▒▒ ░ ▒░▒░▒░ ░▒▓▒ ▒ ▒ ░ ▒▓ ░▒▓░   
+ ▒ ░     ░▒ ░ ▒░ ░ ░  ░▒ ░▒░    ░ ░  ░  ░  ▒       ░        ▓██ ░▒░   ░ ▒ ▒░ ░░▒░ ░ ░   ░▒ ░ ▒░   
+ ▒ ░     ░░   ░    ░   ░ ░ ░      ░   ░          ░          ▒ ▒ ░░  ░ ░ ░ ▒   ░░░ ░ ░   ░░   ░    
+ ░        ░        ░  ░░   ░      ░  ░░ ░                   ░ ░         ░ ░     ░        ░        
+                                      ░                     ░ ░                                   
+    ██▀███  ▓█████ ▄▄▄       ██▓     ██▓▄▄▄█████▓▓██   ██▓    ▄▄▄       ███▄    █ ▓█████▄         
+   ▓██ ▒ ██▒▓█   ▀▒████▄    ▓██▒    ▓██▒▓  ██▒ ▓▒ ▒██  ██▒   ▒████▄     ██ ▀█   █ ▒██▀ ██▌        
+   ▓██ ░▄█ ▒▒███  ▒██  ▀█▄  ▒██░    ▒██▒▒ ▓██░ ▒░  ▒██ ██░   ▒██  ▀█▄  ▓██  ▀█ ██▒░██   █▌        
+   ▒██▀▀█▄  ▒▓█  ▄░██▄▄▄▄██ ▒██░    ░██░░ ▓██▓ ░   ░ ▐██▓░   ░██▄▄▄▄██ ▓██▒  ▐▌██▒░▓█▄   ▌        
+   ░██▓ ▒██▒░▒████▒▓█   ▓██▒░██████▒░██░  ▒██▒ ░   ░ ██▒▓░    ▓█   ▓██▒▒██░   ▓██░░▒████▓         
+   ░ ▒▓ ░▒▓░░░ ▒░ ░▒▒   ▓▒█░░ ▒░▓  ░░▓    ▒ ░░      ██▒▒▒     ▒▒   ▓▒█░░ ▒░   ▒ ▒  ▒▒▓  ▒         
+     ░▒ ░ ▒░ ░ ░  ░ ▒   ▒▒ ░░ ░ ▒  ░ ▒ ░    ░     ▓██ ░▒░      ▒   ▒▒ ░░ ░░   ░ ▒░ ░ ▒  ▒         
+     ░░   ░    ░    ░   ▒     ░ ░    ▒ ░  ░       ▒ ▒ ░░       ░   ▒      ░   ░ ░  ░ ░  ░         
+      ░        ░  ░     ░  ░    ░  ░ ░            ░ ░              ░  ░         ░    ░            
+                                                  ░ ░                              ░              
+     ██████  █    ██  ▄▄▄▄     ██████ ▄▄▄█████▓ ██▓▄▄▄█████▓ █    ██ ▄▄▄█████▓▓█████              
+   ▒██    ▒  ██  ▓██▒▓█████▄ ▒██    ▒ ▓  ██▒ ▓▒▓██▒▓  ██▒ ▓▒ ██  ▓██▒▓  ██▒ ▓▒▓█   ▀              
+   ░ ▓██▄   ▓██  ▒██░▒██▒ ▄██░ ▓██▄   ▒ ▓██░ ▒░▒██▒▒ ▓██░ ▒░▓██  ▒██░▒ ▓██░ ▒░▒███                
+     ▒   ██▒▓▓█  ░██░▒██░█▀    ▒   ██▒░ ▓██▓ ░ ░██░░ ▓██▓ ░ ▓▓█  ░██░░ ▓██▓ ░ ▒▓█  ▄              
+   ▒██████▒▒▒▒█████▓ ░▓█  ▀█▓▒██████▒▒  ▒██▒ ░ ░██░  ▒██▒ ░ ▒▒█████▓   ▒██▒ ░ ░▒████▒             
+   ▒ ▒▓▒ ▒ ░░▒▓▒ ▒ ▒ ░▒▓███▀▒▒ ▒▓▒ ▒ ░  ▒ ░░   ░▓    ▒ ░░   ░▒▓▒ ▒ ▒   ▒ ░░   ░░ ▒░ ░             
+   ░ ░▒  ░ ░░░▒░ ░ ░ ▒░▒   ░ ░ ░▒  ░ ░    ░     ▒ ░    ░    ░░▒░ ░ ░     ░     ░ ░  ░             
+   ░  ░  ░   ░░░ ░ ░  ░    ░ ░  ░  ░    ░       ▒ ░  ░       ░░░ ░ ░   ░         ░                
+         ░     ░      ░            ░            ░              ░                 ░  ░             
+                           ░                                                                      
+             ███▄ ▄███▓▓██   ██▓    ▒█████   █     █░███▄    █                                    
+            ▓██▒▀█▀ ██▒ ▒██  ██▒   ▒██▒  ██▒▓█░ █ ░█░██ ▀█   █                                    
+            ▓██    ▓██░  ▒██ ██░   ▒██░  ██▒▒█░ █ ░█▓██  ▀█ ██▒                                   
+            ▒██    ▒██   ░ ▐██▓░   ▒██   ██░░█░ █ ░█▓██▒  ▐▌██▒                                   
+            ▒██▒   ░██▒  ░ ██▒▓░   ░ ████▓▒░░░██▒██▓▒██░   ▓██░                                   
+            ░ ▒░   ░  ░   ██▒▒▒    ░ ▒░▒░▒░ ░ ▓░▒ ▒ ░ ▒░   ▒ ▒                                    
+            ░  ░      ░ ▓██ ░▒░      ░ ▒ ▒░   ▒ ░ ░ ░ ░░   ░ ▒░                                   
+            ░      ░    ▒ ▒ ░░     ░ ░ ░ ▒    ░   ░    ░   ░ ░                                    
+                   ░    ░ ░            ░ ░      ░            ░                                    
+                        ░ ░                                                                       
+EOF
+
+return message
+
+end  

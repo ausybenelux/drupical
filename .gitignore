@@ -3,6 +3,7 @@
 .vagrant/*
 
 logs/apache2/*
+logs/php-fpm/*
 
 build/vagrant/chef-repo/tmp/*
 build/vagrant/chef-repo/cookbooks/*

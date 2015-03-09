@@ -1,0 +1,21 @@
+{
+  "name": "testing",
+  "description": "testing role.",
+  "json_class": "Chef::Role",
+  "default_attributes": {
+  },
+  "chef_type": "role",
+  "override_attributes": {
+  },
+  "chef_type": "role",
+  "run_list": [
+    "recipe[selenium::default]",
+    "recipe[testing::default]",
+    "recipe[testing-selenium::default]",
+    "recipe[testing-phpunit::default]"
+
+  ],
+
+  "env_run_lists": {
+  }
+}

@@ -6,17 +6,10 @@
   },
   "chef_type": "role",
   "override_attributes": {
-    "authorization": {
-      "sudo": {
-        "users": "vagrant",
-        "passwordless": true
-      }
-    }
   },
   "chef_type": "role",
   "run_list": [
-    "recipe[base::default]",
-    "recipe[base::cachefilesd]"
+    "recipe[frontend::default]"
   ],
   "env_run_lists": {
   }

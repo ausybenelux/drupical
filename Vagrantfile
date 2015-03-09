@@ -1,6 +1,8 @@
 # -*- mode: ruby -*-
 # vi: set ft=ruby :
 
+VAGRANTFILE_API_VERSION = "2"
+
 begin
 
   load './build/vagrant/include/helper.rb'
@@ -23,7 +25,7 @@ begin
 
 end
 
-Vagrant.configure(2) do |config|
+Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   #
   config.vagrant.host = :detect
@@ -184,7 +186,7 @@ Vagrant.configure(2) do |config|
     chef.add_role("base")
 
     #
-    chef.add_role("database")
+    #chef.add_role("database")
 
     #
     chef.add_role("web")
@@ -199,7 +201,9 @@ Vagrant.configure(2) do |config|
     end
 
     #
-    chef.add_role("web-tools")
+    if vconfig['config']['web_tools']['web_tools_install']
+      chef.add_role("web-tools")
+    end
 
     #
     if vconfig['config']['solr']['solr_install']
@@ -211,7 +215,18 @@ Vagrant.configure(2) do |config|
       chef.add_role("varnish")
     end
 
+    #
+    if vconfig['config']['testing_install']
+      chef.add_role("testing")
+    end
+
   end
+
+  # restart VM
+  config.vm.provision :reload
+
+  # set post_up_message
+  config.vm.post_up_message = get_vagrant_post_up_message
 
   config.trigger.before :destroy do
     if File.exists?('build/backup/file_token')

@@ -13,7 +13,7 @@
     "box_ram": "1G",
     "box_cpu": "2",
 
-    "os_update": true,
+    "os_update": false,
 
     "vagrant_ports": {
       "http": {
@@ -51,6 +51,7 @@
     },
 
     "web_tools": {
+      "web_tools_install": false,
       "url_base": "dev.drupicaldev.local",
       "tools": {
         "info": {
@@ -81,6 +82,8 @@
     },
 
     "varnish_install": false,
+
+    "testing_install": true,
 
     "vhosts": {},
 

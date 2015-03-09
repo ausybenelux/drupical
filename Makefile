@@ -26,6 +26,7 @@ install-vagrant-dependencies:
 	vagrant plugin install vagrant-omnibus
 	vagrant plugin install vagrant-persistent-storage
 	vagrant plugin install vagrant-hostmanager
+	vagrant plugin install vagrant-reload
 
 make-drupal:
 	cd $(PWD)/build/phing ; $(shell pwd) ; phing
