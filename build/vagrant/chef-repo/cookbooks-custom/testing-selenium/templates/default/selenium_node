@@ -1,0 +1,46 @@
+#!/bin/bash
+### BEGIN INIT INFO
+# Provides:          selenium_node
+# Required-Start:    $local_fs $remote_fs $network $syslog
+# Required-Stop:     $local_fs $remote_fs $network $syslog
+# Default-Start:     2 3 4 5
+# Default-Stop:      0 1 6
+# X-Interactive:     true
+# Short-Description: Selenium selenium_node service
+### END INIT INFO
+
+set -e
+
+exec=/usr/bin/java
+args="-jar "/usr/local/selenium/server/selenium-server-standalone.jar" -Dwebdriver.chrome.driver="/usr/local/selenium/drivers/chromedriver/chromedriver" -role node -nodeConfig "/usr/local/selenium/config/selenium_node.json""
+pidfile="/var/run/selenium_node.pid"
+logfile="/var/log/selenium_node.log"
+prog="selenium_node"
+display=":0"
+
+if [ "$1" = "status" ]; then
+  if [ -f "$pidfile" ]; then
+    echo
+    echo "$prog is running ... PID=$(cat $pidfile)."
+  else
+    echo "$prog is not running."
+  fi
+  exit 1
+fi
+
+if [ -f "$pidfile" ]; then
+  PID=$(cat $pidfile)
+  if [ "$1" = "restart" -o "$1" = "stop" ]; then
+    kill $PID
+    rm $pidfile
+  fi
+fi
+
+if [ "$1" = "start" -o "$1" = "restart" ]; then
+  if [ ! -f "$pidfile" ]; then
+    export DISPLAY=$display
+    nohup $exec $args >> $logfile 2>&1 &
+    PID=$!
+    echo $PID > $pidfile
+  fi
+fi
