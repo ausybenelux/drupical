@@ -1,8 +1,4 @@
 
-include_recipe 'testing-selenium::xvfb'
-
-include_recipe 'testing-selenium::browsers'
-
 selenium_hub 'selenium_hub' do
   host 'localhost'
   action :install
@@ -16,18 +12,11 @@ selenium_node 'selenium_node' do
       browserName: 'chrome',
       maxInstances: 5,
       seleniumProtocol: 'WebDriver'
-    },
-    {
-      browserName: 'firefox',
-      maxInstances: 5,
-      seleniumProtocol: 'WebDriver'
-    },
-    {
-      browserName: 'htmlunit',
-      maxInstances: 1,
-      platform: 'ANY',
-      seleniumProtocol: 'WebDriver'
     }
   ]
   action :install
 end
+
+include_recipe 'testing-selenium::xvfb'
+
+include_recipe 'testing-selenium::browsers'
