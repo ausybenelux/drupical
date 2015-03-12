@@ -12,8 +12,8 @@
     "recipe[selenium::default]",
     "recipe[testing::default]",
     "recipe[testing-selenium::default]",
-    "recipe[testing-phpunit::default]"
-
+    "recipe[testing-phpunit::default]",
+    "recipe[testing-munin::default]"
   ],
 
   "env_run_lists": {

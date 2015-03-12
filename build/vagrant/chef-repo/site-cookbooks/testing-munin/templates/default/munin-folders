@@ -1,0 +1,5 @@
+dbdir	/var/lib/munin
+htmldir /var/cache/munin/www
+logdir 	/var/log/munin
+rundir  /var/run/munin
+tmpldir	/etc/munin/templates/munstrap

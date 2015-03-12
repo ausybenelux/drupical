@@ -37,7 +37,7 @@ node['config']['vhosts'].each do |key, vhost|
 
   php_settings = {}
   vhost['php_settings'].each do |setting_key, value|
-    php_settings["php_admin_value[#{setting_key}]"] = "value"
+    php_settings["php_admin_value[#{setting_key}]"] = value
   end
 
   php_fpm_pool vhost['server_name'].split('.')[0] do

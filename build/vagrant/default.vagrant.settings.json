@@ -51,7 +51,7 @@
     },
 
     "web_tools": {
-      "web_tools_install": false,
+      "web_tools_install": true,
       "url_base": "dev.drupicaldev.local",
       "tools": {
         "info": {
@@ -77,6 +77,10 @@
         "phpdoc": {
           "install": true,
           "alias": "phpdoc"
+        },
+        "munin": {
+          "install": true,
+          "alias": "munin"
         }
       }
     },
@@ -88,7 +92,7 @@
     "vhosts": {},
 
     "php": {
-      "php_version": "5.4",
+      "php_version": "5.3",
       "enable_php_phing": true,
       "enable_php_composer": true
     },

@@ -851,3 +851,923 @@
 [10-Mar-2015 21:53:23] NOTICE: ready to handle connections
 [10-Mar-2015 21:53:30] NOTICE: Finishing ...
 [10-Mar-2015 21:53:30] NOTICE: exiting, bye-bye!
+[11-Mar-2015 21:24:17] WARNING: [pool drupicaldev] pm.start_servers is not set. It's been set to 3.
+[11-Mar-2015 21:24:17] NOTICE: configuration file /etc/php5/fpm/php-fpm.conf test is successful
+
+[11-Mar-2015 21:24:17] WARNING: [pool drupicaldev] pm.start_servers is not set. It's been set to 3.
+[11-Mar-2015 21:24:17] NOTICE: fpm is running, pid 4370
+[11-Mar-2015 21:24:17] NOTICE: ready to handle connections
+[11-Mar-2015 21:25:11] NOTICE: Finishing ...
+[11-Mar-2015 21:25:11] NOTICE: exiting, bye-bye!
+[11-Mar-2015 21:25:11] WARNING: [pool drupicaldev] pm.start_servers is not set. It's been set to 3.
+[11-Mar-2015 21:25:11] NOTICE: fpm is running, pid 5415
+[11-Mar-2015 21:25:11] NOTICE: ready to handle connections
+[11-Mar-2015 21:25:17] NOTICE: Finishing ...
+[11-Mar-2015 21:25:17] NOTICE: exiting, bye-bye!
+[11-Mar-2015 21:32:59] WARNING: [pool drupicaldev] pm.start_servers is not set. It's been set to 3.
+[11-Mar-2015 21:32:59] NOTICE: configuration file /etc/php5/fpm/php-fpm.conf test is successful
+
+[11-Mar-2015 21:32:59] WARNING: [pool drupicaldev] pm.start_servers is not set. It's been set to 3.
+[11-Mar-2015 21:32:59] NOTICE: fpm is running, pid 4323
+[11-Mar-2015 21:32:59] NOTICE: ready to handle connections
+[11-Mar-2015 21:33:23] NOTICE: Finishing ...
+[11-Mar-2015 21:33:23] NOTICE: exiting, bye-bye!
+[11-Mar-2015 21:33:23] WARNING: [pool drupicaldev] pm.start_servers is not set. It's been set to 3.
+[11-Mar-2015 21:33:23] NOTICE: fpm is running, pid 4484
+[11-Mar-2015 21:33:23] NOTICE: ready to handle connections
+[11-Mar-2015 21:40:42] NOTICE: Finishing ...
+[11-Mar-2015 21:40:42] NOTICE: exiting, bye-bye!
+[11-Mar-2015 21:42:16] WARNING: [pool drupicaldev] pm.start_servers is not set. It's been set to 3.
+[11-Mar-2015 21:42:16] NOTICE: configuration file /etc/php5/fpm/php-fpm.conf test is successful
+
+[11-Mar-2015 21:42:16] WARNING: [pool drupicaldev] pm.start_servers is not set. It's been set to 3.
+[11-Mar-2015 21:42:16] NOTICE: fpm is running, pid 4289
+[11-Mar-2015 21:42:16] NOTICE: ready to handle connections
+[11-Mar-2015 21:43:06] NOTICE: Finishing ...
+[11-Mar-2015 21:43:06] NOTICE: exiting, bye-bye!
+[11-Mar-2015 21:43:06] WARNING: [pool drupicaldev] pm.start_servers is not set. It's been set to 3.
+[11-Mar-2015 21:43:06] WARNING: [pool munin] pm.start_servers is not set. It's been set to 3.
+[11-Mar-2015 21:43:06] NOTICE: fpm is running, pid 4732
+[11-Mar-2015 21:43:06] NOTICE: ready to handle connections
+[11-Mar-2015 21:43:14] NOTICE: Finishing ...
+[11-Mar-2015 21:43:14] NOTICE: exiting, bye-bye!
+[11-Mar-2015 21:51:38] WARNING: [pool drupicaldev] pm.start_servers is not set. It's been set to 3.
+[11-Mar-2015 21:51:38] WARNING: [pool munin] pm.start_servers is not set. It's been set to 3.
+[11-Mar-2015 21:51:38] NOTICE: configuration file /etc/php5/fpm/php-fpm.conf test is successful
+
+[11-Mar-2015 21:51:38] WARNING: [pool drupicaldev] pm.start_servers is not set. It's been set to 3.
+[11-Mar-2015 21:51:38] WARNING: [pool munin] pm.start_servers is not set. It's been set to 3.
+[11-Mar-2015 21:51:38] NOTICE: fpm is running, pid 4338
+[11-Mar-2015 21:51:38] NOTICE: ready to handle connections
+[11-Mar-2015 21:52:53] NOTICE: Finishing ...
+[11-Mar-2015 21:52:53] NOTICE: exiting, bye-bye!
+[11-Mar-2015 21:52:53] WARNING: [pool phpmemcachedadmin] pm.start_servers is not set. It's been set to 3.
+[11-Mar-2015 21:52:53] WARNING: [pool phpdoc] pm.start_servers is not set. It's been set to 3.
+[11-Mar-2015 21:52:53] WARNING: [pool opcachegui] pm.start_servers is not set. It's been set to 3.
+[11-Mar-2015 21:52:53] WARNING: [pool adminer] pm.start_servers is not set. It's been set to 3.
+[11-Mar-2015 21:52:53] WARNING: [pool drupicaldev] pm.start_servers is not set. It's been set to 3.
+[11-Mar-2015 21:52:53] WARNING: [pool munin] pm.start_servers is not set. It's been set to 3.
+[11-Mar-2015 21:52:53] WARNING: [pool info] pm.start_servers is not set. It's been set to 3.
+[11-Mar-2015 21:52:53] NOTICE: fpm is running, pid 4857
+[11-Mar-2015 21:52:53] NOTICE: ready to handle connections
+[11-Mar-2015 21:53:01] NOTICE: Finishing ...
+[11-Mar-2015 21:53:01] NOTICE: exiting, bye-bye!
+[11-Mar-2015 22:17:26] NOTICE: configuration file /etc/php5/fpm/php-fpm.conf test is successful
+
+[11-Mar-2015 22:17:26] NOTICE: fpm is running, pid 16248
+[11-Mar-2015 22:17:26] NOTICE: ready to handle connections
+[11-Mar-2015 22:17:26] NOTICE: configuration file /etc/php5/fpm/php-fpm.conf test is successful
+
+[11-Mar-2015 22:17:26] NOTICE: Finishing ...
+[11-Mar-2015 22:17:26] NOTICE: exiting, bye-bye!
+[11-Mar-2015 22:17:26] NOTICE: fpm is running, pid 16506
+[11-Mar-2015 22:17:26] NOTICE: ready to handle connections
+[11-Mar-2015 22:18:37] WARNING: [pool drupicaldev] pm.start_servers is not set. It's been set to 3.
+[11-Mar-2015 22:18:37] NOTICE: configuration file /etc/php5/fpm/php-fpm.conf test is successful
+
+[11-Mar-2015 22:18:37] NOTICE: Finishing ...
+[11-Mar-2015 22:18:37] NOTICE: exiting, bye-bye!
+[11-Mar-2015 22:18:37] WARNING: [pool drupicaldev] pm.start_servers is not set. It's been set to 3.
+[11-Mar-2015 22:18:37] NOTICE: fpm is running, pid 19218
+[11-Mar-2015 22:18:37] NOTICE: ready to handle connections
+[11-Mar-2015 22:18:37] WARNING: [pool drupicaldev] pm.start_servers is not set. It's been set to 3.
+[11-Mar-2015 22:18:37] NOTICE: configuration file /etc/php5/fpm/php-fpm.conf test is successful
+
+[11-Mar-2015 22:18:37] NOTICE: Finishing ...
+[11-Mar-2015 22:18:37] NOTICE: exiting, bye-bye!
+[11-Mar-2015 22:18:37] WARNING: [pool drupicaldev] pm.start_servers is not set. It's been set to 3.
+[11-Mar-2015 22:18:37] NOTICE: fpm is running, pid 19377
+[11-Mar-2015 22:18:37] NOTICE: ready to handle connections
+[11-Mar-2015 22:18:46] WARNING: [pool drupicaldev] pm.start_servers is not set. It's been set to 3.
+[11-Mar-2015 22:18:46] NOTICE: configuration file /etc/php5/fpm/php-fpm.conf test is successful
+
+[11-Mar-2015 22:18:46] NOTICE: Finishing ...
+[11-Mar-2015 22:18:46] NOTICE: exiting, bye-bye!
+[11-Mar-2015 22:18:47] WARNING: [pool drupicaldev] pm.start_servers is not set. It's been set to 3.
+[11-Mar-2015 22:18:47] NOTICE: fpm is running, pid 19742
+[11-Mar-2015 22:18:47] NOTICE: ready to handle connections
+[11-Mar-2015 22:18:47] WARNING: [pool drupicaldev] pm.start_servers is not set. It's been set to 3.
+[11-Mar-2015 22:18:47] NOTICE: configuration file /etc/php5/fpm/php-fpm.conf test is successful
+
+[11-Mar-2015 22:18:47] NOTICE: Finishing ...
+[11-Mar-2015 22:18:47] NOTICE: exiting, bye-bye!
+[11-Mar-2015 22:18:47] WARNING: [pool drupicaldev] pm.start_servers is not set. It's been set to 3.
+[11-Mar-2015 22:18:47] NOTICE: fpm is running, pid 19941
+[11-Mar-2015 22:18:47] NOTICE: ready to handle connections
+[11-Mar-2015 22:18:49] WARNING: [pool drupicaldev] pm.start_servers is not set. It's been set to 3.
+[11-Mar-2015 22:18:49] NOTICE: configuration file /etc/php5/fpm/php-fpm.conf test is successful
+
+[11-Mar-2015 22:18:49] NOTICE: Finishing ...
+[11-Mar-2015 22:18:49] NOTICE: exiting, bye-bye!
+[11-Mar-2015 22:18:49] WARNING: [pool drupicaldev] pm.start_servers is not set. It's been set to 3.
+[11-Mar-2015 22:18:49] NOTICE: fpm is running, pid 20049
+[11-Mar-2015 22:18:49] NOTICE: ready to handle connections
+[11-Mar-2015 22:18:50] WARNING: [pool drupicaldev] pm.start_servers is not set. It's been set to 3.
+[11-Mar-2015 22:18:50] NOTICE: configuration file /etc/php5/fpm/php-fpm.conf test is successful
+
+[11-Mar-2015 22:18:50] NOTICE: Finishing ...
+[11-Mar-2015 22:18:50] NOTICE: exiting, bye-bye!
+[11-Mar-2015 22:18:50] WARNING: [pool drupicaldev] pm.start_servers is not set. It's been set to 3.
+[11-Mar-2015 22:18:50] NOTICE: fpm is running, pid 20215
+[11-Mar-2015 22:18:50] NOTICE: ready to handle connections
+[11-Mar-2015 22:19:00] WARNING: [pool drupicaldev] pm.start_servers is not set. It's been set to 3.
+[11-Mar-2015 22:19:00] NOTICE: configuration file /etc/php5/fpm/php-fpm.conf test is successful
+
+[11-Mar-2015 22:19:00] NOTICE: Finishing ...
+[11-Mar-2015 22:19:00] NOTICE: exiting, bye-bye!
+[11-Mar-2015 22:19:00] WARNING: [pool drupicaldev] pm.start_servers is not set. It's been set to 3.
+[11-Mar-2015 22:19:00] NOTICE: fpm is running, pid 20388
+[11-Mar-2015 22:19:00] NOTICE: ready to handle connections
+[11-Mar-2015 22:19:02] WARNING: [pool drupicaldev] pm.start_servers is not set. It's been set to 3.
+[11-Mar-2015 22:19:02] NOTICE: configuration file /etc/php5/fpm/php-fpm.conf test is successful
+
+[11-Mar-2015 22:19:02] NOTICE: Finishing ...
+[11-Mar-2015 22:19:02] NOTICE: exiting, bye-bye!
+[11-Mar-2015 22:19:02] WARNING: [pool drupicaldev] pm.start_servers is not set. It's been set to 3.
+[11-Mar-2015 22:19:02] NOTICE: fpm is running, pid 20923
+[11-Mar-2015 22:19:02] NOTICE: ready to handle connections
+[11-Mar-2015 22:21:48] NOTICE: Finishing ...
+[11-Mar-2015 22:21:48] NOTICE: exiting, bye-bye!
+[11-Mar-2015 22:21:48] WARNING: [pool phpmemcachedadmin] pm.start_servers is not set. It's been set to 3.
+[11-Mar-2015 22:21:48] WARNING: [pool phpdoc] pm.start_servers is not set. It's been set to 3.
+[11-Mar-2015 22:21:48] WARNING: [pool opcachegui] pm.start_servers is not set. It's been set to 3.
+[11-Mar-2015 22:21:48] WARNING: [pool adminer] pm.start_servers is not set. It's been set to 3.
+[11-Mar-2015 22:21:48] WARNING: [pool drupicaldev] pm.start_servers is not set. It's been set to 3.
+[11-Mar-2015 22:21:48] WARNING: [pool info] pm.start_servers is not set. It's been set to 3.
+[11-Mar-2015 22:21:48] NOTICE: fpm is running, pid 30144
+[11-Mar-2015 22:21:48] NOTICE: ready to handle connections
+[11-Mar-2015 22:21:50] NOTICE: Reloading in progress ...
+[11-Mar-2015 22:21:50] NOTICE: reloading: execvp("/usr/sbin/php5-fpm", {"/usr/sbin/php5-fpm", "--fpm-config", "/etc/php5/fpm/php-fpm.conf"})
+[11-Mar-2015 22:21:50] WARNING: [pool phpmemcachedadmin] pm.start_servers is not set. It's been set to 3.
+[11-Mar-2015 22:21:50] WARNING: [pool phpmemcachedadmin] pm.start_servers is not set. It's been set to 3.
+[11-Mar-2015 22:21:50] WARNING: [pool phpdoc] pm.start_servers is not set. It's been set to 3.
+[11-Mar-2015 22:21:50] WARNING: [pool phpdoc] pm.start_servers is not set. It's been set to 3.
+[11-Mar-2015 22:21:50] WARNING: [pool opcachegui] pm.start_servers is not set. It's been set to 3.
+[11-Mar-2015 22:21:50] WARNING: [pool opcachegui] pm.start_servers is not set. It's been set to 3.
+[11-Mar-2015 22:21:50] WARNING: [pool adminer] pm.start_servers is not set. It's been set to 3.
+[11-Mar-2015 22:21:50] WARNING: [pool adminer] pm.start_servers is not set. It's been set to 3.
+[11-Mar-2015 22:21:50] WARNING: [pool drupicaldev] pm.start_servers is not set. It's been set to 3.
+[11-Mar-2015 22:21:50] WARNING: [pool drupicaldev] pm.start_servers is not set. It's been set to 3.
+[11-Mar-2015 22:21:50] WARNING: [pool info] pm.start_servers is not set. It's been set to 3.
+[11-Mar-2015 22:21:50] WARNING: [pool info] pm.start_servers is not set. It's been set to 3.
+[11-Mar-2015 22:21:50] NOTICE: using inherited socket fd=7, "/var/run/php-fpm-phpmemcachedadmin.sock"
+[11-Mar-2015 22:21:50] NOTICE: using inherited socket fd=7, "/var/run/php-fpm-phpmemcachedadmin.sock"
+[11-Mar-2015 22:21:50] NOTICE: using inherited socket fd=8, "/var/run/php-fpm-phpdoc.sock"
+[11-Mar-2015 22:21:50] NOTICE: using inherited socket fd=8, "/var/run/php-fpm-phpdoc.sock"
+[11-Mar-2015 22:21:50] NOTICE: using inherited socket fd=9, "/var/run/php-fpm-opcachegui.sock"
+[11-Mar-2015 22:21:50] NOTICE: using inherited socket fd=9, "/var/run/php-fpm-opcachegui.sock"
+[11-Mar-2015 22:21:50] NOTICE: using inherited socket fd=10, "/var/run/php-fpm-adminer.sock"
+[11-Mar-2015 22:21:50] NOTICE: using inherited socket fd=10, "/var/run/php-fpm-adminer.sock"
+[11-Mar-2015 22:21:50] NOTICE: using inherited socket fd=11, "/var/run/php-fpm-drupicaldev.sock"
+[11-Mar-2015 22:21:50] NOTICE: using inherited socket fd=11, "/var/run/php-fpm-drupicaldev.sock"
+[11-Mar-2015 22:21:50] NOTICE: using inherited socket fd=12, "/var/run/php-fpm-info.sock"
+[11-Mar-2015 22:21:50] NOTICE: using inherited socket fd=12, "/var/run/php-fpm-info.sock"
+[11-Mar-2015 22:21:50] NOTICE: using inherited socket fd=13, "/var/run/php-fpm-www.sock"
+[11-Mar-2015 22:21:50] NOTICE: using inherited socket fd=13, "/var/run/php-fpm-www.sock"
+[11-Mar-2015 22:21:50] NOTICE: fpm is running, pid 30627
+[11-Mar-2015 22:21:50] NOTICE: ready to handle connections
+[11-Mar-2015 22:40:49] NOTICE: Finishing ...
+[11-Mar-2015 22:40:49] NOTICE: exiting, bye-bye!
+[11-Mar-2015 22:42:51] WARNING: [pool phpmemcachedadmin] pm.start_servers is not set. It's been set to 3.
+[11-Mar-2015 22:42:51] WARNING: [pool phpdoc] pm.start_servers is not set. It's been set to 3.
+[11-Mar-2015 22:42:51] WARNING: [pool opcachegui] pm.start_servers is not set. It's been set to 3.
+[11-Mar-2015 22:42:51] WARNING: [pool adminer] pm.start_servers is not set. It's been set to 3.
+[11-Mar-2015 22:42:51] WARNING: [pool drupicaldev] pm.start_servers is not set. It's been set to 3.
+[11-Mar-2015 22:42:51] WARNING: [pool info] pm.start_servers is not set. It's been set to 3.
+[11-Mar-2015 22:42:51] NOTICE: configuration file /etc/php5/fpm/php-fpm.conf test is successful
+
+[11-Mar-2015 22:42:51] WARNING: [pool phpmemcachedadmin] pm.start_servers is not set. It's been set to 3.
+[11-Mar-2015 22:42:51] WARNING: [pool phpdoc] pm.start_servers is not set. It's been set to 3.
+[11-Mar-2015 22:42:51] WARNING: [pool opcachegui] pm.start_servers is not set. It's been set to 3.
+[11-Mar-2015 22:42:51] WARNING: [pool adminer] pm.start_servers is not set. It's been set to 3.
+[11-Mar-2015 22:42:51] WARNING: [pool drupicaldev] pm.start_servers is not set. It's been set to 3.
+[11-Mar-2015 22:42:51] WARNING: [pool info] pm.start_servers is not set. It's been set to 3.
+[11-Mar-2015 22:42:51] NOTICE: fpm is running, pid 4191
+[11-Mar-2015 22:42:51] NOTICE: ready to handle connections
+[11-Mar-2015 22:50:48] NOTICE: Finishing ...
+[11-Mar-2015 22:50:48] NOTICE: exiting, bye-bye!
+[11-Mar-2015 22:50:48] WARNING: [pool phpmemcachedadmin] pm.start_servers is not set. It's been set to 3.
+[11-Mar-2015 22:50:48] WARNING: [pool phpdoc] pm.start_servers is not set. It's been set to 3.
+[11-Mar-2015 22:50:48] WARNING: [pool opcachegui] pm.start_servers is not set. It's been set to 3.
+[11-Mar-2015 22:50:48] WARNING: [pool adminer] pm.start_servers is not set. It's been set to 3.
+[11-Mar-2015 22:50:48] WARNING: [pool drupicaldev] pm.start_servers is not set. It's been set to 3.
+[11-Mar-2015 22:50:48] WARNING: [pool munin] pm.start_servers is not set. It's been set to 3.
+[11-Mar-2015 22:50:48] WARNING: [pool info] pm.start_servers is not set. It's been set to 3.
+[11-Mar-2015 22:50:48] NOTICE: fpm is running, pid 16336
+[11-Mar-2015 22:50:48] NOTICE: ready to handle connections
+[11-Mar-2015 22:50:56] NOTICE: Finishing ...
+[11-Mar-2015 22:50:56] NOTICE: exiting, bye-bye!
+[11-Mar-2015 22:54:36] WARNING: [pool phpmemcachedadmin] pm.start_servers is not set. It's been set to 3.
+[11-Mar-2015 22:54:36] WARNING: [pool phpdoc] pm.start_servers is not set. It's been set to 3.
+[11-Mar-2015 22:54:36] WARNING: [pool opcachegui] pm.start_servers is not set. It's been set to 3.
+[11-Mar-2015 22:54:36] WARNING: [pool adminer] pm.start_servers is not set. It's been set to 3.
+[11-Mar-2015 22:54:36] WARNING: [pool drupicaldev] pm.start_servers is not set. It's been set to 3.
+[11-Mar-2015 22:54:36] WARNING: [pool munin] pm.start_servers is not set. It's been set to 3.
+[11-Mar-2015 22:54:36] WARNING: [pool info] pm.start_servers is not set. It's been set to 3.
+[11-Mar-2015 22:54:36] NOTICE: fpm is running, pid 3668
+[11-Mar-2015 22:54:36] NOTICE: ready to handle connections
+[11-Mar-2015 23:01:49] NOTICE: Finishing ...
+[11-Mar-2015 23:01:49] NOTICE: exiting, bye-bye!
+[11-Mar-2015 23:04:11] WARNING: [pool phpmemcachedadmin] pm.start_servers is not set. It's been set to 3.
+[11-Mar-2015 23:04:11] WARNING: [pool phpdoc] pm.start_servers is not set. It's been set to 3.
+[11-Mar-2015 23:04:11] WARNING: [pool opcachegui] pm.start_servers is not set. It's been set to 3.
+[11-Mar-2015 23:04:11] WARNING: [pool adminer] pm.start_servers is not set. It's been set to 3.
+[11-Mar-2015 23:04:11] WARNING: [pool drupicaldev] pm.start_servers is not set. It's been set to 3.
+[11-Mar-2015 23:04:11] WARNING: [pool munin] pm.start_servers is not set. It's been set to 3.
+[11-Mar-2015 23:04:11] WARNING: [pool info] pm.start_servers is not set. It's been set to 3.
+[11-Mar-2015 23:04:11] NOTICE: configuration file /etc/php5/fpm/php-fpm.conf test is successful
+
+[11-Mar-2015 23:04:11] WARNING: [pool phpmemcachedadmin] pm.start_servers is not set. It's been set to 3.
+[11-Mar-2015 23:04:11] WARNING: [pool phpdoc] pm.start_servers is not set. It's been set to 3.
+[11-Mar-2015 23:04:11] WARNING: [pool opcachegui] pm.start_servers is not set. It's been set to 3.
+[11-Mar-2015 23:04:11] WARNING: [pool adminer] pm.start_servers is not set. It's been set to 3.
+[11-Mar-2015 23:04:11] WARNING: [pool drupicaldev] pm.start_servers is not set. It's been set to 3.
+[11-Mar-2015 23:04:11] WARNING: [pool munin] pm.start_servers is not set. It's been set to 3.
+[11-Mar-2015 23:04:11] WARNING: [pool info] pm.start_servers is not set. It's been set to 3.
+[11-Mar-2015 23:04:11] NOTICE: fpm is running, pid 4336
+[11-Mar-2015 23:04:11] NOTICE: ready to handle connections
+[11-Mar-2015 23:05:16] NOTICE: Finishing ...
+[11-Mar-2015 23:05:16] NOTICE: exiting, bye-bye!
+[11-Mar-2015 23:05:16] WARNING: [pool phpmemcachedadmin] pm.start_servers is not set. It's been set to 3.
+[11-Mar-2015 23:05:16] WARNING: [pool phpdoc] pm.start_servers is not set. It's been set to 3.
+[11-Mar-2015 23:05:16] WARNING: [pool opcachegui] pm.start_servers is not set. It's been set to 3.
+[11-Mar-2015 23:05:16] WARNING: [pool adminer] pm.start_servers is not set. It's been set to 3.
+[11-Mar-2015 23:05:16] WARNING: [pool drupicaldev] pm.start_servers is not set. It's been set to 3.
+[11-Mar-2015 23:05:16] WARNING: [pool munin] pm.start_servers is not set. It's been set to 3.
+[11-Mar-2015 23:05:16] WARNING: [pool info] pm.start_servers is not set. It's been set to 3.
+[11-Mar-2015 23:05:16] NOTICE: fpm is running, pid 5439
+[11-Mar-2015 23:05:16] NOTICE: ready to handle connections
+[11-Mar-2015 23:05:22] NOTICE: Finishing ...
+[11-Mar-2015 23:05:22] NOTICE: exiting, bye-bye!
+[11-Mar-2015 23:18:37] WARNING: [pool phpmemcachedadmin] pm.start_servers is not set. It's been set to 3.
+[11-Mar-2015 23:18:37] WARNING: [pool phpdoc] pm.start_servers is not set. It's been set to 3.
+[11-Mar-2015 23:18:37] WARNING: [pool opcachegui] pm.start_servers is not set. It's been set to 3.
+[11-Mar-2015 23:18:37] WARNING: [pool adminer] pm.start_servers is not set. It's been set to 3.
+[11-Mar-2015 23:18:37] WARNING: [pool drupicaldev] pm.start_servers is not set. It's been set to 3.
+[11-Mar-2015 23:18:37] WARNING: [pool munin] pm.start_servers is not set. It's been set to 3.
+[11-Mar-2015 23:18:37] WARNING: [pool info] pm.start_servers is not set. It's been set to 3.
+[11-Mar-2015 23:18:37] NOTICE: configuration file /etc/php5/fpm/php-fpm.conf test is successful
+
+[11-Mar-2015 23:18:37] WARNING: [pool phpmemcachedadmin] pm.start_servers is not set. It's been set to 3.
+[11-Mar-2015 23:18:37] WARNING: [pool phpdoc] pm.start_servers is not set. It's been set to 3.
+[11-Mar-2015 23:18:37] WARNING: [pool opcachegui] pm.start_servers is not set. It's been set to 3.
+[11-Mar-2015 23:18:37] WARNING: [pool adminer] pm.start_servers is not set. It's been set to 3.
+[11-Mar-2015 23:18:37] WARNING: [pool drupicaldev] pm.start_servers is not set. It's been set to 3.
+[11-Mar-2015 23:18:37] WARNING: [pool munin] pm.start_servers is not set. It's been set to 3.
+[11-Mar-2015 23:18:37] WARNING: [pool info] pm.start_servers is not set. It's been set to 3.
+[11-Mar-2015 23:18:37] NOTICE: fpm is running, pid 4262
+[11-Mar-2015 23:18:37] NOTICE: ready to handle connections
+[11-Mar-2015 23:19:23] NOTICE: Finishing ...
+[11-Mar-2015 23:19:23] NOTICE: exiting, bye-bye!
+[11-Mar-2015 23:19:23] WARNING: [pool phpmemcachedadmin] pm.start_servers is not set. It's been set to 3.
+[11-Mar-2015 23:19:23] WARNING: [pool phpdoc] pm.start_servers is not set. It's been set to 3.
+[11-Mar-2015 23:19:23] WARNING: [pool opcachegui] pm.start_servers is not set. It's been set to 3.
+[11-Mar-2015 23:19:23] WARNING: [pool adminer] pm.start_servers is not set. It's been set to 3.
+[11-Mar-2015 23:19:23] WARNING: [pool drupicaldev] pm.start_servers is not set. It's been set to 3.
+[11-Mar-2015 23:19:23] WARNING: [pool munin] pm.start_servers is not set. It's been set to 3.
+[11-Mar-2015 23:19:23] WARNING: [pool info] pm.start_servers is not set. It's been set to 3.
+[11-Mar-2015 23:19:23] NOTICE: fpm is running, pid 4765
+[11-Mar-2015 23:19:23] NOTICE: ready to handle connections
+[11-Mar-2015 23:19:30] NOTICE: Finishing ...
+[11-Mar-2015 23:19:30] NOTICE: exiting, bye-bye!
+[11-Mar-2015 23:21:31] WARNING: [pool phpmemcachedadmin] pm.start_servers is not set. It's been set to 3.
+[11-Mar-2015 23:21:31] WARNING: [pool phpdoc] pm.start_servers is not set. It's been set to 3.
+[11-Mar-2015 23:21:31] WARNING: [pool opcachegui] pm.start_servers is not set. It's been set to 3.
+[11-Mar-2015 23:21:31] WARNING: [pool adminer] pm.start_servers is not set. It's been set to 3.
+[11-Mar-2015 23:21:31] WARNING: [pool drupicaldev] pm.start_servers is not set. It's been set to 3.
+[11-Mar-2015 23:21:31] WARNING: [pool munin] pm.start_servers is not set. It's been set to 3.
+[11-Mar-2015 23:21:31] WARNING: [pool info] pm.start_servers is not set. It's been set to 3.
+[11-Mar-2015 23:21:31] NOTICE: fpm is running, pid 3573
+[11-Mar-2015 23:21:31] NOTICE: ready to handle connections
+[11-Mar-2015 23:31:06] NOTICE: configuration file /etc/php5/fpm/php-fpm.conf test is successful
+
+[11-Mar-2015 23:31:06] NOTICE: fpm is running, pid 16371
+[11-Mar-2015 23:31:06] NOTICE: ready to handle connections
+[11-Mar-2015 23:31:06] NOTICE: configuration file /etc/php5/fpm/php-fpm.conf test is successful
+
+[11-Mar-2015 23:31:06] NOTICE: Finishing ...
+[11-Mar-2015 23:31:06] NOTICE: exiting, bye-bye!
+[11-Mar-2015 23:31:07] NOTICE: fpm is running, pid 16629
+[11-Mar-2015 23:31:07] NOTICE: ready to handle connections
+[11-Mar-2015 23:32:01] WARNING: [pool drupicaldev] pm.start_servers is not set. It's been set to 3.
+[11-Mar-2015 23:32:01] NOTICE: configuration file /etc/php5/fpm/php-fpm.conf test is successful
+
+[11-Mar-2015 23:32:02] NOTICE: Finishing ...
+[11-Mar-2015 23:32:02] NOTICE: exiting, bye-bye!
+[11-Mar-2015 23:32:02] WARNING: [pool drupicaldev] pm.start_servers is not set. It's been set to 3.
+[11-Mar-2015 23:32:02] NOTICE: fpm is running, pid 19342
+[11-Mar-2015 23:32:02] NOTICE: ready to handle connections
+[11-Mar-2015 23:32:02] WARNING: [pool drupicaldev] pm.start_servers is not set. It's been set to 3.
+[11-Mar-2015 23:32:02] NOTICE: configuration file /etc/php5/fpm/php-fpm.conf test is successful
+
+[11-Mar-2015 23:32:02] NOTICE: Finishing ...
+[11-Mar-2015 23:32:02] NOTICE: exiting, bye-bye!
+[11-Mar-2015 23:32:02] WARNING: [pool drupicaldev] pm.start_servers is not set. It's been set to 3.
+[11-Mar-2015 23:32:02] NOTICE: fpm is running, pid 19501
+[11-Mar-2015 23:32:02] NOTICE: ready to handle connections
+[11-Mar-2015 23:32:07] WARNING: [pool drupicaldev] pm.start_servers is not set. It's been set to 3.
+[11-Mar-2015 23:32:07] NOTICE: configuration file /etc/php5/fpm/php-fpm.conf test is successful
+
+[11-Mar-2015 23:32:07] NOTICE: Finishing ...
+[11-Mar-2015 23:32:07] NOTICE: exiting, bye-bye!
+[11-Mar-2015 23:32:07] WARNING: [pool drupicaldev] pm.start_servers is not set. It's been set to 3.
+[11-Mar-2015 23:32:07] NOTICE: fpm is running, pid 19709
+[11-Mar-2015 23:32:07] NOTICE: ready to handle connections
+[11-Mar-2015 23:32:08] WARNING: [pool drupicaldev] pm.start_servers is not set. It's been set to 3.
+[11-Mar-2015 23:32:08] NOTICE: configuration file /etc/php5/fpm/php-fpm.conf test is successful
+
+[11-Mar-2015 23:32:08] NOTICE: Finishing ...
+[11-Mar-2015 23:32:08] NOTICE: exiting, bye-bye!
+[11-Mar-2015 23:32:08] WARNING: [pool drupicaldev] pm.start_servers is not set. It's been set to 3.
+[11-Mar-2015 23:32:08] NOTICE: fpm is running, pid 19908
+[11-Mar-2015 23:32:08] NOTICE: ready to handle connections
+[11-Mar-2015 23:32:11] WARNING: [pool drupicaldev] pm.start_servers is not set. It's been set to 3.
+[11-Mar-2015 23:32:11] NOTICE: configuration file /etc/php5/fpm/php-fpm.conf test is successful
+
+[11-Mar-2015 23:32:11] NOTICE: Finishing ...
+[11-Mar-2015 23:32:11] NOTICE: exiting, bye-bye!
+[11-Mar-2015 23:32:11] WARNING: [pool drupicaldev] pm.start_servers is not set. It's been set to 3.
+[11-Mar-2015 23:32:11] NOTICE: fpm is running, pid 20016
+[11-Mar-2015 23:32:11] NOTICE: ready to handle connections
+[11-Mar-2015 23:32:11] WARNING: [pool drupicaldev] pm.start_servers is not set. It's been set to 3.
+[11-Mar-2015 23:32:11] NOTICE: configuration file /etc/php5/fpm/php-fpm.conf test is successful
+
+[11-Mar-2015 23:32:11] NOTICE: Finishing ...
+[11-Mar-2015 23:32:11] NOTICE: exiting, bye-bye!
+[11-Mar-2015 23:32:11] WARNING: [pool drupicaldev] pm.start_servers is not set. It's been set to 3.
+[11-Mar-2015 23:32:11] NOTICE: fpm is running, pid 20182
+[11-Mar-2015 23:32:11] NOTICE: ready to handle connections
+[11-Mar-2015 23:32:17] WARNING: [pool drupicaldev] pm.start_servers is not set. It's been set to 3.
+[11-Mar-2015 23:32:17] NOTICE: configuration file /etc/php5/fpm/php-fpm.conf test is successful
+
+[11-Mar-2015 23:32:17] NOTICE: Finishing ...
+[11-Mar-2015 23:32:17] NOTICE: exiting, bye-bye!
+[11-Mar-2015 23:32:17] WARNING: [pool drupicaldev] pm.start_servers is not set. It's been set to 3.
+[11-Mar-2015 23:32:17] NOTICE: fpm is running, pid 20355
+[11-Mar-2015 23:32:17] NOTICE: ready to handle connections
+[11-Mar-2015 23:32:18] WARNING: [pool drupicaldev] pm.start_servers is not set. It's been set to 3.
+[11-Mar-2015 23:32:18] NOTICE: configuration file /etc/php5/fpm/php-fpm.conf test is successful
+
+[11-Mar-2015 23:32:18] NOTICE: Finishing ...
+[11-Mar-2015 23:32:18] NOTICE: exiting, bye-bye!
+[11-Mar-2015 23:32:18] WARNING: [pool drupicaldev] pm.start_servers is not set. It's been set to 3.
+[11-Mar-2015 23:32:18] NOTICE: fpm is running, pid 20890
+[11-Mar-2015 23:32:18] NOTICE: ready to handle connections
+[11-Mar-2015 23:38:53] NOTICE: Finishing ...
+[11-Mar-2015 23:38:53] NOTICE: exiting, bye-bye!
+[11-Mar-2015 23:38:53] WARNING: [pool phpmemcachedadmin] pm.start_servers is not set. It's been set to 3.
+[11-Mar-2015 23:38:53] WARNING: [pool phpdoc] pm.start_servers is not set. It's been set to 3.
+[11-Mar-2015 23:38:53] WARNING: [pool opcachegui] pm.start_servers is not set. It's been set to 3.
+[11-Mar-2015 23:38:53] WARNING: [pool adminer] pm.start_servers is not set. It's been set to 3.
+[11-Mar-2015 23:38:53] WARNING: [pool drupicaldev] pm.start_servers is not set. It's been set to 3.
+[11-Mar-2015 23:38:53] WARNING: [pool info] pm.start_servers is not set. It's been set to 3.
+[11-Mar-2015 23:38:53] NOTICE: fpm is running, pid 1132
+[11-Mar-2015 23:38:53] NOTICE: ready to handle connections
+[11-Mar-2015 23:38:56] NOTICE: Reloading in progress ...
+[11-Mar-2015 23:38:56] NOTICE: reloading: execvp("/usr/sbin/php5-fpm", {"/usr/sbin/php5-fpm", "--fpm-config", "/etc/php5/fpm/php-fpm.conf"})
+[11-Mar-2015 23:38:57] WARNING: [pool phpmemcachedadmin] pm.start_servers is not set. It's been set to 3.
+[11-Mar-2015 23:38:57] WARNING: [pool phpmemcachedadmin] pm.start_servers is not set. It's been set to 3.
+[11-Mar-2015 23:38:57] WARNING: [pool phpdoc] pm.start_servers is not set. It's been set to 3.
+[11-Mar-2015 23:38:57] WARNING: [pool phpdoc] pm.start_servers is not set. It's been set to 3.
+[11-Mar-2015 23:38:57] WARNING: [pool opcachegui] pm.start_servers is not set. It's been set to 3.
+[11-Mar-2015 23:38:57] WARNING: [pool opcachegui] pm.start_servers is not set. It's been set to 3.
+[11-Mar-2015 23:38:57] WARNING: [pool adminer] pm.start_servers is not set. It's been set to 3.
+[11-Mar-2015 23:38:57] WARNING: [pool adminer] pm.start_servers is not set. It's been set to 3.
+[11-Mar-2015 23:38:57] WARNING: [pool drupicaldev] pm.start_servers is not set. It's been set to 3.
+[11-Mar-2015 23:38:57] WARNING: [pool drupicaldev] pm.start_servers is not set. It's been set to 3.
+[11-Mar-2015 23:38:57] WARNING: [pool info] pm.start_servers is not set. It's been set to 3.
+[11-Mar-2015 23:38:57] WARNING: [pool info] pm.start_servers is not set. It's been set to 3.
+[11-Mar-2015 23:38:57] NOTICE: using inherited socket fd=7, "/var/run/php-fpm-phpmemcachedadmin.sock"
+[11-Mar-2015 23:38:57] NOTICE: using inherited socket fd=7, "/var/run/php-fpm-phpmemcachedadmin.sock"
+[11-Mar-2015 23:38:57] NOTICE: using inherited socket fd=8, "/var/run/php-fpm-phpdoc.sock"
+[11-Mar-2015 23:38:57] NOTICE: using inherited socket fd=8, "/var/run/php-fpm-phpdoc.sock"
+[11-Mar-2015 23:38:57] NOTICE: using inherited socket fd=9, "/var/run/php-fpm-opcachegui.sock"
+[11-Mar-2015 23:38:57] NOTICE: using inherited socket fd=9, "/var/run/php-fpm-opcachegui.sock"
+[11-Mar-2015 23:38:57] NOTICE: using inherited socket fd=10, "/var/run/php-fpm-adminer.sock"
+[11-Mar-2015 23:38:57] NOTICE: using inherited socket fd=10, "/var/run/php-fpm-adminer.sock"
+[11-Mar-2015 23:38:57] NOTICE: using inherited socket fd=11, "/var/run/php-fpm-drupicaldev.sock"
+[11-Mar-2015 23:38:57] NOTICE: using inherited socket fd=11, "/var/run/php-fpm-drupicaldev.sock"
+[11-Mar-2015 23:38:57] NOTICE: using inherited socket fd=12, "/var/run/php-fpm-info.sock"
+[11-Mar-2015 23:38:57] NOTICE: using inherited socket fd=12, "/var/run/php-fpm-info.sock"
+[11-Mar-2015 23:38:57] NOTICE: using inherited socket fd=13, "/var/run/php-fpm-www.sock"
+[11-Mar-2015 23:38:57] NOTICE: using inherited socket fd=13, "/var/run/php-fpm-www.sock"
+[11-Mar-2015 23:38:57] NOTICE: fpm is running, pid 1559
+[11-Mar-2015 23:38:57] NOTICE: ready to handle connections
+[11-Mar-2015 23:52:58] WARNING: [pool drupicaldev] pm.start_servers is not set. It's been set to 3.
+[11-Mar-2015 23:52:58] NOTICE: fpm is running, pid 14983
+[11-Mar-2015 23:52:58] NOTICE: ready to handle connections
+[11-Mar-2015 23:53:00] NOTICE: Reloading in progress ...
+[11-Mar-2015 23:53:00] NOTICE: reloading: execvp("/usr/sbin/php5-fpm", {"/usr/sbin/php5-fpm", "--fpm-config", "/etc/php5/fpm/php-fpm.conf"})
+[11-Mar-2015 23:53:00] WARNING: [pool drupicaldev] pm.start_servers is not set. It's been set to 3.
+[11-Mar-2015 23:53:00] WARNING: [pool drupicaldev] pm.start_servers is not set. It's been set to 3.
+[11-Mar-2015 23:53:00] NOTICE: using inherited socket fd=6, "/var/run/php-fpm-drupicaldev.sock"
+[11-Mar-2015 23:53:00] NOTICE: using inherited socket fd=6, "/var/run/php-fpm-drupicaldev.sock"
+[11-Mar-2015 23:53:00] NOTICE: using inherited socket fd=7, "/var/run/php-fpm-www.sock"
+[11-Mar-2015 23:53:00] NOTICE: using inherited socket fd=7, "/var/run/php-fpm-www.sock"
+[11-Mar-2015 23:53:00] NOTICE: fpm is running, pid 15451
+[11-Mar-2015 23:53:00] NOTICE: ready to handle connections
+[12-Mar-2015 00:19:09] WARNING: [pool phpmemcachedadmin] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 00:19:09] WARNING: [pool phpdoc] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 00:19:09] WARNING: [pool opcachegui] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 00:19:09] WARNING: [pool adminer] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 00:19:09] WARNING: [pool drupicaldev] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 00:19:09] WARNING: [pool info] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 00:19:09] NOTICE: fpm is running, pid 2994
+[12-Mar-2015 00:19:09] NOTICE: ready to handle connections
+[12-Mar-2015 00:19:12] NOTICE: Reloading in progress ...
+[12-Mar-2015 00:19:12] NOTICE: reloading: execvp("/usr/sbin/php5-fpm", {"/usr/sbin/php5-fpm", "--fpm-config", "/etc/php5/fpm/php-fpm.conf"})
+[12-Mar-2015 00:19:12] NOTICE: PHP message: PHP Deprecated:  Comments starting with '#' are deprecated in /etc/php5/fpm/conf.d/20-xdebug.ini on line 2 in Unknown on line 0
+Failed loading /usr/lib/php5/20100525/xdebug.so:  /usr/lib/php5/20100525/xdebug.so: cannot open shared object file: No such file or directory
+[12-Mar-2015 00:19:12] WARNING: [pool phpmemcachedadmin] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 00:19:12] WARNING: [pool phpmemcachedadmin] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 00:19:12] WARNING: [pool phpdoc] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 00:19:12] WARNING: [pool phpdoc] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 00:19:12] WARNING: [pool opcachegui] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 00:19:12] WARNING: [pool opcachegui] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 00:19:12] WARNING: [pool adminer] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 00:19:12] WARNING: [pool adminer] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 00:19:12] WARNING: [pool drupicaldev] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 00:19:12] WARNING: [pool drupicaldev] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 00:19:12] WARNING: [pool info] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 00:19:12] WARNING: [pool info] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 00:19:12] NOTICE: using inherited socket fd=6, "/var/run/php-fpm-phpmemcachedadmin.sock"
+[12-Mar-2015 00:19:12] NOTICE: using inherited socket fd=6, "/var/run/php-fpm-phpmemcachedadmin.sock"
+[12-Mar-2015 00:19:12] NOTICE: using inherited socket fd=7, "/var/run/php-fpm-phpdoc.sock"
+[12-Mar-2015 00:19:12] NOTICE: using inherited socket fd=7, "/var/run/php-fpm-phpdoc.sock"
+[12-Mar-2015 00:19:12] NOTICE: using inherited socket fd=8, "/var/run/php-fpm-opcachegui.sock"
+[12-Mar-2015 00:19:12] NOTICE: using inherited socket fd=8, "/var/run/php-fpm-opcachegui.sock"
+[12-Mar-2015 00:19:12] NOTICE: using inherited socket fd=9, "/var/run/php-fpm-adminer.sock"
+[12-Mar-2015 00:19:12] NOTICE: using inherited socket fd=9, "/var/run/php-fpm-adminer.sock"
+[12-Mar-2015 00:19:12] NOTICE: using inherited socket fd=10, "/var/run/php-fpm-drupicaldev.sock"
+[12-Mar-2015 00:19:12] NOTICE: using inherited socket fd=10, "/var/run/php-fpm-drupicaldev.sock"
+[12-Mar-2015 00:19:12] NOTICE: using inherited socket fd=11, "/var/run/php-fpm-info.sock"
+[12-Mar-2015 00:19:12] NOTICE: using inherited socket fd=11, "/var/run/php-fpm-info.sock"
+[12-Mar-2015 00:19:12] NOTICE: using inherited socket fd=12, "/var/run/php-fpm-www.sock"
+[12-Mar-2015 00:19:12] NOTICE: using inherited socket fd=12, "/var/run/php-fpm-www.sock"
+[12-Mar-2015 00:19:12] NOTICE: fpm is running, pid 3420
+[12-Mar-2015 00:19:12] NOTICE: ready to handle connections
+[12-Mar-2015 00:19:18] NOTICE: Finishing ...
+[12-Mar-2015 00:19:18] NOTICE: exiting, bye-bye!
+[12-Mar-2015 00:21:30] WARNING: [pool phpmemcachedadmin] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 00:21:30] WARNING: [pool phpdoc] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 00:21:30] WARNING: [pool opcachegui] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 00:21:30] WARNING: [pool adminer] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 00:21:30] WARNING: [pool drupicaldev] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 00:21:30] WARNING: [pool info] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 00:21:30] NOTICE: configuration file /etc/php5/fpm/php-fpm.conf test is successful
+
+[12-Mar-2015 00:21:30] WARNING: [pool phpmemcachedadmin] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 00:21:30] WARNING: [pool phpdoc] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 00:21:30] WARNING: [pool opcachegui] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 00:21:30] WARNING: [pool adminer] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 00:21:30] WARNING: [pool drupicaldev] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 00:21:30] WARNING: [pool info] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 00:21:30] NOTICE: fpm is running, pid 4338
+[12-Mar-2015 00:21:30] NOTICE: ready to handle connections
+[12-Mar-2015 00:35:04] NOTICE: Finishing ...
+[12-Mar-2015 00:35:04] NOTICE: exiting, bye-bye!
+[12-Mar-2015 00:36:53] WARNING: [pool phpmemcachedadmin] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 00:36:53] WARNING: [pool phpdoc] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 00:36:53] WARNING: [pool opcachegui] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 00:36:53] WARNING: [pool adminer] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 00:36:53] WARNING: [pool drupicaldev] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 00:36:53] WARNING: [pool info] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 00:36:53] NOTICE: configuration file /etc/php5/fpm/php-fpm.conf test is successful
+
+[12-Mar-2015 00:36:53] WARNING: [pool phpmemcachedadmin] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 00:36:53] WARNING: [pool phpdoc] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 00:36:53] WARNING: [pool opcachegui] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 00:36:53] WARNING: [pool adminer] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 00:36:53] WARNING: [pool drupicaldev] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 00:36:53] WARNING: [pool info] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 00:36:53] NOTICE: fpm is running, pid 4316
+[12-Mar-2015 00:36:53] NOTICE: ready to handle connections
+[12-Mar-2015 00:37:09] NOTICE: Finishing ...
+[12-Mar-2015 00:37:09] NOTICE: exiting, bye-bye!
+[12-Mar-2015 00:37:09] WARNING: [pool phpmemcachedadmin] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 00:37:09] WARNING: [pool phpdoc] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 00:37:09] WARNING: [pool opcachegui] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 00:37:09] WARNING: [pool adminer] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 00:37:09] WARNING: [pool drupicaldev] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 00:37:09] WARNING: [pool info] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 00:37:09] NOTICE: fpm is running, pid 4422
+[12-Mar-2015 00:37:09] NOTICE: ready to handle connections
+[12-Mar-2015 00:43:42] NOTICE: Finishing ...
+[12-Mar-2015 00:43:42] NOTICE: exiting, bye-bye!
+[12-Mar-2015 00:45:43] WARNING: [pool phpmemcachedadmin] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 00:45:43] WARNING: [pool phpdoc] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 00:45:43] WARNING: [pool opcachegui] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 00:45:43] WARNING: [pool adminer] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 00:45:43] WARNING: [pool drupicaldev] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 00:45:43] WARNING: [pool info] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 00:45:43] NOTICE: configuration file /etc/php5/fpm/php-fpm.conf test is successful
+
+[12-Mar-2015 00:45:43] WARNING: [pool phpmemcachedadmin] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 00:45:43] WARNING: [pool phpdoc] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 00:45:43] WARNING: [pool opcachegui] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 00:45:43] WARNING: [pool adminer] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 00:45:43] WARNING: [pool drupicaldev] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 00:45:43] WARNING: [pool info] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 00:45:43] NOTICE: fpm is running, pid 4959
+[12-Mar-2015 00:45:43] NOTICE: ready to handle connections
+[12-Mar-2015 00:45:58] NOTICE: Finishing ...
+[12-Mar-2015 00:45:58] NOTICE: exiting, bye-bye!
+[12-Mar-2015 00:45:58] WARNING: [pool phpmemcachedadmin] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 00:45:58] WARNING: [pool phpdoc] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 00:45:58] WARNING: [pool opcachegui] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 00:45:58] WARNING: [pool adminer] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 00:45:58] WARNING: [pool drupicaldev] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 00:45:58] WARNING: [pool info] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 00:45:58] NOTICE: fpm is running, pid 5065
+[12-Mar-2015 00:45:58] NOTICE: ready to handle connections
+[12-Mar-2015 00:48:26] NOTICE: Finishing ...
+[12-Mar-2015 00:48:26] NOTICE: exiting, bye-bye!
+[12-Mar-2015 00:50:50] WARNING: [pool phpmemcachedadmin] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 00:50:50] WARNING: [pool phpdoc] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 00:50:50] WARNING: [pool opcachegui] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 00:50:50] WARNING: [pool adminer] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 00:50:50] WARNING: [pool drupicaldev] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 00:50:50] WARNING: [pool info] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 00:50:50] NOTICE: configuration file /etc/php5/fpm/php-fpm.conf test is successful
+
+[12-Mar-2015 00:50:50] WARNING: [pool phpmemcachedadmin] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 00:50:50] WARNING: [pool phpdoc] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 00:50:50] WARNING: [pool opcachegui] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 00:50:50] WARNING: [pool adminer] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 00:50:50] WARNING: [pool drupicaldev] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 00:50:50] WARNING: [pool info] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 00:50:50] NOTICE: fpm is running, pid 4967
+[12-Mar-2015 00:50:50] NOTICE: ready to handle connections
+[12-Mar-2015 00:51:07] NOTICE: Finishing ...
+[12-Mar-2015 00:51:07] NOTICE: exiting, bye-bye!
+[12-Mar-2015 00:51:08] WARNING: [pool phpmemcachedadmin] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 00:51:08] WARNING: [pool phpdoc] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 00:51:08] WARNING: [pool opcachegui] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 00:51:08] WARNING: [pool adminer] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 00:51:08] WARNING: [pool drupicaldev] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 00:51:08] WARNING: [pool info] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 00:51:08] NOTICE: fpm is running, pid 5073
+[12-Mar-2015 00:51:08] NOTICE: ready to handle connections
+[12-Mar-2015 00:52:42] NOTICE: Finishing ...
+[12-Mar-2015 00:52:42] NOTICE: exiting, bye-bye!
+[12-Mar-2015 00:54:47] WARNING: [pool phpmemcachedadmin] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 00:54:47] WARNING: [pool phpdoc] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 00:54:47] WARNING: [pool opcachegui] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 00:54:47] WARNING: [pool adminer] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 00:54:47] WARNING: [pool drupicaldev] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 00:54:47] WARNING: [pool info] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 00:54:47] NOTICE: configuration file /etc/php5/fpm/php-fpm.conf test is successful
+
+[12-Mar-2015 00:54:47] WARNING: [pool phpmemcachedadmin] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 00:54:47] WARNING: [pool phpdoc] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 00:54:47] WARNING: [pool opcachegui] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 00:54:47] WARNING: [pool adminer] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 00:54:47] WARNING: [pool drupicaldev] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 00:54:47] WARNING: [pool info] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 00:54:47] NOTICE: fpm is running, pid 4300
+[12-Mar-2015 00:54:47] NOTICE: ready to handle connections
+[12-Mar-2015 00:55:00] NOTICE: Finishing ...
+[12-Mar-2015 00:55:00] NOTICE: exiting, bye-bye!
+[12-Mar-2015 00:55:00] WARNING: [pool phpmemcachedadmin] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 00:55:00] WARNING: [pool phpdoc] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 00:55:00] WARNING: [pool opcachegui] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 00:55:00] WARNING: [pool adminer] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 00:55:00] WARNING: [pool drupicaldev] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 00:55:00] WARNING: [pool info] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 00:55:00] NOTICE: fpm is running, pid 4406
+[12-Mar-2015 00:55:00] NOTICE: ready to handle connections
+[12-Mar-2015 01:16:34] WARNING: [pool phpmemcachedadmin] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 01:16:34] WARNING: [pool phpdoc] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 01:16:34] WARNING: [pool opcachegui] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 01:16:34] WARNING: [pool adminer] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 01:16:34] WARNING: [pool drupicaldev] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 01:16:34] WARNING: [pool info] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 01:16:34] NOTICE: fpm is running, pid 3410
+[12-Mar-2015 01:16:34] NOTICE: ready to handle connections
+[12-Mar-2015 01:16:38] NOTICE: Reloading in progress ...
+[12-Mar-2015 01:16:38] NOTICE: reloading: execvp("/usr/sbin/php5-fpm", {"/usr/sbin/php5-fpm", "--fpm-config", "/etc/php5/fpm/php-fpm.conf"})
+[12-Mar-2015 01:16:38] NOTICE: PHP message: PHP Deprecated:  Comments starting with '#' are deprecated in /etc/php5/fpm/conf.d/20-xdebug.ini on line 2 in Unknown on line 0
+[12-Mar-2015 01:16:38] WARNING: [pool phpmemcachedadmin] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 01:16:38] WARNING: [pool phpmemcachedadmin] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 01:16:38] WARNING: [pool phpdoc] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 01:16:38] WARNING: [pool phpdoc] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 01:16:38] WARNING: [pool opcachegui] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 01:16:38] WARNING: [pool opcachegui] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 01:16:38] WARNING: [pool adminer] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 01:16:38] WARNING: [pool adminer] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 01:16:38] WARNING: [pool drupicaldev] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 01:16:38] WARNING: [pool drupicaldev] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 01:16:38] WARNING: [pool info] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 01:16:38] WARNING: [pool info] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 01:16:38] NOTICE: using inherited socket fd=6, "/var/run/php-fpm-phpmemcachedadmin.sock"
+[12-Mar-2015 01:16:38] NOTICE: using inherited socket fd=6, "/var/run/php-fpm-phpmemcachedadmin.sock"
+[12-Mar-2015 01:16:38] NOTICE: using inherited socket fd=7, "/var/run/php-fpm-phpdoc.sock"
+[12-Mar-2015 01:16:38] NOTICE: using inherited socket fd=7, "/var/run/php-fpm-phpdoc.sock"
+[12-Mar-2015 01:16:38] NOTICE: using inherited socket fd=8, "/var/run/php-fpm-opcachegui.sock"
+[12-Mar-2015 01:16:38] NOTICE: using inherited socket fd=8, "/var/run/php-fpm-opcachegui.sock"
+[12-Mar-2015 01:16:38] NOTICE: using inherited socket fd=9, "/var/run/php-fpm-adminer.sock"
+[12-Mar-2015 01:16:38] NOTICE: using inherited socket fd=9, "/var/run/php-fpm-adminer.sock"
+[12-Mar-2015 01:16:38] NOTICE: using inherited socket fd=10, "/var/run/php-fpm-drupicaldev.sock"
+[12-Mar-2015 01:16:38] NOTICE: using inherited socket fd=10, "/var/run/php-fpm-drupicaldev.sock"
+[12-Mar-2015 01:16:38] NOTICE: using inherited socket fd=11, "/var/run/php-fpm-info.sock"
+[12-Mar-2015 01:16:38] NOTICE: using inherited socket fd=11, "/var/run/php-fpm-info.sock"
+[12-Mar-2015 01:16:38] NOTICE: using inherited socket fd=12, "/var/run/php-fpm-www.sock"
+[12-Mar-2015 01:16:38] NOTICE: using inherited socket fd=12, "/var/run/php-fpm-www.sock"
+[12-Mar-2015 01:16:38] NOTICE: fpm is running, pid 3903
+[12-Mar-2015 01:16:38] NOTICE: ready to handle connections
+[12-Mar-2015 01:16:43] NOTICE: Finishing ...
+[12-Mar-2015 01:16:43] NOTICE: exiting, bye-bye!
+[12-Mar-2015 01:19:48] WARNING: [pool phpmemcachedadmin] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 01:19:48] WARNING: [pool phpdoc] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 01:19:48] WARNING: [pool opcachegui] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 01:19:48] WARNING: [pool adminer] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 01:19:48] WARNING: [pool drupicaldev] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 01:19:48] WARNING: [pool info] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 01:19:48] NOTICE: configuration file /etc/php5/fpm/php-fpm.conf test is successful
+
+[12-Mar-2015 01:19:48] WARNING: [pool phpmemcachedadmin] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 01:19:48] WARNING: [pool phpdoc] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 01:19:48] WARNING: [pool opcachegui] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 01:19:48] WARNING: [pool adminer] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 01:19:48] WARNING: [pool drupicaldev] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 01:19:48] WARNING: [pool info] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 01:19:48] NOTICE: fpm is running, pid 4307
+[12-Mar-2015 01:19:48] NOTICE: ready to handle connections
+[12-Mar-2015 01:20:03] NOTICE: Finishing ...
+[12-Mar-2015 01:20:03] NOTICE: exiting, bye-bye!
+[12-Mar-2015 01:20:03] WARNING: [pool phpmemcachedadmin] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 01:20:03] WARNING: [pool phpdoc] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 01:20:03] WARNING: [pool opcachegui] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 01:20:03] WARNING: [pool adminer] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 01:20:03] WARNING: [pool drupicaldev] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 01:20:03] WARNING: [pool info] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 01:20:03] NOTICE: fpm is running, pid 4603
+[12-Mar-2015 01:20:03] NOTICE: ready to handle connections
+[12-Mar-2015 01:22:49] NOTICE: Finishing ...
+[12-Mar-2015 01:22:49] NOTICE: exiting, bye-bye!
+[12-Mar-2015 01:24:36] WARNING: [pool phpmemcachedadmin] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 01:24:36] WARNING: [pool phpdoc] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 01:24:36] WARNING: [pool opcachegui] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 01:24:36] WARNING: [pool adminer] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 01:24:36] WARNING: [pool drupicaldev] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 01:24:36] WARNING: [pool info] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 01:24:36] NOTICE: configuration file /etc/php5/fpm/php-fpm.conf test is successful
+
+[12-Mar-2015 01:24:36] WARNING: [pool phpmemcachedadmin] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 01:24:36] WARNING: [pool phpdoc] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 01:24:36] WARNING: [pool opcachegui] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 01:24:36] WARNING: [pool adminer] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 01:24:36] WARNING: [pool drupicaldev] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 01:24:36] WARNING: [pool info] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 01:24:36] NOTICE: fpm is running, pid 4238
+[12-Mar-2015 01:24:36] NOTICE: ready to handle connections
+[12-Mar-2015 01:24:47] NOTICE: Finishing ...
+[12-Mar-2015 01:24:47] NOTICE: exiting, bye-bye!
+[12-Mar-2015 01:24:47] WARNING: [pool phpmemcachedadmin] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 01:24:47] WARNING: [pool phpdoc] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 01:24:47] WARNING: [pool opcachegui] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 01:24:47] WARNING: [pool adminer] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 01:24:47] WARNING: [pool drupicaldev] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 01:24:47] WARNING: [pool info] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 01:24:47] NOTICE: fpm is running, pid 4372
+[12-Mar-2015 01:24:47] NOTICE: ready to handle connections
+[12-Mar-2015 01:27:33] NOTICE: Finishing ...
+[12-Mar-2015 01:27:33] NOTICE: exiting, bye-bye!
+[12-Mar-2015 01:29:24] WARNING: [pool phpmemcachedadmin] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 01:29:24] WARNING: [pool phpdoc] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 01:29:24] WARNING: [pool opcachegui] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 01:29:24] WARNING: [pool adminer] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 01:29:24] WARNING: [pool drupicaldev] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 01:29:24] WARNING: [pool info] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 01:29:24] NOTICE: configuration file /etc/php5/fpm/php-fpm.conf test is successful
+
+[12-Mar-2015 01:29:24] WARNING: [pool phpmemcachedadmin] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 01:29:24] WARNING: [pool phpdoc] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 01:29:24] WARNING: [pool opcachegui] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 01:29:24] WARNING: [pool adminer] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 01:29:24] WARNING: [pool drupicaldev] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 01:29:24] WARNING: [pool info] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 01:29:24] NOTICE: fpm is running, pid 4233
+[12-Mar-2015 01:29:24] NOTICE: ready to handle connections
+[12-Mar-2015 01:29:39] NOTICE: Finishing ...
+[12-Mar-2015 01:29:39] NOTICE: exiting, bye-bye!
+[12-Mar-2015 01:29:40] WARNING: [pool phpmemcachedadmin] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 01:29:40] WARNING: [pool phpdoc] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 01:29:40] WARNING: [pool opcachegui] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 01:29:40] WARNING: [pool adminer] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 01:29:40] WARNING: [pool drupicaldev] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 01:29:40] WARNING: [pool info] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 01:29:40] NOTICE: fpm is running, pid 4393
+[12-Mar-2015 01:29:40] NOTICE: ready to handle connections
+[12-Mar-2015 01:30:31] NOTICE: Finishing ...
+[12-Mar-2015 01:30:31] NOTICE: exiting, bye-bye!
+[12-Mar-2015 01:32:00] WARNING: [pool phpmemcachedadmin] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 01:32:00] WARNING: [pool phpdoc] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 01:32:00] WARNING: [pool opcachegui] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 01:32:00] WARNING: [pool adminer] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 01:32:00] WARNING: [pool drupicaldev] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 01:32:00] WARNING: [pool info] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 01:32:00] NOTICE: configuration file /etc/php5/fpm/php-fpm.conf test is successful
+
+[12-Mar-2015 01:32:00] WARNING: [pool phpmemcachedadmin] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 01:32:00] WARNING: [pool phpdoc] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 01:32:00] WARNING: [pool opcachegui] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 01:32:00] WARNING: [pool adminer] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 01:32:00] WARNING: [pool drupicaldev] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 01:32:00] WARNING: [pool info] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 01:32:00] NOTICE: fpm is running, pid 4281
+[12-Mar-2015 01:32:00] NOTICE: ready to handle connections
+[12-Mar-2015 01:32:15] NOTICE: Finishing ...
+[12-Mar-2015 01:32:15] NOTICE: exiting, bye-bye!
+[12-Mar-2015 01:32:15] WARNING: [pool phpmemcachedadmin] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 01:32:15] WARNING: [pool phpdoc] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 01:32:15] WARNING: [pool opcachegui] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 01:32:15] WARNING: [pool adminer] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 01:32:15] WARNING: [pool drupicaldev] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 01:32:15] WARNING: [pool info] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 01:32:15] NOTICE: fpm is running, pid 4413
+[12-Mar-2015 01:32:15] NOTICE: ready to handle connections
+[12-Mar-2015 01:35:02] NOTICE: Finishing ...
+[12-Mar-2015 01:35:02] NOTICE: exiting, bye-bye!
+[12-Mar-2015 01:36:46] WARNING: [pool phpmemcachedadmin] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 01:36:46] WARNING: [pool phpdoc] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 01:36:46] WARNING: [pool opcachegui] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 01:36:46] WARNING: [pool adminer] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 01:36:46] WARNING: [pool drupicaldev] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 01:36:46] WARNING: [pool info] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 01:36:46] NOTICE: configuration file /etc/php5/fpm/php-fpm.conf test is successful
+
+[12-Mar-2015 01:36:46] WARNING: [pool phpmemcachedadmin] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 01:36:46] WARNING: [pool phpdoc] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 01:36:46] WARNING: [pool opcachegui] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 01:36:46] WARNING: [pool adminer] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 01:36:46] WARNING: [pool drupicaldev] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 01:36:46] WARNING: [pool info] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 01:36:46] NOTICE: fpm is running, pid 4316
+[12-Mar-2015 01:36:46] NOTICE: ready to handle connections
+[12-Mar-2015 01:37:33] NOTICE: Finishing ...
+[12-Mar-2015 01:37:33] NOTICE: exiting, bye-bye!
+[12-Mar-2015 01:37:33] WARNING: [pool phpmemcachedadmin] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 01:37:33] WARNING: [pool phpdoc] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 01:37:33] WARNING: [pool opcachegui] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 01:37:33] WARNING: [pool adminer] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 01:37:33] WARNING: [pool drupicaldev] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 01:37:33] WARNING: [pool info] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 01:37:33] NOTICE: fpm is running, pid 4747
+[12-Mar-2015 01:37:33] NOTICE: ready to handle connections
+[12-Mar-2015 01:37:39] NOTICE: Finishing ...
+[12-Mar-2015 01:37:39] NOTICE: exiting, bye-bye!
+[12-Mar-2015 01:41:22] WARNING: [pool phpmemcachedadmin] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 01:41:22] WARNING: [pool phpdoc] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 01:41:22] WARNING: [pool opcachegui] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 01:41:22] WARNING: [pool adminer] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 01:41:22] WARNING: [pool drupicaldev] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 01:41:22] WARNING: [pool info] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 01:41:22] NOTICE: configuration file /etc/php5/fpm/php-fpm.conf test is successful
+
+[12-Mar-2015 01:41:22] WARNING: [pool phpmemcachedadmin] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 01:41:22] WARNING: [pool phpdoc] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 01:41:22] WARNING: [pool opcachegui] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 01:41:22] WARNING: [pool adminer] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 01:41:22] WARNING: [pool drupicaldev] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 01:41:22] WARNING: [pool info] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 01:41:22] NOTICE: fpm is running, pid 4318
+[12-Mar-2015 01:41:22] NOTICE: ready to handle connections
+[12-Mar-2015 01:42:00] NOTICE: Finishing ...
+[12-Mar-2015 01:42:00] NOTICE: exiting, bye-bye!
+[12-Mar-2015 01:42:00] WARNING: [pool phpmemcachedadmin] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 01:42:00] WARNING: [pool phpdoc] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 01:42:00] WARNING: [pool opcachegui] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 01:42:00] WARNING: [pool adminer] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 01:42:00] WARNING: [pool drupicaldev] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 01:42:00] WARNING: [pool info] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 01:42:00] NOTICE: fpm is running, pid 4749
+[12-Mar-2015 01:42:00] NOTICE: ready to handle connections
+[12-Mar-2015 01:42:07] NOTICE: Finishing ...
+[12-Mar-2015 01:42:07] NOTICE: exiting, bye-bye!
+[12-Mar-2015 08:31:39] WARNING: [pool phpmemcachedadmin] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 08:31:39] WARNING: [pool phpdoc] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 08:31:39] WARNING: [pool opcachegui] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 08:31:39] WARNING: [pool adminer] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 08:31:39] WARNING: [pool drupicaldev] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 08:31:39] WARNING: [pool info] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 08:31:39] NOTICE: fpm is running, pid 3417
+[12-Mar-2015 08:31:39] NOTICE: ready to handle connections
+[12-Mar-2015 08:31:42] NOTICE: Reloading in progress ...
+[12-Mar-2015 08:31:42] NOTICE: reloading: execvp("/usr/sbin/php5-fpm", {"/usr/sbin/php5-fpm", "--fpm-config", "/etc/php5/fpm/php-fpm.conf"})
+[12-Mar-2015 08:31:42] WARNING: [pool phpmemcachedadmin] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 08:31:42] WARNING: [pool phpmemcachedadmin] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 08:31:42] WARNING: [pool phpdoc] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 08:31:42] WARNING: [pool phpdoc] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 08:31:42] WARNING: [pool opcachegui] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 08:31:42] WARNING: [pool opcachegui] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 08:31:42] WARNING: [pool adminer] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 08:31:42] WARNING: [pool adminer] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 08:31:42] WARNING: [pool drupicaldev] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 08:31:42] WARNING: [pool drupicaldev] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 08:31:42] WARNING: [pool info] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 08:31:42] WARNING: [pool info] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 08:31:42] NOTICE: using inherited socket fd=6, "/var/run/php-fpm-phpmemcachedadmin.sock"
+[12-Mar-2015 08:31:42] NOTICE: using inherited socket fd=6, "/var/run/php-fpm-phpmemcachedadmin.sock"
+[12-Mar-2015 08:31:42] NOTICE: using inherited socket fd=7, "/var/run/php-fpm-phpdoc.sock"
+[12-Mar-2015 08:31:42] NOTICE: using inherited socket fd=7, "/var/run/php-fpm-phpdoc.sock"
+[12-Mar-2015 08:31:42] NOTICE: using inherited socket fd=8, "/var/run/php-fpm-opcachegui.sock"
+[12-Mar-2015 08:31:42] NOTICE: using inherited socket fd=8, "/var/run/php-fpm-opcachegui.sock"
+[12-Mar-2015 08:31:42] NOTICE: using inherited socket fd=9, "/var/run/php-fpm-adminer.sock"
+[12-Mar-2015 08:31:42] NOTICE: using inherited socket fd=9, "/var/run/php-fpm-adminer.sock"
+[12-Mar-2015 08:31:42] NOTICE: using inherited socket fd=10, "/var/run/php-fpm-drupicaldev.sock"
+[12-Mar-2015 08:31:42] NOTICE: using inherited socket fd=10, "/var/run/php-fpm-drupicaldev.sock"
+[12-Mar-2015 08:31:42] NOTICE: using inherited socket fd=11, "/var/run/php-fpm-info.sock"
+[12-Mar-2015 08:31:42] NOTICE: using inherited socket fd=11, "/var/run/php-fpm-info.sock"
+[12-Mar-2015 08:31:42] NOTICE: using inherited socket fd=12, "/var/run/php-fpm-www.sock"
+[12-Mar-2015 08:31:42] NOTICE: using inherited socket fd=12, "/var/run/php-fpm-www.sock"
+[12-Mar-2015 08:31:42] NOTICE: fpm is running, pid 3843
+[12-Mar-2015 08:31:42] NOTICE: ready to handle connections
+[12-Mar-2015 08:31:48] NOTICE: Finishing ...
+[12-Mar-2015 08:31:48] NOTICE: exiting, bye-bye!
+[12-Mar-2015 08:47:30] WARNING: [pool phpmemcachedadmin] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 08:47:30] WARNING: [pool phpdoc] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 08:47:30] WARNING: [pool opcachegui] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 08:47:30] WARNING: [pool adminer] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 08:47:30] WARNING: [pool drupicaldev] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 08:47:30] WARNING: [pool info] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 08:47:30] NOTICE: configuration file /etc/php5/fpm/php-fpm.conf test is successful
+
+[12-Mar-2015 08:47:30] WARNING: [pool phpmemcachedadmin] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 08:47:30] WARNING: [pool phpdoc] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 08:47:30] WARNING: [pool opcachegui] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 08:47:30] WARNING: [pool adminer] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 08:47:30] WARNING: [pool drupicaldev] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 08:47:30] WARNING: [pool info] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 08:47:30] NOTICE: fpm is running, pid 5336
+[12-Mar-2015 08:47:30] NOTICE: ready to handle connections
+[12-Mar-2015 08:49:28] NOTICE: Finishing ...
+[12-Mar-2015 08:49:28] NOTICE: exiting, bye-bye!
+[12-Mar-2015 08:49:28] WARNING: [pool phpmemcachedadmin] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 08:49:28] WARNING: [pool phpdoc] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 08:49:28] WARNING: [pool opcachegui] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 08:49:28] WARNING: [pool adminer] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 08:49:28] WARNING: [pool drupicaldev] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 08:49:28] WARNING: [pool info] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 08:49:28] NOTICE: fpm is running, pid 5710
+[12-Mar-2015 08:49:28] NOTICE: ready to handle connections
+[12-Mar-2015 09:02:10] WARNING: [pool drupicaldev] child 5726 exited with code 255 after 762.046705 seconds from start
+[12-Mar-2015 09:02:10] NOTICE: [pool drupicaldev] child 8406 started
+[12-Mar-2015 09:37:22] WARNING: [pool phpmemcachedadmin] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 09:37:22] WARNING: [pool phpdoc] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 09:37:22] WARNING: [pool opcachegui] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 09:37:22] WARNING: [pool adminer] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 09:37:22] WARNING: [pool drupicaldev] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 09:37:22] WARNING: [pool info] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 09:37:22] NOTICE: fpm is running, pid 3627
+[12-Mar-2015 09:37:22] NOTICE: ready to handle connections
+[12-Mar-2015 09:37:24] NOTICE: Reloading in progress ...
+[12-Mar-2015 09:37:24] NOTICE: reloading: execvp("/usr/sbin/php5-fpm", {"/usr/sbin/php5-fpm", "--fpm-config", "/etc/php5/fpm/php-fpm.conf"})
+[12-Mar-2015 09:37:24] WARNING: [pool phpmemcachedadmin] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 09:37:24] WARNING: [pool phpmemcachedadmin] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 09:37:24] WARNING: [pool phpdoc] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 09:37:24] WARNING: [pool phpdoc] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 09:37:24] WARNING: [pool opcachegui] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 09:37:24] WARNING: [pool opcachegui] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 09:37:24] WARNING: [pool adminer] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 09:37:24] WARNING: [pool adminer] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 09:37:24] WARNING: [pool drupicaldev] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 09:37:24] WARNING: [pool drupicaldev] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 09:37:24] WARNING: [pool info] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 09:37:24] WARNING: [pool info] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 09:37:24] NOTICE: using inherited socket fd=6, "/var/run/php-fpm-phpmemcachedadmin.sock"
+[12-Mar-2015 09:37:24] NOTICE: using inherited socket fd=6, "/var/run/php-fpm-phpmemcachedadmin.sock"
+[12-Mar-2015 09:37:24] NOTICE: using inherited socket fd=7, "/var/run/php-fpm-phpdoc.sock"
+[12-Mar-2015 09:37:24] NOTICE: using inherited socket fd=7, "/var/run/php-fpm-phpdoc.sock"
+[12-Mar-2015 09:37:24] NOTICE: using inherited socket fd=8, "/var/run/php-fpm-opcachegui.sock"
+[12-Mar-2015 09:37:24] NOTICE: using inherited socket fd=8, "/var/run/php-fpm-opcachegui.sock"
+[12-Mar-2015 09:37:24] NOTICE: using inherited socket fd=9, "/var/run/php-fpm-adminer.sock"
+[12-Mar-2015 09:37:24] NOTICE: using inherited socket fd=9, "/var/run/php-fpm-adminer.sock"
+[12-Mar-2015 09:37:24] NOTICE: using inherited socket fd=10, "/var/run/php-fpm-drupicaldev.sock"
+[12-Mar-2015 09:37:24] NOTICE: using inherited socket fd=10, "/var/run/php-fpm-drupicaldev.sock"
+[12-Mar-2015 09:37:24] NOTICE: using inherited socket fd=11, "/var/run/php-fpm-info.sock"
+[12-Mar-2015 09:37:24] NOTICE: using inherited socket fd=11, "/var/run/php-fpm-info.sock"
+[12-Mar-2015 09:37:24] NOTICE: using inherited socket fd=12, "/var/run/php-fpm-www.sock"
+[12-Mar-2015 09:37:24] NOTICE: using inherited socket fd=12, "/var/run/php-fpm-www.sock"
+[12-Mar-2015 09:37:24] NOTICE: fpm is running, pid 4063
+[12-Mar-2015 09:37:24] NOTICE: ready to handle connections
+[12-Mar-2015 09:37:30] NOTICE: Finishing ...
+[12-Mar-2015 09:37:30] NOTICE: exiting, bye-bye!
+[12-Mar-2015 09:40:01] WARNING: [pool phpmemcachedadmin] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 09:40:01] WARNING: [pool phpdoc] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 09:40:01] WARNING: [pool opcachegui] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 09:40:01] WARNING: [pool adminer] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 09:40:01] WARNING: [pool drupicaldev] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 09:40:01] WARNING: [pool info] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 09:40:01] NOTICE: fpm is running, pid 3652
+[12-Mar-2015 09:40:01] NOTICE: ready to handle connections
+[12-Mar-2015 09:41:58] NOTICE: Finishing ...
+[12-Mar-2015 09:41:58] NOTICE: exiting, bye-bye!
+[12-Mar-2015 09:41:58] WARNING: [pool phpmemcachedadmin] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 09:41:58] WARNING: [pool phpdoc] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 09:41:58] WARNING: [pool opcachegui] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 09:41:58] WARNING: [pool adminer] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 09:41:58] WARNING: [pool drupicaldev] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 09:41:58] WARNING: [pool info] pm.start_servers is not set. It's been set to 3.
+[12-Mar-2015 09:41:58] NOTICE: fpm is running, pid 4558
+[12-Mar-2015 09:41:58] NOTICE: ready to handle connections

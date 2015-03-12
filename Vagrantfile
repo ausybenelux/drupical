@@ -173,7 +173,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     #
     chef.cookbooks_path = [
         "./build/vagrant/chef-repo/cookbooks",
-        "./build/vagrant/chef-repo/cookbooks-custom"
+        "./build/vagrant/chef-repo/site-cookbooks"
     ]
 
     #
@@ -186,7 +186,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     chef.add_role("base")
 
     #
-    #chef.add_role("database")
+    chef.add_role("database")
 
     #
     chef.add_role("web")

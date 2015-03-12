@@ -4,11 +4,11 @@
 #
 
 #
-if node['config']['php']['enable_php_phing']
+#if node['config']['php']['enable_php_phing']
 
-  include_recipe 'phing'
+#  include_recipe 'phing'
 
-end
+#end
 
 #
 if node['config']['php']['enable_php_composer']
@@ -36,22 +36,38 @@ end
 #
 if node['config']['php_packages']['php5-xdebug']
 
-  file "/etc/php5/mods-available/xdebug.ini" do
-    action :delete
-    only_if { File.exists?("/etc/php5/mods-available/xdebug.ini") }
-  end
+  if node['config']['php']['php_version'] == '5.3'
 
-  template "/etc/php5/mods-available/20-xdebug.ini" do
-    source "xdebug.ini"
-    mode 0644
-    owner "root"
-    group "root"
-    action :create
-  end
+    file "/etc/php5/conf.d/xdebug.ini" do
+      action :delete
+    end
 
-  file "/etc/php5/fpm/conf.d/20-xdebug.ini" do
-    action :delete
-    only_if { File.exists?("/etc/php5/fpm/conf.d/20-xdebug.ini") }
+    template "/etc/php5/conf.d/xdebug.ini" do
+      source "20090626-xdebug.ini"
+      mode 0644
+      owner "root"
+      group "root"
+      action :create
+    end
+
+  else
+
+    file "/etc/php5/mods-available/xdebug.ini" do
+      action :delete
+    end
+    
+    file "/etc/php5/mods-available/20-xdebug.ini" do
+      action :delete
+    end
+
+    template "/etc/php5/mods-available/20-xdebug.ini" do
+      source "20100525-xdebug.ini"
+      mode 0644
+      owner "root"
+      group "root"
+      action :create
+    end
+  
   end
 
 end
