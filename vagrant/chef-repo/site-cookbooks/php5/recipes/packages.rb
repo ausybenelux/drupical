@@ -1,14 +1,20 @@
 #
-# Cookbook Name:: php5
-# Recipe:: packages
+# Cookbook Name::php5
+# Recipe::packages
 #
 
 #
-#if node['config']['php']['enable_php_phing']
+if node['config']['php']['enable_php_phing']
 
-#  include_recipe 'phing'
+  bash "install-phing" do
+    code <<-EOH
+    (wget http://www.phing.info/get/phing-latest.phar)
+    (chmod +x phing-latest.phar)
+    (sudo mv phing-latest.phar /usr/local/bin/phing)
+    EOH
+  end
 
-#end
+end
 
 #
 if node['config']['php']['enable_php_composer']

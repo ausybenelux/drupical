@@ -42,6 +42,22 @@
           "upload_max_filesize": "64M"
         }
       }
+    },
+
+    "php_packages": {
+      "php-apc": false,
+      "php5-curl": true,
+      "php5-gd": true,
+      "php5-intl": true,
+      "php5-json": true,
+      "php5-mcrypt": true,
+      "php5-memcached": true,
+      "php5-mongo": false,
+      "php5-mysqlnd": true,
+      "php5-uprofiler": false,
+      "php5-xdebug": true,
+      "php5-xmlrpc": false,
+      "php5-xsl": false
     }
 
   }

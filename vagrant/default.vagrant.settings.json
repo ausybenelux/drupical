@@ -13,9 +13,12 @@
     "box_ram": "1G",
     "box_cpu": "2",
 
+    "box_shell": "bash",
+
     "os_update": true,
 
     "vagrant_synced_folders": {
+
       "adminer" : {
         "source" : "./web-tools/adminer/",
         "target" : "/usr/share/adminer/",
@@ -27,7 +30,21 @@
         "target" : "/usr/share/siteinfo/",
         "type" : "nfs",
         "mount_options" : ["rw", "vers=3", "udp", "fsc", "actimeo=1"]
+      },
+
+      "/var/log/php-fpm" : {
+        "source" : "./logs/php-fpm/",
+        "target" : "/var/log/php-fpm/",
+        "type" : "nfs",
+        "mount_options" : ["rw", "vers=3", "udp", "fsc", "actimeo=1"]
+      },
+      "/var/log/apache2" : {
+        "source" : "./logs/apache2/",
+        "target" : "/var/log/apache2/",
+        "type" : "nfs",
+        "mount_options" : ["rw", "vers=3", "udp", "fsc", "actimeo=1"]
       }
+
     },
 
     "solr": {
