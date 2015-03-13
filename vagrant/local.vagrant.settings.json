@@ -32,6 +32,7 @@
         "database_name" : "drupical",
         "docroot" : "/home/vagrant/drupical/docroot/",
         "aliases" : [ "www.drupical.local" ],
+        "enable_ssl" : "false",
         "php_settings": {
           "log_errors": "on",
           "memory_limit": "512M",
