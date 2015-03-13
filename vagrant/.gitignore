@@ -1,5 +1,4 @@
 backup/*
-web-tools/*
 
 logs/apache2/*
 logs/php-fpm/*
