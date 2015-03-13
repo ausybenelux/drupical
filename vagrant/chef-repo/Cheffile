@@ -39,3 +39,5 @@ cookbook 'grunt_cookbook',
 cookbook 'ruby-ng'
 
 cookbook 'selenium'
+
+cookbook 'openssl'

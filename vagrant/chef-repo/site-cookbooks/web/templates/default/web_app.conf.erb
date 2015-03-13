@@ -16,6 +16,14 @@
   <% end -%>
   </Directory>
 
+  <% if @params[:enable_ssl] == 'true' %>
+      <IfModule mod_ssl.c>
+        SSLEngine on
+        SSLCertificateFile /etc/apache2/ssl/<%= @params[:server_name] %>.crt
+        SSLCertificateKeyFile /etc/apache2/ssl/<%= @params[:server_name] %>.key
+      </IfModule>
+  <% end %>
+
   <IfModule mod_fastcgi.c>
 
     AddHandler php-script .php
