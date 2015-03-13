@@ -1,13 +1,3 @@
 .idea
-
-.vagrant/*
-
-logs/apache2/*
-logs/php-fpm/*
-
-build/vagrant/chef-repo/tmp/*
-build/vagrant/chef-repo/cookbooks/*
-
-build/backup/*
-build/web-tools/adminer/*
-build/web-tools/siteinfo/*
+.vagrant
+atlassian-ide-plugin.xml

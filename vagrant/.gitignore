@@ -1,0 +1,11 @@
+backup/*
+web-tools/*
+
+logs/apache2/*
+logs/php-fpm/*
+logs/uprofiler/*
+logs/xdebug/*
+
+chef-repo/tmp/*
+chef-repo/Cheffile.lock
+chef-repo/cookbooks/*
