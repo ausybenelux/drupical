@@ -1,4 +1,5 @@
 .PHONY: info install-chef-librarian download-chef-cookbooks install-vagrant-dependencies make-drupal vagrant-provision vagrant-up
+
 PWD = $(shell pwd)
 VAGRANTPLUG = $(shell vagrant plugin list)
 
@@ -6,29 +7,35 @@ default: info
 
 info:
 	@echo "make info (this)"
+	@echo "make install-base (Install chef librarian & downloads chef cookbooks & start provisioning vagrant)"
 	@echo "make install-chef-librarian"
 	@echo "make download-chef-cookbooks"
 	@echo "make install-vagrant-dependencies"
-	@echo "make make-drupal"
 	@echo "make vagrant-provision"
 	@echo "make vagrant-up"
 
+install-base : install-chef-librarian download-chef-cookbooks vagrant-up
+
 install-chef-librarian:
+	@echo "Installing gem librarian chef"
 	gem install librarian-chef
 
 download-chef-cookbooks:
-	cd $(PWD)/build/vagrant/chef-repo ; librarian-chef install --clean --verbose
-
-install-vagrant-dependencies: check-triggers check-hostsupdater check-cachier check-vbguest check-omnibus check-persistent-storage check-hostmanager check-reload
-
-make-drupal:
-	cd $(PWD)/build/phing ; $(shell pwd) ; phing
+	@echo "Downloading chef cookbooks"
+	cd $(PWD)/chef-repo ; librarian-chef install --clean --verbose
 
 vagrant-provision:
+	@echo "Re-provisioning vagrant box"
 	vagrant reload --provision
 
 vagrant-up:
 	ssh-add ~/.ssh/id_rsa ; vagrant up
+
+vagrant-destroy:
+	@echo "Destroying vagrant box"
+	vagrant destroy -f
+
+install-vagrant-dependencies: check-triggers check-hostsupdater check-cachier check-vbguest check-omnibus check-persistent-storage check-hostmanager check-reload
 
 check-triggers:
 ifneq (,$(findstring triggers, $(VAGRANTPLUG)))

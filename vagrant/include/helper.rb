@@ -173,20 +173,21 @@ class Hash
 
 end
 
-def get_vagrant_post_up_message()
+
+def get_vagrant_post_up_message(aliases)
 
 message = <<EOF
-            _
-           /(|
-          (  :
-         __\  \  _____
-       (____)  `|
-      (____)|   |
-       (____).__|
-        (___)__.|_____
+          _
+         /(|
+        (  :
+       __\  \  _____
+     (____)  `|
+    (____)|   |
+     (____).__|
+      (___)__.|_____
 
 EOF
 
-return message
+  message = message + aliases.to_s
 
-end  
+end

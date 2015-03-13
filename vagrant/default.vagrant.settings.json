@@ -13,6 +13,8 @@
     "box_ram": "1G",
     "box_cpu": "2",
 
+    "box_shell": "bash",
+
     "os_update": true,
 
     "vagrant_synced_folders": {

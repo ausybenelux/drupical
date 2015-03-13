@@ -210,7 +210,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.provision :reload
 
   # set post_up_message
-  config.vm.post_up_message = get_vagrant_post_up_message
+  config.vm.post_up_message = get_vagrant_post_up_message(aliases)
 
   config.trigger.before :destroy do
     if File.exists?('build/backup/file_token')
