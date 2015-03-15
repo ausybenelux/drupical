@@ -48,7 +48,7 @@
     },
 
     "solr": {
-      "solr_install": false,
+      "solr_install": true,
       "solr_version": "3.6.2",
       "solr_checksum": "537426dcbdd0dc82dd5bf16b48b6bcaf87cb4049c1245eea8dcb79eeaf3e7ac6"
     },
@@ -90,7 +90,7 @@
 
     "rmdbs" : "mariadb",
 
-    "varnish_install": false,
+    "varnish_install": true,
 
     "testing" : {
       "testing_install": true,

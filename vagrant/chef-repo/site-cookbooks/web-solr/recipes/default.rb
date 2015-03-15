@@ -6,9 +6,10 @@
 Chef::Log.info('Starting drupical::solr')
 
 node.override['jetty']['port'] = 8390
-node.override['jetty']['version'] = '9.2.9.v20150224'
-node.override['jetty']['link'] = 'http://download.eclipse.org/jetty/stable-9/dist/jetty-distribution-9.2.9.v20150224.tar.gz'
-node.override['jetty']['checksum'] = 'd565cb0abe9c265f573a16c5dfd9ae36e769c908'
+node.override['jetty']['version'] = '9.2.8.v20150217'
+node.override['jetty']['link'] = 'http://archive.eclipse.org/jetty/9.2.8.v20150217/dist/jetty-distribution-9.2.8.v20150217.tar.gz'
+
+node.override['jetty']['checksum'] = '0975f6d682a74a8f413a6d1586f8e067vagra'
 
 node.override['solr']["version"] = node['config']['solr']['solr_version']
 node.override['solr']["checksum"] = node['config']['solr']['solr_checksum']
