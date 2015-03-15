@@ -12,10 +12,7 @@
   },
   "chef_type": "role",
   "run_list": [
-    "recipe[database::default]",
-    "recipe[database::mysql]",
-    "recipe[mysql::client]",
-    "recipe[mysql::server]"
+    "recipe[database]"
   ],
   "env_run_lists": {
   }

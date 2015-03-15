@@ -1,4 +1,4 @@
-name 'zsh'
+name 'base'
 
 maintainer 'Bart Arickx'
 maintainer_email 'bart.arickx@one-agency.be'
@@ -14,10 +14,13 @@ version '0.0.1'
   supports os
 end
 
-%w{ apt git curl vim }.each do |dependancy|
+%w{ apt git curl vim java build-essential}.each do |dependancy|
   depends dependancy
 end
 
-recipe 'base::default',     'Default'
+recipe 'base::default', 'Default'
+recipe 'base::apt', 'Apt'
 recipe 'base::cachefilesd', 'Cachefilesd'
-recipe 'base::zsh',         'Zsh'
+recipe 'base::extra', 'extra'
+recipe 'base::java', 'java'
+recipe 'base::extra_zsh', 'Zsh'

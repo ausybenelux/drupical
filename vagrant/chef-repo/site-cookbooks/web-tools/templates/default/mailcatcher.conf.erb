@@ -1,0 +1,8 @@
+description "Mailcatcher"
+
+start on runlevel [2345]
+stop on runlevel [!2345]
+
+respawn
+
+exec /usr/bin/env /opt/chef/embedded/lib/ruby/gems/1.9.1/gems/mailcatcher-0.6.1/bin/mailcatcher --foreground --http-ip=0.0.0.0

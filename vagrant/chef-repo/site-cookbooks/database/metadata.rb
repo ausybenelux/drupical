@@ -1,4 +1,4 @@
-name 'zsh'
+name 'database'
 
 maintainer 'Bart Arickx'
 maintainer_email 'bart.arickx@one-agency.be'
@@ -14,9 +14,11 @@ version '0.1.0'
   supports os
 end
 
-%w{base mysql}.each do |dependancy|
+%w{base mysql apt}.each do |dependancy|
   depends dependancy
 end
 
 recipe 'database::default', 'Database role cookbook'
 recipe 'database::mysql', 'mysql'
+recipe 'database::mariadb', 'mariadb'
+

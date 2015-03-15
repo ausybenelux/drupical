@@ -21,6 +21,6 @@ end
 
 recipe 'testing-selenium::default' ,'default'
 recipe 'testing-selenium::browsers' ,'browsers'
-recipe 'testing-selenium::xvfb', 'xvfb'
 recipe 'testing-selenium::chrome' , 'browser_chrome'
 recipe 'testing-selenium::firefox' , 'browser_firefox'
+recipe 'testing-selenium::xvfb', 'xvfb'

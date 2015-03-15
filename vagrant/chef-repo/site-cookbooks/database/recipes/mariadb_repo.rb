@@ -1,6 +1,6 @@
 #
-# Cookbook Name:: database
-# Recipe:: from_ondrej_old
+# Cookbook Name::database
+# Recipe::mariadb
 #
 
 apt_repository "mariadb" do
@@ -12,7 +12,7 @@ apt_repository "mariadb" do
   notifies :run, 'execute[apt-get update]', :immediately
 end
 
-apt_preference "mariadb" do
+apt_preference "mariadb-pin" do
   glob '*'
   pin 'origin http://mariadb.mirror.nucleus.be//repo/10.0/ubuntu'
   pin_priority '700'

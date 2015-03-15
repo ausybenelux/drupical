@@ -15,8 +15,7 @@
   },
   "chef_type": "role",
   "run_list": [
-    "recipe[drupical]",
-    "recipe[drupical::drush]"
+    "recipe[drupical]"
   ],
   "env_run_lists": {
   }

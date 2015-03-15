@@ -81,21 +81,35 @@
           "install": true,
           "alias": "phpdoc"
         },
-        "munin": {
-          "install": true,
-          "alias": "munin"
+        "mailcatcher": {
+          "install": false,
+          "alias": "mailcatcher"
         }
       }
     },
 
+    "rmdbs" : "mariadb",
+
     "varnish_install": false,
 
-    "testing_install": true,
+    "testing" : {
+      "testing_install": true,
+      "munin": {
+        "install": true,
+        "alias": "munin"
+      },
+      "selenium": {
+        "install": true
+      },
+      "phpunit": {
+        "install": true
+      }
+    },
 
     "vhosts": {},
 
     "php": {
-      "php_version": "5.3",
+      "php_version": "5.5",
       "enable_php_phing": true,
       "enable_php_composer": true
     },

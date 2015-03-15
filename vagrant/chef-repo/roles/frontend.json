@@ -9,7 +9,7 @@
   },
   "chef_type": "role",
   "run_list": [
-    "recipe[frontend::default]"
+    "recipe[frontend]"
   ],
   "env_run_lists": {
   }

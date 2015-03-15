@@ -9,11 +9,7 @@
   },
   "chef_type": "role",
   "run_list": [
-    "recipe[selenium::default]",
-    "recipe[testing::default]",
-    "recipe[testing-selenium::default]",
-    "recipe[testing-phpunit::default]",
-    "recipe[testing-munin::default]"
+    "recipe[testing]"
   ],
 
   "env_run_lists": {

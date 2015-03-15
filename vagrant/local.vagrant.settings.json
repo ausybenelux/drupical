@@ -4,7 +4,7 @@
     "box_name": "drupicaldev",
     "box_hostname": "drupicaldev",
 
-    "vagrant_debugging": false,
+    "vagrant_debugging": true,
 
     "vagrant_synced_folders" : {
       "build" : {
@@ -21,7 +21,7 @@
     },
 
     "php": {
-      "php_version": "5.5",
+      "php_version": "5.3",
       "enable_php_phing": false,
       "enable_php_composer": false
     },

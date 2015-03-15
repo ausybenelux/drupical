@@ -10,7 +10,7 @@
     "recipe[web-solr::default]",
     "recipe[hipsnip-jetty]",
     "recipe[hipsnip-solr]",
-    "recipe[java::default]"
+    "recipe[base::java]"
   ],
   "env_run_lists": {
   }
