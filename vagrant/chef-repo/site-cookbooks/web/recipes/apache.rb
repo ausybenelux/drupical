@@ -42,6 +42,11 @@ end
 
 #
 
+apache_module "ssl" do
+  enable true
+end
+
+
 directory "/etc/apache2/ssl" do
   owner 'root'
   group 'root'
@@ -51,20 +56,28 @@ end
 
 node['config']['vhosts'].each do |key, vhost|
 
-  enable_ssl = false
-  vhost_port = 80
   if vhost['enable_ssl'] == 'true'
-    enable_ssl = true
-    vhost_port = 443
-   openssl_x509 "/etc/apache2/ssl/#{vhost['server_name']}.crt" do
+
+    openssl_x509 "/etc/apache2/ssl/#{vhost['server_name']}.crt" do
      common_name "#{vhost['server_name']}"
      org "One Agency"
      org_unit "Web"
      country "BE"
-   end
+    end
+
+    web_app "#{key}-ssl" do
+      templates 'web_app.conf.erb'
+      cookbook 'web'
+      server_name vhost['server_name']
+      server_aliases vhost['aliases']
+      docroot vhost['docroot']
+      allow_override 'All'
+      enable_ssl 'true'
+      server_port 443
+      server_pool "#{vhost['server_name'].split('.')[0]}-ssl"
+    end
+
   end
-
-
 
   web_app key do
     templates 'web_app.conf.erb'
@@ -73,8 +86,8 @@ node['config']['vhosts'].each do |key, vhost|
     server_aliases vhost['aliases']
     docroot vhost['docroot']
     allow_override 'All'
-    enable_ssl enable_ssl
-    server_port vhost_port
+    enable_ssl 'false'
+    server_port 80
     server_pool vhost['server_name'].split('.')[0]
   end
 

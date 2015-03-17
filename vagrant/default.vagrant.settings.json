@@ -48,7 +48,7 @@
     },
 
     "solr": {
-      "solr_install": true,
+      "solr_install": false,
       "solr_version": "3.6.2",
       "solr_checksum": "537426dcbdd0dc82dd5bf16b48b6bcaf87cb4049c1245eea8dcb79eeaf3e7ac6"
     },
@@ -58,19 +58,19 @@
       "url_base": "dev.drupicaldev.local",
       "tools": {
         "info": {
-          "install": true,
+          "install": false,
           "alias": "info"
         },
         "adminer": {
-          "install": true,
+          "install": false,
           "alias": "adminer"
         },
         "phpmemcachedadmin": {
-          "install": true,
+          "install": false,
           "alias": "phpmemcachedadmin"
         },
         "opcachegui": {
-          "install": true,
+          "install": false,
           "alias": "opcachegui"
         },
         "uprofiler_ui": {
@@ -78,11 +78,11 @@
           "alias": "uprofiler"
         },
         "phpdoc": {
-          "install": true,
+          "install": false,
           "alias": "phpdoc"
         },
         "mailcatcher": {
-          "install": false,
+          "install": true,
           "alias": "mailcatcher"
         }
       }

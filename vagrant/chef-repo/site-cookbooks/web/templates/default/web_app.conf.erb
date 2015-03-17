@@ -22,6 +22,12 @@
         SSLCertificateFile /etc/apache2/ssl/<%= @params[:server_name] %>.crt
         SSLCertificateKeyFile /etc/apache2/ssl/<%= @params[:server_name] %>.key
       </IfModule>
+
+      <Directory <%= @params[:docroot] %>>
+        RewriteEngine on
+        RewriteCond %{HTTP:X-Forwarded-Proto} !https
+        RewriteRule .* https://%{HTTP_HOST}%{REQUEST_URI} [R,L]
+      </Directory>
   <% end %>
 
   <IfModule mod_fastcgi.c>
