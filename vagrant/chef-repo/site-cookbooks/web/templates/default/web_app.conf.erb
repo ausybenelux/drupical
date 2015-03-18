@@ -22,12 +22,6 @@
         SSLCertificateFile /etc/apache2/ssl/<%= @params[:server_name] %>.crt
         SSLCertificateKeyFile /etc/apache2/ssl/<%= @params[:server_name] %>.key
       </IfModule>
-
-      <Directory <%= @params[:docroot] %>>
-        RewriteEngine on
-        RewriteCond %{HTTP:X-Forwarded-Proto} !https
-        RewriteRule .* https://%{HTTP_HOST}%{REQUEST_URI} [R,L]
-      </Directory>
   <% end %>
 
   <IfModule mod_fastcgi.c>
@@ -84,10 +78,16 @@
   DirectoryIndex <%= [@params[:directory_index]].flatten.join " " %>
   <% end -%>
 
+  <% if @params[:enable_ssl] == 'true' %>
   # Canonical host, <%= @params[:server_name] %>
+  RewriteCond %{HTTPS_HOST}   !^<%= @params[:server_name] %> [NC]
+  RewriteCond %{HTTPS_HOST}   !^$
+  RewriteRule ^/(.*)$        https://<%= @params[:server_name] %>/$1 [L,R=301]
+  <%- else -%>
   RewriteCond %{HTTP_HOST}   !^<%= @params[:server_name] %> [NC]
   RewriteCond %{HTTP_HOST}   !^$
   RewriteRule ^/(.*)$        http://<%= @params[:server_name] %>/$1 [L,R=301]
+  <%- end -%>
 
   RewriteCond %{DOCUMENT_ROOT}/system/maintenance.html -f
   RewriteCond %{SCRIPT_FILENAME} !maintenance.html

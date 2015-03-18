@@ -5,6 +5,7 @@
 
 if node['config']['web_tools']['tools']['mailcatcher']['install']
 
+
   package 'rubygems' do
     action :install
   end
@@ -21,7 +22,9 @@ if node['config']['web_tools']['tools']['mailcatcher']['install']
     action :nothing
   end.run_action(:install)
 
-  gem_package "mailcatcher"
+  gem_package "mailcatcher" do
+    action :install
+  end
 
   template '/etc/init/mailcatcher.conf' do
     cookbook 'web-tools'
@@ -60,6 +63,10 @@ if node['config']['web_tools']['tools']['mailcatcher']['install']
     group 'root'
     mode '0655'
     action :create
+  end
+
+  execute "Start mailcatcher" do
+    command "mailcatcher"
   end
 
 end

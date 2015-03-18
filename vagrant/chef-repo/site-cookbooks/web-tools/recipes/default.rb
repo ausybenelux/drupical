@@ -22,3 +22,6 @@ include_recipe 'web-tools::profiler'
 
 #
 include_recipe 'web-tools::phpdoc'
+
+#
+include_recipe 'web-tools::mailcatcher'

@@ -58,27 +58,27 @@
       "url_base": "dev.drupicaldev.local",
       "tools": {
         "info": {
-          "install": false,
+          "install": true,
           "alias": "info"
         },
         "adminer": {
-          "install": false,
+          "install": true,
           "alias": "adminer"
         },
         "phpmemcachedadmin": {
-          "install": false,
+          "install": true,
           "alias": "phpmemcachedadmin"
         },
         "opcachegui": {
-          "install": false,
+          "install": true,
           "alias": "opcachegui"
         },
         "uprofiler_ui": {
-          "install": false,
+          "install": true,
           "alias": "uprofiler"
         },
         "phpdoc": {
-          "install": false,
+          "install": true,
           "alias": "phpdoc"
         },
         "mailcatcher": {
