@@ -1,8 +1,8 @@
 {
   "config": {
 
-    "box_name": "vagrant",
-    "box_hostname": "drupicaldev",
+    "box_name": "drupal",
+    "box_hostname": "dev",
 
     "vagrant_synced_folders" : {
       "build" : {

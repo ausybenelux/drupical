@@ -17,7 +17,7 @@ include_recipe "mysql::server"
 #
 template '/etc/mysql/conf.d/mysqld_logging.cnf' do
   cookbook 'database'
-  source 'mysqld-logging.cnf.erb'
+  source 'mysql-logging.cnf.erb'
   mode '0644'
 end
 
