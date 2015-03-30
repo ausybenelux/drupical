@@ -5,6 +5,9 @@
 
 Chef::Log.info('Starting database::mysql')
 
+node.override['mysql']['server_root_password'] = node['config']['rmdbs']['server_root_password']
+node.override['mysql']['server_debian_password'] = node['config']['rmdbs']['server_root_password']
+
 #
 include_recipe "mysql::client"
 
@@ -12,12 +15,17 @@ include_recipe "mysql::client"
 include_recipe "mysql::server"
 
 #
-ruby_block "set-mysqld-max_allowed_packet" do
-  block do
-    fe = Chef::Util::FileEdit.new("/etc/mysql/my.cnf")
-    fe.insert_line_after_match(/\[mysqld\]/, "max_allowed_packet = 256M")
-    fe.write_file
-  end
+template '/etc/mysql/conf.d/mysqld_logging.cnf' do
+  cookbook 'database'
+  source 'mysqld-logging.cnf.erb'
+  mode '0644'
+end
+
+#
+template '/etc/mysql/conf.d/mysqld_max_allowed_packet.cnf' do
+  cookbook 'database'
+  source 'mysql-max-allowed-packet.cnf.erb'
+  mode '0644'
 end
 
 #

@@ -1,15 +1,13 @@
 {
   "config": {
 
-    "box_name": "drupicaldev",
+    "box_name": "vagrant",
     "box_hostname": "drupicaldev",
-
-    "vagrant_debugging": true,
 
     "vagrant_synced_folders" : {
       "build" : {
         "source" : "..",
-        "target" : "/home/vagrant/drupical",
+        "target" : "/vagrant",
         "type" : "nfs",
         "mount_options" : ["rw", "vers=3", "udp", "fsc", "actimeo=1"]
       }
@@ -30,7 +28,7 @@
       "drupical" : {
         "server_name" : "drupical.local",
         "database_name" : "drupical",
-        "docroot" : "/home/vagrant/drupical/docroot/",
+        "docroot" : "/vagrant/docroot/",
         "aliases" : [ "www.drupical.local" ],
         "enable_ssl" : "true",
         "php_settings": {
@@ -45,19 +43,14 @@
     },
 
     "php_packages": {
-      "php-apc": false,
       "php5-curl": true,
       "php5-gd": true,
       "php5-intl": true,
       "php5-json": true,
       "php5-mcrypt": true,
       "php5-memcached": true,
-      "php5-mongo": false,
       "php5-mysqlnd": true,
-      "php5-uprofiler": false,
-      "php5-xdebug": true,
-      "php5-xmlrpc": false,
-      "php5-xsl": false
+      "php5-xdebug": true
     }
 
   }

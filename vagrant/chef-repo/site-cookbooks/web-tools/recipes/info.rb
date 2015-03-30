@@ -2,7 +2,6 @@
 # Cookbook Name:: drupical
 # Recipe:: info
 #
-
 if node['config']['web_tools']['tools']['info']['install']
 
   remote_directory '/usr/share/siteinfo' do

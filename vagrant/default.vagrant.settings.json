@@ -1,7 +1,7 @@
 {
   "config": {
 
-    "vagrant_debugging": true,
+    "vagrant_debugging": false,
 
     "box_type": "hashicorp/precise64",
     "box_name": "drupicaldev",
@@ -15,7 +15,7 @@
 
     "box_shell": "bash",
 
-    "os_update": true,
+    "os_update": false,
 
     "vagrant_synced_folders": {
 
@@ -88,7 +88,11 @@
       }
     },
 
-    "rmdbs" : "mariadb",
+    "rmdbs" : {
+      "type" : "mysql",
+      "pass" : "10moioui",
+      "use-mysql-persistent-storage" : true
+    },
 
     "varnish_install": true,
 
