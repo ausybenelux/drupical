@@ -5,8 +5,6 @@
 
 Chef::Log.info('Starting database::mysql')
 
-node.override['mysql']['server_root_password'] = node['config']['rmdbs']['server_root_password']
-node.override['mysql']['server_debian_password'] = node['config']['rmdbs']['server_root_password']
 
 #
 include_recipe "mysql::client"
