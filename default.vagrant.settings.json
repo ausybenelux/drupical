@@ -32,19 +32,12 @@
         "mount_options" : ["rw", "vers=3", "udp", "fsc", "actimeo=1"]
       },
 
-      "/var/log/php-fpm" : {
-        "source" : "./logs/php-fpm/",
-        "target" : "/var/log/php-fpm/",
-        "type" : "nfs",
-        "mount_options" : ["rw", "vers=3", "udp", "fsc", "actimeo=1"]
-      },
-      "/var/log/apache2" : {
-        "source" : "./logs/apache2/",
-        "target" : "/var/log/apache2/",
+      "/var/log" : {
+        "source" : "./logs",
+        "target" : "/var/log",
         "type" : "nfs",
         "mount_options" : ["rw", "vers=3", "udp", "fsc", "actimeo=1"]
       }
-
     },
 
     "solr": {
