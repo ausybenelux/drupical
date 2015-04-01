@@ -5,6 +5,9 @@
 
 Chef::Log.info('Starting database::default')
 
+node.override['mysql']['server_root_password'] = node['config']['mysql']['root_password']
+node.override['mysql']['server_debian_password'] = node['config']['mysql']['root_password']
+
 #
 if node['config']['rmdbs'] == 'mariadb'
 

@@ -65,8 +65,8 @@ if node['config']['web_tools']['tools']['mailcatcher']['install']
     action :create
   end
 
-  execute "Start mailcatcher" do
-    command "mailcatcher"
-  end
+  #execute "Start mailcatcher" do
+  #  command "mailcatcher"
+  #end
 
 end

@@ -208,6 +208,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
       chef.add_role('testing')
     end
 
+    chef.add_role('drupical')
+
     chef.add_role('frontend')
 
 

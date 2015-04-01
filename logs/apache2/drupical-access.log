@@ -1,0 +1,6 @@
+172.28.128.1 - - [27/Feb/2015:13:38:47 +0000] "GET /test.php HTTP/1.1" 200 19560 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.115 Safari/537.36"
+172.28.128.1 - - [27/Feb/2015:13:38:47 +0000] "GET /favicon.ico HTTP/1.1" 404 276 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.115 Safari/537.36"
+172.28.128.1 - - [27/Feb/2015:13:38:49 +0000] "GET /test.php HTTP/1.1" 200 19581 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.115 Safari/537.36"
+172.28.128.1 - - [27/Feb/2015:16:34:44 +0000] "GET /test.php HTTP/1.1" 500 598 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.115 Safari/537.36"
+172.28.128.1 - - [27/Feb/2015:16:34:45 +0000] "GET /favicon.ico HTTP/1.1" 404 276 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.115 Safari/537.36"
+172.28.128.1 - - [27/Feb/2015:16:34:46 +0000] "GET /test.php HTTP/1.1" 500 598 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.115 Safari/537.36"

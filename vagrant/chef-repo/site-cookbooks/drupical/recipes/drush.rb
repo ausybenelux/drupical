@@ -31,9 +31,9 @@ directory "/home/vagrant/.drush" do
   action :create
 end
 
-link "/home/vagrant/build/drush/policy/policy.drush.inc" do
-  to "/home/vagrant/.drush/policy.drush.inc"
-end
+#link "/home/vagrant/build/drush/policy/policy.drush.inc" do
+#  to "/home/vagrant/.drush/policy.drush.inc"
+#end
 
 vhosts = node['config']['vhosts']
 vhosts.each do |key, vhost|
@@ -53,20 +53,20 @@ vhosts.each do |key, vhost|
 
   end
 
-  template "/home/vagrant/drupical/build/drush/alias/" + key + ".aliases.drushrc.php" do
+ # template "/home/vagrant/drupical/build/drush/alias/" + key + ".aliases.drushrc.php" do
+#
+  #  source "aliases.drushrc.php.erb"
+  #  mode '0666'
+  #  variables({
+  #                :server_name  => vhost.fetch('server_name'),
+  #                :docroot      => vhost.fetch('docroot'),
+  #                :aliases      => vhost_aliases
+  #            })
 
-    source "aliases.drushrc.php.erb"
-    mode '0666'
-    variables({
-                  :server_name  => vhost.fetch('server_name'),
-                  :docroot      => vhost.fetch('docroot'),
-                  :aliases      => vhost_aliases
-              })
+  #end
 
-  end
-
-  link "/home/vagrant/.drush/" + key + ".aliases.drushrc.php"do
-    to "/home/vagrant/drupical/build/drush/alias/" + key + ".aliases.drushrc.php"
-  end
+  #link "/home/vagrant/.drush/" + key + ".aliases.drushrc.php"do
+  #  to "/home/vagrant/drupical/build/drush/alias/" + key + ".aliases.drushrc.php"
+  #end
 
 end

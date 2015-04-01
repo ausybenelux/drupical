@@ -9,8 +9,14 @@
     "vagrant_synced_folders" : {
       "build" : {
         "source" : "..",
-        "target" : "/home/vagrant/drupical",
+        "target" : "/var/www/site",
         "type" : "nfs",
+        "mount_options" : ["rw", "vers=3", "udp", "fsc", "actimeo=1"]
+      },
+      "docroot" : {
+        "source" : "../docroot",
+        "target" : "/var/www/site/docroot",
+        "type"   : "nfs",
         "mount_options" : ["rw", "vers=3", "udp", "fsc", "actimeo=1"]
       }
     },
@@ -20,10 +26,15 @@
       "url_base": "tools.drupical.local"
     },
 
+    "mysql": {
+      "root_password": "10moioui"
+    },
+
     "php": {
       "php_version": "5.5",
       "enable_php_phing": false,
-      "enable_php_composer": false
+      "enable_php_composer": false,
+      "enable_php_drush": true
     },
 
     "vhosts" : {

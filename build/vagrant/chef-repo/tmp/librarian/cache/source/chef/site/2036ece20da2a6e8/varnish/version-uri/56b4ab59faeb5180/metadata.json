@@ -1,0 +1,1 @@
+{"license":"Apache 2.0","tarball_file_size":4646,"version":"1.0.2","average_rating":null,"cookbook":"https://supermarket.getchef.com/api/v1/cookbooks/varnish","file":"https://supermarket.getchef.com/api/v1/cookbooks/varnish/versions/1.0.2/download","dependencies":{"yum-epel":">= 0.0.0","yum":"~> 3.0","build-essential":">= 0.0.0","apt":"~> 2.4"}}

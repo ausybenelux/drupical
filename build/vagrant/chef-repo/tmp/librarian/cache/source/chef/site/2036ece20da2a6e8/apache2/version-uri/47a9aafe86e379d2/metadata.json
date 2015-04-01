@@ -1,0 +1,1 @@
+{"license":"Apache 2.0","tarball_file_size":67533,"version":"3.0.1","average_rating":null,"cookbook":"https://supermarket.getchef.com/api/v1/cookbooks/apache2","file":"https://supermarket.getchef.com/api/v1/cookbooks/apache2/versions/3.0.1/download","dependencies":{"logrotate":">= 0.0.0","iptables":">= 0.0.0"}}

@@ -5,18 +5,18 @@
 
 Chef::Log.info('Starting drupical::solr')
 
-node.override['jetty']['port'] = 8390
-node.override['jetty']['version'] = '9.2.8.v20150217'
-node.override['jetty']['link'] = 'http://archive.eclipse.org/jetty/9.2.8.v20150217/dist/jetty-distribution-9.2.8.v20150217.tar.gz'
+#node.override['jetty']['port'] = 8390
+#node.override['jetty']['version'] = '9.2.8.v20150217'
+#node.override['jetty']['link'] = 'http://archive.eclipse.org/jetty/9.2.8.v20150217/dist/jetty-distribution-9.2.8.v20150217.tar.gz'
 
-node.override['jetty']['checksum'] = '0975f6d682a74a8f413a6d1586f8e067vagra'
+#node.override['jetty']['checksum'] = '0975f6d682a74a8f413a6d1586f8e067vagra'
 
 node.override['solr']["version"] = node['config']['solr']['solr_version']
-node.override['solr']["checksum"] = node['config']['solr']['solr_checksum']
+node.override['solr']["checksum"] = node['config']['solr']['solr_checksums'][node['config']['solr']['solr_version']]
 
-include_recipe "java"
+#include_recipe "java"
 
-include_recipe "hipsnip-jetty"
+#include_recipe "hipsnip-jetty"
 
 include_recipe "hipsnip-solr"
 
@@ -48,10 +48,10 @@ vhosts.each do |key, vhost|
 
   server_name = vhost.fetch('server_name')
 
-  link "/usr/share/solr/#{server_name}" do
-    to "/home/vagrant/drupical/build/config/solr"
-    not_if { File.symlink?("/usr/share/solr/#{server_name}") }
-  end
+ # link "/usr/share/solr/#{server_name}" do
+ #   to "/home/vagrant/drupical/build/config/solr"
+ #   not_if { File.symlink?("/usr/share/solr/#{server_name}") }
+ # end
 
   ruby_block "adding-multicore-#{server_name}" do
     block do
