@@ -24,7 +24,7 @@
       "url_base": "tools.drupical.local"
     },
 
-    "mysql": {
+    "rmdbs": {
       "root_password": "10moioui"
     },
 

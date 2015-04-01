@@ -93,7 +93,7 @@
 
     "rmdbs" : {
       "type" : "mysql",
-      "pass" : "10moioui",
+      "root_password" : "10moioui",
       "use-mysql-persistent-storage" : true
     },
 
