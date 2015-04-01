@@ -1,1 +1,0 @@
-{"license":"Apache 2.0","tarball_file_size":20942,"version":"6.0.13","average_rating":null,"cookbook":"https://supermarket.getchef.com/api/v1/cookbooks/mysql","file":"https://supermarket.getchef.com/api/v1/cookbooks/mysql/versions/6.0.13/download","dependencies":{"smf":">= 0.0.0","yum-mysql-community":">= 0.0.0"}}

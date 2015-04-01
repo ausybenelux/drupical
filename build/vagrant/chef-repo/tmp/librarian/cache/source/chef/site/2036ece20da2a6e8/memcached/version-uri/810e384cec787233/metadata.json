@@ -1,1 +1,0 @@
-{"license":"Apache 2.0","tarball_file_size":5865,"version":"1.7.2","average_rating":null,"cookbook":"https://supermarket.getchef.com/api/v1/cookbooks/memcached","file":"https://supermarket.getchef.com/api/v1/cookbooks/memcached/versions/1.7.2/download","dependencies":{"yum":"~> 3.0","runit":"~> 1.0","yum-epel":">= 0.0.0"}}
