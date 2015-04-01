@@ -5,7 +5,6 @@
 
 if node['config']['web_tools']['tools']['mailcatcher']['install']
 
-
   package 'rubygems' do
     action :install
   end

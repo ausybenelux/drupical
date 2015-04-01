@@ -46,15 +46,21 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # Plugin: Cachier
   config.cache.scope = :box
   config.cache.auto_detect = false
-  config.cache.synced_folder_opts = {type: :nfs}
+  config.cache.synced_folder_opts = {
+      type: :nfs,
+      mount_options: ["rw", "vers=3", "udp", "fsc", "actimeo=1"]
+  }
   config.cache.enable :apt
+  config.cache.enable :apt_lists
   config.cache.enable :chef
+  config.cache.enable :chef_gem
+  config.cache.enable :composer
   config.cache.enable :gem
   config.cache.enable :npm
   config.cache.enable :generic, {
-                                  'wget' => {cache_dir: '/var/cache/wget'},
-                                  'curl' => {cache_dir: '/var/cache/curl'},
-                              }
+    'wget' => {cache_dir: '/var/cache/wget'},
+    'curl' => {cache_dir: '/var/cache/curl'},
+  }
 
   # Fix NFS permission issues
   config.nfs.map_uid = Process.uid
@@ -131,15 +137,15 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   end
 
   if Vagrant.has_plugin?('vagrant-persistent-storage')
-
-    config.persistent_storage.enabled = true
-    config.persistent_storage.use_lvm = false
-    config.persistent_storage.location = '.vagrant/storage/mysql-hdd.vdi'
-    config.persistent_storage.size = 5000
-    config.persistent_storage.mountname = 'mysql'
-    config.persistent_storage.filesystem = 'ext4'
-    config.persistent_storage.mountpoint = '/var/lib/mysql'
-
+    if vconfig['config']['rmdbs']['use-mysql-persistent-storage']
+      config.persistent_storage.enabled = true
+      config.persistent_storage.use_lvm = false
+      config.persistent_storage.location = '.vagrant/storage/mysql-hdd.vdi'
+      config.persistent_storage.size = 5000
+      config.persistent_storage.mountname = 'mysql'
+      config.persistent_storage.filesystem = 'ext4'
+      config.persistent_storage.mountpoint = '/var/lib/mysql'
+    end
   end
 
   # Provisioning
@@ -184,10 +190,6 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
       chef.add_role('web-php55')
     end
 
-
-    #
-
-
     #
     if vconfig['config']['web_tools']['web_tools_install']
       chef.add_role('web-tools')
@@ -212,7 +214,6 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
     chef.add_role('frontend')
 
-
   end
 
   # restart VM
@@ -222,7 +223,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.post_up_message = get_vagrant_post_up_message(aliases)
 
   config.trigger.before :destroy do
-    if File.exists?('build/backup/file_token')
+    if File.exists?('backup/file_token')
       run_remote '/usr/local/bin/backup-db.sh'
     end
   end
