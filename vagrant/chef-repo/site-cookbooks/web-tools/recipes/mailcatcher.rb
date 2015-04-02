@@ -25,14 +25,14 @@ if node['config']['web_tools']['tools']['mailcatcher']['install']
     action :install
   end
 
-  #template '/etc/init/mailcatcher.conf' do
-  #  cookbook 'web-tools'
-  #  source 'mailcatcher.conf.erb'
-  #  owner 'root'
-  #  group 'root'
-  #  mode '0655'
-  #  action :create
-  #end
+  template '/etc/init/mailcatcher.conf' do
+    cookbook 'web-tools'
+    source 'mailcatcher.conf.erb'
+    owner 'root'
+    group 'root'
+    mode '0655'
+    action :create
+  end
 
   url_base = node['config']['web_tools']['url_base']
   tool_alias = node['config']['web_tools']['tools']['mailcatcher']['alias']
