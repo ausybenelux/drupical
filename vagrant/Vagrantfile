@@ -50,8 +50,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
       type: :nfs,
       mount_options: ["rw", "vers=3", "udp", "fsc", "actimeo=1"]
   }
-  #config.cache.enable :apt
-  #config.cache.enable :apt_lists
+  config.cache.enable :apt
+  config.cache.enable :apt_lists
   config.cache.enable :chef
   config.cache.enable :chef_gem
   config.cache.enable :composer
