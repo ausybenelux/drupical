@@ -35,8 +35,8 @@
       "/var/log" : {
         "source" : "./logs",
         "target" : "/var/log",
-        "type" : "nfs",
-        "mount_options" : ["rw", "vers=3", "udp", "fsc", "actimeo=1"]
+        "type" : "rsync",
+        "mount_options" : []
       }
     },
 
