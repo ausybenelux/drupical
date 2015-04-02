@@ -15,6 +15,7 @@ info:
 	@echo "------------------------------------------------------------------------------------------------------------"
 	@echo "make info (this)"
 	@echo "------------------------------------------------------------------------------------------------------------"
+	@echo "make install (Install all requirements and vagrant up)"
 	@echo "make install-vagrant-base"
 	@echo "make install-vagrant-plugins"
 	@echo "make install-chef-base (Install chef librarian & downloads chef cookbooks)"
@@ -32,6 +33,7 @@ info:
 	@echo "make vagrant-destroy"
 	@echo "------------------------------------------------------------------------------------------------------------"
 
+install : install-vagrant-base install-vagrant-plugins install-chef-base vagrant-up
 
 install-chef-base : install-chef-librarian download-chef-cookbooks
 
