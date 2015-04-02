@@ -15,6 +15,13 @@ execute "apt-mark-hold" do
   only_if { apt_installed? }
 end
 
+execute "apt-update" do
+  command "apt-get update"
+  action :nothing
+  ignore_failure true
+  only_if { apt_installed? }
+end
+
 execute "apt-upgrade" do
   command "apt-get update && apt-get upgrade -y"
   action :nothing
