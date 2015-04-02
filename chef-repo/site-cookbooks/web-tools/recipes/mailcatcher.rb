@@ -37,6 +37,19 @@ if node['config']['web_tools']['tools']['mailcatcher']['install']
   url_base = node['config']['web_tools']['url_base']
   tool_alias = node['config']['web_tools']['tools']['mailcatcher']['alias']
 
+
+  file "/etc/php5/mods-available/20-mailcatcher.ini" do
+    action :delete
+  end
+
+  template "/etc/php5/mods-available/mailcatcher.ini" do
+    source "mailcatcher.ini"
+    mode 0644
+    owner "root"
+    group "root"
+    action :create
+  end
+
   template '/etc/apache2/sites-available/mailcatcher.conf' do
     cookbook 'web-tools'
     source 'mailcatcher.vhost.erb'
@@ -57,15 +70,16 @@ if node['config']['web_tools']['tools']['mailcatcher']['install']
 
   template '/etc/postfix/main.cf' do
     cookbook 'web-tools'
-    source 'mailcatcher.vhost.erb'
+    source 'postfix_main.cf'
     owner 'root'
     group 'root'
     mode '0655'
     action :create
   end
 
-  #execute "Start mailcatcher" do
-  #  command "mailcatcher"
-  #end
+  execute "Enable mailcatcher" do
+    command "php5enmod mailcatcher"
+    only_if { File.exists?("/etc/php5/mods-available/mailcatcher.ini") }
+  end
 
 end
