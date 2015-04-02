@@ -77,7 +77,7 @@ download-chef-cookbooks:
 	cd $(PWD)/chef-repo ; librarian-chef install --clean --verbose
 
 vagrant-up:
-	ssh-add ~/.ssh/id_rsa ; vagrant up
+	ssh-add -K ~/.ssh/id_rsa ; vagrant up
 
 vagrant-provision:
 	@echo "Re-provisioning vagrant box."
