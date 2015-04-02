@@ -27,7 +27,7 @@ cookbook 'hipsnip-solr'
 
 cookbook 'memcached'
 
-cookbook 'varnish'
+cookbook 'varnish', '= 1.0.2'
 
 cookbook 'php-fpm'
 
