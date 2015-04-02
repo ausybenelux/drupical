@@ -1,8 +1,8 @@
 {
   "config": {
 
-    "box_name": "drupal",
-    "box_hostname": "dev",
+    "box_name": "PROJECT_NAME",
+    "box_hostname": "SITE_HOST",
 
     "vagrant_synced_folders" : {
       "build" : {
@@ -32,11 +32,11 @@
     },
 
     "vhosts" : {
-      "drupical" : {
-        "server_name" : "drupical.local",
-        "database_name" : "drupical",
+      "SITE_NAME" : {
+        "server_name" : "SITE_HOST",
+        "database_name" : "PROJECT_NAME",
         "docroot" : "/vagrant/docroot/",
-        "aliases" : [ "www.drupical.local" ],
+        "aliases" : [ "www.SITE_HOST" ],
         "enable_ssl" : "true",
         "php_settings": {
           "log_errors": "on",
