@@ -12,4 +12,3 @@ chef-repo/cookbooks/*
 web-tools/adminer/*
 web-tools/siteinfo/*
 
-local.vagrant.settings.json
