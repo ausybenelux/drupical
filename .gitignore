@@ -2,8 +2,8 @@
 
 backup/*
 
-logs/apache2/*
-logs/php-fpm/*
+logs/*
+!logs/.gitkeep
 
 chef-repo/tmp/*
 chef-repo/Cheffile.lock
