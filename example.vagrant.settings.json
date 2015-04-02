@@ -24,10 +24,6 @@
       "url_base": "tools.drupical.local"
     },
 
-    "rmdbs": {
-      "root_password": "10moioui"
-    },
-
     "php": {
       "php_version": "5.5",
       "enable_php_phing": false,
