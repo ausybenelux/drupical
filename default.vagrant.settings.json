@@ -10,7 +10,7 @@
     "box_dhcp": true,
     "box_static_ip": "10.0.0.1",
     "box_ram_cpu": "auto",
-    "box_ram": "1G",
+    "box_ram": "1024",
     "box_cpu": "2",
 
     "box_shell": "bash",
