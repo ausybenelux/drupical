@@ -31,6 +31,22 @@ git submodule add git@github.com:ONEAgency/drupical.git vagrant
 
 ### Configuring Drupical for your Project
 
+You can configure Drupical by creating your own `local.vagrant.settings.json` settings file. The file will override all settings found in `default.vagrant.settings.json`. See the **Configuration** topic for a full reference.
+
+The most important configuration options are:
+
+Property | Default | Description
+---------|---------|------------
+box_name | drupal | The name identifying your Vagrant box
+vagrant_synced_folders | | A list of folders to sync with Vagrant
+vhosts | | A list of apache2 vhosts
+solr.solr_install | false | Include solr
+solr.solr_version | 3.6.2 | The solr version
+rmdbs.root_password | 10moioui | The MySQL root user password
+mysql.root_password | 10moioui | The MySQL root user password
+varnish_install | true | Include varnish
+php.php_version | 5.5 | The PHP version that will be installed
+
 ### Provisioning the Vagrant Box
 
 ## Usage
