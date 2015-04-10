@@ -5,10 +5,13 @@
 
     "box_type": "hashicorp/precise64",
     "box_name": "drupal",
-    "box_hostname": "dev",
-    "box_gui": false,
+    "box_hostname": "dev.local",
+
+    "box_gui": false, // true or false
+
     "box_dhcp": true,
     "box_static_ip": "10.0.0.1",
+
     "box_ram_cpu": "auto",
     "box_ram": "1024",
     "box_cpu": "2",
@@ -18,20 +21,6 @@
     "os_update": false,
 
     "vagrant_synced_folders": {
-
-      "adminer" : {
-        "source" : "./web-tools/adminer/",
-        "target" : "/usr/share/adminer/",
-        "type" : "nfs",
-        "mount_options" : ["rw", "vers=3", "udp", "fsc", "actimeo=1"]
-      },
-      "siteinfo" : {
-        "source" : "./web-tools/siteinfo/",
-        "target" : "/usr/share/siteinfo/",
-        "type" : "nfs",
-        "mount_options" : ["rw", "vers=3", "udp", "fsc", "actimeo=1"]
-      },
-
       "/var/log" : {
         "source" : "./logs",
         "target" : "/var/log",
@@ -50,36 +39,36 @@
     },
 
     "web_tools": {
-      "web_tools_install": true,
-      "url_base": "dev.drupicaldev.local",
+      "web_tools_install": false,
+      "url_base": "tools",
       "tools": {
-        "info": {
-          "install": true,
-          "alias": "info"
-        },
         "adminer": {
-          "install": true,
+          "install": false,
           "alias": "adminer"
         },
+        "mailcatcher": {
+          "install": false,
+          "alias": "mailcatcher"
+        },
+        "info": {
+          "install": false,
+          "alias": "info"
+        },
         "phpmemcachedadmin": {
-          "install": true,
+          "install": false,
           "alias": "phpmemcachedadmin"
         },
         "opcachegui": {
-          "install": true,
+          "install": false,
           "alias": "opcachegui"
         },
         "uprofiler_ui": {
-          "install": true,
+          "install": false,
           "alias": "uprofiler"
         },
         "phpdoc": {
-          "install": true,
+          "install": false,
           "alias": "phpdoc"
-        },
-        "mailcatcher": {
-          "install": true,
-          "alias": "mailcatcher"
         }
       }
     },
@@ -90,10 +79,10 @@
       "use-mysql-persistent-storage" : true
     },
 
-    "varnish_install": true,
+    "varnish_install": false,
 
     "testing" : {
-      "testing_install": true,
+      "testing_install": false,
       "munin": {
         "install": true,
         "alias": "munin"
@@ -107,10 +96,6 @@
     },
 
     "vhosts": {},
-
-    "mysql": {
-      "root_password": "10moioui"
-    },
 
     "php": {
       "php_version": "5.5",
@@ -210,13 +195,13 @@
       "php5-adodb": false,
       "php5-apcu": false,
       "php5-auth-pam": false,
-      "php5-curl": true,
+      "php5-curl": false,
       "php5-dbg": false,
       "php5-dev": false,
       "php5-enchant": false,
       "php5-exactimage": false,
       "php5-ffmpeg": false,
-      "php5-gd": true,
+      "php5-gd": false,
       "php5-gearman": false,
       "php5-geoip": false,
       "php5-gmp": false,
@@ -230,14 +215,14 @@
       "php5-librdf": false,
       "php5-libvirt-php": false,
       "php5-mapscript": false,
-      "php5-mcrypt": true,
+      "php5-mcrypt": false,
       "php5-memcache": false,
-      "php5-memcached": true,
+      "php5-memcached": false,
       "php5-midgard2": false,
       "php5-ming": false,
       "php5-mongo": false,
       "php5-mysql": false,
-      "php5-mysqlnd": true,
+      "php5-mysqlnd": false,
       "php5-mysqlnd-ms": false,
       "php5-oauth": false,
       "php5-odbc": false,
@@ -260,7 +245,7 @@
       "php5-uprofiler": false,
       "php5-uuid": false,
       "php5-xcache": false,
-      "php5-xdebug": true,
+      "php5-xdebug": false,
       "php5-xmlrpc": false,
       "php5-xsl": false,
       "php5-zmq": false,

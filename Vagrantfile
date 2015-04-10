@@ -40,8 +40,9 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # Hostname
   config.vm.hostname = vconfig['config']['box_name']
 
-  # Forward Agent
+  # SSH config
   config.ssh.forward_agent = true
+  config.ssh.insert_key = false
 
   # Plugin: Cachier
   config.cache.scope = :box
@@ -122,6 +123,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   end
 
+  # Configure ip
   if Vagrant.has_plugin?('vagrant-hostmanager')
 
     config.hostmanager.ip_resolver = proc do |vm, resolving_vm|
@@ -136,6 +138,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   end
 
+  # Configure persistent storage for the mysql database
   if Vagrant.has_plugin?('vagrant-persistent-storage')
     if vconfig['config']['rmdbs']['use-mysql-persistent-storage']
       config.persistent_storage.enabled = true
@@ -169,8 +172,9 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
         'chef-repo/cookbooks',
         'chef-repo/site-cookbooks'
     ]
+
+    #
     chef.roles_path = 'chef-repo/roles'
-    chef.data_bags_path = 'chef-repo/data_bags'
 
     #
     chef.add_role('base')
@@ -210,18 +214,21 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
       chef.add_role('testing')
     end
 
+    #
     chef.add_role('drupical')
 
+    #
     chef.add_role('frontend')
 
   end
 
-  # restart VM
+  # Restart VM
   config.vm.provision :reload
 
-  # set post_up_message
+  # Set post_up_message
   config.vm.post_up_message = get_vagrant_post_up_message(aliases)
 
+  # Try to backup the databases
   config.trigger.before :destroy do
     if File.exists?('backup/file_token')
       run_remote '/usr/local/bin/backup-db.sh'
