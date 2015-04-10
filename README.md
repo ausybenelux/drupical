@@ -22,6 +22,31 @@ The Vagrant box comes with the following software and tools:
 
 ## Quickstart
 
+### 1. Include the repository
+
+Inside the root of your repository:
+
+```bash
+git clone --depth=1 git@github.com:ONEAgency/drupical.git vagrant && cd vagrant && rm -rf .git
+```
+
+### 2. Set up your project configuration:
+
+```bash
+cp example.vagrant.settings.json local.vagrant.settings.json
+```
+
+In `local.vagrant.settings.json`:
+
+- Replace all instances of `PROJECT_NAME` with the machine name of your project (e.g. my_project) and `SITE_HOST` with the local host name (e.g. my-project.local).
+- If your Drupal docroot is not located at /docroot in your repo change `"source" : "../docroot"` to the path of your Drupal docroot, relative to the vagrant directory.
+
+### 3. Provision the box
+
+```bash
+make install
+```
+
 ## Installation
 
 ### Including Drupical in your Project
