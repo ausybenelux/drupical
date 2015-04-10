@@ -2,6 +2,24 @@
 
 Drupical is an easily configurable Vagrant box for developing Drupal projects.
 
+The Vagrant box comes with the following software and tools:
+
+- Ubuntu 12.04 LTS 64
+- PHP 5.5, 5.4 or 5.3
+- MySQL5
+- Apache2
+- Solr
+- Memcache
+- Varnish
+- Composer
+- Phing
+- Nodejs
+- Grunt
+- Ruby2
+- Selenium
+- OpenSSL
+
+
 ## Quickstart
 
 ## Installation
