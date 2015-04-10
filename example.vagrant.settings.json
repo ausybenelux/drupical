@@ -35,7 +35,7 @@
       "SITE_NAME" : {
         "server_name" : "SITE_HOST",
         "database_name" : "PROJECT_NAME",
-        "docroot" : "/vagrant/docroot/",
+        "docroot" : "/var/www/site/docroot/",
         "aliases" : [ "www.SITE_HOST" ],
         "enable_ssl" : "true",
         "php_settings": {
