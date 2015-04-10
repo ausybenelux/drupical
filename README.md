@@ -47,6 +47,10 @@ In `local.vagrant.settings.json`:
 make install
 ```
 
+### 4. Setup your project
+
+**TODO**
+
 ## Installation
 
 ### Including Drupical in your Project
@@ -111,6 +115,49 @@ make vagrant-up
 ```
 
 ## Usage
+
+### Managing the Vagrant box
+
+You can manage your box with the following commands. Execute them from the vagrant directory:
+
+Command | Description
+--------|------------
+`vagrant up` | Boot
+`vagrant reload` | Reboot
+`vagrant ssh` | Log in via SSH
+`vagrant halt` | Power off
+`vagrant suspend` | Sleep
+`vagrant destroy` | Remove the box (run `vagrant up --provision` to set it up again).
+
+More information is available in the [official Vagrant documentation](https://docs.vagrantup.com/v2/cli/index.html).
+
+### Accessing your files
+
+By default the parent directory of the box is mounted on /vagrant. 
+
+**Example:**
+
+Host machine path: `/Users/Tyrion/projects/example/docroot/sites`
+
+Vagrant path: `/Users/Tyrion/projects/example/vagrant`
+
+Path on the Vagrant box (log in via `vagrant ssh`): `/vagrant/docroot/sites`
+
+### Managing your database
+
+You can easily manage your database using the included [Adminer DB manager](http://adminer.tools.drupical.local/).
+
+If you prefer a native app like SequelPro follow these instructions:
+
+- In the vagrant dir, run `vagrant ssh-config`
+- Copy the `IdentityFile` path
+- Execute `ssh-add -K /path/to/identityfile`
+- In SequelPro, create a new connection of type SSH
+- MySQL Host: 127.0.0.1
+- Username: root
+- Password: 10moioui
+- SSH Host: your project's hostname (e.g. my-project.local)
+- SSH User: vagrant
 
 ## Configuration
 
