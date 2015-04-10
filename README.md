@@ -49,6 +49,24 @@ php.php_version | 5.5 | The PHP version that will be installed
 
 ### Provisioning the Vagrant Box
 
+Execute the following commands inside the vagrant folder.
+
+OSX:
+
+```bash
+make install
+```
+
+Ubuntu:
+
+```bash
+sudo apt-get install virtualbox 
+sudo apt-get install vagrant
+make install-chef-base
+make install-vagrant-plugins
+make vagrant-up
+```
+
 ## Usage
 
 ## Configuration
