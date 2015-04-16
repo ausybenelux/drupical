@@ -1,3 +1,4 @@
+[![Stories in Ready](https://badge.waffle.io/ONEAgency/drupical.png?label=ready&title=Ready)](https://waffle.io/ONEAgency/drupical)
 # Drupical
 
 Drupical is an easily configurable Vagrant box for developing Drupal projects.
