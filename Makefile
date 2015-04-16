@@ -8,6 +8,8 @@ BIN_BREW := $(shell brew --version 2>/dev/null)
 BIN_VAGRANT := $(shell vagrant -v 2>/dev/null)
 BIN_VIRTUALBOX := $(shell VBoxManage --version 2>/dev/null)
 BIN_LIBRARIAN := $(shell librarian-chef version 2>/dev/null)
+UNAME := $(shell uname -s)
+
 
 default: vagrant-up
 
@@ -39,12 +41,23 @@ install-chef-base : install-chef-librarian download-chef-cookbooks
 
 install-vagrant-base : install-homebrew install-virtualbox install-vagrant
 
-install-vagrant-plugins: check-triggers check-hostsupdater check-cachier check-vbguest check-omnibus check-persistent-storage check-hostmanager check-reload
+install-vagrant-plugins: check-nfs check-triggers check-hostsupdater check-cachier check-vbguest check-omnibus check-persistent-storage check-hostmanager check-reload
 
 install-homebrew:
 ifndef BIN_BREW
-	@echo "Installing Homebrew."
-	$$(curl -sS https://raw.githubusercontent.com/Homebrew/install/master/install | ruby)
+	ifeq ($(UNAME_S),Darwin)
+		@echo "Installing Homebrew."
+		$$(curl -sS https://raw.githubusercontent.com/Homebrew/install/master/install | ruby)
+	endif
+
+	ifeq ($(UNAME_S),Linux)
+		@echo "Installing prerequisites."
+		sudo apt-get install build-essential curl git m4 ruby texinfo libbz2-dev libcurl4-openssl-dev libexpat-dev libncurses-dev zlib1g-dev ruby2.0 ruby2.0-dev
+		@echo "Installing Linuxbrew"
+		ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/linuxbrew/go/install)"
+	endif
+
+
 else
 	@echo "Homebrew is already installed."
 endif
@@ -77,6 +90,13 @@ endif
 download-chef-cookbooks:
 	@echo "Downloading chef cookbooks."
 	cd $(PWD)/chef-repo ; librarian-chef install --clean --verbose
+
+check-nfs:
+	ifeq ($(UNAME_S),Linux)
+		@echo "We assume we can do sudo for this part."
+		sudo apt-get update
+		sudo apt-get install nfs-kernel-server
+	endif
 
 vagrant-up:
 	ssh-add -K ~/.ssh/id_rsa ; vagrant up
