@@ -8,7 +8,7 @@ BIN_BREW := $(shell brew --version 2>/dev/null)
 BIN_VAGRANT := $(shell vagrant -v 2>/dev/null)
 BIN_VIRTUALBOX := $(shell VBoxManage --version 2>/dev/null)
 BIN_LIBRARIAN := $(shell librarian-chef version 2>/dev/null)
-UNAME := $(shell uname -s)
+UNAME = $(shell uname -s)
 
 
 default: vagrant-up
@@ -45,19 +45,17 @@ install-vagrant-plugins: check-nfs check-triggers check-hostsupdater check-cachi
 
 install-homebrew:
 ifndef BIN_BREW
-	ifeq (,($(UNAME), Darwin))
+ifeq (,($(UNAME), Darwin))
 		@echo "Installing Homebrew."
 		$$(curl -sS https://raw.githubusercontent.com/Homebrew/install/master/install | ruby)
-	endif
+endif
 
-	ifeq (,($(UNAME), Linux))
+ifeq (,($(UNAME), Linux))
 		@echo "Installing prerequisites. We assume you already installed ruby 2.0 or higher."
 		sudo apt-get update && sudo apt-get install build-essential curl git m4 ruby texinfo libbz2-dev libcurl4-openssl-dev libexpat-dev libncurses-dev zlib1g-dev
 		@echo "Installing Linuxbrew"
 		ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/linuxbrew/go/install)"
-	endif
-
-
+endif
 else
 	@echo "Homebrew is already installed."
 endif
