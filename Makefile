@@ -52,7 +52,7 @@ endif
 
 ifeq ($(UNAME), Linux)
 		@echo "Installing prerequisites. We assume you already installed ruby 2.0 or higher."
-		sudo apt-get update && sudo apt-get install build-essential curl git m4 ruby texinfo libbz2-dev libcurl4-openssl-dev libexpat-dev libncurses-dev zlib1g-dev 
+		sudo apt-get update && sudo apt-get install -y build-essential curl git m4 ruby texinfo libbz2-dev libcurl4-openssl-dev libexpat-dev libncurses-dev zlib1g-dev 
 		@echo "Installing Linuxbrew"
 		$$(curl -sS https://raw.githubusercontent.com/Homebrew/linuxbrew/go/install| ruby)
 endif
@@ -93,7 +93,7 @@ check-nfs:
 ifeq ($(UNAME),Linux)
 		@echo "We assume we can do sudo for this part."
 		sudo apt-get update
-		sudo apt-get install nfs-kernel-server
+		sudo apt-get install -y nfs-kernel-server
 endif
 
 vagrant-up:
