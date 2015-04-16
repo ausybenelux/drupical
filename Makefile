@@ -45,12 +45,12 @@ install-vagrant-plugins: check-nfs check-triggers check-hostsupdater check-cachi
 
 install-homebrew:
 ifndef BIN_BREW
-	ifeq ($(UNAME),Darwin)
+	ifeq (,($(UNAME),Darwin))
 		@echo "Installing Homebrew."
 		$$(curl -sS https://raw.githubusercontent.com/Homebrew/install/master/install | ruby)
 	endif
 
-	ifeq ($(UNAME),Linux)
+	ifeq (,($(UNAME),Linux))
 		@echo "Installing prerequisites. We assume you already installed ruby 2.0 or higher."
 		sudo apt-get update && sudo apt-get install build-essential curl git m4 ruby texinfo libbz2-dev libcurl4-openssl-dev libexpat-dev libncurses-dev zlib1g-dev
 		@echo "Installing Linuxbrew"
@@ -92,7 +92,7 @@ download-chef-cookbooks:
 	cd $(PWD)/chef-repo ; librarian-chef install --clean --verbose
 
 check-nfs:
-	ifeq ($(UNAME),Linux)
+	ifeq (,($(UNAME),Linux))
 		@echo "We assume we can do sudo for this part."
 		sudo apt-get update
 		sudo apt-get install nfs-kernel-server
