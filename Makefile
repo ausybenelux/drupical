@@ -83,7 +83,11 @@ endif
 install-chef-librarian:
 ifndef BIN_LIBRARIAN
 	@echo "Installing gem librarian chef."
+ifeq ($(UNAME),Darwin)
 	gem install librarian-chef
+else
+	sudo gem install librarian-chef
+endif
 else
 	@echo "librarian chef is already installed."
 endif
