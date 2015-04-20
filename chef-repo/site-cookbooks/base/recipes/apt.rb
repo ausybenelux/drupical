@@ -1,12 +1,9 @@
+#
+# Cookbook Name::base
+# Recipe::apt
+#
+
 include_recipe "apt"
-
-package 'debconf' do
-  action :install
-end
-
-package 'debconf-utils' do
-  action :install
-end
 
 execute "apt-mark-hold" do
   command "apt-mark hold grub-pc grub-pc-bin grub2-common && apt-get update"
@@ -27,7 +24,6 @@ execute "apt-upgrade" do
   action :nothing
   ignore_failure true
   only_if { apt_installed? }
-  only_if { node['config']['os_update'] }
 end
 
 execute "apt-cleanup" do
@@ -40,13 +36,14 @@ end
 template "/etc/apt/apt.conf.d/80dpkg" do
   source "80dpkg"
   mode '0666'
-  notifies :run, "execute[apt-get update]", :immediately
+  notifies :run, "execute[apt-update]", :immediately
 end
 
 template "/etc/apt/apt.conf.d/90forceyes" do
   source "90forceyes"
   mode '0666'
   notifies :run, "execute[apt-mark-hold]", :immediately
+  notifies :run, "execute[apt-update]", :immediately
   notifies :run, "execute[apt-upgrade]", :immediately
   notifies :run, "execute[apt-cleanup]", :immediately
 end

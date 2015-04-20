@@ -14,10 +14,9 @@ version '0.1.0'
   supports os
 end
 
-%w{ apache2 web }.each do |dependency|
+%w{ apache2 web openssl}.each do |dependency|
   depends dependency
 end
 
 recipe 'drupical::default'  ,'default'
 recipe 'drupical::drush'    ,'drush configuration'
-depends 'openssl'

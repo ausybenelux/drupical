@@ -1,6 +1,8 @@
 {
   "config": {
 
+    "start_form": "scratch",
+
     "vagrant_debugging": false,
 
     "box_type": "hashicorp/precise64",
@@ -84,14 +86,14 @@
     "testing" : {
       "testing_install": false,
       "munin": {
-        "install": true,
+        "install": false,
         "alias": "munin"
       },
       "selenium": {
-        "install": true
+        "install": false
       },
       "phpunit": {
-        "install": true
+        "install": false
       }
     },
 

@@ -27,10 +27,8 @@
   },
   "chef_type": "role",
   "run_list": [
-    "recipe[web::default]",
-    "recipe[web::apache]",
-    "recipe[web::apache_repo]",
-    "recipe[web-memcached::default]"
+    "recipe[web]",
+    "recipe[web-memcached]"
   ],
   "env_run_lists": {
   }

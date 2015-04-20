@@ -23,8 +23,6 @@ if node['config']['php']['enable_php_composer']
 
 end
 
-
-
 #
 node['config']['php_packages'].each do |php_package, install_php_package|
 
@@ -66,14 +64,18 @@ if node['config']['php_packages']['php5-xdebug']
       action :delete
     end
 
-    template "/etc/php5/mods-available/20-xdebug.ini" do
+    template "/etc/php5/mods-available/xdebug.ini" do
       source "20100525-xdebug.ini"
       mode 0644
       owner "root"
       group "root"
       action :create
     end
-  
+
+    link "/etc/php5/mods-available/xdebug.ini" do
+      to "/etc/php5/fpm/conf.d/xdebug.ini"
+    end
+
   end
 
 end

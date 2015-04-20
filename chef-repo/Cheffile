@@ -13,7 +13,7 @@ cookbook 'vim'
 
 cookbook 'apache2'
 
-cookbook 'mysql', '~> 5.3.6'
+cookbook 'mysql'
 
 cookbook 'php'
 

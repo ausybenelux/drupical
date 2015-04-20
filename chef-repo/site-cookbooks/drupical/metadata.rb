@@ -14,9 +14,9 @@ version '0.1.0'
   supports os
 end
 
-%w{apt}.each do |dependancy|
+%w{apt apache2 php-fpm}.each do |dependancy|
   depends dependancy
 end
 
-recipe 'drupical::default', 'default'
-recipe 'drupical::drush',   'drush'
+recipe 'drupical::site',  'site'
+recipe 'drupical::drush', 'drush'

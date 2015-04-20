@@ -18,3 +18,7 @@ else
   include_recipe "database::mysql"
 
 end
+
+include_recipe "database::config"
+
+include_recipe "database::backup-db"
