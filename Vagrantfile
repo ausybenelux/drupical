@@ -69,11 +69,15 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   # Synced folders
   vconfig['config']['vagrant_synced_folders'].each do |key, value|
-    src = File.expand_path(value.fetch('source'))
-    config.vm.synced_folder src,
-                            value.fetch('target'),
-                            type: value.fetch('type'),
-                            mount_options: value.fetch('mount_options')
+    if ((/linux/ =~ RUBY_PLATFORM) && key = "/var/log")
+      puts "Not mapping /var/log"
+    else
+      src = File.expand_path(value.fetch('source'))
+      config.vm.synced_folder src,
+                              value.fetch('target'),
+                              type: value.fetch('type'),
+                              mount_options: value.fetch('mount_options')
+    end
   end
 
   # Virtualbox
