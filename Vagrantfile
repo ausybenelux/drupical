@@ -69,7 +69,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   # Synced folders
   vconfig['config']['vagrant_synced_folders'].each do |key, value|
-    if ((/linux/ =~ RUBY_PLATFORM) && key = "/var/log")
+    if ((/linux/ =~ RUBY_PLATFORM) && key == "/var/log")
       puts "Not mapping /var/log"
     else
       src = File.expand_path(value.fetch('source'))
