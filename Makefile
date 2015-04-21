@@ -56,7 +56,10 @@ ifeq ($(UNAME), Linux)
 		@echo "Installing prerequisites. We assume you already installed ruby 2.0 or higher."
 		sudo apt-get update && sudo apt-get install -y build-essential curl git m4 ruby texinfo libbz2-dev libcurl4-openssl-dev libexpat-dev libncurses-dev zlib1g-dev 
 		@echo "Installing Linuxbrew"
-		$$(curl -sS https://raw.githubusercontent.com/Homebrew/linuxbrew/go/install| ruby)
+		echo '\r' | ruby -e "$$(curl -sSfL https://raw.githubusercontent.com/Homebrew/linuxbrew/go/install)"
+		echo 'export PATH="$$HOME/.linuxbrew/bin:$$PATH"' >> ~/.bashrc
+		echo 'export MANPATH="$$HOME/.linuxbrew/share/man:$$MANPATH"' >> ~/.bashrc
+		echo 'export INFOPATH="$$HOME/.linuxbrew/share/info:$$INFOPATH"' >> ~/.bashrc
 endif
 else
 	@echo "Homebrew is already installed."
@@ -82,7 +85,11 @@ endif
 install-chef-librarian:
 ifndef BIN_LIBRARIAN
 	@echo "Installing gem librarian chef."
+ifeq ($(UNAME),Darwin)
 	gem install librarian-chef
+else
+	sudo gem install librarian-chef
+endif
 else
 	@echo "librarian chef is already installed."
 endif

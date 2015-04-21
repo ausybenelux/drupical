@@ -59,6 +59,23 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     }
   end
 
+  # Fix NFS permission issues
+  config.nfs.map_uid = Process.uid
+  config.nfs.map_gid = Process.gid
+
+  # Synced folders
+  vconfig['config']['vagrant_synced_folders'].each do |key, value|
+    if ((/linux/ =~ RUBY_PLATFORM) && key == "/var/log")
+      puts "Not mapping /var/log"
+    else
+      src = File.expand_path(value.fetch('source'))
+      config.vm.synced_folder src,
+                              value.fetch('target'),
+                              type: value.fetch('type'),
+                              mount_options: value.fetch('mount_options')
+    end
+  end
+
   # hostmanager
   if Vagrant.has_plugin?('vagrant-hostmanager')
 

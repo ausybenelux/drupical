@@ -5,7 +5,7 @@ site 'https://supermarket.getchef.com/api/v1'
 
 cookbook 'apt'
 
-cookbook 'git'
+cookbook 'git', '= 4.1.0'
 
 cookbook 'curl'
 
