@@ -18,6 +18,10 @@ include_recipe 'php5::php_fpm'
 #
 node['config']['vhosts'].each do |key, vhost|
 
+  if vhost['server_name'].include?("_")
+    vhost['server_name'] = vhost['server_name'].gsub!("_","-")
+  end
+
   if vhost['enable_ssl'] == 'true'
 
     openssl_x509 "/etc/apache2/ssl/#{vhost['server_name']}.crt" do
