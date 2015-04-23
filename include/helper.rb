@@ -111,6 +111,10 @@ def vagrant_get_aliases(vconfig)
     aliases.push(vhost.fetch('server_name'))
 
     vhost['aliases'].each do |_alias|
+      if _alias.include?("_")
+        _alias = _alias.gsub!("_","-")
+      end
+      
       aliases.push(_alias)
     end
 

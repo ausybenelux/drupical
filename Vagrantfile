@@ -2,7 +2,7 @@
 # vi: set ft=ruby :
 
 VAGRANTFILE_API_VERSION = '2'
-
+Vagrant.require_version ">= 1.6.0", "< 1.7.2"
 begin
 
   load 'include/helper.rb'
@@ -322,7 +322,16 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
     drupical.vm.box_check_update = true
 
-    drupical.vm.hostname = "precise64-base"
+    #
+    #We need to clean the box_hostname
+    #
+    box_hostname = vconfig['config']['box_hostname'].split('.')[0]
+
+    if box_hostname.include?('_')
+      drupical.vm.hostname = box_hostname.gsub!('_','-')
+    else
+      drupical.vm.hostname = box_hostname
+    end
 
     # network
     if vconfig['config']['box_dhcp'] == true
@@ -338,7 +347,11 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     drupical.vm.provider 'virtualbox' do |vb|
 
       # Name
-      vb.name = vconfig['config']['box_hostname']
+      if box_hostname.include?('_')
+        vb.name = box_hostname.gsub!('_','-')
+      else
+        vb.name = box_hostname
+      end
 
       # GUI
       vb.gui = vconfig['config']['box_gui']
