@@ -1,0 +1,69 @@
+{
+  "config": {
+
+    "start_form": "base",
+
+    "box_name": "dummy",
+    "box_hostname": "dummy",
+
+    "vagrant_synced_folders" : {
+      "build" : {
+        "source" : "..",
+        "target" : "/vagrant",
+        "type" : "nfs",
+        "mount_options" : ["rw", "vers=3", "udp", "fsc", "actimeo=1"]
+      }
+    },
+
+    "web_tools": {
+      "web_tools_install": true,
+      "url_base": "tools",
+      "tools": {
+        "adminer": {
+          "install": true,
+          "alias": "adminer"
+        },
+        "mailcatcher": {
+          "install": true,
+          "alias": "mailcatcher"
+        }
+      }
+    },
+
+    "php": {
+      "php_version": "5.5",
+      "enable_php_phing": false,
+      "enable_php_composer": false,
+      "enable_php_drush": true
+    },
+
+    "vhosts" : {
+      "dummy" : {
+        "server_name" : "dummy.local",
+        "database_name" : "dummy",
+        "docroot" : "/vagrant/docroot/",
+        "aliases" : [ "www.dummy.local" ],
+        "enable_ssl" : "true",
+        "php_settings": {
+          "log_errors": "on",
+          "memory_limit": "512M",
+          "error_reporting": "E_ALL & ~E_DEPRECATED",
+          "display_errors": "On",
+          "post_max_size": "64M",
+          "upload_max_filesize": "64M"
+        }
+      }
+    },
+
+    "php_packages": {
+      "php5-curl": true,
+      "php5-gd": true,
+      "php5-intl": true,
+      "php5-json": true,
+      "php5-mcrypt": true,
+      "php5-mysqlnd": true,
+      "php5-xdebug": true
+    }
+
+  }
+}

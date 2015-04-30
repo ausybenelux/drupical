@@ -5,6 +5,8 @@
 
 Chef::Log.info('Starting drupical::web-tools')
 
+include_recipe 'php-fpm'
+
 #
 include_recipe 'web-tools::info'
 

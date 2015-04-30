@@ -5,38 +5,23 @@
 
 Chef::Log.info('Starting database::mysql')
 
+execute "apt-update-mysql" do
+  command "apt-get update"
+  action :nothing
+  ignore_failure true
+  only_if { apt_installed? }
+end
 
 #
 include_recipe "mysql::client"
 
 #
-include_recipe "mysql::server"
-
-#
-template '/etc/mysql/conf.d/mysqld_logging.cnf' do
-  cookbook 'database'
-  source 'mysql-logging.cnf.erb'
-  mode '0644'
-end
-
-#
-template '/etc/mysql/conf.d/mysqld_max_allowed_packet.cnf' do
-  cookbook 'database'
-  source 'mysql-max-allowed-packet.cnf.erb'
-  mode '0644'
-end
-
-#
-vhosts = node['config']['vhosts']
-vhosts.each do |key, vhost|
-
-  database = vhost.fetch('database_name')
-  pass = node['mysql']['server_root_password']
-
-  bash "create-database-#{database}" do
-    code <<-EOH
-    mysql --user=root --password=#{pass} -e "CREATE DATABASE IF NOT EXISTS #{database}";
-    EOH
-  end
-
+mysql_service 'default' do
+  port '3306'
+  data_dir '/var/lib/mysql'
+  allow_remote_root true
+  remove_anonymous_users false
+  remove_test_database true
+  server_root_password node['config']['rmdbs']['root_password']
+  action :create
 end

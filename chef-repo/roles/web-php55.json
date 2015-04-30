@@ -4,22 +4,12 @@
   "json_class": "Chef::Role",
   "default_attributes": {
     "php" : {
-      "install_method" : "package",
-      "directives" : {
-        "memory_limit" : "512M",
-        "error_reporting" : "E_ALL & ~E_DEPRECATED",
-        "display_errors" : "On",
-        "post_max_size" : "64M",
-        "upload_max_filesize" : "64M"
-      }
+      "install_method" : "package"
     }
   },
   "chef_type": "role",
   "run_list": [
-    "recipe[php5::default]",
-    "recipe[php5::install]",
-    "recipe[php5::packages]",
-    "recipe[php5::php5_55_ppa]",
+    "recipe[php5::php5_55]",
     "recipe[php-fpm]"
   ],
   "env_run_lists": {}

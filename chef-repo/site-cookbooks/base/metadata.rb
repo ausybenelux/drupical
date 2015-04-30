@@ -14,14 +14,14 @@ version '0.0.1'
   supports os
 end
 
-%w{ apt git curl vim java build-essential ruby-ng}.each do |dependancy|
+%w{ apt git curl vim java ruby-ng}.each do |dependancy|
   depends dependancy
 end
 
-recipe 'base::default', 'Default'
-recipe 'base::apt', 'Apt'
-recipe 'base::cachefilesd', 'Cachefilesd'
-recipe 'base::extra', 'extra'
-recipe 'base::java', 'java'
-recipe 'base::extra_zsh', 'Zsh'
-recipe 'base::ruby', 'ruby'
+recipe 'base::default'        , 'Default'
+recipe 'base::apt'            , 'Apt'
+recipe 'base::build'          , 'Build-essential'
+recipe 'base::extra'          , 'Extra'
+recipe 'base::extra_zsh'      , 'Zsh'
+recipe 'base::java'           , 'Java'
+recipe 'base::ruby'           , 'Ruby'

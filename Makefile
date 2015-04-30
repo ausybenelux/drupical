@@ -34,6 +34,8 @@ info:
 	@echo "make vagrant-up"
 	@echo "make vagrant-destroy"
 	@echo "------------------------------------------------------------------------------------------------------------"
+	@echo "make vagrant-export"
+	@echo "------------------------------------------------------------------------------------------------------------"
 
 install : install-vagrant-base install-vagrant-plugins install-chef-base vagrant-up
 
@@ -169,3 +171,34 @@ ifneq (,$(findstring reload, $(VAGRANTPLUG)))
 else
 	vagrant plugin install vagrant-reload
 endif
+
+install-export-all : vagrant-export-base vagrant-export-base-php53 vagrant-export-base-php54 vagrant-export-base-php55 vagrant-export-base-php56
+
+vagrant-export-base:
+	vagrant destroy -f
+	vagrant up precise64-base
+	vagrant package --base 'precise64-base' --output 'precise64-base_0.0.1.box'
+	vagrant box add 'precise64-base' file://./precise64-base_0.0.1.box
+
+vagrant-export-base-php53:
+	vagrant destroy -f
+	vagrant up precise64-base-php53
+	vagrant package --base 'precise64-base-php53' --output 'precise64-base-php53_0.0.1.box'
+	vagrant box add 'precise64-base-php53' file://./precise64-base-php53_0.0.1.box
+
+vagrant-export-base-php54:
+	vagrant destroy -f
+	vagrant up precise64-base-php54
+	vagrant package --base 'precise64-base-php54' --output 'precise64-base-php54_0.0.1.box'
+	vagrant box add 'precise64-base-php54' file://./precise64-base-php54_0.0.1.box
+
+vagrant-export-base-php55:
+	vagrant destroy -f
+	vagrant up precise64-base-php55
+	vagrant package --base 'precise64-base-php55' --output 'precise64-base-php55_0.0.1.box'
+	vagrant box add 'precise64-base-php55' file://./precise64-base-php55_0.0.1.box
+
+vagrant-export-base-php56:
+	vagrant up precise64-base-php56
+	vagrant package --base 'precise64-base-php56' --output 'precise64-base-php56_0.0.1.box'
+	vagrant box add 'precise64-base-php56' file://./precise64-base-php56_0.0.1.box

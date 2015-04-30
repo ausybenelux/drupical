@@ -12,6 +12,13 @@ include_recipe 'web::apache_repo'
 include_recipe 'apache2'
 
 #
+service 'apache2' do
+  service_name 'apache2'
+  supports     status: true, restart: true, reload: true
+  action       [:enable, :start]
+end
+
+#
 package "libapache2-mod-fastcgi" do
   action :install
 end
@@ -53,43 +60,3 @@ directory "/etc/apache2/ssl" do
   mode '0755'
   action :create
 end
-
-node['config']['vhosts'].each do |key, vhost|
-
-  if vhost['enable_ssl'] == 'true'
-
-    openssl_x509 "/etc/apache2/ssl/#{vhost['server_name']}.crt" do
-     common_name "#{vhost['server_name']}"
-     org "One Agency"
-     org_unit "Web"
-     country "BE"
-    end
-
-    web_app "#{key}-ssl" do
-      templates 'web_app.conf.erb'
-      cookbook 'web'
-      server_name vhost['server_name']
-      server_aliases vhost['aliases']
-      docroot vhost['docroot']
-      allow_override 'All'
-      enable_ssl 'true'
-      server_port 443
-      server_pool "#{vhost['server_name'].split('.')[0]}-ssl"
-    end
-
-  end
-
-  web_app key do
-    templates 'web_app.conf.erb'
-    cookbook 'web'
-    server_name vhost['server_name']
-    server_aliases vhost['aliases']
-    docroot vhost['docroot']
-    allow_override 'All'
-    enable_ssl 'false'
-    server_port 80
-    server_pool vhost['server_name'].split('.')[0]
-  end
-
-end
-

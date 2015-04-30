@@ -1,15 +1,15 @@
 #
-# Cookbook Name:: drupical
-# Recipe:: tasks
+# Cookbook Name:: database
+# Recipe:: backup-db
 #
 
 template "/usr/local/bin/backup-db.sh" do
   source "backup-db.sh.erb"
   mode 0777
-  notifies :run, 'execute[create_db_backup_token]', :immediately
+  cookbook 'database'
 end
 
-file "/vagrantbackup/file_token" do
+file "/var/enable-backup-db" do
   owner 'root'
   group 'root'
   mode '0644'

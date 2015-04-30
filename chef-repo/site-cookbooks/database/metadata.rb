@@ -18,7 +18,8 @@ end
   depends dependancy
 end
 
-recipe 'database::default', 'Database role cookbook'
 recipe 'database::mysql', 'mysql'
 recipe 'database::mariadb', 'mariadb'
+recipe 'database::config', 'config'
+recipe 'database::backup-db', 'backup-db'
 

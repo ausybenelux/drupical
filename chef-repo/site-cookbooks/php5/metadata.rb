@@ -18,9 +18,10 @@ end
   depends dependancy
 end
 
-recipe 'php5::default', 'Main configuration'
-recipe 'php5::install', 'Install'
+recipe 'php5::default',  'Main configuration'
+recipe 'php5::install',  'Install'
 recipe 'php5::packages', 'Packages'
-recipe 'php5::php5_54_ppa', 'php5_54_ppa'
-recipe 'php5::php5_55_ppa', 'php5_55_ppa'
-recipe 'php5::php5_56_dotdeb', 'php5_56_dotdeb'
+recipe 'php5::php5_54',  'php5_54_ppa'
+recipe 'php5::php5_55',  'php5_55_ppa'
+recipe 'php5::php5_53',  'php5_56_dotdeb'
+recipe 'php5::php_fpm',  'php_fpm'
