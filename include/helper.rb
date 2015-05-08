@@ -139,7 +139,7 @@ end
 
 def read_ip_address(machine)
 
-  command = "LANG=en ifconfig  | grep 'inet addr:'| grep -v '127.0.0.1' | cut -d: -f2 | awk '{ print $1 }'"
+  command = "LANG=en ifconfig eth1 | grep 'inet addr:'| grep -v '127.0.0.1' | cut -d: -f2 | awk '{ print $1 }'"
   result  = ""
 
   begin
