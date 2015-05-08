@@ -37,12 +37,14 @@
       "enable_php_drush": true
     },
 
+    "varnish_install": true,
+    
     "vhosts" : {
       "dummy" : {
-        "server_name" : "dummy.local",
+        "server_name" : "dummy_seb.local",
         "database_name" : "dummy",
         "docroot" : "/vagrant/docroot/",
-        "aliases" : [ "www.dummy.local" ],
+        "aliases" : [ "www.dummy_seb.local" ],
         "enable_ssl" : "true",
         "php_settings": {
           "log_errors": "on",

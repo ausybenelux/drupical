@@ -11,7 +11,7 @@
       }
     },
     "build-essential" : {
-      "compile_time" : true
+      "compile_time" : false
     }
   },
   "chef_type": "role",

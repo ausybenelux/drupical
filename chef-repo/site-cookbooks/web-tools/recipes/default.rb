@@ -5,6 +5,13 @@
 
 Chef::Log.info('Starting drupical::web-tools')
 
+execute "apt-update-webtools" do
+  command "apt-get update"
+  action :nothing
+  ignore_failure true
+  only_if { apt_installed? }
+end
+
 include_recipe 'php-fpm'
 
 #

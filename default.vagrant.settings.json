@@ -23,12 +23,6 @@
     "os_update": false,
 
     "vagrant_synced_folders": {
-      "/var/log" : {
-        "source" : "./logs",
-        "target" : "/var/log",
-        "type" : "nfs",
-        "mount_options" : ["rw", "vers=3", "udp", "fsc", "actimeo=1"]
-      }
     },
 
     "solr": {

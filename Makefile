@@ -199,6 +199,7 @@ vagrant-export-base-php55:
 	vagrant box add 'precise64-base-php55' file://./precise64-base-php55_0.0.1.box
 
 vagrant-export-base-php56:
+	vagrant destroy -f
 	vagrant up precise64-base-php56
 	vagrant package --base 'precise64-base-php56' --output 'precise64-base-php56_0.0.1.box'
 	vagrant box add 'precise64-base-php56' file://./precise64-base-php56_0.0.1.box
