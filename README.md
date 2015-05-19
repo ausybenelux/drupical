@@ -169,6 +169,7 @@ Permission error on a log directory when booting. | On the host machine, remove 
 mount.nfs: access denied error | On the host machine, run `sudo rm /etc/exports` and `vagrant reload`
 403 / Forbidden error when visiting the site in a browser | Run `vagrant reload` on the host machine
 No connection error when going to the website in a browser | SSH into the machine and run `sudo apache2ctl start`
+Box in wrong state error | Run `vagrant destroy`, remove the .vagrant directory and check if there are corrupt devices that should be removed in VirtualBox -> File -> Virtual Media Manager
 
 ## Contributing
 
