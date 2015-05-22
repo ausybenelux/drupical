@@ -1,0 +1,5 @@
+sudo: required
+install: make install
+language: ruby
+rvm:
+  - 2.1.0
