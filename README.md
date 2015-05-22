@@ -47,10 +47,6 @@ In `local.vagrant.settings.json`:
 make install
 ```
 
-### 4. Setup your project
-
-**TODO**
-
 ## Installation
 
 ### Including Drupical in your Project
@@ -174,4 +170,4 @@ Network interface is defined twice | Use Vagrant 1.7.1
 
 ## Contributing
 
-https://github.com/applicationsonline/librarian-chef
+See the [contribution guidelines](https://github.com/ONEAgency/drupical/wiki/Contributing) in the wiki.
