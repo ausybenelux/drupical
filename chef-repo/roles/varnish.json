@@ -13,7 +13,6 @@
   },
   "chef_type": "role",
   "run_list": [
-    "recipe[varnish::default]",
     "recipe[web-varnish::default]"
   ],
   "env_run_lists": {
