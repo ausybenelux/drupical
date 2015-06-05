@@ -33,9 +33,6 @@ cookbook 'php-fpm'
 
 cookbook 'nodejs'
 
-cookbook 'grunt_cookbook',
-         :git => 'git://github.com/MattSurabian/grunt_cookbook.git'
-
 cookbook 'ruby-ng'
 
 cookbook 'selenium'

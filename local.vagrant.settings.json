@@ -41,7 +41,7 @@
     
     "vhosts" : {
       "dummy" : {
-        "server_name" : "dummy_seb.local",
+        "server_name" : "dummy-seb.local",
         "database_name" : "dummy",
         "docroot" : "/vagrant/docroot/",
         "aliases" : [ "www.dummy_seb.local" ],

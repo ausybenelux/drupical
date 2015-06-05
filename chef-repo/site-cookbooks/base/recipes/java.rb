@@ -3,8 +3,14 @@
 # Recipe::java
 #
 
-node.override['java']['jdk_version'] = '7'
-node.override['java']['install_flavor'] = 'oracle'
-node.override['java']['oracle']['accept_oracle_download_terms'] = true
+bash "java-set-debconf-selection" do
+  code <<-EOH
+    (echo oracle-java7-installer shared/accepted-oracle-license-v1-1 select true | sudo /usr/bin/debconf-set-selections)
+  EOH
+end
 
-include_recipe "java"
+include_recipe "base::java_repo"
+
+package "oracle-java7-installer" do
+  action :install
+end

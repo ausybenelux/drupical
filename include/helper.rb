@@ -3,8 +3,22 @@
 
 def vagrant_check_requirements
 
-  Vagrant.require_version ">= 1.6.5"
+  #
+  Vagrant.require_version ">= 1.7.1"
 
+  #
+  current_dir = File.expand_path('.')
+  if !File.exists? (current_dir + "/chef-repo/cookbooks/apache2")
+
+    puts "#"
+    puts "Please run 'make install-chef-librarian' & 'make download-chef-cookbooks' before continuing."
+    puts "#"
+
+    raise SystemExit
+
+  end
+
+  #
   if !Vagrant.has_plugin?("vagrant-triggers") || 
     !Vagrant.has_plugin?("vagrant-hostsupdater") || 
     !Vagrant.has_plugin?("vagrant-cachier") || 
@@ -58,7 +72,6 @@ def vagrant_check_requirements
 
 end
 
-
 def vagrant_get_config()
 
   vconfig_global = false
@@ -79,6 +92,26 @@ def vagrant_get_config()
 
       puts "#"
       puts "Couldn't find local.vagrant.settings.json in " + settings_dir + "."
+      puts "#"
+
+    end
+
+    vconfig_global['config']['vhosts'].each do |key, vhost|
+      if vhost['server_name'].include? "_"
+
+        puts "#"
+        puts "Vhost aliasses cannot contain underscores."
+        puts "#"
+
+        raise SystemExit
+
+      end
+    end
+
+    if vconfig_global['config']['box_hostname'].include? "_"
+
+      puts "#"
+      puts "Box hostname cannot contain underscores."
       puts "#"
 
       raise SystemExit
@@ -114,7 +147,6 @@ def vagrant_get_aliases(vconfig)
       if _alias.include?("_")
         _alias = _alias.gsub!("_","-")
       end
-      
       aliases.push(_alias)
     end
 
@@ -137,22 +169,28 @@ def vagrant_get_aliases(vconfig)
 
 end
 
-def read_ip_address(machine)
+def read_ip_address(ip)
 
-  command = "LANG=en ifconfig eth1 | grep 'inet addr:'| grep -v '127.0.0.1' | cut -d: -f2 | awk '{ print $1 }'"
-  result  = ""
+  return ip
 
-  begin
-    # sudo is needed for ifconfig
-    machine.communicate.sudo(command) do |type, data|
-      result << data if type == :stdout
-    end
-  rescue
-    result = "# NOT-UP"
+end
+
+def generate_random_ip()
+
+  file_random_ip = File.expand_path('.') + "/.vagrant/random_ip"
+
+  if File.exists? (file_random_ip)
+    ip = File.read(file_random_ip)
+  else
+    ip = "192.168.#{rand(252)+1}.#{rand(252)+1}"
+    File.open(file_random_ip, 'w') {
+      |f| f.write(ip)
+    }
   end
 
-  # the second inet is more accurate
-  result.chomp.split("\n").last
+  File.close
+
+  return ip
 
 end
 
@@ -179,19 +217,5 @@ end
 
 
 def get_vagrant_post_up_message(aliases)
-
-message = <<EOF
-          _
-         /(|
-        (  :
-       __\  \  _____
-     (____)  `|
-    (____)|   |
-     (____).__|
-      (___)__.|_____
-
-EOF
-
-  message = message + aliases.to_s
-
+  message = aliases.to_s
 end

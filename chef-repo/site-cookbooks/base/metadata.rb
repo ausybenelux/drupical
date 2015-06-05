@@ -14,7 +14,7 @@ version '0.0.1'
   supports os
 end
 
-%w{ apt git curl vim java ruby-ng}.each do |dependancy|
+%w{ apt git curl vim ruby-ng}.each do |dependancy|
   depends dependancy
 end
 
@@ -24,4 +24,5 @@ recipe 'base::build'          , 'Build-essential'
 recipe 'base::extra'          , 'Extra'
 recipe 'base::extra_zsh'      , 'Zsh'
 recipe 'base::java'           , 'Java'
+recipe 'base::java_repo'      , 'Java repo'
 recipe 'base::ruby'           , 'Ruby'

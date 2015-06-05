@@ -40,21 +40,7 @@ end
 #
 if node['config']['php_packages']['php5-xdebug']
 
-  if node['config']['php']['php_version'] == '5.3'
 
-    file "/etc/php5/conf.d/xdebug.ini" do
-      action :delete
-    end
-
-    template "/etc/php5/conf.d/xdebug.ini" do
-      source "20090626-xdebug.ini"
-      mode 0644
-      owner "root"
-      group "root"
-      action :create
-    end
-
-  else
 
     file "/etc/php5/mods-available/xdebug.ini" do
       action :delete
