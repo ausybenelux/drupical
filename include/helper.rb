@@ -19,11 +19,11 @@ def vagrant_check_requirements
   end
 
   #
-  if !Vagrant.has_plugin?("vagrant-triggers") || 
-    !Vagrant.has_plugin?("vagrant-hostsupdater") || 
-    !Vagrant.has_plugin?("vagrant-cachier") || 
-    !Vagrant.has_plugin?("vagrant-vbguest") || 
-    !Vagrant.has_plugin?("vagrant-persistent-storage") || 
+  if !Vagrant.has_plugin?("vagrant-triggers") ||
+    !Vagrant.has_plugin?("vagrant-hostsupdater") ||
+    !Vagrant.has_plugin?("vagrant-cachier") ||
+    !Vagrant.has_plugin?("vagrant-vbguest") ||
+    !Vagrant.has_plugin?("vagrant-persistent-storage") ||
     !Vagrant.has_plugin?("vagrant-hostmanager") ||
     !Vagrant.has_plugin?("vagrant-reload")
 
@@ -63,7 +63,7 @@ def vagrant_check_requirements
     if !Vagrant.has_plugin?("vagrant-reload")
       puts "vagrant plugin install vagrant-reload"
     end
-    
+
     puts "#"
 
     raise SystemExit
@@ -187,8 +187,6 @@ def generate_random_ip()
       |f| f.write(ip)
     }
   end
-
-  File.close
 
   return ip
 
