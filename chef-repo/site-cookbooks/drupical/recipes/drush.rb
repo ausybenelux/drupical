@@ -3,6 +3,8 @@
 # Recipe:: default
 #
 
+include_recipe "drupical::drush_php53"
+
 bash "install-console-table" do
   code <<-EOH
   (pear install Console_Table)

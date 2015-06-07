@@ -1,4 +1,9 @@
 #
+# Cookbook Name:: drupical
+# Recipe::site
+#
+
+#
 node['config']['vhosts'].each do |key, vhost|
 
   database = vhost.fetch('database_name')
@@ -12,8 +17,6 @@ node['config']['vhosts'].each do |key, vhost|
   end
 
 end
-
-include_recipe 'php5::php_fpm'
 
 #
 node['config']['vhosts'].each do |key, vhost|
@@ -36,7 +39,7 @@ node['config']['vhosts'].each do |key, vhost|
       allow_override 'All'
       enable_ssl 'true'
       server_port 443
-      server_pool "#{vhost['server_name'].split('.')[0]}-ssl"
+      server_pool vhost['server_name'].split('.')[0] + "-ssl"
     end
 
   end
@@ -54,5 +57,3 @@ node['config']['vhosts'].each do |key, vhost|
   end
 
 end
-
-include_recipe 'php5::packages'

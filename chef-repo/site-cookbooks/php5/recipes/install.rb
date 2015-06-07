@@ -29,3 +29,6 @@ end
 #We have to disable apache2::mod_php5 because it'll interfere with the PHP-FPM module.
 #
 #include_recipe 'apache2::mod_php5'
+
+include_recipe 'php5::php_fpm'
+include_recipe 'php5::packages'

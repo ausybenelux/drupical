@@ -40,28 +40,24 @@ end
 #
 if node['config']['php_packages']['php5-xdebug']
 
+  file "/etc/php5/mods-available/xdebug.ini" do
+    action :delete
+  end
 
+  file "/etc/php5/mods-available/20-xdebug.ini" do
+    action :delete
+  end
 
-    file "/etc/php5/mods-available/xdebug.ini" do
-      action :delete
-    end
-    
-    file "/etc/php5/mods-available/20-xdebug.ini" do
-      action :delete
-    end
+  template "/etc/php5/mods-available/xdebug.ini" do
+    source "20100525-xdebug.ini"
+    mode 0644
+    owner "root"
+    group "root"
+    action :create
+  end
 
-    template "/etc/php5/mods-available/xdebug.ini" do
-      source "20100525-xdebug.ini"
-      mode 0644
-      owner "root"
-      group "root"
-      action :create
-    end
-
-    link "/etc/php5/mods-available/xdebug.ini" do
-      to "/etc/php5/fpm/conf.d/xdebug.ini"
-    end
-
+  link "/etc/php5/mods-available/xdebug.ini" do
+    to "/etc/php5/fpm/conf.d/xdebug.ini"
   end
 
 end

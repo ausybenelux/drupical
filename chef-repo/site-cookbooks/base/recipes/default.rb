@@ -12,3 +12,5 @@ include_recipe "base::extra"
 include_recipe "base::java"
 
 include_recipe "base::ruby"
+
+include_recipe "base::cachefilesd"
