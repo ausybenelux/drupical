@@ -167,7 +167,9 @@ mount.nfs: access denied error | On the host machine, run `sudo rm /etc/exports`
 No connection error when going to the website in a browser | SSH into the machine and run `sudo apache2ctl start`
 Box in wrong state error | Run `vagrant destroy`, remove the .vagrant directory and check if there are corrupt devices that should be removed in VirtualBox -> File -> Virtual Media Manager
 Network interface is defined twice | Use Vagrant 1.7.1
-There was an error while executing `VBoxManage` | killall -9 VBoxHeadless && vagrant reload
+There was an error while executing `VBoxManage` | killall -9 VBoxHeadless && vagrant reload. If that fails, restart your machine.
+Vagrant won't boot after cancelling vagrant up with cmd + c | restart your machine
+
 
 
 ## Contributing
