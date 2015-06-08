@@ -9,7 +9,7 @@
         "source" : "..",
         "target" : "/vagrant",
         "type" : "nfs",
-        "mount_options" : ["rw", "vers=3", "udp", "fsc", "actimeo=1"]
+        "mount_options" : ["rw", "vers=3", "tcp", "fsc", "actimeo=1"]
       }
     },
 
