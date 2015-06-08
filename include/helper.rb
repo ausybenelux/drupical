@@ -4,7 +4,16 @@
 def vagrant_check_requirements
 
   #
-  Vagrant.require_version ">= 1.7.1"
+  version = Vagrant::VERSION
+  if(version != '1.7.1')
+
+    puts "#"
+    puts "Only Vagrant version 1.7.1 is allowed. Please install this version: http://www.vagrantup.com/download-archive/v1.7.1.html"
+    puts "#"
+
+    raise SystemExit
+
+  end
 
   #
   current_dir = File.expand_path('.')
@@ -93,6 +102,8 @@ def vagrant_get_config()
       puts "#"
       puts "Couldn't find local.vagrant.settings.json in " + settings_dir + "."
       puts "#"
+
+      raise SystemExit
 
     end
 
