@@ -159,6 +159,8 @@ If you prefer a native app like SequelPro follow these instructions:
 
 ## Troubleshooting
 
+*If your issue is not listed below, please reboot your machine.*
+
 Problem | Solution
 --------|---------
 Permission error on a log directory when booting. | On the host machine, remove all but the `.gitkeep` file in the `logs` directory and run `vagrant reload`.
