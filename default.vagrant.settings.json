@@ -16,15 +16,14 @@
     "box_static_ip": "10.0.0.2",
 
     "box_ram_cpu": "auto",
-    "box_ram": "1024",
+    "box_ram": "2048",
     "box_cpu": "2",
 
     "box_shell": "bash",
 
     "os_update": false,
 
-    "vagrant_synced_folders": {
-    },
+    "vagrant_synced_folders": {},
 
     "solr": {
       "solr_install": false,
@@ -37,7 +36,7 @@
 
     "web_tools": {
       "web_tools_install": false,
-      "url_base": "tools",
+      "url_base": "tools.dev.local",
       "tools": {
         "adminer": {
           "install": false,
@@ -73,7 +72,7 @@
     "rmdbs" : {
       "type" : "mysql",
       "root_password" : "10moioui",
-      "use-mysql-persistent-storage" : true
+      "use-mysql-persistent-storage" : false
     },
 
     "varnish_install": false,

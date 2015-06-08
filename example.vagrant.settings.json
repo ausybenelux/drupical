@@ -13,21 +13,6 @@
       }
     },
 
-    "web_tools": {
-      "web_tools_install": true,
-      "url_base": "tools",
-      "tools": {
-        "adminer": {
-          "install": true,
-          "alias": "adminer"
-        },
-        "mailcatcher": {
-          "install": true,
-          "alias": "mailcatcher"
-        }
-      }
-    },
-
     "php": {
       "php_version": "5.5",
       "enable_php_phing": false,
