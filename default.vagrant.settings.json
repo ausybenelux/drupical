@@ -8,7 +8,7 @@
     "box_type": "hashicorp/precise64",
 
     "box_name": "drupal",
-    "box_hostname": "dev.local",
+    "box_hostname": "dev",
 
     "box_gui": false, // true or false
 
