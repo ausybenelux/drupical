@@ -10,3 +10,5 @@ vboxmanage hostonlyif remove vboxnet6
 vboxmanage hostonlyif remove vboxnet7
 vboxmanage hostonlyif remove vboxnet8
 vboxmanage hostonlyif remove vboxnet9
+vboxmanage hostonlyif remove vboxnet10
+vboxmanage hostonlyif remove vboxnet11

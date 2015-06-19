@@ -75,6 +75,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   # IP
   config.vm.network :private_network, ip: random_ip
+
+  # Plugin: Hostsupdater
   config.hostsupdater.remove_on_suspend = true
   config.hostsupdater.aliases = aliases
 
@@ -121,6 +123,24 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
     vb.customize ['storageattach', :id, '--storagectl', 'SATA Controller', '--port', 0, '--nonrotational', 'on']
 
+  end
+
+  # Fix NFS permission issues
+  config.nfs.map_uid = Process.uid
+  config.nfs.map_gid = Process.gid
+
+  # Synced folders
+  vconfig['config']['vagrant_synced_folders'].each do |key, value|
+
+    mount_options = value.fetch('mount_options')
+    mount_options.push ('clientaddr=' + random_ip)
+
+    src = File.expand_path(value.fetch('source'))
+    config.vm.synced_folder src,
+                            value.fetch('target'),
+                            create: true,
+                            type: value.fetch('type'),
+                            mount_options: mount_options
   end
 
   if vconfig['config']['rmdbs']['use-mysql-persistent-storage']

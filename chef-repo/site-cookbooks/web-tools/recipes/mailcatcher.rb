@@ -9,7 +9,6 @@ if node['config']['web_tools']['tools']['mailcatcher']['install']
     action :install
   end
 
-
   package 'sqlite3' do
     action :nothing
   end.run_action(:install)

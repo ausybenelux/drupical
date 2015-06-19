@@ -8,7 +8,7 @@ node['config']['vhosts'].each do |key, vhost|
     php_settings["php_admin_value[#{setting_key}]"] = value
   end
 
-  php_fpm_pool vhost['server_name'].split('.')[0] do
+  php_fpm_pool vhost['server_name'] do
     process_manager "dynamic"
     max_requests 5000
     max_children 10
@@ -19,7 +19,7 @@ node['config']['vhosts'].each do |key, vhost|
 
   if vhost['enable_ssl'] == 'true'
 
-    php_fpm_pool "#{vhost['server_name'].split('.')[0]}-ssl" do
+    php_fpm_pool "#{vhost['server_name']}-ssl" do
       process_manager "dynamic"
       max_requests 5000
       max_children 10

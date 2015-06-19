@@ -71,5 +71,13 @@ bash "compile-php53" do
     (cd /opt/php-5.3.9 && ./configure --prefix=/opt/php53 --with-config-file-path=/opt/php53 --without-t1lib --disable-short-tags --with-mysqli=mysqlnd --with-mysql=mysqlnd --with-pdo-mysql --with-openssl --with-zlib --enable-bcmath --with-bz2 --with-gd --enable-mbstring --with-mcrypt --with-mhash --enable-soap --enable-sockets --with-xmlrpc --enable-zip --with-tidy --with-curl --with-curlwrappers)
     (cd /opt/php-5.3.9 && make)
     (cd /opt/php-5.3.9 && make install)
+    (chmod -R 777 /opt/php53)
   EOH
 end
+
+ template "/etc/profile.d/profile.drush.sh" do
+
+   source "profile.drush.sh"
+   mode 0777
+
+ end
