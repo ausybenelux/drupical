@@ -19,6 +19,6 @@ else
 
 end
 
-include_recipe "database::config"
+#include_recipe "database::config"
 
-include_recipe "database::backup-db"
+#include_recipe "database::backup-db"

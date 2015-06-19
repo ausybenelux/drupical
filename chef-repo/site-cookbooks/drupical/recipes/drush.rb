@@ -3,17 +3,33 @@
 # Recipe:: default
 #
 
-bash "install-console-table" do
-  code <<-EOH
-  (pear install Console_Table)
-  EOH
-  not_if "pear list| grep Console_Table"
-end
-
 git "/usr/share/drush" do
   repository "https://github.com/drush-ops/drush.git"
-  reference "6.5.0"
+  reference "6.6.0"
   action :sync
+end
+
+if node["php5"]["version"] != "5.3"
+
+  include_recipe "drupical::drush_php53"
+
+  bash "install-console-table-manual" do
+    code <<-EOH
+      (wget http://download.pear.php.net/package/Console_Table-1.1.3.tgz)
+      (tar xvzf Console_Table-1.1.3.tgz)
+      (sudo mv Console_Table-1.1.3 /usr/share/drush/lib)
+    EOH
+  end
+
+else
+
+  bash "install-console-table-pear" do
+    code <<-EOH
+      (pear install Console_Table)
+    EOH
+    not_if "pear list| grep Console_Table"
+  end
+
 end
 
 bash "make-drush-symlink" do
@@ -31,42 +47,10 @@ directory "/home/vagrant/.drush" do
   action :create
 end
 
-#link "/home/vagrant/build/drush/policy/policy.drush.inc" do
-#  to "/home/vagrant/.drush/policy.drush.inc"
-#end
-
-vhosts = node['config']['vhosts']
-vhosts.each do |key, vhost|
-
-  #
-  vhost_aliases = Hash.new
-
-  #
-  _aliases = vhost.fetch('aliases')
-
-  vhost_aliases[key] = vhost.fetch('server_name')
-
-  #
-  _aliases.each do |_key, _alias|
-
-    vhost_aliases[_key] = _alias
-
-  end
-
- # template "/home/vagrant/drupical/build/drush/alias/" + key + ".aliases.drushrc.php" do
-#
-  #  source "aliases.drushrc.php.erb"
-  #  mode '0666'
-  #  variables({
-  #                :server_name  => vhost.fetch('server_name'),
-  #                :docroot      => vhost.fetch('docroot'),
-  #                :aliases      => vhost_aliases
-  #            })
-
-  #end
-
-  #link "/home/vagrant/.drush/" + key + ".aliases.drushrc.php"do
-  #  to "/home/vagrant/drupical/build/drush/alias/" + key + ".aliases.drushrc.php"
-  #end
-
+bash "drush-autocmpletion" do
+  code <<-EOH
+  (ln -s /usr/share/drush/drush.complete.sh /etc/bash_completion.d/drush.complete.sh)
+  EOH
+  not_if { File.exists?("/etc/bash_completion.d/drush.complete.sh") }
+  only_if { File.exists?("/usr/share/drush/drush.complete.sh") }
 end

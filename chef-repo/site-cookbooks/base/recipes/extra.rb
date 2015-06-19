@@ -3,8 +3,6 @@
 # Recipe::extra
 #
 
-
-
 include_recipe "git"
 
 include_recipe "curl"

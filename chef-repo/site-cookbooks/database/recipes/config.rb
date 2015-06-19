@@ -1,4 +1,5 @@
 #
+=begin
 template '/etc/mysql/conf.d/mysqld_logging.cnf' do
   cookbook 'database'
   source 'mysql-logging.cnf.erb'
@@ -16,4 +17,4 @@ template '/etc/mysql/conf.d/mysqld_tweaks.cnf' do
   cookbook 'database'
   source 'mysql-tweaks.cnf.erb'
   mode '0644'
-end
+end=end

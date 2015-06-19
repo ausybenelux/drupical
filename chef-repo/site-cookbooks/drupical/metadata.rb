@@ -20,3 +20,4 @@ end
 
 recipe 'drupical::site',  'site'
 recipe 'drupical::drush', 'drush'
+recipe 'drupical::drush_php53', 'drush_php53'

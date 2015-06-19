@@ -9,22 +9,7 @@
         "source" : "..",
         "target" : "/vagrant",
         "type" : "nfs",
-        "mount_options" : ["rw", "vers=3", "udp", "fsc", "actimeo=1"]
-      }
-    },
-
-    "web_tools": {
-      "web_tools_install": true,
-      "url_base": "tools",
-      "tools": {
-        "adminer": {
-          "install": true,
-          "alias": "adminer"
-        },
-        "mailcatcher": {
-          "install": true,
-          "alias": "mailcatcher"
-        }
+        "mount_options" : ["rw", "vers=3", "tcp", "fsc", "actimeo=1"]
       }
     },
 

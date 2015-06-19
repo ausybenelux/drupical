@@ -3,13 +3,6 @@
   "description": "Base role applied to all nodes.",
   "json_class": "Chef::Role",
   "default_attributes": {
-    "java" : {
-      "install_flavor" : "oracle",
-      "jdk_version" : "7",
-      "oracle" : {
-        "accept_oracle_download_terms" : true
-      }
-    },
     "build-essential" : {
       "compile_time" : false
     }
@@ -20,13 +13,6 @@
       "sudo": {
         "users": "vagrant",
         "passwordless": true
-      }
-    },
-    "java" : {
-      "install_flavor" : "oracle",
-      "jdk_version" : "7",
-      "oracle" : {
-        "accept_oracle_download_terms" : true
       }
     }
   },

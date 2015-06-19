@@ -1,33 +1,33 @@
 {
   "config": {
 
-    "start_form": "scratch",
+    "start_form": "hashicorp",
 
     "vagrant_debugging": false,
 
     "box_type": "hashicorp/precise64",
+
     "box_name": "drupal",
-    "box_hostname": "dev.local",
+    "box_hostname": "dev",
 
     "box_gui": false, // true or false
 
     "box_dhcp": true,
-    "box_static_ip": "10.0.0.1",
+    "box_static_ip": "10.0.0.2",
 
     "box_ram_cpu": "auto",
-    "box_ram": "1024",
+    "box_ram": "2048",
     "box_cpu": "2",
 
     "box_shell": "bash",
 
     "os_update": false,
 
-    "vagrant_synced_folders": {
-    },
+    "vagrant_synced_folders": {},
 
     "solr": {
       "solr_install": false,
-      "solr_version": "3.6.2",
+      "solr_version": "4.2.1",
       "solr_checksums": {
         "3.6.2": "537426dcbdd0dc82dd5bf16b48b6bcaf87cb4049c1245eea8dcb79eeaf3e7ac6",
         "4.2.1": "648a4b2509f6bcac83554ca5958cf607474e81f34e6ed3a0bc932ea7fac40b99"
@@ -36,7 +36,7 @@
 
     "web_tools": {
       "web_tools_install": false,
-      "url_base": "tools",
+      "url_base": "tools.dev.local",
       "tools": {
         "adminer": {
           "install": false,
@@ -72,7 +72,7 @@
     "rmdbs" : {
       "type" : "mysql",
       "root_password" : "10moioui",
-      "use-mysql-persistent-storage" : true
+      "use-mysql-persistent-storage" : false
     },
 
     "varnish_install": false,

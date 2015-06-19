@@ -85,11 +85,7 @@ endif
 install-chef-librarian:
 ifndef BIN_LIBRARIAN
 	@echo "Installing gem librarian chef."
-ifeq ($(UNAME),Darwin)
-	gem install librarian-chef
-else
 	sudo gem install librarian-chef
-endif
 else
 	@echo "librarian chef is already installed."
 endif
@@ -106,15 +102,15 @@ ifeq ($(UNAME),Linux)
 endif
 
 vagrant-up:
-	ssh-add -K ~/.ssh/id_rsa ; vagrant up
+	ssh-add -K ~/.ssh/id_rsa ; vagrant up 
 
 vagrant-provision:
 	@echo "Re-provisioning vagrant box."
-	vagrant reload --provision
+	vagrant reload  --provision
 
 vagrant-destroy:
 	@echo "Destroying vagrant box."
-	vagrant destroy -f
+	vagrant destroy -f  
 
 check-triggers:
 ifneq (,$(findstring triggers, $(VAGRANTPLUG)))
@@ -165,6 +161,13 @@ else
 	vagrant plugin install vagrant-hostmanager
 endif
 
+check-hostmanager:
+ifneq (,$(findstring hosts, $(VAGRANTPLUG)))
+	@echo "Vagrant hosts is already installed"
+else
+	vagrant plugin install vagrant-hosts
+endif
+
 check-reload:
 ifneq (,$(findstring reload, $(VAGRANTPLUG)))
 	@echo "Vagrant reload is already installed"
@@ -172,34 +175,23 @@ else
 	vagrant plugin install vagrant-reload
 endif
 
-install-export-all : vagrant-export-base vagrant-export-base-php53 vagrant-export-base-php54 vagrant-export-base-php55 vagrant-export-base-php56
-
-vagrant-export-base:
+vagrant-export:
+	rm precise64-drupical_0.0.1.box
+	vagrant box remove precise64-drupical
 	vagrant destroy -f
-	vagrant up precise64-base
-	vagrant package --base 'precise64-base' --output 'precise64-base_0.0.1.box'
-	vagrant box add 'precise64-base' file://./precise64-base_0.0.1.box
+	vagrant up
+	vagrant package --output 'precise64-drupical_0.0.1.box'
+	vagrant box add 'precise64-drupical file://./precise64-drupical_0.0.1.box
 
-vagrant-export-base-php53:
-	vagrant destroy -f
-	vagrant up precise64-base-php53
-	vagrant package --base 'precise64-base-php53' --output 'precise64-base-php53_0.0.1.box'
-	vagrant box add 'precise64-base-php53' file://./precise64-base-php53_0.0.1.box
-
-vagrant-export-base-php54:
-	vagrant destroy -f
-	vagrant up precise64-base-php54
-	vagrant package --base 'precise64-base-php54' --output 'precise64-base-php54_0.0.1.box'
-	vagrant box add 'precise64-base-php54' file://./precise64-base-php54_0.0.1.box
-
-vagrant-export-base-php55:
-	vagrant destroy -f
-	vagrant up precise64-base-php55
-	vagrant package --base 'precise64-base-php55' --output 'precise64-base-php55_0.0.1.box'
-	vagrant box add 'precise64-base-php55' file://./precise64-base-php55_0.0.1.box
-
-vagrant-export-base-php56:
-	vagrant destroy -f
-	vagrant up precise64-base-php56
-	vagrant package --base 'precise64-base-php56' --output 'precise64-base-php56_0.0.1.box'
-	vagrant box add 'precise64-base-php56' file://./precise64-base-php56_0.0.1.box
+vagrant-cleanup-interfaces:
+	vboxmanage hostonlyif remove vboxnet0
+	vboxmanage hostonlyif remove vboxnet1
+	vboxmanage hostonlyif remove vboxnet2
+	vboxmanage hostonlyif remove vboxnet3
+	vboxmanage hostonlyif remove vboxnet4
+	vboxmanage hostonlyif remove vboxnet5
+	vboxmanage hostonlyif remove vboxnet6
+	vboxmanage hostonlyif remove vboxnet7
+	vboxmanage hostonlyif remove vboxnet8
+	vboxmanage hostonlyif remove vboxnet9
+	vboxmanage hostonlyif create
