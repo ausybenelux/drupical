@@ -71,7 +71,9 @@ endif
 
 check-environment-librarian:
 ifndef BIN_LIBRARIAN
-	$(error Chef-Librarian has not been installed yet.)
+	@echo "Chef-Librarion has not been installed."
+	@echo "Installing Chef-Librarion."
+	gem install librarian-chef
 endif
 	@echo "Chef-Librarian: OK"
 
