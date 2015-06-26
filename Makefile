@@ -88,16 +88,16 @@ endif
 	@echo "Homebrew: OK"
 
 check-vagrant-plugins: check-environment-vagrant
-	vagrant plugin install vagrant-cachier --verbose --plugin-version '1.2.0'
-	vagrant plugin install vagrant-hostmanager --verbose --plugin-version '1.5.0'
-	vagrant plugin install vagrant-hosts --verbose --plugin-version '2.4.0'
-	vagrant plugin install vagrant-hostsupdater --verbose --plugin-version '0.0.11'
-	vagrant plugin install vagrant-omnibus --verbose --plugin-version '1.4.1'
-	vagrant plugin install vagrant-persistent-storage --verbose --plugin-version '0.0.16'
-	vagrant plugin install vagrant-reload --verbose --plugin-version '0.0.1'
-	vagrant plugin install vagrant-share --verbose --plugin-version '1.1.4'
-	vagrant plugin install vagrant-triggers --verbose --plugin-version '0.5.0'
-	vagrant plugin install vagrant-vbguest --verbose --plugin-version '0.10.0'
+	make .install-vagrant-plugin plugin=vagrant-cachier version=1.2.0
+	make .install-vagrant-plugin plugin=vagrant-hostmanager version=1.5.0
+	make .install-vagrant-plugin plugin=vagrant-hosts version=2.4.0
+	make .install-vagrant-plugin plugin=vagrant-hostsupdater version=0.0.11
+	make .install-vagrant-plugin plugin=vagrant-omnibus version=1.4.1
+	make .install-vagrant-plugin plugin=vagrant-persistent-storage version=0.0.16
+	make .install-vagrant-plugin plugin=vagrant-reload version=0.0.1
+	make .install-vagrant-plugin plugin=vagrant-share version=1.1.4
+	make .install-vagrant-plugin plugin=vagrant-triggers version=0.5.0
+	make .install-vagrant-plugin plugin=vagrant-vbguest version=0.10.0
 
 .prompt-yesno:
 	@exec 9<&0 0</dev/tty
@@ -105,3 +105,10 @@ check-vagrant-plugins: check-environment-vagrant
 	[[ -z $$FOUNDATION_NO_WAIT ]] && read -rs -t5 -n 1 yn;
 	exec 0<&9 9<&-
 	[[ -z $$yn ]] || [[ $$yn == [yY] ]] && echo Y >&2 || (echo N >&2 && exit 1)
+
+.install-vagrant-plugin:
+ifneq (,$(findstring $(plugin), $(VAGRANT_PLUGINS)))
+	@echo "Vagrant plugin $(plugin) is already installed."
+else
+	vagrant plugin install $(plugin) --verbose --plugin-version '$(version)'
+endif
