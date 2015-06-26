@@ -36,7 +36,7 @@ download-chef-cookbooks:
 	cd $(PWD)/chef-repo ; librarian-chef install --clean --verbose
 
 vagrant-up:
-ifeq "$(wildcard .vagrant)" ""
+ifeq "$(wildcard chef-repo/cookbooks)" ""
 	make install
 endif
 	ssh-add -K ~/.ssh/id_rsa ; vagrant up
