@@ -57,7 +57,7 @@ check-environment-virtualbox:
 ifndef BIN_VIRTUALBOX
 	@echo "Virtualbox has not been installed yet."
 	@echo "Please install the latest version from https://www.virtualbox.org/wiki/Downloads."
-	exit;
+	exit 2;
 endif
 	@echo "Virtualbox: OK"
 
@@ -65,14 +65,13 @@ check-environment-vagrant:
 ifndef BIN_VAGRANT
 	@echo "Vagrant has not been installed yet."
 	@echo "Please install the version 1.7.1 from http://www.vagrantup.com/download-archive/v1.7.1.html."
-	exit;
+	exit 2;
 endif
 	@echo "Vagrant: OK"
 
 check-environment-librarian:
 ifndef BIN_LIBRARIAN
-	@echo "Chef-Librarian has not been installed yet."
-	exit;
+	$(error Chef-Librarian has not been installed yet.)
 endif
 	@echo "Chef-Librarian: OK"
 
@@ -80,7 +79,7 @@ check-environment-brew:
 ifndef BIN_BREW
 	@echo "Homebrew has not been installed yet."
 ifneq ($(UNAME),Linux)
-	exit;
+	exit 2;
 endif
 
 endif
