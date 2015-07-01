@@ -171,6 +171,7 @@ Box in wrong state error | Run `vagrant destroy`, remove the .vagrant directory 
 Network interface is defined twice | Use Vagrant 1.7.1
 There was an error while executing `VBoxManage` | killall -9 VBoxHeadless && vagrant reload. If that fails, restart your machine.
 Vagrant won't boot after cancelling vagrant up with cmd + c | restart your machine
+Vagrant won't start: "A virtual machine with the name xxx123 already exists" | Run `vagrant destroy`, remove the .vagrant directory and check if there are corrupt devices that should be removed in VirtualBox -> File -> Virtual Media Manager
 
 
 
