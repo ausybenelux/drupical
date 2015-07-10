@@ -20,7 +20,7 @@ def vagrant_check_requirements
   if !File.exists? (current_dir + "/chef-repo/cookbooks/apache2")
 
     puts "#"
-    puts "Please run 'make install-chef-librarian' & 'make download-chef-cookbooks' before continuing."
+    puts "Please run following command: make install"
     puts "#"
 
     raise SystemExit

@@ -27,7 +27,7 @@ info:
 	@echo ""
 
 help:
-	@echo ""
+	@echo "/giphy boobies"
 
 install: check-environment download-chef-cookbooks vagrant-up
 
@@ -36,7 +36,7 @@ download-chef-cookbooks:
 	cd $(PWD)/chef-repo ; librarian-chef install --clean --verbose
 
 vagrant-up:
-ifeq "$(wildcard chef-repo/cookbooks)" ""
+ifeq "$(wildcard chef-repo/cookbooks/apache2)" ""
 	make install
 endif
 	ssh-add -K ~/.ssh/id_rsa ; vagrant up
@@ -110,5 +110,5 @@ check-vagrant-plugins: check-environment-vagrant
 ifneq (,$(findstring $(plugin), $(VAGRANT_PLUGINS)))
 	@echo "Vagrant plugin $(plugin) is already installed."
 else
-	vagrant plugin install $(plugin) --verbose --plugin-version '$(version)'
+	vagrant plugin install $(plugin) --plugin-version '$(version)'
 endif
