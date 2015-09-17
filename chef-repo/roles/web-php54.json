@@ -9,8 +9,7 @@
   },
   "chef_type": "role",
   "run_list": [
-    "recipe[php5::php5_54]",
-    "recipe[php-fpm]"
+    "recipe[web-php5::php5_54]"
   ],
   "env_run_lists": {}
 }

@@ -12,9 +12,6 @@
 
     "box_gui": false, // true or false
 
-    "box_dhcp": true,
-    "box_static_ip": "10.0.0.2",
-
     "box_ram_cpu": "auto",
     "box_ram": "2048",
     "box_cpu": "2",

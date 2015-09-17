@@ -18,4 +18,4 @@ end
   depends dependancy
 end
 
-recipe 'web-memcached::default'  ,'default'
+recipe 'web-memcached::default', 'default'

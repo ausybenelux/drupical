@@ -18,4 +18,4 @@ end
   depends dependancy
 end
 
-recipe 'frontend::nodejs',  'nodejs'
+recipe 'frontend::nodejs', 'nodejs'

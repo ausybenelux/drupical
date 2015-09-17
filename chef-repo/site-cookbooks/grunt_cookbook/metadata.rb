@@ -1,10 +1,10 @@
-name	"grunt_cookbook"
-maintainer       "Matt Surabian"
+name "grunt_cookbook"
+maintainer "Matt Surabian"
 maintainer_email "matt@mattsurabian.com"
-license          "MIT"
-description      "Provides lightweight resources and recipes for installing and working with GRUNT."
+license "MIT"
+description "Provides lightweight resources and recipes for installing and working with GRUNT."
 long_description IO.read(File.join(File.dirname(__FILE__), 'README.md'))
-version          "1.0.0"
+version "1.0.0"
 
 depends "nodejs"
 

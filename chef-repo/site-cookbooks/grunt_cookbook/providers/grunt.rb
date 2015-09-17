@@ -20,7 +20,7 @@ action :task do
   # Prepare grunt command
   grunt_command = "grunt"
   unless task.empty?
-   grunt_command += " #{task}"
+    grunt_command += " #{task}"
   end
 
   # Execute grunt command.

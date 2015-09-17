@@ -1,12 +1,6 @@
 .idea
-
 .vagrant
-
 backup/*
-
 logs/*
 !logs/.gitkeep
-
 chef-repo/tmp/*
-chef-repo/Cheffile.lock
-chef-repo/cookbooks/*

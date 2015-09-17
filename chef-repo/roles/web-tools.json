@@ -6,13 +6,7 @@
   },
   "chef_type": "role",
   "run_list": [
-    "recipe[web-tools::default]",
-    "recipe[web-tools::adminer]",
-    "recipe[web-tools::info]",
-    "recipe[web-tools::opcachegui]",
-    "recipe[web-tools::phpmemcachedadmin]",
-    "recipe[web-tools::profiler]",
-    "recipe[web-tools::phpdoc]"
+    "recipe[web-tools]"
   ],
   "env_run_lists": {
   }

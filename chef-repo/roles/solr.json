@@ -7,10 +7,8 @@
   },
   "chef_type": "role",
   "run_list": [
-    "recipe[web-solr::default]",
-    "recipe[hipsnip-jetty]",
-    "recipe[hipsnip-solr]",
-    "recipe[base::java]"
+    "recipe[system::java]",
+    "recipe[web-solr::default]"
   ],
   "env_run_lists": {
   }

@@ -18,4 +18,4 @@ end
   depends dependancy
 end
 
-recipe 'web-varnish::default'  ,'default'
+recipe 'web-varnish::default', 'default'

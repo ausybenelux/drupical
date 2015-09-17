@@ -1,7 +1,7 @@
 <VirtualHost *:80>
   ServerName <%= @servername %>
-  <Location />
-    Require all granted
+  <Location/>
+  Require all granted
   </Location>
   ProxyRequests Off
   ProxyPassReverse / http://127.0.0.1:1080/

@@ -1,0 +1,11 @@
+[mysqld]
+
+log_warnings         = 2
+
+general_log          = 0
+general_log_file     = /var/log/mysql/mysql.log
+
+slow_query_log       = 1
+slow_query_log_file  = /var/log/mysql/slow-query.log
+long_query_time      = 1
+log-queries-not-using-indexes

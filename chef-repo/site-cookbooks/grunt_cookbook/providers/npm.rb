@@ -26,7 +26,7 @@ action :install do
   end
 
   unless flags.nil? or flags.empty?
-      npm_command += " #{flags}"
+    npm_command += " #{flags}"
   end
 
   execute npm_command do

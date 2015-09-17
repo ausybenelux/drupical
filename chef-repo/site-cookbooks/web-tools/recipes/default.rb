@@ -3,8 +3,6 @@
 # Recipe:: web-tools
 #
 
-Chef::Log.info('Starting drupical::web-tools')
-
 execute "apt-update-webtools" do
   command "apt-get update"
   action :nothing

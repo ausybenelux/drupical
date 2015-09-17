@@ -51,7 +51,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.ssh.insert_key = false
 
   # Plugin: Cachier
-  config.cache.scope = :box
+  config.cache.scope = :machine
   config.cache.auto_detect = false
   config.cache.synced_folder_opts = {
       type: :nfs,
@@ -93,10 +93,10 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     if vconfig['config']['box_ram_cpu'] == 'auto'
       host = RbConfig::CONFIG['host_os']
       if host =~ /darwin/
-        cpus = `sysctl -n hw.ncpu`.to_i / 2
+        cpus = `sysctl -n hw.ncpu`.to_i / 4
         memory = `sysctl -n hw.memsize`.to_i / 1024 / 1024 / 4
       elsif host =~ /linux/
-        cpus = `nproc`.to_i / 2
+        cpus = `nproc`.to_i / 4
         memory = `grep 'MemTotal' /proc/meminfo | sed -e 's/MemTotal://' -e 's/ kB//'`.to_i / 1024 / 4
       else
         cpus = vconfig['config']['box_cpu']
@@ -110,9 +110,9 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     vb.cpus = cpus
 
     #
-    #vb.customize ["modifyvm", :id, "--nictype1", "virtio"]
-    #vb.customize ["modifyvm", :id, "--nictype2", "virtio"]
-    #vb.customize ["modifyvm", :id, "--nictype3", "virtio"]
+    vb.customize ["modifyvm", :id, "--nictype1", "virtio"]
+    vb.customize ["modifyvm", :id, "--nictype2", "virtio"]
+    vb.customize ["modifyvm", :id, "--nictype3", "virtio"]
 
     vb.customize ['modifyvm', :id, '--natdnshostresolver1', 'on']
     vb.customize ['modifyvm', :id, '--natdnsproxy1', 'on']
@@ -124,10 +124,6 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     vb.customize ['storageattach', :id, '--storagectl', 'SATA Controller', '--port', 0, '--nonrotational', 'on']
 
   end
-
-  # Fix NFS permission issues
-  config.nfs.map_uid = Process.uid
-  config.nfs.map_gid = Process.gid
 
   # Synced folders
   vconfig['config']['vagrant_synced_folders'].each do |key, value|
@@ -177,13 +173,13 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     chef.roles_path = 'chef-repo/roles'
 
     #
-    chef.add_role('base')
+    chef.add_role('system')
 
     #
-    chef.add_role('database')
+    chef.add_role('web-database')
 
     #
-    chef.add_role('web')
+    chef.add_role('web-httpd')
 
     #
     if vconfig['config']['php']['php_version'] == '5.3'
@@ -201,21 +197,13 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
     #
     if vconfig['config']['solr']['solr_install']
-      chef.add_role('solr')
+      chef.add_role('web-solr')
     end
 
     #
     if vconfig['config']['varnish_install']
-      chef.add_role('varnish')
+      chef.add_role('web-varnish')
     end
-
-    #
-    if vconfig['config']['testing_install']
-      chef.add_role('testing')
-    end
-
-    #
-    chef.add_role('drupical')
 
     #
     chef.add_role('frontend')
