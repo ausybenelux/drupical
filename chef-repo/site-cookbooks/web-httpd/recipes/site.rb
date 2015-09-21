@@ -24,7 +24,7 @@ node['config']['vhosts'].each do |key, vhost|
       allow_override 'All'
       enable_ssl 'true'
       server_port 443
-      server_pool vhost['server_name'].split('.')[0] + "-ssl"
+      server_pool vhost['server_name'] + "-ssl"
     end
 
   end
@@ -38,7 +38,7 @@ node['config']['vhosts'].each do |key, vhost|
     allow_override 'All'
     enable_ssl 'false'
     server_port 80
-    server_pool vhost['server_name'].split('.')[0]
+    server_pool vhost['server_name']
   end
 
 end

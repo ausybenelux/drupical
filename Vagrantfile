@@ -128,15 +128,31 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # Synced folders
   vconfig['config']['vagrant_synced_folders'].each do |key, value|
 
-    mount_options = value.fetch('mount_options')
-    mount_options.push ('clientaddr=' + random_ip)
-
     src = File.expand_path(value.fetch('source'))
-    config.vm.synced_folder src,
-                            value.fetch('target'),
-                            create: true,
-                            type: value.fetch('type'),
-                            mount_options: mount_options
+    target = value.fetch('target')
+
+    if(value.fetch('type') == 'nfs')
+
+      mount_options = value.fetch('mount_options')
+      mount_options.push ('clientaddr=' + random_ip)
+
+      config.vm.synced_folder src,
+                              target,
+                              create: true,
+                              type: "nfs",
+                              mount_options: mount_options
+
+    elsif(value.fetch('type') == 'rsync')
+
+      config.vm.synced_folder src,
+                              target,
+                              type: "rsync",
+                              rsync__auto: true,
+                              rsync__exclude: [".git", ".vagrant", "bin", "chef-repo", "include", "logs"],
+                              rsync__args: ["--verbose", "--rsync-path='sudo rsync'", "--archive", "--delete", "-z"]
+
+    end
+
   end
 
   if vconfig['config']['rmdbs']['use-mysql-persistent-storage']

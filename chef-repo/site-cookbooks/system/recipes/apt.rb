@@ -44,6 +44,6 @@ template "/etc/apt/apt.conf.d/90forceyes" do
   mode '0666'
   notifies :run, "execute[apt-mark-hold]", :immediately
   notifies :run, "execute[apt-update]", :immediately
-  notifies :run, "execute[apt-upgrade]", :immediately
-  notifies :run, "execute[apt-cleanup]", :immediately
+#  notifies :run, "execute[apt-upgrade]", :immediately
+#  notifies :run, "execute[apt-cleanup]", :immediately
 end
