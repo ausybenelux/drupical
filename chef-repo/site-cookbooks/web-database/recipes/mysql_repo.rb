@@ -4,7 +4,7 @@
 #
 
 apt_repository "mysql" do
-  uri " http://ppa.launchpad.net/ondrej/mysql-5.6/ubuntu"
+  uri "http://ppa.launchpad.net/ondrej/mysql-5.6/ubuntu"
   components [node["lsb"]["codename"], 'main']
   key '1BB943DB'
   keyserver 'keyserver.ubuntu.com'

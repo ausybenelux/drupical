@@ -20,10 +20,10 @@ template '/var/cache/local/preseeding/mysql-server.seed' do
   mode '0600'
   variables({:password => node['mysql']['server_root_password']})
   action :create
-  notifies :run, 'execute[preseed mariadb-server]', :immediately
+  notifies :run, 'execute[preseed mysql-server]', :immediately
 end
 
-execute 'preseed mariadb-server' do
+execute 'preseed mysql-server' do
   command '/usr/bin/debconf-set-selections /var/cache/local/preseeding/mysql-server.seed'
   action :nothing
 end

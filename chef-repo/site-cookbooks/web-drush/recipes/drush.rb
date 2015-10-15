@@ -9,28 +9,36 @@ git "/usr/share/drush" do
   action :sync
 end
 
-if node["php5"]["version"] != "5.3"
-
-  include_recipe "web-drush::drush_php53"
-
-  bash "install-console-table-manual" do
-    code <<-EOH
+bash "install-console-table-manual" do
+  code <<-EOH
       (wget http://download.pear.php.net/package/Console_Table-1.1.3.tgz)
       (tar xvzf Console_Table-1.1.3.tgz)
       (sudo mv Console_Table-1.1.3 /usr/share/drush/lib)
-    EOH
-  end
-
-else
-
-  bash "install-console-table-pear" do
-    code <<-EOH
-      (pear install Console_Table)
-    EOH
-    not_if "pear list| grep Console_Table"
-  end
-
+  EOH
 end
+
+#if node["php5"]["version"] != "5.3"
+#
+#  include_recipe "web-drush::drush_php53"
+#
+#  bash "install-console-table-manual" do
+#    code <<-EOH
+#      (wget http://download.pear.php.net/package/Console_Table-1.1.3.tgz)
+#      (tar xvzf Console_Table-1.1.3.tgz)
+#      (sudo mv Console_Table-1.1.3 /usr/share/drush/lib)
+#    EOH
+#  end
+#
+#else
+#
+#  bash "install-console-table-pear" do
+#    code <<-EOH
+#      (pear install Console_Table)
+#    EOH
+#    not_if "pear list| grep Console_Table"
+#  end
+#
+#end
 
 bash "make-drush-symlink" do
   code <<-EOH
@@ -47,7 +55,7 @@ directory "/home/vagrant/.drush" do
   action :create
 end
 
-bash "drush-autocmpletion" do
+bash "drush-autocompletion" do
   code <<-EOH
   (ln -s /usr/share/drush/drush.complete.sh /etc/bash_completion.d/drush.complete.sh)
   EOH

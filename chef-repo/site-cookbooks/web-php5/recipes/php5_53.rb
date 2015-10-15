@@ -8,3 +8,4 @@ node.override['config']['php']['php_version'] = '5.3'
 
 include_recipe 'php'
 include_recipe 'web-php5::php_fpm'
+include_recipe 'web-php5::packages'
