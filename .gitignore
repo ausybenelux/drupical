@@ -1,6 +1,4 @@
 .idea
 .vagrant
 backup/*
-logs/*
-!logs/.gitkeep
 chef-repo/tmp/*

@@ -5,16 +5,7 @@ def vagrant_check_requirements
 
   #
   version = Vagrant::VERSION
-  if(version != '1.7.1')
-
-    puts "#"
-    puts "Only Vagrant version 1.7.1 is allowed. Please install this version: http://www.vagrantup.com/download-archive/v1.7.1.html"
-    puts "#"
-
-    raise SystemExit
-
-  end
-
+  
   #
   current_dir = File.expand_path('.')
   if !File.exists? (current_dir + "/chef-repo/cookbooks/apache2")

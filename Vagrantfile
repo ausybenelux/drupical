@@ -109,11 +109,6 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     vb.memory = memory
     vb.cpus = cpus
 
-    #
-    vb.customize ["modifyvm", :id, "--nictype1", "virtio"]
-    vb.customize ["modifyvm", :id, "--nictype2", "virtio"]
-    vb.customize ["modifyvm", :id, "--nictype3", "virtio"]
-
     vb.customize ['modifyvm', :id, '--natdnshostresolver1', 'on']
     vb.customize ['modifyvm', :id, '--natdnsproxy1', 'on']
 
@@ -148,7 +143,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
                               target,
                               type: "rsync",
                               rsync__auto: true,
-                              rsync__exclude: [".git", ".vagrant", "bin", "chef-repo", "include", "logs"],
+                              rsync__exclude: [".git/", "vagrant/"],
                               rsync__args: ["--verbose", "--rsync-path='sudo rsync'", "--archive", "--delete", "-z"]
 
     end

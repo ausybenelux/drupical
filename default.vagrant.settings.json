@@ -74,20 +74,6 @@
 
     "varnish_install": false,
 
-    "testing" : {
-      "testing_install": false,
-      "munin": {
-        "install": false,
-        "alias": "munin"
-      },
-      "selenium": {
-        "install": false
-      },
-      "phpunit": {
-        "install": false
-      }
-    },
-
     "vhosts": {},
 
     "php": {

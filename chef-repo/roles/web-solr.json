@@ -1,6 +1,6 @@
 {
-  "name": "solr",
-  "description": "Web role",
+  "name": "web-solr",
+  "description": "Solr role",
   "json_class": "Chef::Role",
   "default_attributes": {
 
