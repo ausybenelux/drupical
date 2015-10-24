@@ -16,6 +16,6 @@ end
 apt_preference "ondrej-apache2" do
   glob '*'
   pin 'origin http://ppa.launchpad.net/ondrej/apache2/ubuntu'
-  pin_priority '700'
+  pin_priority '999'
   notifies :run, "execute[apt-get update]", :immediately
 end

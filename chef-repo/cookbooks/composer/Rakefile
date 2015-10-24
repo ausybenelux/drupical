@@ -28,7 +28,7 @@ namespace :integration do
   require 'kitchen'
 
   desc 'Run Test Kitchen integration tests with Vagrant'
-  task :vagrant do
+  task :guest do
     Kitchen.logger = Kitchen.default_file_logger
     Kitchen::Config.new.instances.each do |instance|
       instance.test(:always)

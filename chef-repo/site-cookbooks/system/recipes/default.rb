@@ -14,3 +14,5 @@ include_recipe "system::java"
 include_recipe "system::ruby"
 
 include_recipe "system::cachefilesd"
+
+include_recipe "system::inosync"

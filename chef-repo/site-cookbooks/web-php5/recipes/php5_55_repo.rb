@@ -17,7 +17,7 @@ end
 apt_preference "ondrej-php-pin" do
   glob '*'
   pin 'origin http://ppa.launchpad.net/ondrej/php5/ubuntu'
-  pin_priority '700'
+  pin_priority '999'
   notifies :run, "execute[apt-get update]", :immediately
 end
 

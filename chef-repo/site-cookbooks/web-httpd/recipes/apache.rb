@@ -16,10 +16,6 @@ service 'apache2' do
   action [:enable, :start]
 end
 
-#
-package "libapache2-mod-fastcgi" do
-  action :install
-end
 
 #
 execute "Enabling necessary apache2 modules" do
@@ -39,14 +35,9 @@ execute "Enabling necessary apache2 modules" do
   action :run
 end
 
-#
-execute "Enabling necessary apache2 modules" do
-  command 'a2enmod fastcgi'
-  action :run
-end
+
 
 #
-
 apache_module "ssl" do
   enable true
 end

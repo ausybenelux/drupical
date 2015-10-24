@@ -27,12 +27,9 @@ end
 node['config']['php_packages'].each do |php_package, install_php_package|
 
   if install_php_package
-
     package php_package do
       action :install
-      notifies :reload, 'service[php-fpm]', :delayed
     end
-
   end
 
 end
@@ -56,10 +53,6 @@ if node['config']['php_packages']['php5-xdebug']
     action :create
   end
 
-  link "/etc/php5/mods-available/xdebug.ini" do
-    to "/etc/php5/fpm/conf.d/xdebug.ini"
-  end
-
 end
 
 #
@@ -77,7 +70,6 @@ if node['config']['php_packages']['php5-uprofiler']
     group "root"
     action :create
     notifies :restart, 'service[apache2]', :delayed
-    notifies :reload, 'service[php-fpm]', :delayed
     only_if { !File.exists?("/etc/php5/mods-available/uprofiler.ini") }
   end
 

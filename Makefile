@@ -37,9 +37,9 @@ download-chef-cookbooks:
 
 vagrant-up:
 ifeq "$(wildcard chef-repo/cookbooks/apache2)" ""
-	make install
+	@echo "Please run make install."
 endif
-	ssh-add -K ~/.ssh/id_rsa ; vagrant up
+	ssh-add -K ~/.ssh/id_rsa ; vagrant up ; vagrant rsync-auto
 
 vagrant-provision:
 	@if make .prompt-yesno message="Do you want to continue?" 2> /dev/null; then \

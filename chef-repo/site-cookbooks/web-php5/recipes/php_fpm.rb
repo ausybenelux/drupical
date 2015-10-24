@@ -48,7 +48,6 @@ link '/etc/apache2/conf-enabled/php-fpm.conf' do
   not_if { File.symlink?("/etc/apache2/conf-enabled/php-fpm.conf") }
 end
 
-
 bash "fastcgi-permissions" do
   code <<-EOH
   (chmod -R 777 /var/lib/apache2/fastcgi)
