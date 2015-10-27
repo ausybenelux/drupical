@@ -21,7 +21,6 @@ end
 recipe 'system::default', 'Default'
 recipe 'system::apt', 'Apt'
 recipe 'system::build', 'Build-essential'
-recipe 'system::extra', 'Extra'
 recipe 'system::zsh', 'Zsh'
 recipe 'system::java', 'Java'
 recipe 'system::java_repo', 'Java repo'

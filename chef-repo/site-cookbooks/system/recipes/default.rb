@@ -7,8 +7,6 @@ include_recipe "system::apt"
 
 include_recipe "system::build"
 
-include_recipe "system::extra"
-
 include_recipe "system::java"
 
 include_recipe "system::ruby"
@@ -16,3 +14,9 @@ include_recipe "system::ruby"
 include_recipe "system::cachefilesd"
 
 include_recipe "system::inosync"
+
+include_recipe "git"
+
+include_recipe "curl"
+
+include_recipe "vim"
