@@ -3,8 +3,8 @@
   "description": "Web role",
   "json_class": "Chef::Role",
   "default_attributes": {
-    "php" : {
-      "install_method" : "package"
+    "php": {
+      "install_method": "package"
     }
   },
   "chef_type": "role",

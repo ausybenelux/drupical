@@ -41,7 +41,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.box_check_update = true
 
   #
-  config.omnibus.chef_version = '11'
+  config.omnibus.chef_version = '12'
 
   # Hostname
   config.vm.hostname = box_hostname
@@ -65,9 +65,9 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.cache.enable :gem
   config.cache.enable :npm
   config.cache.enable :generic, {
-                                  'wget' => {cache_dir: '/var/cache/wget'},
-                                  'curl' => {cache_dir: '/var/cache/curl'},
-                              }
+      'wget' => {cache_dir: '/var/cache/wget'},
+      'curl' => {cache_dir: '/var/cache/curl'},
+  }
 
   # Fix NFS permission issues
   config.nfs.map_uid = Process.uid
@@ -116,8 +116,6 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     vb.customize ['modifyvm', :id, '--chipset', 'ich9']
     vb.customize ['modifyvm', :id, '--accelerate3d', 'off']
 
-    vb.customize ['storageattach', :id, '--storagectl', 'SATA Controller', '--port', 0, '--nonrotational', 'on']
-
   end
 
   # Synced folders
@@ -126,7 +124,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     src = File.expand_path(value.fetch('source'))
     target = value.fetch('target')
 
-    if(value.fetch('type') == 'nfs')
+    if (value.fetch('type') == 'nfs')
 
       mount_options = value.fetch('mount_options')
       mount_options.push ('clientaddr=' + random_ip)
@@ -137,14 +135,23 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
                               type: "nfs",
                               mount_options: mount_options
 
-    elsif(value.fetch('type') == 'rsync')
+    elsif (value.fetch('type') == 'rsync')
 
       config.vm.synced_folder src,
                               target,
                               type: "rsync",
                               rsync__auto: true,
-                              rsync__exclude: [".git/", "vagrant/"],
-                              rsync__args: ["--verbose", "--rsync-path='sudo rsync'", "--archive", "--delete", "-z"]
+                              rsync__args: [
+                                  "--verbose",
+                                  "--rsync-path='sudo rsync'",
+                                  "--archive",
+                                  "--delete",
+                                  "-z"
+                              ],
+                              rsync__exclude: [
+                                  ".git/",
+                                  "vagrant/"
+                              ]
 
     end
 
@@ -193,13 +200,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     chef.add_role('web-httpd')
 
     #
-    if vconfig['config']['php']['php_version'] == '5.3'
-      chef.add_role('web-php53')
-    elsif vconfig['config']['php']['php_version'] == '5.4'
-      chef.add_role('web-php54')
-    elsif vconfig['config']['php']['php_version'] == '5.5'
-      chef.add_role('web-php55')
-    end
+    chef.add_role('web-php5')
 
     #
     if vconfig['config']['web_tools']['web_tools_install']
@@ -218,6 +219,9 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
     #
     chef.add_role('frontend')
+
+    #
+    chef.add_role('site')
 
   end
 

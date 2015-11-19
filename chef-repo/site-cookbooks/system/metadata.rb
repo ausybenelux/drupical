@@ -19,10 +19,11 @@ end
 end
 
 recipe 'system::default', 'Default'
-recipe 'system::apt', 'Apt'
-recipe 'system::build', 'Build-essential'
-recipe 'system::zsh', 'Zsh'
-recipe 'system::java', 'Java'
+recipe 'system::apt',     'Apt'
+recipe 'system::build',   'Build-essential'
+recipe 'system::zsh',     'Zsh'
+recipe 'system::java',    'Java'
 recipe 'system::java_repo', 'Java repo'
-recipe 'system::ruby', 'Ruby'
+recipe 'system::ruby',    'Ruby'
 recipe 'system::inosync', 'Inosync'
+recipe 'system::locale',   'Locale'

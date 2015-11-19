@@ -15,6 +15,8 @@ include_recipe "system::cachefilesd"
 
 include_recipe "system::inosync"
 
+include_recipe "system::locale"
+
 include_recipe "git"
 
 include_recipe "curl"

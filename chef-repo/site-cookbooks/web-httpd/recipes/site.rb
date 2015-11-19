@@ -31,7 +31,6 @@ node['config']['vhosts'].each do |key, vhost|
 
   web_app key do
     templates 'web_app.conf.erb'
-    cookbook 'web-httpd'
     server_name vhost['server_name']
     server_aliases vhost['aliases']
     docroot vhost['docroot']

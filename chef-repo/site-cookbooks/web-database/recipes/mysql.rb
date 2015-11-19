@@ -3,8 +3,6 @@
 # Recipe::mysql
 #
 
-include_recipe 'web-database::mysql_repo'
-
 directory '/var/cache/local/preseeding' do
   owner 'root'
   group 'root'

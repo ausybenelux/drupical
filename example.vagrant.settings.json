@@ -1,32 +1,39 @@
 {
   "config": {
 
+    "box_type": "ubuntu/trusty64",
+
     "box_name": "PROJECT_NAME",
     "box_hostname": "SITE_HOST",
-
-    "vagrant_synced_folders" : {
-      "build" : {
-        "source" : "..",
-        "target" : "/vagrant",
-        "type" : "nfs",
-        "mount_options" : ["rw", "vers=3", "tcp", "fsc", "actimeo=1"]
+    "vagrant_synced_folders": {
+      "build": {
+        "source": "..",
+        "target": "/vagrant",
+        "type": "nfs",
+        "mount_options": [
+          "rw",
+          "vers=3",
+          "tcp",
+          "fsc",
+          "actimeo=1"
+        ]
       }
     },
-
     "php": {
-      "php_version": "5.5",
+      "php_version": "5.x",
       "enable_php_phing": false,
       "enable_php_composer": false,
       "enable_php_drush": true
     },
-
-    "vhosts" : {
-      "SITE_NAME" : {
-        "server_name" : "SITE_HOST",
-        "database_name" : "PROJECT_NAME",
-        "docroot" : "/vagrant/docroot/",
-        "aliases" : [ "www.SITE_HOST" ],
-        "enable_ssl" : "true",
+    "vhosts": {
+      "SITE_NAME": {
+        "server_name": "SITE_HOST",
+        "database_name": "PROJECT_NAME",
+        "docroot": "/vagrant/docroot/",
+        "aliases": [
+          "www.SITE_HOST"
+        ],
+        "enable_ssl": "true",
         "php_settings": {
           "log_errors": "on",
           "memory_limit": "512M",
@@ -39,7 +46,6 @@
         }
       }
     },
-
     "php_packages": {
       "php5-curl": true,
       "php5-gd": true,
@@ -49,6 +55,5 @@
       "php5-mysqlnd": true,
       "php5-xdebug": true
     }
-
   }
 }

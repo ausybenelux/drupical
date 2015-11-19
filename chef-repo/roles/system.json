@@ -3,8 +3,8 @@
   "description": "System role applied to all nodes.",
   "json_class": "Chef::Role",
   "default_attributes": {
-    "build-essential" : {
-      "compile_time" : false
+    "build-essential": {
+      "compile_time": false
     }
   },
   "chef_type": "role",

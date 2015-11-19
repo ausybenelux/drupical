@@ -1,0 +1,54 @@
+{
+  "config": {
+
+    "box_type": "ubuntu/trusty64",
+
+    "box_name": "mytest",
+    "box_hostname": "mytest",
+    "vagrant_synced_folders": {
+      "build": {
+        "source": ".",
+        "target": "/vagrant",
+        "type": "rsync"
+      },
+      "build_nfs": {
+        "source": ".",
+        "target": "/vagrant_nfs",
+        "type": "nfs",
+        "mount_options": [
+          "rw",
+          "vers=3",
+          "tcp",
+          "fsc",
+          "actimeo=1"
+        ]
+      }
+    },
+    "php": {
+      "php_version": "5.x",
+      "enable_php_phing": false,
+      "enable_php_composer": false,
+      "enable_php_drush": true
+    },
+    "vhosts": {
+      "mytest.dev": {
+        "server_name": "mytest.dev",
+        "database_name": "mytest",
+        "docroot": "/vagrant/docroot/",
+        "aliases": [
+          "www.mytest.dev"
+        ],
+        "enable_ssl": "true"
+      }
+    },
+    "php_packages": {
+      "php5-curl": true,
+      "php5-gd": true,
+      "php5-intl": true,
+      "php5-json": true,
+      "php5-mcrypt": true,
+      "php5-mysqlnd": true,
+      "php5-xdebug": true
+    }
+  }
+}

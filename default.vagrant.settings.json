@@ -1,27 +1,22 @@
 {
   "config": {
 
-    "start_form": "hashicorp",
+    "start_form": "ubuntu/trusty64",
 
     "vagrant_debugging": false,
-
-    "box_type": "hashicorp/precise64",
+    "box_type": "ubuntu/trusty64",
+    //"box_type": "ubuntu/precise64",
 
     "box_name": "drupal",
     "box_hostname": "dev",
-
-    "box_gui": false, // true or false
+    "box_gui": false,
 
     "box_ram_cpu": "auto",
     "box_ram": "2048",
     "box_cpu": "2",
-
     "box_shell": "bash",
-
     "os_update": false,
-
     "vagrant_synced_folders": {},
-
     "solr": {
       "solr_install": false,
       "solr_version": "4.2.1",
@@ -30,7 +25,6 @@
         "4.2.1": "648a4b2509f6bcac83554ca5958cf607474e81f34e6ed3a0bc932ea7fac40b99"
       }
     },
-
     "web_tools": {
       "web_tools_install": false,
       "url_base": "tools.dev.local",
@@ -65,24 +59,19 @@
         }
       }
     },
-
-    "rmdbs" : {
-      "type" : "mysql",
-      "root_password" : "10moioui",
-      "use-mysql-persistent-storage" : false
+    "rmdbs": {
+      "type": "mysql",
+      "root_password": "10moioui",
+      "use-mysql-persistent-storage": false
     },
-
     "varnish_install": false,
-
     "vhosts": {},
-
     "php": {
-      "php_version": "5.5",
+      "php_version": "5.x",
       "enable_php_phing": true,
       "enable_php_composer": true,
       "enable_php_drush": true
     },
-
     "php_packages": {
       "php-apc": false,
       "php-auth": false,

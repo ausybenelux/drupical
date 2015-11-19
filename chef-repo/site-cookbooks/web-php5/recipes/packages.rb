@@ -39,10 +39,12 @@ if node['config']['php_packages']['php5-xdebug']
 
   file "/etc/php5/mods-available/xdebug.ini" do
     action :delete
+    only_if { ::File.exists?("/etc/php5/mods-available/xdebug.ini")}
   end
 
   file "/etc/php5/mods-available/20-xdebug.ini" do
     action :delete
+    only_if { ::File.exists?("/etc/php5/mods-available/20-xdebug.ini")}
   end
 
   template "/etc/php5/mods-available/xdebug.ini" do
@@ -51,6 +53,27 @@ if node['config']['php_packages']['php5-xdebug']
     owner "root"
     group "root"
     action :create
+    only_if { ::File.exists?("/etc/php5/mods-available/")}
+  end
+
+  execute "xdebug" do
+    command 'php5enmod xdebug'
+    action :run
+    only_if { ::File.exists?("/etc/php5/mods-available/")}
+  end
+
+  file "/etc/php5/conf.d/xdebug.ini" do
+    action :delete
+    only_if { ::File.exists?("/etc/php5/conf.d/xdebug.ini")}
+  end
+
+  template "/etc/php5/conf.d/xdebug.ini" do
+    source "20090626-xdebug.ini"
+    mode 0644
+    owner "root"
+    group "root"
+    action :create
+    only_if { ::File.exists?("/etc/php5/conf.d/")}
   end
 
 end

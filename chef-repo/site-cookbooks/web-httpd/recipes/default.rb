@@ -5,4 +5,5 @@
 
 #
 include_recipe 'web-httpd::apache'
-include_recipe 'web-httpd::site'
+
+#include_recipe 'web-httpd::site'

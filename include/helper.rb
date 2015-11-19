@@ -5,7 +5,7 @@ def vagrant_check_requirements
 
   #
   version = Vagrant::VERSION
-  
+
   #
   current_dir = File.expand_path('.')
   if !File.exists? (current_dir + "/chef-repo/cookbooks/apache2")
@@ -20,12 +20,12 @@ def vagrant_check_requirements
 
   #
   if !Vagrant.has_plugin?("vagrant-triggers") ||
-    !Vagrant.has_plugin?("vagrant-hostsupdater") ||
-    !Vagrant.has_plugin?("vagrant-cachier") ||
-    !Vagrant.has_plugin?("vagrant-vbguest") ||
-    !Vagrant.has_plugin?("vagrant-persistent-storage") ||
-    !Vagrant.has_plugin?("vagrant-hostmanager") ||
-    !Vagrant.has_plugin?("vagrant-reload")
+      !Vagrant.has_plugin?("vagrant-hostsupdater") ||
+      !Vagrant.has_plugin?("vagrant-cachier") ||
+      !Vagrant.has_plugin?("vagrant-vbguest") ||
+      !Vagrant.has_plugin?("vagrant-persistent-storage") ||
+      !Vagrant.has_plugin?("vagrant-hostmanager") ||
+      !Vagrant.has_plugin?("vagrant-reload")
 
     puts "#"
     puts "Vagrant needs extra plugin(s)"
@@ -147,7 +147,7 @@ def vagrant_get_aliases(vconfig)
 
     vhost['aliases'].each do |_alias|
       if _alias.include?("_")
-        _alias = _alias.gsub!("_","-")
+        _alias = _alias.gsub!("_", "-")
       end
       aliases.push(_alias)
     end
@@ -186,7 +186,7 @@ def generate_random_ip()
   else
     ip = "192.168.#{rand(252)+1}.#{rand(252)+1}"
     File.open(file_random_ip, 'w') {
-      |f| f.write(ip)
+        |f| f.write(ip)
     }
   end
 

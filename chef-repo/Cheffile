@@ -13,8 +13,6 @@ cookbook 'vim'
 
 cookbook 'apache2'
 
-cookbook 'mysql'
-
 cookbook 'php'
 
 cookbook 'composer'
@@ -34,7 +32,5 @@ cookbook 'php-fpm'
 cookbook 'nodejs'
 
 cookbook 'ruby-ng'
-
-cookbook 'selenium'
 
 cookbook 'openssl'
