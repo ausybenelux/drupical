@@ -3,19 +3,10 @@
 # Recipe:: default
 #
 
-#node.override['jetty']['port'] = 8390
-#node.override['jetty']['version'] = '9.2.8.v20150217'
-#node.override['jetty']['link'] = 'http://archive.eclipse.org/jetty/9.2.8.v20150217/dist/jetty-distribution-9.2.8.v20150217.tar.gz'
-
-#node.override['jetty']['checksum'] = '0975f6d682a74a8f413a6d1586f8e067vagra'
-
 node.override['solr']["version"] = node['config']['solr']['solr_version']
 node.override['solr']["checksum"] = node['config']['solr']['solr_checksums'][node['config']['solr']['solr_version']]
 
-#include_recipe "java"
-
-#include_recipe "hipsnip-jetty"
-
+include_recipe "system::java"
 include_recipe "hipsnip-solr"
 
 if /^(?:1\.4\.(?:0|1){1}|3\.[0-9]{1,}\.[0-9]{1,})/.match(node['config']['solr']['solr_version'])

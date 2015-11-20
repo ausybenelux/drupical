@@ -8,13 +8,12 @@
       "start": "yes",
       "backend_host": "localhost",
       "backend_port": "80",
-      "listen_port": "8081 "
+      "listen_port": "8080"
     }
   },
   "chef_type": "role",
   "run_list": [
     "recipe[web-varnish]"
   ],
-  "env_run_lists": {
-  }
+  "env_run_lists": {}
 }

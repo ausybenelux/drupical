@@ -19,6 +19,4 @@ end
 
 include_recipe "web-database::config"
 
-#include_recipe "web-database::site"
-
 #include_recipe "database::backup-db"

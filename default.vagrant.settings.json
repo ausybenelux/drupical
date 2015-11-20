@@ -66,12 +66,6 @@
     },
     "varnish_install": false,
     "vhosts": {},
-    "php": {
-      "php_version": "5.x",
-      "enable_php_phing": true,
-      "enable_php_composer": true,
-      "enable_php_drush": true
-    },
     "php_packages": {
       "php-apc": false,
       "php-auth": false,

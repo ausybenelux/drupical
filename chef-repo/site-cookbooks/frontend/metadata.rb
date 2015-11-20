@@ -14,8 +14,9 @@ version '0.1.0'
   supports os
 end
 
-%w{ apt nodejs grunt_cookbook }.each do |dependancy|
+%w{ apt nodejs grunt_cookbook ruby-ng}.each do |dependancy|
   depends dependancy
 end
 
 recipe 'frontend::nodejs', 'nodejs'
+recipe 'frontend::ruby',   'Ruby'

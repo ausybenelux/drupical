@@ -3,8 +3,4 @@
 # Recipe:: drush
 #
 
-if node['config']['php']['enable_php_drush']
-
-  include_recipe "web-drush::drush"
-
-end
+include_recipe "web-drush::drush"

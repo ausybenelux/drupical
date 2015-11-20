@@ -29,7 +29,6 @@
   },
   "chef_type": "role",
   "run_list": [
-    "recipe[web-drush]",
     "recipe[web-httpd]"
   ],
   "env_run_lists": {

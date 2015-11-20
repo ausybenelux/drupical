@@ -19,10 +19,5 @@ end
 end
 
 recipe 'web-php5::default', 'Main configuration'
-recipe 'web-php5::install', 'Install'
 recipe 'web-php5::packages', 'Packages'
-recipe 'web-php5::php5_5' , 'php5_5'
-recipe 'web-php5::php5_53', 'php5_53_ppa'
-recipe 'web-php5::php5_54', 'php5_54_ppa'
-recipe 'web-php5::php5_55', 'php5_55_ppa'
 recipe 'web-php5::php_fpm', 'php_fpm'

@@ -6,7 +6,6 @@
   },
   "chef_type": "role",
   "run_list": [
-    "recipe[system::java]",
     "recipe[web-solr::default]"
   ],
   "env_run_lists": {

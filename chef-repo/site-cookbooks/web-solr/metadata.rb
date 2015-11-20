@@ -14,7 +14,7 @@ version '0.0.1'
   supports os
 end
 
-%w{hipsnip-jetty hipsnip-solr java}.each do |dependancy|
+%w{hipsnip-jetty hipsnip-solr system}.each do |dependancy|
   depends dependancy
 end
 

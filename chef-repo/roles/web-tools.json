@@ -8,6 +8,5 @@
   "run_list": [
     "recipe[web-tools]"
   ],
-  "env_run_lists": {
-  }
+  "env_run_lists": {}
 }

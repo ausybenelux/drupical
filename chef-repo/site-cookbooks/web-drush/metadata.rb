@@ -19,4 +19,3 @@ end
 end
 
 recipe 'web-drush::drush', 'drush'
-recipe 'web-drush::drush_php53', 'drush_php53'

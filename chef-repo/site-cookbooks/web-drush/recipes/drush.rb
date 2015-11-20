@@ -17,29 +17,6 @@ bash "install-console-table-manual" do
   EOH
 end
 
-#if node["php5"]["version"] != "5.3"
-#
-#  include_recipe "web-drush::drush_php53"
-#
-#  bash "install-console-table-manual" do
-#    code <<-EOH
-#      (wget http://download.pear.php.net/package/Console_Table-1.1.3.tgz)
-#      (tar xvzf Console_Table-1.1.3.tgz)
-#      (sudo mv Console_Table-1.1.3 /usr/share/drush/lib)
-#    EOH
-#  end
-#
-#else
-#
-#  bash "install-console-table-pear" do
-#    code <<-EOH
-#      (pear install Console_Table)
-#    EOH
-#    not_if "pear list| grep Console_Table"
-#  end
-#
-#end
-
 bash "make-drush-symlink" do
   code <<-EOH
   (ln -s /usr/share/drush/drush /usr/bin/drush)
