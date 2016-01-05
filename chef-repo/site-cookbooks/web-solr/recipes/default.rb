@@ -3,10 +3,27 @@
 # Recipe:: default
 #
 
+node.override['jetty']['version'] = '8.1.17.v20150415'
+node.override['jetty']['link'] = 'http://eclipse.org/downloads/download.php?file=/jetty/8.1.17.v20150415/dist/jetty-distribution-8.1.17.v20150415.tar.gz&r=1'
+node.override['jetty']['checksum'] = '8d69614dcc89c50ffc4b4f97f8013b425b12515b41a03396af1a7ee8d98692ba' # SHA256
+
 node.override['solr']["version"] = node['config']['solr']['solr_version']
 node.override['solr']["checksum"] = node['config']['solr']['solr_checksums'][node['config']['solr']['solr_version']]
+node.override['solr']["link"] = node['config']['solr']['solr_links'][node['config']['solr']['solr_version']]
 
-include_recipe "system::java"
+if /^(?:1\.4\.(?:0|1){1}|3\.[0-9]{1,}\.[0-9]{1,})/.match(node['solr']['version'])
+  node.default['solr']['download'] = "#{node['solr']['directory']}/apache-solr-#{node['solr']['version']}.tgz"
+  node.default['solr']['extracted'] = "#{node['solr']['directory']}/apache-solr-#{node['solr']['version']}"
+  node.default['solr']['war'] = "apache-solr-#{node['solr']['version']}.war"
+elsif /^4\.[0-9]{1,}\.[0-9]{1,}/.match(node['solr']['version'])
+  node.default['solr']['download'] = "#{node['solr']['directory']}/solr-#{node['solr']['version']}.tgz"
+  node.default['solr']['extracted'] = "#{node['solr']['directory']}/solr-#{node['solr']['version']}"
+  node.default['solr']['war'] = "solr-#{node['solr']['version']}.war"
+else
+  # throw here!
+end
+
+#include_recipe "system-java"
 include_recipe "hipsnip-solr"
 
 if /^(?:1\.4\.(?:0|1){1}|3\.[0-9]{1,}\.[0-9]{1,})/.match(node['config']['solr']['solr_version'])

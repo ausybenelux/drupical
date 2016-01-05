@@ -217,5 +217,19 @@ end
 
 
 def get_vagrant_post_up_message(aliases)
-  message = aliases.to_s
+
+message = <<EOF
+          _
+         /(|
+        (  :
+       __\  \  _____
+     (____)  `|
+    (____)|   |
+     (____).__|
+      (___)__.|_____
+
+EOF
+
+  message = message + aliases.to_s
+
 end

@@ -1,0 +1,11 @@
+{
+  "name": "varnish",
+  "description": "Web role",
+  "json_class": "Chef::Role",
+  "default_attributes": {},
+  "chef_type": "role",
+  "run_list": [
+    "recipe[web-memcached]"
+  ],
+  "env_run_lists": {}
+}

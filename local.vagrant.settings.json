@@ -1,18 +1,15 @@
 {
   "config": {
-
-    "box_type": "ubuntu/trusty64",
-
     "box_name": "mytest",
     "box_hostname": "mytest",
     "vagrant_synced_folders": {
       "build": {
-        "source": ".",
+        "source": "..",
         "target": "/vagrant",
         "type": "rsync"
       },
       "build_nfs": {
-        "source": ".",
+        "source": "..",
         "target": "/vagrant_nfs",
         "type": "nfs",
         "mount_options": [
@@ -49,6 +46,15 @@
       "php5-mcrypt": true,
       "php5-mysqlnd": true,
       "php5-xdebug": true
-    }
+    },
+    "solr": {
+      "solr_install": true,
+      "solr_version": "4.10.4",
+      "solr_checksums": {
+        "4.10.4": "ac3543880f1b591bcaa962d7508b528d7b42e2b5548386197940b704629ae851"
+      }
+    },
+    "varnish_install": true,
+    "memcached_install": true
   }
 }

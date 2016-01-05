@@ -39,9 +39,9 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   #
   config.vm.box = vconfig['config']['box_type']
   config.vm.box_check_update = true
-
+  config.vm.box_url = vconfig['config']['box_url']
   #
-  config.omnibus.chef_version = '12'
+#  config.omnibus.chef_version = '12'
 
   # Hostname
   config.vm.hostname = box_hostname
@@ -49,25 +49,6 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # SSH config
   config.ssh.forward_agent = true
   config.ssh.insert_key = false
-
-  # Plugin: Cachier
-  config.cache.scope = :machine
-  config.cache.auto_detect = false
-  config.cache.synced_folder_opts = {
-      type: :nfs,
-      mount_options: ["rw", "vers=3", "udp", "fsc", "actimeo=1"]
-  }
-  config.cache.enable :apt
-  config.cache.enable :apt_lists
-  config.cache.enable :chef
-  config.cache.enable :chef_gem
-  config.cache.enable :composer
-  config.cache.enable :gem
-  config.cache.enable :npm
-  config.cache.enable :generic, {
-      'wget' => {cache_dir: '/var/cache/wget'},
-      'curl' => {cache_dir: '/var/cache/curl'},
-  }
 
   # Fix NFS permission issues
   config.nfs.map_uid = Process.uid
@@ -191,37 +172,22 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     chef.roles_path = 'chef-repo/roles'
 
     #
-    chef.add_role('system')
+    #if vconfig['config']['solr']['solr_install']
+    #  chef.add_role('web-solr')
+    #end
+#
+    ##
+    #if vconfig['config']['varnish_install']
+    #  chef.add_role('web-varnish')
+    #end
+#
+    ##
+    #if vconfig['config']['memcached_install']
+    #  chef.add_role('web-memcached')
+    #end
 
     #
-    chef.add_role('web-database')
-
-    #
-    chef.add_role('web-httpd')
-
-    #
-    chef.add_role('web-php5')
-
-    #
-    if vconfig['config']['web_tools']['web_tools_install']
-      chef.add_role('web-tools')
-    end
-
-    #
-    if vconfig['config']['solr']['solr_install']
-      chef.add_role('web-solr')
-    end
-
-    #
-    if vconfig['config']['varnish_install']
-      chef.add_role('web-varnish')
-    end
-
-    #
-    chef.add_role('frontend')
-
-    #
-    chef.add_role('site')
+    chef.add_role('project')
 
   end
 
@@ -230,11 +196,5 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   # set post_up_message
   config.vm.post_up_message = get_vagrant_post_up_message(aliases)
-
-  config.trigger.before :destroy do
-    if File.exists?('backup/file_token')
-      run_remote '/usr/local/bin/backup-db.sh'
-    end
-  end
 
 end

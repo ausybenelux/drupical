@@ -1,8 +1,0 @@
-description "Mailcatcher"
-
-start on runlevel [2345]
-stop on runlevel [!2345]
-
-respawn
-
-exec /usr/bin/env /var/lib/gems/2.1.0/gems/mailcatcher-0.6.1/bin//mailcatcher

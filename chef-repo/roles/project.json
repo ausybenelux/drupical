@@ -1,0 +1,16 @@
+{
+  "name": "Project",
+  "description": "Site role.",
+  "json_class": "Chef::Role",
+  "default_attributes": {
+    "apache": {
+      "mpm": "prefork"
+    }
+  },
+  "chef_type": "role",
+  "run_list": [
+    "recipe[project::default]"
+  ],
+  "env_run_lists": {
+  }
+}

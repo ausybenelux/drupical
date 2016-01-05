@@ -1,11 +1,13 @@
 {
   "config": {
 
-    "start_form": "ubuntu/trusty64",
-
     "vagrant_debugging": false,
-    "box_type": "ubuntu/trusty64",
-    //"box_type": "ubuntu/precise64",
+
+    "box_type": "oa/drupical-trusty64-base",
+    "box_url": "http://192.168.13.241/one-agency/drupical/trusty64/drupical-trusty64-base.json",
+
+    //"box_type": "oa/drupical-precise64-base",
+    //"box_url": "http://192.168.13.241/one-agency/drupical/precise64/drupical-precise64-base.json",
 
     "box_name": "drupal",
     "box_hostname": "dev",
@@ -14,15 +16,19 @@
     "box_ram_cpu": "auto",
     "box_ram": "2048",
     "box_cpu": "2",
-    "box_shell": "bash",
-    "os_update": false,
+
     "vagrant_synced_folders": {},
+    "vhosts": {},
     "solr": {
       "solr_install": false,
-      "solr_version": "4.2.1",
+      "solr_version": "4.10.4",
       "solr_checksums": {
         "3.6.2": "537426dcbdd0dc82dd5bf16b48b6bcaf87cb4049c1245eea8dcb79eeaf3e7ac6",
-        "4.2.1": "648a4b2509f6bcac83554ca5958cf607474e81f34e6ed3a0bc932ea7fac40b99"
+        "4.10.4": "ac3543880f1b591bcaa962d7508b528d7b42e2b5548386197940b704629ae851"
+      },
+      "solr_links": {
+        "3.6.2": "http://192.168.13.241/one-agency/solr/3.6.2/solr-3.6.2.tgz",
+        "4.10.4": "http://192.168.13.241/one-agency/solr/4.10.4/solr-4.10.4.tgz"
       }
     },
     "web_tools": {
@@ -64,8 +70,6 @@
       "root_password": "10moioui",
       "use-mysql-persistent-storage": false
     },
-    "varnish_install": false,
-    "vhosts": {},
     "php_packages": {
       "php-apc": false,
       "php-auth": false,
@@ -214,6 +218,8 @@
       "phpsysinfo": false,
       "phpunit": false,
       "phpunit-doc": false
-    }
+    },
+    "varnish_install": false,
+    "memcached_install": false
   }
 }

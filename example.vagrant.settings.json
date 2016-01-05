@@ -1,8 +1,6 @@
 {
   "config": {
-
-    "box_type": "ubuntu/trusty64",
-
+    "box_type": "drupical-precise64-base",
     "box_name": "PROJECT_NAME",
     "box_hostname": "SITE_HOST",
     "vagrant_synced_folders": {
@@ -54,6 +52,11 @@
       "php5-mcrypt": true,
       "php5-mysqlnd": true,
       "php5-xdebug": true
-    }
+    },
+    "solr": {
+      "solr_install": false
+    },
+    "varnish_install": false,
+    "memcached_install": false
   }
 }

@@ -4,33 +4,23 @@
 site 'https://supermarket.getchef.com/api/v1'
 
 cookbook 'apt'
-
 cookbook 'git', '= 4.1.0'
-
 cookbook 'curl'
-
 cookbook 'vim'
-
 cookbook 'apache2'
-
 cookbook 'php'
-
 cookbook 'composer'
-
 cookbook 'phing'
-
 cookbook 'hipsnip-jetty'
-
 cookbook 'hipsnip-solr'
-
 cookbook 'memcached'
-
 cookbook 'varnish', '= 1.0.2'
-
 cookbook 'php-fpm'
-
 cookbook 'nodejs'
-
 cookbook 'ruby-ng'
-
 cookbook 'openssl'
+cookbook 'ntp'
+cookbook 'timezone'
+cookbook 'mailcatcher', :github => 'bryantebeek/chef-mailcatcher'
+cookbook 'database'
+cookbook 'mysql2_chef_gem'
