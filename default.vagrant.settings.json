@@ -4,10 +4,10 @@
     "vagrant_debugging": false,
 
     "box_type": "oa/drupical-trusty64-base",
-    "box_url": "http://192.168.13.241/one-agency/drupical/trusty64/drupical-trusty64-base.json",
+    "box_url": "http://192.168.13.241/one-agency/drupical/trusty64/drupical-trusty64-base.php",
 
     //"box_type": "oa/drupical-precise64-base",
-    //"box_url": "http://192.168.13.241/one-agency/drupical/precise64/drupical-precise64-base.json",
+    //"box_url": "http://192.168.13.241/one-agency/drupical/precise64/drupical-precise64-base.php",
 
     "box_name": "drupal",
     "box_hostname": "dev",

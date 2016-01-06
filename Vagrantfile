@@ -38,7 +38,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   #
   config.vm.box = vconfig['config']['box_type']
-  config.vm.box_check_update = true
+  config.vm.box_check_update = false
   config.vm.box_url = vconfig['config']['box_url']
   #
 #  config.omnibus.chef_version = '12'
@@ -172,19 +172,19 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     chef.roles_path = 'chef-repo/roles'
 
     #
-    #if vconfig['config']['solr']['solr_install']
-    #  chef.add_role('web-solr')
-    #end
-#
-    ##
-    #if vconfig['config']['varnish_install']
-    #  chef.add_role('web-varnish')
-    #end
-#
-    ##
-    #if vconfig['config']['memcached_install']
-    #  chef.add_role('web-memcached')
-    #end
+    if vconfig['config']['solr']['solr_install']
+      chef.add_role('web-solr')
+    end
+
+    #
+    if vconfig['config']['varnish_install']
+      chef.add_role('web-varnish')
+    end
+
+    #
+    if vconfig['config']['memcached_install']
+      chef.add_role('web-memcached')
+    end
 
     #
     chef.add_role('project')

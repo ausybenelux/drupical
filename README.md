@@ -6,7 +6,9 @@ Drupical is an easily configurable Vagrant box for developing Drupal projects.
 The Vagrant box comes with the following software:
 
 - Ubuntu 12.04 LTS 64
-- PHP 5.5, 5.4 or 5.3
+- Ubuntu 14.04 LTS 64
+- PHP 5.3 (Ubuntu 12.04 LTS 64 / precise64)
+- PHP 5.5 (Ubuntu 14.04 LTS 64 / trusty64)
 - MySQL5
 - Apache2
 - Solr
@@ -17,7 +19,6 @@ The Vagrant box comes with the following software:
 - Nodejs
 - Grunt
 - Ruby2
-- Selenium
 - OpenSSL
 
 ## Quickstart
@@ -44,7 +45,7 @@ In `local.vagrant.settings.json`:
 ### 3. Provision the box
 
 ```bash
-make install
+rake
 ```
 
 ## Installation
@@ -81,14 +82,19 @@ The most important configuration options are:
 Property | Default | Description
 ---------|---------|------------
 box_name | drupal | The name identifying your Vagrant box
+box_type | oa/drupical-trusty64-base | Choose ubuntu flavor, oa/drupical-trusty64-base / oa/drupical-precise64-base
+box_url | http://192.168.13.241/one-agency/drupical/trusty64/drupical-trusty64-base.php | http://192.168.13.241/one-agency/drupical/trusty64/drupical-trusty64-base.php / http://192.168.13.241/one-agency/drupical/precise64/drupical-precise64-base.php
 vagrant_synced_folders | | A list of folders to sync with Vagrant
 vhosts | | A list of apache2 vhosts
-solr.solr_install | false | Include solr
-solr.solr_version | 3.6.2 | The solr version
+solr.solr_install | false | Install solr, possible values true / false
+solr.solr_version | 3.6.2 / 4.10.4 | The solr version
 rmdbs.root_password | 10moioui | The MySQL root user password
-mysql.root_password | 10moioui | The MySQL root user password
-varnish_install | true | Include varnish
-php.php_version | 5.5 | The PHP version that will be installed
+rmdbs.use-mysql-persistent-storage | false | Use persistent storage for mysql database, possible values true / false
+varnish_install | true | Install varnish, possible values true / false
+php.php_version | 5.x | The PHP version that will be installed
+php.enable_php_phing | false | Install phing, possible values true / false
+php.enable_php_composer | false | Install composer, possible values true / false
+php.enable_php_drush | true | Install drush, possible values true / false
 
 ### Provisioning the Vagrant Box
 
@@ -97,7 +103,7 @@ Execute the following commands inside the vagrant folder.
 OSX:
 
 ```bash
-make install
+rake
 ```
 
 Ubuntu:
@@ -123,7 +129,7 @@ Command | Description
 `vagrant ssh` | Log in via SSH
 `vagrant halt` | Power off
 `vagrant suspend` | Sleep
-`vagrant destroy` | Remove the box (run `vagrant up --provision` to set it up again).
+`vagrant destroy -f` | Remove the box (run `vagrant up --provision` to set it up again).
 
 More information is available in the [official Vagrant documentation](https://docs.vagrantup.com/v2/cli/index.html).
 
@@ -164,14 +170,14 @@ If you prefer a native app like SequelPro follow these instructions:
 Problem | Solution
 --------|---------
 Permission error on a log directory when booting. | On the host machine, remove all but the `.gitkeep` file in the `logs` directory and run `vagrant reload`.
-mount.nfs: access denied error | On the host machine, run `sudo rm /etc/exports` and `vagrant reload`
-403 / Forbidden error when visiting the site in a browser | Run `vagrant reload` on the host machine
-No connection error when going to the website in a browser | SSH into the machine and run `sudo apache2ctl start`
-Box in wrong state error | Run `vagrant destroy`, remove the .vagrant directory and check if there are corrupt devices that should be removed in VirtualBox -> File -> Virtual Media Manager
-Network interface is defined twice | Use Vagrant 1.7.1
-There was an error while executing `VBoxManage` | killall -9 VBoxHeadless && vagrant reload. If that fails, restart your machine.
-Vagrant won't boot after cancelling vagrant up with cmd + c | restart your machine
-Vagrant won't start: "A virtual machine with the name xxx123 already exists" | Run `vagrant destroy`, remove the .vagrant directory and check if there are corrupt devices that should be removed in VirtualBox -> File -> Virtual Media Manager
+mount.nfs: access denied error | Run `rake emergency_fix:nfs`.
+403 / Forbidden error when visiting the site in a browser | Run `rake core:reload`.
+No connection error when going to the website in a browser | Run `rake maintenance:restart_apache` && `rake maintenance:restart_mysql`.
+Box in wrong state error | Run `rake core:destroy`, remove the .vagrant directory and check if there are corrupt devices that should be removed in VirtualBox -> File -> Virtual Media Manager.
+Network interface is defined twice | Install most recent version of vagrant.
+There was an error while executing `VBoxManage` | Run `rake emergency_fix:forcekill` && `rake core:reload`. If that fails, restart your machine.
+Vagrant won't boot after cancelling vagrant up with cmd + c | Run `rake emergency_fix:forcekill` && `rake core:reload`. If that fails, restart your machine.
+Vagrant won't start: "A virtual machine with the name xxx123 already exists" | Run `rake core:destroy`, remove the .vagrant directory and check if there are corrupt devices that should be removed in VirtualBox -> File -> Virtual Media Manager.
 
 
 
