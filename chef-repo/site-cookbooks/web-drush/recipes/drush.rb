@@ -53,8 +53,16 @@ if node['platform_family'] == 'debian'
         mode 0777
       end
 
+      execute 'symbolic-link-drush' do
+        command 'ln -s /usr/local/bin/drush /usr/bin/drush'
+      end
+
     end
 
   end
 
+end
+
+package "unzip" do
+  action :install
 end
