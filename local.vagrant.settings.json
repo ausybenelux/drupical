@@ -3,14 +3,9 @@
     "box_name": "mytest",
     "box_hostname": "mytest",
     "vagrant_synced_folders": {
-      "build": {
-        "source": "..",
-        "target": "/vagrant",
-        "type": "rsync"
-      },
       "build_nfs": {
         "source": "..",
-        "target": "/vagrant_nfs",
+        "target": "/vagrant",
         "type": "nfs",
         "mount_options": [
           "rw",

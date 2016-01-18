@@ -4,7 +4,13 @@
     "vagrant_debugging": false,
 
     "box_type": "oa/drupical-trusty64-base",
-    "box_url": "http://192.168.13.241/one-agency/drupical/trusty64/drupical-trusty64-base.php",
+    "box_url": "http://drupical.staging5.dotprojects.be/drupical/trusty64/drupical-trusty64-base.php",
+
+    //"box_type": "oa/drupical-precise64-base",
+    //"box_url": "http://drupical.staging5.dotprojects.be/drupical/precise64/drupical-precise64-base.php",
+
+    //"box_type": "oa/drupical-trusty64-base",
+    //"box_url": "http://192.168.13.241/one-agency/drupical/trusty64/drupical-trusty64-base.php",
 
     //"box_type": "oa/drupical-precise64-base",
     //"box_url": "http://192.168.13.241/one-agency/drupical/precise64/drupical-precise64-base.php",
@@ -27,8 +33,10 @@
         "4.10.4": "ac3543880f1b591bcaa962d7508b528d7b42e2b5548386197940b704629ae851"
       },
       "solr_links": {
-        "3.6.2": "http://192.168.13.241/one-agency/solr/3.6.2/solr-3.6.2.tgz",
-        "4.10.4": "http://192.168.13.241/one-agency/solr/4.10.4/solr-4.10.4.tgz"
+        "3.6.2": "https://archive.apache.org/dist/lucene/solr/3.6.2/apache-solr-3.6.2.tgz",
+        "4.10.4": "https://archive.apache.org/dist/lucene/solr/4.10.4/solr-4.10.4.tgz"
+        //"3.6.2": "http://192.168.13.241/one-agency/solr/3.6.2/solr-3.6.2.tgz",
+        //"4.10.4": "http://192.168.13.241/one-agency/solr/4.10.4/solr-4.10.4.tgz"
       }
     },
     "web_tools": {

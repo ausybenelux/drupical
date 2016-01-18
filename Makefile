@@ -27,7 +27,7 @@ info:
 	@echo ""
 
 help:
-	@echo "todo ..."
+	@echo "/giphy boobies"
 
 install: check-environment download-chef-cookbooks vagrant-up
 
@@ -51,12 +51,6 @@ vagrant-destroy:
 		vagrant destroy -f
 	fi; \
 
-vagrant-export-base:
-	vagrant destroy -f
-	vagrant up
-	vagrant package --base 'trusty64' --output 'trusty64-base.box'
-	vagrant package --base 'precise64' --output 'precise64-base.box'
-
 check-environment: check-environment-virtualbox check-environment-vagrant check-environment-librarian check-vagrant-plugins
 
 check-environment-virtualbox:
@@ -70,6 +64,7 @@ endif
 check-environment-vagrant:
 ifndef BIN_VAGRANT
 	@echo "Vagrant has not been installed yet."
+	@echo "Please install the version 1.7.1 from http://www.vagrantup.com/download-archive/v1.7.1.html."
 	exit 2;
 endif
 	@echo "Vagrant: OK"
