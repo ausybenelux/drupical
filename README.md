@@ -5,10 +5,8 @@ Drupical is an easily configurable Vagrant box for developing Drupal projects.
 
 The Vagrant box comes with the following software:
 
-- Ubuntu 12.04 LTS 64
-- Ubuntu 14.04 LTS 64
-- PHP 5.3 (Ubuntu 12.04 LTS 64 / precise64)
-- PHP 5.5 (Ubuntu 14.04 LTS 64 / trusty64)
+- Ubuntu 12.04 LTS 64 OR Ubuntu 14.04 LTS 64
+- PHP 5.3 (Ubuntu 12.04 LTS 64 / precise64) OR PHP 5.5 (Ubuntu 14.04 LTS 64 / trusty64)
 - MySQL5
 - Apache2
 - Solr
@@ -83,18 +81,18 @@ Property | Default | Description
 ---------|---------|------------
 box_name | drupal | The name identifying your Vagrant box
 box_type | oa/drupical-trusty64-base | Choose ubuntu flavor, oa/drupical-trusty64-base / oa/drupical-precise64-base
-box_url | http://192.168.13.241/one-agency/drupical/trusty64/drupical-trusty64-base.php | http://192.168.13.241/one-agency/drupical/trusty64/drupical-trusty64-base.php / http://192.168.13.241/one-agency/drupical/precise64/drupical-precise64-base.php
+box_url |  | Depends on ubuntu flavor, see default.vagrant.settings.json
 vagrant_synced_folders | | A list of folders to sync with Vagrant
 vhosts | | A list of apache2 vhosts
-solr.solr_install | false | Install solr, possible values true / false
+solr.solr_install | false | Install solr, possible values are true / false
 solr.solr_version | 3.6.2 / 4.10.4 | The solr version
 rmdbs.root_password | 10moioui | The MySQL root user password
-rmdbs.use-mysql-persistent-storage | false | Use persistent storage for mysql database, possible values true / false
-varnish_install | true | Install varnish, possible values true / false
+rmdbs.use-mysql-persistent-storage | false | Use persistent storage for mysql database, possible values are true / false. Limited to 5GB.
+varnish_install | true | Install varnish, possible values are true / false
 php.php_version | 5.x | The PHP version that will be installed
-php.enable_php_phing | false | Install phing, possible values true / false
-php.enable_php_composer | false | Install composer, possible values true / false
-php.enable_php_drush | true | Install drush, possible values true / false
+php.enable_php_phing | false | Install phing, possible values are true / false
+php.enable_php_composer | false | Install composer, possible values are true / false
+php.enable_php_drush | true | Install drush, possible values are true / false
 
 ### Provisioning the Vagrant Box
 
@@ -105,15 +103,18 @@ OSX:
 ```bash
 rake
 ```
+OR
+```bash
+rake core:up
+```
 
 Ubuntu:
 
 ```bash
 sudo apt-get install virtualbox 
 sudo apt-get install vagrant
-make install-chef-base
-make install-vagrant-plugins
-make vagrant-up
+rake environment:install_dependencies_vagrant 
+rake core:up
 ```
 
 ## Usage
@@ -122,16 +123,17 @@ make vagrant-up
 
 You can manage your box with the following commands. Execute them from the vagrant directory:
 
-Command | Description
---------|------------
-`vagrant up` | Boot
-`vagrant reload` | Reboot
-`vagrant ssh` | Log in via SSH
-`vagrant halt` | Power off
-`vagrant suspend` | Sleep
-`vagrant destroy -f` | Remove the box (run `vagrant up --provision` to set it up again).
+Command |Rake command | Description
+--------|-------------|------------
+`ssh-add -K ~/.ssh/id_rsa && vagrant up` | `rake core:up` | Boot
+`vagrant reload` | `rake core:reload` | Reboot
+`vagrant ssh` | `rake core:ssh` | Log in via SSH
+`vagrant halt` | `rake core:halt` | Power off
+`vagrant suspend` | `rake core:suspend` | Sleep
+`vagrant destroy` | `rake core:destroy` | Remove the box (run `vagrant up` OR `rake core:up` to set it up again).
 
-More information is available in the [official Vagrant documentation](https://docs.vagrantup.com/v2/cli/index.html).
+For full overview of all Rake commands: `rake -T` 
+More information is also available in the [official Vagrant documentation](https://docs.vagrantup.com/v2/cli/index.html).
 
 ### Accessing your files
 
@@ -147,8 +149,6 @@ Path on the Vagrant box (log in via `vagrant ssh`): `/vagrant/docroot/sites`
 
 ### Managing your database
 
-You can easily manage your database using the included [Adminer DB manager](http://adminer.tools.drupical.local/).
-
 If you prefer a native app like SequelPro follow these instructions:
 
 - In the vagrant dir, run `vagrant ssh-config`
@@ -157,9 +157,10 @@ If you prefer a native app like SequelPro follow these instructions:
 - In SequelPro, create a new connection of type SSH
 - MySQL Host: 127.0.0.1
 - Username: root
-- Password: 10moioui
+- Password: your project's rmdbs password (e.g. 10moioui)
 - SSH Host: your project's hostname (e.g. my-project.local)
 - SSH User: vagrant
+- SSH Port: see output `vagrant ssh-config`
 
 ## Configuration
 
@@ -178,8 +179,6 @@ Network interface is defined twice | Install most recent version of vagrant.
 There was an error while executing `VBoxManage` | Run `rake emergency_fix:forcekill` && `rake core:reload`. If that fails, restart your machine.
 Vagrant won't boot after cancelling vagrant up with cmd + c | Run `rake emergency_fix:forcekill` && `rake core:reload`. If that fails, restart your machine.
 Vagrant won't start: "A virtual machine with the name xxx123 already exists" | Run `rake core:destroy`, remove the .vagrant directory and check if there are corrupt devices that should be removed in VirtualBox -> File -> Virtual Media Manager.
-
-
 
 ## Contributing
 

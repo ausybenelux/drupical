@@ -139,12 +139,7 @@ namespace :maintenance do
 
     Rake::Task["core:up"].invoke()
 
-    begin
-      sh "vagrant ssh --command 'sudo rm -rf /var/log/*'"
-      sh "vagrant ssh --command 'sudo mkdir /var/log/apache2 ; sudo mkdir /var/log/mysql'"
-      Rake::Task["core:reload"].invoke()
-    rescue
-    end
+    Rake::Task["maintenance:clear_logs"].invoke()
 
     begin
       sh "vagrant ssh --command 'sudo cat /dev/zero > zero.fill'"
