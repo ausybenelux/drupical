@@ -19,6 +19,8 @@ end
 end
 
 recipe 'project::default', ''
+recipe 'project::web-apt-update', ''
+recipe 'project::web-database', ''
 recipe 'project::web-database', ''
 recipe 'project::web-httpd', ''
 recipe 'project::web-php5', ''

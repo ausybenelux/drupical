@@ -18,9 +18,10 @@ if node['platform_family'] == 'debian'
       bash "install-console-table-manual" do
         code <<-EOH
             (wget http://download.pear.php.net/package/Console_Table-1.1.3.tgz)
-            (tar xvzf Console_Table-1.1.3.tgz)
+            (tar xvzf Console_Table-1.1.3.tgz && rm -rf ./Console_Table-1.1.3.tgz)
             (sudo mv Console_Table-1.1.3 /usr/share/drush/lib)
         EOH
+        not_if { File.exists?("/usr/share/drush/lib/Console_Table-1.1.3") }
       end
 
       bash "make-drush-symlink" do
@@ -51,10 +52,12 @@ if node['platform_family'] == 'debian'
       remote_file "/usr/local/bin/drush" do
         source "http://files.drush.org/drush.phar"
         mode 0777
+        not_if { File.exists?("/usr/local/bin/drush") }
       end
 
       execute 'symbolic-link-drush' do
         command 'ln -s /usr/local/bin/drush /usr/bin/drush'
+        not_if { File.exists?("/usr/bin/drush") }
       end
 
     end

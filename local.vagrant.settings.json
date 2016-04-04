@@ -43,13 +43,10 @@
       "php5-xdebug": true
     },
     "solr": {
-      "solr_install": true,
-      "solr_version": "4.10.4",
-      "solr_checksums": {
-        "4.10.4": "ac3543880f1b591bcaa962d7508b528d7b42e2b5548386197940b704629ae851"
-      }
+      "solr_install": false,
+      "solr_version": "4.x"
     },
-    "varnish_install": true,
-    "memcached_install": true
+    "varnish_install": false,
+    "memcached_install": false
   }
 }

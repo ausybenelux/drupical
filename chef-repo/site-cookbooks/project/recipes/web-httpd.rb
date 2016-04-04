@@ -39,6 +39,14 @@ node['config']['vhosts'].each do |key, vhost|
       server_pool vhost['server_name'] + "-ssl"
     end
 
+    node.default['apache']['listen_ports'] = node['apache']['listen_ports'] + [443]
+    template 'ssl_ports.conf' do
+      path "#{node['apache']['dir']}/ports.conf"
+      source 'ports.conf.erb'
+      mode '0644'
+      notifies :restart, 'service[apache2]', :delayed
+    end
+
   end
 
 end

@@ -1,0 +1,74 @@
+#!/bin/sh
+
+# Prerequisites:
+# 1. Java must be installed (sudo apt-get install openjdk-6-jdk)
+# 2. Solr needs to be installed at /usr/local/solr/MYSOLRINSTANCE (Replace MYSOLRINSTANCE with the name if directory you wish to use for your Solr instance)
+# 3. daemon needs to be installed (sudo apt-get install daemon)
+# 4. Script needs to be executed by root
+
+# This script will launch Solr in a mode that will automatically re-spawn if it
+# crashes. Output will be sent to /var/log/solr/solr.log. A PID file will be
+# created in the standard location.
+
+start () {
+    echo -n "Starting solr..."
+
+    # Start daemon (Replace MYSOLRINSTANCE with the name if directory you wish to use for your solr instance)
+    daemon --chdir='<%= @jetty_home %>' --command "java -jar start.jar" --respawn --output=<%= @jetty_log %>/solr.log --name=solr --verbose
+
+    RETVAL=$?
+    if [ $RETVAL = 0 ]
+    then
+        echo "done."
+    else
+        echo "failed. See error code for more information."
+    fi
+    return $RETVAL
+}
+
+stop () {
+    # Stop daemon
+    echo -n "Stopping solr..."
+
+    daemon --stop --name=solr  --verbose
+    RETVAL=$?
+
+    if [ $RETVAL = 0 ]
+    then
+        echo "Done."
+    else
+        echo "Failed. See error code for more information."
+    fi
+    return $RETVAL
+}
+
+restart () {
+    daemon --restart --name=solr  --verbose
+}
+
+status () {
+    # Report on the status of the daemon
+    daemon --running --verbose --name=solr
+    return $?
+}
+
+case "$1" in
+    start)
+        start
+    ;;
+    status)
+        status
+    ;;
+    stop)
+        stop
+    ;;
+    restart)
+        restart
+    ;;
+    *)
+        echo $"Usage: solr {start|status|stop|restart}"
+        exit 3
+    ;;
+esac
+
+exit $RETVAL

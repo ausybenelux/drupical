@@ -27,17 +27,7 @@
     "vhosts": {},
     "solr": {
       "solr_install": false,
-      "solr_version": "4.10.4",
-      "solr_checksums": {
-        "3.6.2": "537426dcbdd0dc82dd5bf16b48b6bcaf87cb4049c1245eea8dcb79eeaf3e7ac6",
-        "4.10.4": "ac3543880f1b591bcaa962d7508b528d7b42e2b5548386197940b704629ae851"
-      },
-      "solr_links": {
-        "3.6.2": "https://archive.apache.org/dist/lucene/solr/3.6.2/apache-solr-3.6.2.tgz",
-        "4.10.4": "https://archive.apache.org/dist/lucene/solr/4.10.4/solr-4.10.4.tgz"
-        //"3.6.2": "http://192.168.13.241/one-agency/solr/3.6.2/solr-3.6.2.tgz",
-        //"4.10.4": "http://192.168.13.241/one-agency/solr/4.10.4/solr-4.10.4.tgz"
-      }
+      "solr_version": "4.x"
     },
     "web_tools": {
       "web_tools_install": false,

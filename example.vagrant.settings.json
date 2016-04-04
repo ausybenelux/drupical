@@ -55,7 +55,8 @@
       "php5-xdebug": true
     },
     "solr": {
-      "solr_install": false
+      "solr_install": false,
+      "solr_version": "4.x"
     },
     "varnish_install": false,
     "memcached_install": false

@@ -1,21 +1,19 @@
-name 'web-solr'
-
-maintainer 'Bart Arickx'
-maintainer_email 'bart.arickx@one-agency.be'
-
-license '(c) 2015 -- All rights reserved'
-
-description 'Installs/Configures drupical'
-long_description IO.read(File.join(File.dirname(__FILE__), 'README.md'))
-
-version '0.0.1'
+name             'web-solr'
+maintainer       'Ausy Belgium nv'
+maintainer_email 'systems@ausy.be'
+license          'All rights reserved'
+description      'Installs/Configures oa-solr'
+long_description 'Installs/Configures oa-solr'
+version          '0.1.0'
 
 %w{ ubuntu }.each do |os|
   supports os
 end
 
-%w{hipsnip-jetty hipsnip-solr system-java}.each do |dependancy|
-  depends dependancy
+%w{ system-java }.each do |dependency|
+  depends dependency
 end
 
-recipe 'web-solr::default', 'Main configuration'
+recipe 'oa-solr::default', ''
+recipe 'oa-solr::package', ''
+recipe 'oa-solr::service', ''

@@ -37,11 +37,9 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vagrant.host = :detect
 
   #
-  config.vm.box = vconfig['config']['box_type']
   config.vm.box_check_update = false
+  config.vm.box = vconfig['config']['box_type']
   config.vm.box_url = vconfig['config']['box_url']
-  #
-#  config.omnibus.chef_version = '12'
 
   # Hostname
   config.vm.hostname = box_hostname

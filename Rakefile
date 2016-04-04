@@ -14,7 +14,7 @@ namespace :core do
   task :up do
     puts "up"
     begin
-      sh "ssh-add -K ~/.ssh/id_rsa && vagrant up"
+      sh "ssh-add -K ~/.ssh/id_rsa && vagrant up && vagrant ssh"
     rescue
     end
   end

@@ -1,0 +1,7 @@
+NO_START=0
+JETTY_USER=<%= @jetty_user %>
+JETTY_HOST=<%= @jetty_host %>
+JETTY_PORT=<%= @jetty_port %>
+JETTY_HOME=<%= @jetty_home %>
+JETTY_LOGS=<%= @jetty_log %>
+JAVA_OPTIONS="-Dsolr.solr.home=<%= @jetty_home %>/solr $JAVA_OPTIONS"
